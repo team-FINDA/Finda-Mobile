@@ -1,0 +1,8 @@
+#include "../Shared.xcconfig"
+
+BUNDLE_DISPLAY_NAME = Finda
+
+APP_BUNDLE_ID = com.finda.app
+
+API_BASE_URL = https:/$()/
+SOCKET_BASE_URL = wss:/$()/
