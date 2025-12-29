@@ -1,0 +1,39 @@
+name: "기능 구현"
+description: "기능을 추가합니다. ⚙️"
+labels: ["🐥 feat"]
+
+body:
+    - type: textarea
+      id: feature-contents
+      attributes:
+          label: Feature
+          description: |
+              작업할 Feature에 대한 설명을 적어주세요.
+          placeholder: |
+              ex) Calendar 컴포넌트 제작
+      validations:
+          required: true
+
+    - type: textarea
+      id: work-todo
+      attributes:
+          label: Todo
+          description: |
+              어떤 작업을 진행할 것인가요?
+          placeholder: |
+              - [ ] Header 컴포넌트 구현
+
+              - [ ] API 통신 구현
+
+              - [ ] 상태관리 로직 구현
+      validations:
+          required: false
+
+    - type: textarea
+      id: additional-contents
+      attributes:
+          label: Additional
+          description: |
+              추가로 할말을 작성해주세요.
+      validations:
+          required: false
