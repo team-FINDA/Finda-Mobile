@@ -1,34 +1,31 @@
 import ProjectDescription
 
 let project = Project(
-    name: "Finda-iOS",
+    name: "FINDA",
+    organizationName: "FINDA",
     targets: [
         .target(
-            name: "Finda-iOS",
+            name: "FINDA",
             destinations: .iOS,
             product: .app,
-            bundleId: "io.tuist.Finda-iOS",
-            infoPlist: .extendingDefault(
-                with: [
-                    "UILaunchScreen": [
-                        "UIColorName": "",
-                        "UIImageName": "",
-                    ],
-                ]
-            ),
-            sources: ["Finda-iOS/Sources/**"],
-            resources: ["Finda-iOS/Resources/**"],
-            dependencies: []
-        ),
-        .target(
-            name: "Finda-iOSTests",
-            destinations: .iOS,
-            product: .unitTests,
-            bundleId: "io.tuist.Finda-iOSTests",
-            infoPlist: .default,
-            sources: ["Finda-iOS/Tests/**"],
-            resources: [],
-            dependencies: [.target(name: "Finda-iOS")]
-        ),
+            bundleId: "$(APP_BUNDLE_ID)",
+            deploymentTargets: .iOS("16.0"),
+            infoPlist: .extendingDefault(with: [
+                "UILaunchScreen": [:],
+                "UISupportedInterfaceOrientations": ["UIInterfaceOrientationPortrait"],
+                "CFBundleDisplayName": "FINDA"
+            ]),
+            sources: ["Sources/**"],
+            resources: ["Resources/**"],
+            dependencies: [
+                .project(target: "FeatureAuth", path: .relativeToRoot("Projects/Features/FeatureAuth")),
+                .project(target: "FeatureStudent", path: .relativeToRoot("Projects/Features/FeatureStudent")),
+                .project(target: "FeatureTeacher", path: .relativeToRoot("Projects/Features/FeatureTeacher")),
+                .project(target: "FeatureSchedule", path: .relativeToRoot("Projects/Features/FeatureSchedule")),
+                .project(target: "Core", path: .relativeToRoot("Projects/Core")),
+                .project(target: "DesignSystem", path: .relativeToRoot("Projects/DesignSystem")),
+                .external(name: "ComposableArchitecture")
+            ]
+        )
     ]
 )
