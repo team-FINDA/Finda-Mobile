@@ -1,6 +1,9 @@
 import ProjectDescription
 
 let config = Config(
-    compatibleXcodeVersions: .all,
-    swiftVersion: "5.9"
+    plugins: [
+        .local(path: .relativeToManifest("../../Plugins/ConfigurationPlugin")),
+        .local(path: .relativeToManifest("../../Plugins/DependencyPlugin")),
+        .local(path: .relativeToManifest("../../Plugins/EnvironmentPlugin"))
+    ]
 )

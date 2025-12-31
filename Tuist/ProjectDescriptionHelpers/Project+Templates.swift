@@ -1,13 +1,14 @@
 import ProjectDescription
+import EnvironmentPlugin
 
 public extension Project {
     static func makeModule(
         name: String,
-        organizationName: String = "com.finda",
-        destinations: Destinations = .iOS,
+        organizationName: String = env.organizationName,
+        destinations: Destinations = env.destination,
         product: Product,
         packages: [Package] = [],
-        deploymentTargets: DeploymentTargets = .iOS("16.0"),
+        deploymentTargets: DeploymentTargets = env.deploymentTargets,
         sources: SourceFilesList = ["Sources/**"],
         resources: ResourceFileElements? = nil,
         dependencies: [TargetDependency] = []
@@ -18,7 +19,7 @@ public extension Project {
                 name: name,
                 destinations: destinations,
                 product: product,
-                bundleId: "\(organizationName).\(name.lowercased())",
+                bundleId: organizationName,
                 deploymentTargets: deploymentTargets,
                 infoPlist: .default,
                 sources: sources,
@@ -29,7 +30,7 @@ public extension Project {
                 name: "\(name)Tests",
                 destinations: destinations,
                 product: .unitTests,
-                bundleId: "\(organizationName).\(name.lowercased()).tests",
+                bundleId: "\(organizationName).tests",
                 deploymentTargets: deploymentTargets,
                 infoPlist: .default,
                 sources: ["Tests/**"],

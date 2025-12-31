@@ -1,7 +1,8 @@
 import ProjectDescription
+import EnvironmentPlugin
 
 let workspace = Workspace(
-    name: "FINDA",
+    name: env.appName,
     projects: [
         "Projects/App",
         "Projects/Features/FeatureAuth",
