@@ -1,11 +1,12 @@
 import ProjectDescription
 import ProjectDescriptionHelpers
+import DependencyPlugin
 
 let project = Project.makeModule(
     name: "Core",
     product: .framework,
     packages: [],
     dependencies: [
-        .project(target: "Shared", path: .relativeToRoot("Projects/Shared")),
+        .Projects.shared
     ]
 )
