@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:Projects"
+      name = "Projects">
+      <FileRef
+         location = "group:App/FINDA.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:Core/Core.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:DesignSystem/DesignSystem.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:Shared/Shared.xcodeproj">
+      </FileRef>
+      <Group
+         location = "group:Features"
+         name = "Features">
+         <FileRef
+            location = "group:FeatureAuth/FeatureAuth.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:FeatureSchedule/FeatureSchedule.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:FeatureStudent/FeatureStudent.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:FeatureTeacher/FeatureTeacher.xcodeproj">
+         </FileRef>
+      </Group>
+   </Group>
+</Workspace>

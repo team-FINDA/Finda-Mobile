@@ -1,0 +1,470 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E2B1D076C8886C94D60DFF9 /* Et.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D65E602D0DF6D469DCB7EEE /* Et.swift */; };
+		2AB37BCCF8DE710ECB91B9A6 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A859DFBF1DE3A7684455CCF /* Shared.framework */; };
+		2C97E84C75BB426451763FBF /* DesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D4F47AE0F7B8C603C4BF9BCC /* DesignSystem.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2DB0478FE287CFA70A78E13C /* Et.swift in Resources */ = {isa = PBXBuildFile; fileRef = 2C5011172ECC4B4FA40EEBEE /* Et.swift */; };
+		34D3CB077E91988C8175F4EB /* TuistBundle+FINDA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8549101BF27E27B2E6ABB595 /* TuistBundle+FINDA.swift */; };
+		52D7A98D910A3036B0AF5D43 /* FeatureSchedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3738402DF01F7641707456 /* FeatureSchedule.framework */; };
+		5C1D00FDE97CEB09996CD48F /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 481B2FEBFFF0167F53790302 /* Core.framework */; };
+		62C8898F5D42A3F0CCF978C7 /* FeatureSchedule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3738402DF01F7641707456 /* FeatureSchedule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6B4C980ECB95DF53C20E2832 /* FeatureStudent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870C91B5DEBD7DDB08399748 /* FeatureStudent.framework */; };
+		7BA9A1C51BC38C933AD4884F /* FeatureTeacher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BAFC1A65D3EB2CDD5501BE2 /* FeatureTeacher.framework */; };
+		8C2DE1A54C0F895A29C947F8 /* FeatureTeacher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9BAFC1A65D3EB2CDD5501BE2 /* FeatureTeacher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		930A5FF4BF88DF197DAAE710 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 481B2FEBFFF0167F53790302 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		958630994DE1B5F03CA7C189 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A859DFBF1DE3A7684455CCF /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DE3B9E41D406162EC36A54B3 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F47AE0F7B8C603C4BF9BCC /* DesignSystem.framework */; };
+		E2C6D42A6A160AF30D853702 /* FeatureStudent.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 870C91B5DEBD7DDB08399748 /* FeatureStudent.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		113D49EF109E7D10DCAD7B43 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				930A5FF4BF88DF197DAAE710 /* Core.framework in Embed Frameworks */,
+				2C97E84C75BB426451763FBF /* DesignSystem.framework in Embed Frameworks */,
+				62C8898F5D42A3F0CCF978C7 /* FeatureSchedule.framework in Embed Frameworks */,
+				E2C6D42A6A160AF30D853702 /* FeatureStudent.framework in Embed Frameworks */,
+				8C2DE1A54C0F895A29C947F8 /* FeatureTeacher.framework in Embed Frameworks */,
+				958630994DE1B5F03CA7C189 /* Shared.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2C5011172ECC4B4FA40EEBEE /* Et.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Et.swift; sourceTree = "<group>"; };
+		3C3738402DF01F7641707456 /* FeatureSchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureSchedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		481B2FEBFFF0167F53790302 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8449417FF2BD1FF979D9585E /* FINDA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FINDA.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8549101BF27E27B2E6ABB595 /* TuistBundle+FINDA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+FINDA.swift"; sourceTree = "<group>"; };
+		870C91B5DEBD7DDB08399748 /* FeatureStudent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureStudent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A859DFBF1DE3A7684455CCF /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BAFC1A65D3EB2CDD5501BE2 /* FeatureTeacher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureTeacher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D65E602D0DF6D469DCB7EEE /* Et.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Et.swift; sourceTree = "<group>"; };
+		C53502CE8E7D2861852C6902 /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
+		D053AFF575073D61DAF6E3F6 /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
+		D4F47AE0F7B8C603C4BF9BCC /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F99433141C503EF7708A2A0A /* FINDA-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "FINDA-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B5C83598B23353E10B5D2CD1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C1D00FDE97CEB09996CD48F /* Core.framework in Frameworks */,
+				DE3B9E41D406162EC36A54B3 /* DesignSystem.framework in Frameworks */,
+				52D7A98D910A3036B0AF5D43 /* FeatureSchedule.framework in Frameworks */,
+				6B4C980ECB95DF53C20E2832 /* FeatureStudent.framework in Frameworks */,
+				7BA9A1C51BC38C933AD4884F /* FeatureTeacher.framework in Frameworks */,
+				2AB37BCCF8DE710ECB91B9A6 /* Shared.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0204AD25CE3289602A3C5507 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				F2B659E5E1DE49A22EE96C76 /* Derived */,
+				D58032EFEE9D422A26EF3983 /* Resources */,
+				C48403CE41E007F5A5E0D0BD /* Sources */,
+				B972844EEFE4D7E74B08A5E1 /* XCConfig */,
+			);
+			name = Project;
+			sourceTree = "<group>";
+		};
+		2F39E5D6098415281116C7A7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				8549101BF27E27B2E6ABB595 /* TuistBundle+FINDA.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		2F5AEA9B1EF70920794E329C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				481B2FEBFFF0167F53790302 /* Core.framework */,
+				D4F47AE0F7B8C603C4BF9BCC /* DesignSystem.framework */,
+				3C3738402DF01F7641707456 /* FeatureSchedule.framework */,
+				870C91B5DEBD7DDB08399748 /* FeatureStudent.framework */,
+				9BAFC1A65D3EB2CDD5501BE2 /* FeatureTeacher.framework */,
+				8449417FF2BD1FF979D9585E /* FINDA.app */,
+				8A859DFBF1DE3A7684455CCF /* Shared.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B3446BAFAF0993AFCDCD088 /* FINDA */ = {
+			isa = PBXGroup;
+			children = (
+				C53502CE8E7D2861852C6902 /* PROD.xcconfig */,
+				D053AFF575073D61DAF6E3F6 /* STAGE.xcconfig */,
+			);
+			path = FINDA;
+			sourceTree = "<group>";
+		};
+		88A1F28609A7F4F4980C630E /* InfoPlists */ = {
+			isa = PBXGroup;
+			children = (
+				F99433141C503EF7708A2A0A /* FINDA-Info.plist */,
+			);
+			path = InfoPlists;
+			sourceTree = "<group>";
+		};
+		B972844EEFE4D7E74B08A5E1 /* XCConfig */ = {
+			isa = PBXGroup;
+			children = (
+				3B3446BAFAF0993AFCDCD088 /* FINDA */,
+			);
+			name = XCConfig;
+			path = ../../XCConfig;
+			sourceTree = "<group>";
+		};
+		BCBA5ABD723623EF78BF9FD6 = {
+			isa = PBXGroup;
+			children = (
+				0204AD25CE3289602A3C5507 /* Project */,
+				2F5AEA9B1EF70920794E329C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C48403CE41E007F5A5E0D0BD /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				9D65E602D0DF6D469DCB7EEE /* Et.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		D58032EFEE9D422A26EF3983 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2C5011172ECC4B4FA40EEBEE /* Et.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F2B659E5E1DE49A22EE96C76 /* Derived */ = {
+			isa = PBXGroup;
+			children = (
+				88A1F28609A7F4F4980C630E /* InfoPlists */,
+				2F39E5D6098415281116C7A7 /* Sources */,
+			);
+			path = Derived;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		283839053DFC12C549E8D90C /* FINDA */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC13D8D619E8E7E4E058E816 /* Build configuration list for PBXNativeTarget "FINDA" */;
+			buildPhases = (
+				A396FB9C5676D17F5529D8E6 /* SwiftLint */,
+				717B4953D3B1488D9A2ADCC2 /* Sources */,
+				5587D3ED117EB26A6F57F98D /* Resources */,
+				113D49EF109E7D10DCAD7B43 /* Embed Frameworks */,
+				B5C83598B23353E10B5D2CD1 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FINDA;
+			packageProductDependencies = (
+			);
+			productName = FINDA;
+			productReference = 8449417FF2BD1FF979D9585E /* FINDA.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF036AE6F20DCBE071B2D176 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				ORGANIZATIONNAME = com.finda.app;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 1051A9F12BD5364DB015CAF1 /* Build configuration list for PBXProject "FINDA" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = BCBA5ABD723623EF78BF9FD6;
+			productRefGroup = 2F5AEA9B1EF70920794E329C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				283839053DFC12C549E8D90C /* FINDA */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5587D3ED117EB26A6F57F98D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DB0478FE287CFA70A78E13C /* Et.swift in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A396FB9C5676D17F5529D8E6 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT\"/../../Scripts/SwiftLintRunScript.sh ";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		717B4953D3B1488D9A2ADCC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34D3CB077E91988C8175F4EB /* TuistBundle+FINDA.swift in Sources */,
+				0E2B1D076C8886C94D60DFF9 /* Et.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		381A02EF754E7A3845C77400 /* STAGE */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Derived/InfoPlists/FINDA-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.finda.app.finda;
+				PRODUCT_NAME = FINDA;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = STAGE;
+		};
+		7B72BCA7F277A47AE47339A3 /* PROD */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C53502CE8E7D2861852C6902 /* PROD.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Z25H7B85Z8;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = PROD;
+		};
+		8D364482D843C5669EDA1769 /* PROD */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Derived/InfoPlists/FINDA-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.finda.app.finda;
+				PRODUCT_NAME = FINDA;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = PROD;
+		};
+		D818544B3D6BEA332F35D809 /* STAGE */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D053AFF575073D61DAF6E3F6 /* STAGE.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Z25H7B85Z8;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = STAGE;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1051A9F12BD5364DB015CAF1 /* Build configuration list for PBXProject "FINDA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B72BCA7F277A47AE47339A3 /* PROD */,
+				D818544B3D6BEA332F35D809 /* STAGE */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = PROD;
+		};
+		BC13D8D619E8E7E4E058E816 /* Build configuration list for PBXNativeTarget "FINDA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D364482D843C5669EDA1769 /* PROD */,
+				381A02EF754E7A3845C77400 /* STAGE */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = PROD;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EF036AE6F20DCBE071B2D176 /* Project object */;
+}
