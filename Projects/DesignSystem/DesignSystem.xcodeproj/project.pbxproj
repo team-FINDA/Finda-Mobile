@@ -10,8 +10,11 @@
 		02CC97ABFD780062F1EB4548 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A7772AA0518B04428BE5C5 /* Shared.framework */; };
 		081634FE070B0A4C2CC0E641 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBD3CF9B93DB5CAE4CB88C8E /* Icons.xcassets */; };
 		11E9D55EEFCC8048FD0E47A3 /* Et.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D877FFD7BDF730C8C7C714 /* Et.swift */; };
+		12E6F8D5A1B74FBAA859A17B /* Sub.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AABBDD28F1353CACF3406AB /* Sub.xcassets */; };
+		1CDC7DDFBC0374FBD4076030 /* Blue.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24D93F7D818D17A03E1017E5 /* Blue.xcassets */; };
 		313FB8E862B2BF5242789879 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25C1C589AF4FC204EF5E571 /* Images.xcassets */; };
 		ABB14811E13F7B1ECCF8B086 /* TuistAssets+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5263BC75B281154AC0B5A7B /* TuistAssets+DesignSystem.swift */; };
+		C8478A3CDE36A8F1A7E401DA /* Gray.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C226A3A3734473E0AF64CD /* Gray.xcassets */; };
 		F6018B5F7748E322214C52D6 /* TuistBundle+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4AD9735556ECA8C8008FEC /* TuistBundle+DesignSystem.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +33,9 @@
 
 /* Begin PBXFileReference section */
 		1CA11073843FE4E5B67AAAE0 /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
+		24D93F7D818D17A03E1017E5 /* Blue.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Blue.xcassets; sourceTree = "<group>"; };
 		56A7772AA0518B04428BE5C5 /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AABBDD28F1353CACF3406AB /* Sub.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Sub.xcassets; sourceTree = "<group>"; };
 		69B7BBEAD5472C7195924AC8 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8937FA9427EEA938B58C5B3E /* DesignSystem-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DesignSystem-Info.plist"; sourceTree = "<group>"; };
 		A5263BC75B281154AC0B5A7B /* TuistAssets+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+DesignSystem.swift"; sourceTree = "<group>"; };
@@ -38,6 +43,7 @@
 		BE4AD9735556ECA8C8008FEC /* TuistBundle+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+DesignSystem.swift"; sourceTree = "<group>"; };
 		C6D877FFD7BDF730C8C7C714 /* Et.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Et.swift; sourceTree = "<group>"; };
 		D25C1C589AF4FC204EF5E571 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F0C226A3A3734473E0AF64CD /* Gray.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Gray.xcassets; sourceTree = "<group>"; };
 		FBD3CF9B93DB5CAE4CB88C8E /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +105,16 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		7A598F64DE446EA65E8B61CE /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				24D93F7D818D17A03E1017E5 /* Blue.xcassets */,
+				F0C226A3A3734473E0AF64CD /* Gray.xcassets */,
+				5AABBDD28F1353CACF3406AB /* Sub.xcassets */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
 		82664F67710540CBDEBE5B11 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +136,7 @@
 		9C29548CCBEAF62FB7951500 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7A598F64DE446EA65E8B61CE /* Colors */,
 				464C046F1FA6DE83CF911453 /* Images */,
 			);
 			path = Resources;
@@ -208,6 +225,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CDC7DDFBC0374FBD4076030 /* Blue.xcassets in Resources */,
+				C8478A3CDE36A8F1A7E401DA /* Gray.xcassets in Resources */,
+				12E6F8D5A1B74FBAA859A17B /* Sub.xcassets in Resources */,
 				081634FE070B0A4C2CC0E641 /* Icons.xcassets in Resources */,
 				313FB8E862B2BF5242789879 /* Images.xcassets in Resources */,
 			);
