@@ -8,9 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		02CC97ABFD780062F1EB4548 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A7772AA0518B04428BE5C5 /* Shared.framework */; };
-		11E9D55EEFCC8048FD0E47A3 /* Et.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D877FFD7BDF730C8C7C714 /* Et.swift */; };
-		2A8B7E93D2103C404957AE58 /* Et.swift in Resources */ = {isa = PBXBuildFile; fileRef = DF93A3F57CD1AF5A3965BBFF /* Et.swift */; };
+		081634FE070B0A4C2CC0E641 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBD3CF9B93DB5CAE4CB88C8E /* Icons.xcassets */; };
+		12E6F8D5A1B74FBAA859A17B /* Sub.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AABBDD28F1353CACF3406AB /* Sub.xcassets */; };
+		1CDC7DDFBC0374FBD4076030 /* Blue.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24D93F7D818D17A03E1017E5 /* Blue.xcassets */; };
+		2C2A6F1B0843699ACFE53D23 /* TuistFonts+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1489E7809DA4DADA471C2CDC /* TuistFonts+DesignSystem.swift */; };
+		313FB8E862B2BF5242789879 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25C1C589AF4FC204EF5E571 /* Images.xcassets */; };
+		ABB14811E13F7B1ECCF8B086 /* TuistAssets+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5263BC75B281154AC0B5A7B /* TuistAssets+DesignSystem.swift */; };
+		ACDAD3EE27CA12E21F8A7A2A /* FindaFontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D97AAEE430A52848A3BF3AE /* FindaFontStyle.swift */; };
+		C8478A3CDE36A8F1A7E401DA /* Gray.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C226A3A3734473E0AF64CD /* Gray.xcassets */; };
+		CA2CCB6E800DED7F783CE76A /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 02F6CE72280B49A87F296776 /* Pretendard-SemiBold.otf */; };
 		F6018B5F7748E322214C52D6 /* TuistBundle+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4AD9735556ECA8C8008FEC /* TuistBundle+DesignSystem.swift */; };
+		F75DE7671F28DA597E4776C6 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C3EF56EE58728F4397BB9DA8 /* Pretendard-Bold.otf */; };
+		F92BA348F451BC1488B0FD4D /* FindaFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5A53524CF95D1B02B3C29E /* FindaFont.swift */; };
+		FDE744903728AE3AF51ACD5E /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B32F42237E0E489BDCA10FDB /* Pretendard-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,14 +37,24 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		02F6CE72280B49A87F296776 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		1489E7809DA4DADA471C2CDC /* TuistFonts+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistFonts+DesignSystem.swift"; sourceTree = "<group>"; };
 		1CA11073843FE4E5B67AAAE0 /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
+		24D93F7D818D17A03E1017E5 /* Blue.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Blue.xcassets; sourceTree = "<group>"; };
 		56A7772AA0518B04428BE5C5 /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AABBDD28F1353CACF3406AB /* Sub.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Sub.xcassets; sourceTree = "<group>"; };
 		69B7BBEAD5472C7195924AC8 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D97AAEE430A52848A3BF3AE /* FindaFontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindaFontStyle.swift; sourceTree = "<group>"; };
 		8937FA9427EEA938B58C5B3E /* DesignSystem-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DesignSystem-Info.plist"; sourceTree = "<group>"; };
+		A5263BC75B281154AC0B5A7B /* TuistAssets+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+DesignSystem.swift"; sourceTree = "<group>"; };
 		A8631F72BB16A3A9A9FDB973 /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
+		B32F42237E0E489BDCA10FDB /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		BC5A53524CF95D1B02B3C29E /* FindaFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindaFont.swift; sourceTree = "<group>"; };
 		BE4AD9735556ECA8C8008FEC /* TuistBundle+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+DesignSystem.swift"; sourceTree = "<group>"; };
-		C6D877FFD7BDF730C8C7C714 /* Et.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Et.swift; sourceTree = "<group>"; };
-		DF93A3F57CD1AF5A3965BBFF /* Et.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Et.swift; sourceTree = "<group>"; };
+		C3EF56EE58728F4397BB9DA8 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		D25C1C589AF4FC204EF5E571 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F0C226A3A3734473E0AF64CD /* Gray.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Gray.xcassets; sourceTree = "<group>"; };
+		FBD3CF9B93DB5CAE4CB88C8E /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +81,7 @@
 		0E1288659896D0CFF98DA5AA /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				C6D877FFD7BDF730C8C7C714 /* Et.swift */,
+				3685E88874D8B1F3BEE6A129 /* Typography */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -75,6 +95,14 @@
 			path = ../../XCConfig;
 			sourceTree = "<group>";
 		};
+		1AC66E6767016E7C72081D81 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EFB068E26AA8CB834A0F1063 /* Pretendard */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		2BB59E843B58BD9FFF395FEA /* Project */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +112,34 @@
 				191A630E1AD9933D6084DE5E /* XCConfig */,
 			);
 			name = Project;
+			sourceTree = "<group>";
+		};
+		3685E88874D8B1F3BEE6A129 /* Typography */ = {
+			isa = PBXGroup;
+			children = (
+				BC5A53524CF95D1B02B3C29E /* FindaFont.swift */,
+				6D97AAEE430A52848A3BF3AE /* FindaFontStyle.swift */,
+			);
+			path = Typography;
+			sourceTree = "<group>";
+		};
+		464C046F1FA6DE83CF911453 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				FBD3CF9B93DB5CAE4CB88C8E /* Icons.xcassets */,
+				D25C1C589AF4FC204EF5E571 /* Images.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		7A598F64DE446EA65E8B61CE /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				24D93F7D818D17A03E1017E5 /* Blue.xcassets */,
+				F0C226A3A3734473E0AF64CD /* Gray.xcassets */,
+				5AABBDD28F1353CACF3406AB /* Sub.xcassets */,
+			);
+			path = Colors;
 			sourceTree = "<group>";
 		};
 		82664F67710540CBDEBE5B11 /* Products */ = {
@@ -107,7 +163,9 @@
 		9C29548CCBEAF62FB7951500 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				DF93A3F57CD1AF5A3965BBFF /* Et.swift */,
+				7A598F64DE446EA65E8B61CE /* Colors */,
+				1AC66E6767016E7C72081D81 /* Fonts */,
+				464C046F1FA6DE83CF911453 /* Images */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -115,7 +173,9 @@
 		D5FD3537E28AE857DC09D214 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				A5263BC75B281154AC0B5A7B /* TuistAssets+DesignSystem.swift */,
 				BE4AD9735556ECA8C8008FEC /* TuistBundle+DesignSystem.swift */,
+				1489E7809DA4DADA471C2CDC /* TuistFonts+DesignSystem.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -126,6 +186,16 @@
 				2BB59E843B58BD9FFF395FEA /* Project */,
 				82664F67710540CBDEBE5B11 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		EFB068E26AA8CB834A0F1063 /* Pretendard */ = {
+			isa = PBXGroup;
+			children = (
+				C3EF56EE58728F4397BB9DA8 /* Pretendard-Bold.otf */,
+				B32F42237E0E489BDCA10FDB /* Pretendard-Regular.otf */,
+				02F6CE72280B49A87F296776 /* Pretendard-SemiBold.otf */,
+			);
+			path = Pretendard;
 			sourceTree = "<group>";
 		};
 		F2F0D6EECE384EBEC3AFDEB4 /* InfoPlists */ = {
@@ -194,7 +264,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A8B7E93D2103C404957AE58 /* Et.swift in Resources */,
+				1CDC7DDFBC0374FBD4076030 /* Blue.xcassets in Resources */,
+				C8478A3CDE36A8F1A7E401DA /* Gray.xcassets in Resources */,
+				12E6F8D5A1B74FBAA859A17B /* Sub.xcassets in Resources */,
+				F75DE7671F28DA597E4776C6 /* Pretendard-Bold.otf in Resources */,
+				FDE744903728AE3AF51ACD5E /* Pretendard-Regular.otf in Resources */,
+				CA2CCB6E800DED7F783CE76A /* Pretendard-SemiBold.otf in Resources */,
+				081634FE070B0A4C2CC0E641 /* Icons.xcassets in Resources */,
+				313FB8E862B2BF5242789879 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,8 +304,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABB14811E13F7B1ECCF8B086 /* TuistAssets+DesignSystem.swift in Sources */,
 				F6018B5F7748E322214C52D6 /* TuistBundle+DesignSystem.swift in Sources */,
-				11E9D55EEFCC8048FD0E47A3 /* Et.swift in Sources */,
+				2C2A6F1B0843699ACFE53D23 /* TuistFonts+DesignSystem.swift in Sources */,
+				F92BA348F451BC1488B0FD4D /* FindaFont.swift in Sources */,
+				ACDAD3EE27CA12E21F8A7A2A /* FindaFontStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
