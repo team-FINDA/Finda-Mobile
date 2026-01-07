@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		02CC97ABFD780062F1EB4548 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A7772AA0518B04428BE5C5 /* Shared.framework */; };
+		081634FE070B0A4C2CC0E641 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBD3CF9B93DB5CAE4CB88C8E /* Icons.xcassets */; };
 		11E9D55EEFCC8048FD0E47A3 /* Et.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D877FFD7BDF730C8C7C714 /* Et.swift */; };
 		313FB8E862B2BF5242789879 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25C1C589AF4FC204EF5E571 /* Images.xcassets */; };
 		ABB14811E13F7B1ECCF8B086 /* TuistAssets+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5263BC75B281154AC0B5A7B /* TuistAssets+DesignSystem.swift */; };
-		F401848A6FE00AEDDC5B905D /* Icoms.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB2CFC6D5E54CDD6F241D202 /* Icoms.xcassets */; };
 		F6018B5F7748E322214C52D6 /* TuistBundle+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4AD9735556ECA8C8008FEC /* TuistBundle+DesignSystem.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +38,7 @@
 		BE4AD9735556ECA8C8008FEC /* TuistBundle+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+DesignSystem.swift"; sourceTree = "<group>"; };
 		C6D877FFD7BDF730C8C7C714 /* Et.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Et.swift; sourceTree = "<group>"; };
 		D25C1C589AF4FC204EF5E571 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		DB2CFC6D5E54CDD6F241D202 /* Icoms.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icoms.xcassets; sourceTree = "<group>"; };
+		FBD3CF9B93DB5CAE4CB88C8E /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +93,7 @@
 		464C046F1FA6DE83CF911453 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				DB2CFC6D5E54CDD6F241D202 /* Icoms.xcassets */,
+				FBD3CF9B93DB5CAE4CB88C8E /* Icons.xcassets */,
 				D25C1C589AF4FC204EF5E571 /* Images.xcassets */,
 			);
 			path = Images;
@@ -208,7 +208,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F401848A6FE00AEDDC5B905D /* Icoms.xcassets in Resources */,
+				081634FE070B0A4C2CC0E641 /* Icons.xcassets in Resources */,
 				313FB8E862B2BF5242789879 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
