@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		02CC97ABFD780062F1EB4548 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A7772AA0518B04428BE5C5 /* Shared.framework */; };
 		11E9D55EEFCC8048FD0E47A3 /* Et.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D877FFD7BDF730C8C7C714 /* Et.swift */; };
-		2A8B7E93D2103C404957AE58 /* Et.swift in Resources */ = {isa = PBXBuildFile; fileRef = DF93A3F57CD1AF5A3965BBFF /* Et.swift */; };
+		313FB8E862B2BF5242789879 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25C1C589AF4FC204EF5E571 /* Images.xcassets */; };
+		ABB14811E13F7B1ECCF8B086 /* TuistAssets+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5263BC75B281154AC0B5A7B /* TuistAssets+DesignSystem.swift */; };
+		F401848A6FE00AEDDC5B905D /* Icoms.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB2CFC6D5E54CDD6F241D202 /* Icoms.xcassets */; };
 		F6018B5F7748E322214C52D6 /* TuistBundle+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4AD9735556ECA8C8008FEC /* TuistBundle+DesignSystem.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,10 +33,12 @@
 		56A7772AA0518B04428BE5C5 /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69B7BBEAD5472C7195924AC8 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8937FA9427EEA938B58C5B3E /* DesignSystem-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DesignSystem-Info.plist"; sourceTree = "<group>"; };
+		A5263BC75B281154AC0B5A7B /* TuistAssets+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+DesignSystem.swift"; sourceTree = "<group>"; };
 		A8631F72BB16A3A9A9FDB973 /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
 		BE4AD9735556ECA8C8008FEC /* TuistBundle+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+DesignSystem.swift"; sourceTree = "<group>"; };
 		C6D877FFD7BDF730C8C7C714 /* Et.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Et.swift; sourceTree = "<group>"; };
-		DF93A3F57CD1AF5A3965BBFF /* Et.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Et.swift; sourceTree = "<group>"; };
+		D25C1C589AF4FC204EF5E571 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DB2CFC6D5E54CDD6F241D202 /* Icoms.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icoms.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,15 @@
 			name = Project;
 			sourceTree = "<group>";
 		};
+		464C046F1FA6DE83CF911453 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				DB2CFC6D5E54CDD6F241D202 /* Icoms.xcassets */,
+				D25C1C589AF4FC204EF5E571 /* Images.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		82664F67710540CBDEBE5B11 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,7 +120,7 @@
 		9C29548CCBEAF62FB7951500 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				DF93A3F57CD1AF5A3965BBFF /* Et.swift */,
+				464C046F1FA6DE83CF911453 /* Images */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -115,6 +128,7 @@
 		D5FD3537E28AE857DC09D214 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				A5263BC75B281154AC0B5A7B /* TuistAssets+DesignSystem.swift */,
 				BE4AD9735556ECA8C8008FEC /* TuistBundle+DesignSystem.swift */,
 			);
 			path = Sources;
@@ -194,7 +208,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A8B7E93D2103C404957AE58 /* Et.swift in Resources */,
+				F401848A6FE00AEDDC5B905D /* Icoms.xcassets in Resources */,
+				313FB8E862B2BF5242789879 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABB14811E13F7B1ECCF8B086 /* TuistAssets+DesignSystem.swift in Sources */,
 				F6018B5F7748E322214C52D6 /* TuistBundle+DesignSystem.swift in Sources */,
 				11E9D55EEFCC8048FD0E47A3 /* Et.swift in Sources */,
 			);
