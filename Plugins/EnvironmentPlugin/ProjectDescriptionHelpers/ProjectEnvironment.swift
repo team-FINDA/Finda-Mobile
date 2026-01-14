@@ -1,6 +1,6 @@
 import ProjectDescription
 
-public struct ProjectEnvironment {
+public struct ProjectEnvironment: Sendable {
     public let appName: String
     public let targetName: String
     public let organizationName: String
