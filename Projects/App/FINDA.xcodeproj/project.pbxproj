@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E2B1D076C8886C94D60DFF9 /* Et.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D65E602D0DF6D469DCB7EEE /* Et.swift */; };
+		03595CF90234D7F72A044FBC /* TuistAssets+FINDA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A393666F4BAFA3AEE7537 /* TuistAssets+FINDA.swift */; };
 		2AB37BCCF8DE710ECB91B9A6 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A859DFBF1DE3A7684455CCF /* Shared.framework */; };
 		2C97E84C75BB426451763FBF /* DesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D4F47AE0F7B8C603C4BF9BCC /* DesignSystem.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2DB0478FE287CFA70A78E13C /* Et.swift in Resources */ = {isa = PBXBuildFile; fileRef = 2C5011172ECC4B4FA40EEBEE /* Et.swift */; };
 		34D3CB077E91988C8175F4EB /* TuistBundle+FINDA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8549101BF27E27B2E6ABB595 /* TuistBundle+FINDA.swift */; };
+		3729012057FC8027F1CE1F13 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF27ECB1068C94CAC1C9590 /* SplashView.swift */; };
 		52D7A98D910A3036B0AF5D43 /* FeatureSchedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3738402DF01F7641707456 /* FeatureSchedule.framework */; };
+		5899A5AC24731545A9A98BC0 /* FINDAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8C79E00C4C6174549E1E0 /* FINDAApp.swift */; };
 		5C1D00FDE97CEB09996CD48F /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 481B2FEBFFF0167F53790302 /* Core.framework */; };
 		62C8898F5D42A3F0CCF978C7 /* FeatureSchedule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3738402DF01F7641707456 /* FeatureSchedule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6B4C980ECB95DF53C20E2832 /* FeatureStudent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870C91B5DEBD7DDB08399748 /* FeatureStudent.framework */; };
@@ -20,6 +21,7 @@
 		8C2DE1A54C0F895A29C947F8 /* FeatureTeacher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9BAFC1A65D3EB2CDD5501BE2 /* FeatureTeacher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		930A5FF4BF88DF197DAAE710 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 481B2FEBFFF0167F53790302 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		958630994DE1B5F03CA7C189 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A859DFBF1DE3A7684455CCF /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A058FFAB4BD82C3932A791E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61063F1E224C880D4CCDA8C4 /* Images.xcassets */; };
 		DE3B9E41D406162EC36A54B3 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F47AE0F7B8C603C4BF9BCC /* DesignSystem.framework */; };
 		E2C6D42A6A160AF30D853702 /* FeatureStudent.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 870C91B5DEBD7DDB08399748 /* FeatureStudent.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -44,18 +46,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2C5011172ECC4B4FA40EEBEE /* Et.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Et.swift; sourceTree = "<group>"; };
 		3C3738402DF01F7641707456 /* FeatureSchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureSchedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		481B2FEBFFF0167F53790302 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		498A393666F4BAFA3AEE7537 /* TuistAssets+FINDA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+FINDA.swift"; sourceTree = "<group>"; };
+		61063F1E224C880D4CCDA8C4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8449417FF2BD1FF979D9585E /* FINDA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FINDA.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84C8C79E00C4C6174549E1E0 /* FINDAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FINDAApp.swift; sourceTree = "<group>"; };
 		8549101BF27E27B2E6ABB595 /* TuistBundle+FINDA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+FINDA.swift"; sourceTree = "<group>"; };
 		870C91B5DEBD7DDB08399748 /* FeatureStudent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureStudent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A859DFBF1DE3A7684455CCF /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BAFC1A65D3EB2CDD5501BE2 /* FeatureTeacher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureTeacher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D65E602D0DF6D469DCB7EEE /* Et.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Et.swift; sourceTree = "<group>"; };
 		C53502CE8E7D2861852C6902 /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
 		D053AFF575073D61DAF6E3F6 /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
 		D4F47AE0F7B8C603C4BF9BCC /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAF27ECB1068C94CAC1C9590 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		F99433141C503EF7708A2A0A /* FINDA-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "FINDA-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +94,7 @@
 		2F39E5D6098415281116C7A7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				498A393666F4BAFA3AEE7537 /* TuistAssets+FINDA.swift */,
 				8549101BF27E27B2E6ABB595 /* TuistBundle+FINDA.swift */,
 			);
 			path = Sources;
@@ -126,6 +131,15 @@
 			path = InfoPlists;
 			sourceTree = "<group>";
 		};
+		AF47195497D125C49C5DD28C /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				84C8C79E00C4C6174549E1E0 /* FINDAApp.swift */,
+				DAF27ECB1068C94CAC1C9590 /* SplashView.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		B972844EEFE4D7E74B08A5E1 /* XCConfig */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,7 +160,7 @@
 		C48403CE41E007F5A5E0D0BD /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				9D65E602D0DF6D469DCB7EEE /* Et.swift */,
+				AF47195497D125C49C5DD28C /* Application */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -154,7 +168,7 @@
 		D58032EFEE9D422A26EF3983 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2C5011172ECC4B4FA40EEBEE /* Et.swift */,
+				61063F1E224C880D4CCDA8C4 /* Images.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -226,7 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DB0478FE287CFA70A78E13C /* Et.swift in Resources */,
+				A058FFAB4BD82C3932A791E5 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +273,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03595CF90234D7F72A044FBC /* TuistAssets+FINDA.swift in Sources */,
 				34D3CB077E91988C8175F4EB /* TuistBundle+FINDA.swift in Sources */,
-				0E2B1D076C8886C94D60DFF9 /* Et.swift in Sources */,
+				5899A5AC24731545A9A98BC0 /* FINDAApp.swift in Sources */,
+				3729012057FC8027F1CE1F13 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
