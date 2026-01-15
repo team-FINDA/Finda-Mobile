@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,7 @@
 		62C8898F5D42A3F0CCF978C7 /* FeatureSchedule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3738402DF01F7641707456 /* FeatureSchedule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6B4C980ECB95DF53C20E2832 /* FeatureStudent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870C91B5DEBD7DDB08399748 /* FeatureStudent.framework */; };
 		7BA9A1C51BC38C933AD4884F /* FeatureTeacher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BAFC1A65D3EB2CDD5501BE2 /* FeatureTeacher.framework */; };
+		88D1FF542F187F1400E1BB73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D1FF532F187F0F00E1BB73 /* ContentView.swift */; };
 		8C2DE1A54C0F895A29C947F8 /* FeatureTeacher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9BAFC1A65D3EB2CDD5501BE2 /* FeatureTeacher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		930A5FF4BF88DF197DAAE710 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 481B2FEBFFF0167F53790302 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		958630994DE1B5F03CA7C189 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A859DFBF1DE3A7684455CCF /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -54,6 +55,7 @@
 		84C8C79E00C4C6174549E1E0 /* FINDAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FINDAApp.swift; sourceTree = "<group>"; };
 		8549101BF27E27B2E6ABB595 /* TuistBundle+FINDA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+FINDA.swift"; sourceTree = "<group>"; };
 		870C91B5DEBD7DDB08399748 /* FeatureStudent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureStudent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88D1FF532F187F0F00E1BB73 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8A859DFBF1DE3A7684455CCF /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BAFC1A65D3EB2CDD5501BE2 /* FeatureTeacher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureTeacher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C53502CE8E7D2861852C6902 /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		AF47195497D125C49C5DD28C /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				88D1FF532F187F0F00E1BB73 /* ContentView.swift */,
 				84C8C79E00C4C6174549E1E0 /* FINDAApp.swift */,
 				DAF27ECB1068C94CAC1C9590 /* SplashView.swift */,
 			);
@@ -214,8 +217,6 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				ORGANIZATIONNAME = com.finda.app;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 1051A9F12BD5364DB015CAF1 /* Build configuration list for PBXProject "FINDA" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -274,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03595CF90234D7F72A044FBC /* TuistAssets+FINDA.swift in Sources */,
+				88D1FF542F187F1400E1BB73 /* ContentView.swift in Sources */,
 				34D3CB077E91988C8175F4EB /* TuistBundle+FINDA.swift in Sources */,
 				5899A5AC24731545A9A98BC0 /* FINDAApp.swift in Sources */,
 				3729012057FC8027F1CE1F13 /* SplashView.swift in Sources */,
@@ -301,10 +303,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-					"$(inherited)",
-					DEBUG,
-				);
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
