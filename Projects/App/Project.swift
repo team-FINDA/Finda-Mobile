@@ -13,7 +13,8 @@ let project = Project.makeModule(
         .Features.featureTeacher,
         .Features.featureSchedule,
         .Projects.core,
-        .Projects.designSystem
+        .Projects.designSystem,
+        .tca
     ],
     additionalPlistRows: [
         "CFBundleDisplayName": "$(APP_DISPLAY_NAME)",

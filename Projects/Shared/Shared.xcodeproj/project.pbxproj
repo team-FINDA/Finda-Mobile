@@ -3,11 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		90E43E4492CCF54409C5FD5B /* Et.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE75E8A50088F0065891067 /* Et.swift */; };
+		3F965F7F8DCD6BEC18BF43EE /* Et.swift in Sources */ = {isa = PBXBuildFile; fileRef = B377F6B50F2D26E3A5E29922 /* Et.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,9 +25,9 @@
 
 /* Begin PBXFileReference section */
 		080C58231FCEDC083F899294 /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0EE75E8A50088F0065891067 /* Et.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Et.swift; sourceTree = "<group>"; };
 		10BE71EB043539D7D60E68C4 /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
 		82251A63363E7CFD1E807647 /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
+		B377F6B50F2D26E3A5E29922 /* Et.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Et.swift; sourceTree = "<group>"; };
 		D72BA6AE8B9AF02B56D8FC04 /* Shared-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Shared-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,6 +49,14 @@
 				82251A63363E7CFD1E807647 /* STAGE.xcconfig */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		1A720BCCAD4A051277FD9063 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B377F6B50F2D26E3A5E29922 /* Et.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		3C54C1673B7334EF19C38BB2 /* Derived */ = {
@@ -77,18 +85,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		88D1FF592F18D2F900E1BB73 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				0EE75E8A50088F0065891067 /* Et.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		8DBC6BAA6C2105D09B097177 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				88D1FF592F18D2F900E1BB73 /* Utils */,
+				1A720BCCAD4A051277FD9063 /* Utils */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -150,6 +150,8 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				ORGANIZATIONNAME = com.finda.app;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = D2876CF02FBF5B694E5387F4 /* Build configuration list for PBXProject "Shared" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -206,7 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90E43E4492CCF54409C5FD5B /* Et.swift in Sources */,
+				3F965F7F8DCD6BEC18BF43EE /* Et.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,10 +267,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-all_load",
-				);
+				OTHER_LDFLAGS = "$(inherited) -all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -298,7 +297,10 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -367,10 +369,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-all_load",
-				);
+				OTHER_LDFLAGS = "$(inherited) -all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = STAGE;

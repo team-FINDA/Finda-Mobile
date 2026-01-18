@@ -8,6 +8,7 @@ let project = Project.makeModule(
     packages: [],
     dependencies: [
         .Projects.core,
-        .Projects.designSystem
+        .Projects.designSystem,
+        .tca
     ]
 )

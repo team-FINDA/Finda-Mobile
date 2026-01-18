@@ -7,6 +7,9 @@ let project = Project.makeModule(
     product: .framework,
     packages: [],
     dependencies: [
-        .Projects.shared
+        .Projects.shared,
+        .tca,
+        .moya,
+        .keychain
     ]
 )
