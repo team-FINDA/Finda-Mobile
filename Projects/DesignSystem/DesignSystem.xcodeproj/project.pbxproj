@@ -10,6 +10,7 @@
 		02CC97ABFD780062F1EB4548 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A7772AA0518B04428BE5C5 /* Shared.framework */; };
 		081634FE070B0A4C2CC0E641 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBD3CF9B93DB5CAE4CB88C8E /* Icons.xcassets */; };
 		12E6F8D5A1B74FBAA859A17B /* Sub.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AABBDD28F1353CACF3406AB /* Sub.xcassets */; };
+		192A7788250BC66DEBFDF245 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1304941C5E8C7083BE0EB257 /* AuthTextField.swift */; };
 		1CDC7DDFBC0374FBD4076030 /* Blue.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24D93F7D818D17A03E1017E5 /* Blue.xcassets */; };
 		2C2A6F1B0843699ACFE53D23 /* TuistFonts+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1489E7809DA4DADA471C2CDC /* TuistFonts+DesignSystem.swift */; };
 		313FB8E862B2BF5242789879 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25C1C589AF4FC204EF5E571 /* Images.xcassets */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		02F6CE72280B49A87F296776 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		1304941C5E8C7083BE0EB257 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		1489E7809DA4DADA471C2CDC /* TuistFonts+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistFonts+DesignSystem.swift"; sourceTree = "<group>"; };
 		1CA11073843FE4E5B67AAAE0 /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
 		24D93F7D818D17A03E1017E5 /* Blue.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Blue.xcassets; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		0E1288659896D0CFF98DA5AA /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				F9E8E6CAFD528DBE7A3EA0F0 /* TextField */,
 				3685E88874D8B1F3BEE6A129 /* Typography */,
 			);
 			path = Sources;
@@ -206,6 +209,14 @@
 			path = InfoPlists;
 			sourceTree = "<group>";
 		};
+		F9E8E6CAFD528DBE7A3EA0F0 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				1304941C5E8C7083BE0EB257 /* AuthTextField.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -307,6 +318,7 @@
 				ABB14811E13F7B1ECCF8B086 /* TuistAssets+DesignSystem.swift in Sources */,
 				F6018B5F7748E322214C52D6 /* TuistBundle+DesignSystem.swift in Sources */,
 				2C2A6F1B0843699ACFE53D23 /* TuistFonts+DesignSystem.swift in Sources */,
+				192A7788250BC66DEBFDF245 /* AuthTextField.swift in Sources */,
 				F92BA348F451BC1488B0FD4D /* FindaFont.swift in Sources */,
 				ACDAD3EE27CA12E21F8A7A2A /* FindaFontStyle.swift in Sources */,
 			);
