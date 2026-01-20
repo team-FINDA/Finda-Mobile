@@ -1,8 +1,8 @@
-import UIKit
+import SwiftUI
 
-public extension UIFont {
-    static func findaFont(_ font: FindaFontStyle) -> UIFont {
-        font.uiFont()
+public extension Font {
+    static func finda(_ style: FindaFontStyle) -> Font {
+        Font(style.uiFont())
     }
 }
 
