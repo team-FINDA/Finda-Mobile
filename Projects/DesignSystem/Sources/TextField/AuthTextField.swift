@@ -1,13 +1,13 @@
 import SwiftUI
 
-enum AuthTextFieldType {
+public enum AuthTextFieldType {
     case base // 기본 텍스트 입력 필드
     case schoolEmail  // 학교 이메일 입력 필드
     case verificationEmail // 이메일 인증 코드 발송 필드
     case password // 비밀번호 입력 필드
 }
 
-struct AuthTextField: View {
+public struct AuthTextField: View {
     let type: AuthTextFieldType
     let placeholder: String
     let label: String?
@@ -20,7 +20,7 @@ struct AuthTextField: View {
     @State private var timer: Timer?
     @FocusState private var isFocused: Bool
 
-    init(
+    public init(
         type: AuthTextFieldType,
         placeholder: String,
         label: String? = nil,
@@ -33,7 +33,7 @@ struct AuthTextField: View {
             self.onSendCode = onSendCode
         }
 
-    var body: some View {
+    public var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text(labelText)
                 .font(.finda(.body1))
@@ -152,7 +152,7 @@ struct AuthTextField: View {
     }
 }
 
-struct AuthTextField_Previews: PreviewProvider {
+private struct AuthTextField_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing: 24) {
             AuthTextField(
