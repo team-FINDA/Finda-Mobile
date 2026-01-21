@@ -4,7 +4,7 @@ public struct FINDAButton: View {
     let buttonText: String
     var buttonColor: Color
     var isDisabled: Bool
-    var buttonClick: (() -> Void)
+    var action: (() -> Void)
 
     public init(
         buttonText: String,
@@ -15,12 +15,12 @@ public struct FINDAButton: View {
         self.buttonText = buttonText
         self.buttonColor = buttonColor
         self.isDisabled = isDisabled
-        self.buttonClick = buttonClick
+        self.action = buttonClick
     }
 
     public var body: some View {
         Button {
-            buttonClick()
+            action()
         } label: {
             Text(buttonText)
                 .font(.finda(.button))
