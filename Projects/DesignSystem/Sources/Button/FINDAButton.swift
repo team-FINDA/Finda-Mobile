@@ -8,7 +8,7 @@ public struct FINDAButton: View {
 
     public init(
         buttonText: String,
-        buttonColor: Color = DesignSystemAsset.Blue.blue50.swiftUIColor,
+        buttonColor: Color = Color.Blue.blue50,
         isDisabled: Bool = false,
         buttonClick: @escaping (() -> Void)
     ) {
@@ -26,10 +26,10 @@ public struct FINDAButton: View {
                 .font(.finda(.button))
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 17)
-                .foregroundStyle(DesignSystemAsset.Gray.gray10.swiftUIColor)
+                .foregroundStyle(Color.Gray.gray10)
         }
         .disabled(isDisabled)
-        .background(isDisabled ? DesignSystemAsset.Gray.gray40.swiftUIColor : buttonColor)
+        .background(isDisabled ? Color.Gray.gray40 : buttonColor)
         .cornerRadius(32)
     }
 }

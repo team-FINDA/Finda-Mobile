@@ -24,7 +24,7 @@ public struct UserSelectButton: View {
             .padding(.vertical, 32)
             .background(
                 RoundedRectangle(cornerRadius: 16)
-                    .fill(DesignSystemAsset.Blue.blue10.swiftUIColor)
+                    .fill(Color.Blue.blue10)
             )
         }
         .buttonStyle(ScaleButtonStyle())
@@ -41,12 +41,12 @@ struct ScaleButtonStyle: ButtonStyle {
 
 #Preview {
     UserSelectButton(
-        icon: DesignSystemAsset.Images.pencil.swiftUIImage,
+        icon: Image.Images.pencil,
         text: "학생 로그인",
         action: {}
     )
     UserSelectButton(
-        icon: DesignSystemAsset.Images.book.swiftUIImage,
+        icon: Image.Images.book,
         text: "학생 로그인",
         action: {}
     )

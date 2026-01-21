@@ -12,6 +12,7 @@ public struct AuthTextField: View {
     let placeholder: String
     let label: String?
     @Binding var text: String
+    @Binding var isError: Bool
     var onSendCode: (() -> Void)?
 
     @State private var isPasswordVisible = false
@@ -25,11 +26,13 @@ public struct AuthTextField: View {
         placeholder: String,
         label: String? = nil,
         text: Binding<String>,
+        isError: Binding<Bool> = .constant(false),
         onSendCode: (() -> Void)? = {}) {
             self.type = type
             self.placeholder = placeholder
             self.label = label
             self._text = text
+            self._isError = isError
             self.onSendCode = onSendCode
         }
 
@@ -37,7 +40,7 @@ public struct AuthTextField: View {
         VStack(alignment: .leading, spacing: 12) {
             Text(labelText)
                 .font(.finda(.body1))
-                .foregroundColor(DesignSystemAsset.Gray.gray80.swiftUIColor)
+                .foregroundColor(Color.Gray.gray80)
 
             HStack(spacing: 12) {
                 Group {
@@ -50,7 +53,7 @@ public struct AuthTextField: View {
                     }
                 }
                 .font(.system(size: 15))
-                .foregroundColor(.black)
+                .foregroundColor(textColor)
                 .autocapitalization(.none)
                 .disableAutocorrection(true)
                 .keyboardType(keyboardType)
@@ -61,14 +64,14 @@ public struct AuthTextField: View {
                     } label: {
                         (
                             isPasswordVisible
-                            ? DesignSystemAsset.Icons.eyeOpen.swiftUIImage
-                            : DesignSystemAsset.Icons.eyeOff.swiftUIImage
+                            ? Image.Icons.eyeOpen
+                            : Image.Icons.eyeOff
                         )
                     }
                 } else if type == .schoolEmail {
                     Text("@dsm.hs.kr")
                         .font(.finda(.body2))
-                        .foregroundColor(DesignSystemAsset.Gray.gray50.swiftUIColor)
+                        .foregroundColor(Color.Gray.gray50)
                 } else if type == .verificationEmail {
                     Button(action: {
                         onSendCode?()
@@ -77,18 +80,18 @@ public struct AuthTextField: View {
                     }, label: {
                         Text(buttonText)
                             .font(.finda(.caption1))
-                            .foregroundColor(DesignSystemAsset.Blue.blue50.swiftUIColor)
+                            .foregroundColor(Color.Blue.blue50)
                     })
                     .disabled(remainingSeconds > 0)
                     .padding(.vertical, 4)
                     .padding(.horizontal, 8)
-                    .background(DesignSystemAsset.Blue.blue10.swiftUIColor)
+                    .background(Color.Blue.blue10)
                     .cornerRadius(20)
                 }
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 17)
-            .background(DesignSystemAsset.Gray.gray20.swiftUIColor)
+            .background(Color.Gray.gray20)
             .cornerRadius(16)
             .overlay(
                 RoundedRectangle(cornerRadius: 16)
@@ -124,7 +127,17 @@ public struct AuthTextField: View {
     }
 
     private var borderColor: Color {
-        isFocused ? DesignSystemAsset.Blue.blue50.swiftUIColor : DesignSystemAsset.Gray.gray20.swiftUIColor
+        if isError {
+            return Color.Sub.red20
+        }
+        return isFocused ? Color.Blue.blue50 : Color.Gray.gray20
+    }
+    
+    private var textColor: Color {
+        if isError {
+            return Color.Sub.red20
+        }
+        return Color.black
     }
 
     private var buttonText: String {
@@ -152,7 +165,7 @@ public struct AuthTextField: View {
     }
 }
 
-private struct AuthTextField_Previews: PreviewProvider {
+struct AuthTextField_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing: 24) {
             AuthTextField(
@@ -173,20 +186,23 @@ private struct AuthTextField_Previews: PreviewProvider {
             AuthTextField(
                 type: .password,
                 placeholder: "비밀번호를 입력해주세요",
-                text: .constant("HiMynameisHawon")
+                text: .constant("HiMynameisHawon"),
+                isError: .constant(false)
             )
 
             AuthTextField(
                 type: .password,
                 placeholder: "비밀번호를 입력해주세요",
                 label: "비밀번호 확인",
-                text: .constant("")
+                text: .constant(""),
+                isError: .constant(true)
             )
 
             AuthTextField(
                 type: .schoolEmail,
                 placeholder: "이메일을 입력해주세요",
-                text: .constant("")
+                text: .constant(""),
+                isError: .constant(false)
             )
         }
         .padding()
