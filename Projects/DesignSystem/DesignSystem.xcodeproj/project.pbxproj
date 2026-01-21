@@ -15,6 +15,7 @@
 		1D14E2323B0A8AB8896FFF59 /* FINDAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9DEA24BB8CC6AB9B37685C /* FINDAButton.swift */; };
 		2C2A6F1B0843699ACFE53D23 /* TuistFonts+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1489E7809DA4DADA471C2CDC /* TuistFonts+DesignSystem.swift */; };
 		313FB8E862B2BF5242789879 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25C1C589AF4FC204EF5E571 /* Images.xcassets */; };
+		4D6F9A9F7E378222A01DCDA6 /* AuthPromptButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99BE9AFD874041C64F1F29 /* AuthPromptButton.swift */; };
 		7ECA1B016B161770DCA93FD4 /* UserSelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D2DBC4518456475CD7CE7D /* UserSelectButton.swift */; };
 		ABB14811E13F7B1ECCF8B086 /* TuistAssets+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5263BC75B281154AC0B5A7B /* TuistAssets+DesignSystem.swift */; };
 		ACDAD3EE27CA12E21F8A7A2A /* FindaFontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D97AAEE430A52848A3BF3AE /* FindaFontStyle.swift */; };
@@ -45,6 +46,7 @@
 		1489E7809DA4DADA471C2CDC /* TuistFonts+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistFonts+DesignSystem.swift"; sourceTree = "<group>"; };
 		1CA11073843FE4E5B67AAAE0 /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
 		24D93F7D818D17A03E1017E5 /* Blue.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Blue.xcassets; sourceTree = "<group>"; };
+		4C99BE9AFD874041C64F1F29 /* AuthPromptButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPromptButton.swift; sourceTree = "<group>"; };
 		56A7772AA0518B04428BE5C5 /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AABBDD28F1353CACF3406AB /* Sub.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Sub.xcassets; sourceTree = "<group>"; };
 		69B7BBEAD5472C7195924AC8 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +173,7 @@
 		8BC136006E1D0234B84A94B8 /* Button */ = {
 			isa = PBXGroup;
 			children = (
+				F5741A6C9005ABEE9D1B1006 /* AuthPrompt */,
 				BB961EF4F6CB8CA6DA4E86D6 /* UserSelect */,
 				8C9DEA24BB8CC6AB9B37685C /* FINDAButton.swift */,
 			);
@@ -229,6 +232,14 @@
 				8937FA9427EEA938B58C5B3E /* DesignSystem-Info.plist */,
 			);
 			path = InfoPlists;
+			sourceTree = "<group>";
+		};
+		F5741A6C9005ABEE9D1B1006 /* AuthPrompt */ = {
+			isa = PBXGroup;
+			children = (
+				4C99BE9AFD874041C64F1F29 /* AuthPromptButton.swift */,
+			);
+			path = AuthPrompt;
 			sourceTree = "<group>";
 		};
 		F9E8E6CAFD528DBE7A3EA0F0 /* TextField */ = {
@@ -340,6 +351,7 @@
 				ABB14811E13F7B1ECCF8B086 /* TuistAssets+DesignSystem.swift in Sources */,
 				F6018B5F7748E322214C52D6 /* TuistBundle+DesignSystem.swift in Sources */,
 				2C2A6F1B0843699ACFE53D23 /* TuistFonts+DesignSystem.swift in Sources */,
+				4D6F9A9F7E378222A01DCDA6 /* AuthPromptButton.swift in Sources */,
 				1D14E2323B0A8AB8896FFF59 /* FINDAButton.swift in Sources */,
 				7ECA1B016B161770DCA93FD4 /* UserSelectButton.swift in Sources */,
 				192A7788250BC66DEBFDF245 /* AuthTextField.swift in Sources */,
