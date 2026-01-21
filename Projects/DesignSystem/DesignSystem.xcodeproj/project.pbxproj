@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		313FB8E862B2BF5242789879 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25C1C589AF4FC204EF5E571 /* Images.xcassets */; };
 		4D6F9A9F7E378222A01DCDA6 /* AuthPromptButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99BE9AFD874041C64F1F29 /* AuthPromptButton.swift */; };
 		7ECA1B016B161770DCA93FD4 /* UserSelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D2DBC4518456475CD7CE7D /* UserSelectButton.swift */; };
+		88838AAF2F20A1170031B07A /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88838AAE2F20A1090031B07A /* Color+.swift */; };
 		ABB14811E13F7B1ECCF8B086 /* TuistAssets+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5263BC75B281154AC0B5A7B /* TuistAssets+DesignSystem.swift */; };
 		ACDAD3EE27CA12E21F8A7A2A /* FindaFontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D97AAEE430A52848A3BF3AE /* FindaFontStyle.swift */; };
 		C8478A3CDE36A8F1A7E401DA /* Gray.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C226A3A3734473E0AF64CD /* Gray.xcassets */; };
@@ -51,6 +52,7 @@
 		5AABBDD28F1353CACF3406AB /* Sub.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Sub.xcassets; sourceTree = "<group>"; };
 		69B7BBEAD5472C7195924AC8 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D97AAEE430A52848A3BF3AE /* FindaFontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindaFontStyle.swift; sourceTree = "<group>"; };
+		88838AAE2F20A1090031B07A /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		8937FA9427EEA938B58C5B3E /* DesignSystem-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DesignSystem-Info.plist"; sourceTree = "<group>"; };
 		8C9DEA24BB8CC6AB9B37685C /* FINDAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FINDAButton.swift; sourceTree = "<group>"; };
 		A5263BC75B281154AC0B5A7B /* TuistAssets+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+DesignSystem.swift"; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		0E1288659896D0CFF98DA5AA /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				88838AAC2F20A0F80031B07A /* Extension */,
 				8BC136006E1D0234B84A94B8 /* Button */,
 				F9E8E6CAFD528DBE7A3EA0F0 /* TextField */,
 				3685E88874D8B1F3BEE6A129 /* Typography */,
@@ -168,6 +171,22 @@
 				D5FD3537E28AE857DC09D214 /* Sources */,
 			);
 			path = Derived;
+			sourceTree = "<group>";
+		};
+		88838AAC2F20A0F80031B07A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				88838AAD2F20A1010031B07A /* Color */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		88838AAD2F20A1010031B07A /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				88838AAE2F20A1090031B07A /* Color+.swift */,
+			);
+			path = Color;
 			sourceTree = "<group>";
 		};
 		8BC136006E1D0234B84A94B8 /* Button */ = {
@@ -282,8 +301,6 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				ORGANIZATIONNAME = com.finda.app;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 5C0CBBA2BFE0CEE21375AF0A /* Build configuration list for PBXProject "DesignSystem" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -354,6 +371,7 @@
 				4D6F9A9F7E378222A01DCDA6 /* AuthPromptButton.swift in Sources */,
 				1D14E2323B0A8AB8896FFF59 /* FINDAButton.swift in Sources */,
 				7ECA1B016B161770DCA93FD4 /* UserSelectButton.swift in Sources */,
+				88838AAF2F20A1170031B07A /* Color+.swift in Sources */,
 				192A7788250BC66DEBFDF245 /* AuthTextField.swift in Sources */,
 				F92BA348F451BC1488B0FD4D /* FindaFont.swift in Sources */,
 				ACDAD3EE27CA12E21F8A7A2A /* FindaFontStyle.swift in Sources */,
@@ -422,7 +440,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "$(inherited) -all_load";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = STAGE;
@@ -484,10 +505,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-					"$(inherited)",
-					DEBUG,
-				);
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -549,7 +567,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "$(inherited) -all_load";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 			};
