@@ -21,7 +21,7 @@ public struct UserSelectButton: View {
                     .foregroundColor(.black)
             }
             .frame(maxWidth: .infinity)
-            .padding(.vertical, 32)
+            .padding(.vertical, 36)
             .background(
                 RoundedRectangle(cornerRadius: 16)
                     .fill(Color.Blue.blue10)

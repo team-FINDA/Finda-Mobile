@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -254,6 +254,8 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				ORGANIZATIONNAME = com.finda.app;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = 6F17F0004229EC72426DFC2D /* Build configuration list for PBXProject "FeatureAuth" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -345,7 +347,21 @@
 					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
 					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros";
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.finda.app.featureauth;
 				PRODUCT_NAME = FeatureAuth;
 				SDKROOT = iphoneos;
@@ -353,7 +369,10 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -391,7 +410,21 @@
 					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
 					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros";
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.finda.app.featureauth;
 				PRODUCT_NAME = FeatureAuth;
 				SDKROOT = iphoneos;
@@ -460,19 +493,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-Objc",
-				);
+				OTHER_LDFLAGS = "$(inherited) -Objc";
 				"OTHER_LDFLAGS[config=Debug]" = "$(inherited)";
-				"OTHER_LDFLAGS[config=Prod]" = (
-					"$(inherited)",
-					"-all_load",
-				);
-				"OTHER_LDFLAGS[config=Stage]" = (
-					"$(inherited)",
-					"-all_load",
-				);
+				"OTHER_LDFLAGS[config=Prod]" = "$(inherited) -all_load";
+				"OTHER_LDFLAGS[config=Stage]" = "$(inherited) -all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -537,19 +561,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-Objc",
-				);
+				OTHER_LDFLAGS = "$(inherited) -Objc";
 				"OTHER_LDFLAGS[config=Debug]" = "$(inherited)";
-				"OTHER_LDFLAGS[config=Prod]" = (
-					"$(inherited)",
-					"-all_load",
-				);
-				"OTHER_LDFLAGS[config=Stage]" = (
-					"$(inherited)",
-					"-all_load",
-				);
+				"OTHER_LDFLAGS[config=Prod]" = "$(inherited) -all_load";
+				"OTHER_LDFLAGS[config=Stage]" = "$(inherited) -all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = STAGE;
