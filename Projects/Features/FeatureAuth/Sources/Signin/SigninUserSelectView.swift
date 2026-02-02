@@ -1,8 +1,9 @@
 import SwiftUI
 import DesignSystem
 
-struct SigninUserSelectView: View {
-    var body: some View {
+public struct SigninUserSelectView: View {
+    public init() {}
+    public var body: some View {
         VStack(spacing: 64) {
             Text("로그인")
                 .font(.finda(.heading4))

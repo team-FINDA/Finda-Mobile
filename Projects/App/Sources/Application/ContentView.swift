@@ -1,4 +1,5 @@
 import SwiftUI
+import FeatureAuth
 
 struct ContentView: View {
     @State private var isLaunch: Bool = true
@@ -13,10 +14,7 @@ struct ContentView: View {
                     }
                 }
         } else {
-            VStack {
-                Text("Hello, FINDA!")
-            }
-            .padding()
+            SigninUserSelectView()
         }
     }
 }

@@ -132,7 +132,7 @@ public struct AuthTextField: View {
         }
         return isFocused ? Color.Blue.blue50 : Color.Gray.gray20
     }
-    
+
     private var textColor: Color {
         if isError {
             return Color.Sub.red20
