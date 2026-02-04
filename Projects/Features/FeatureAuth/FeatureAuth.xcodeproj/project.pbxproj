@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		639509742900F77035109136 /* SigninUserSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD593BD035FDBC51CBD38B /* SigninUserSelectView.swift */; };
 		66DFB871B75F62FC990694A4 /* AuthRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FCD6D5C7FA8363CBF280B5 /* AuthRootView.swift */; };
 		6BE3692C23F276FEC6235200 /* SignupUserSelectFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FD2A5C1F13BD18A9BABDCF /* SignupUserSelectFeature.swift */; };
+		8826A1DD2F33273700E6C33C /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8826A1DC2F33273200E6C33C /* SigninView.swift */; };
 		CB10303FE3B1539F1BEEF91D /* AuthRootFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367E2348CC7D02F2B18E03C9 /* AuthRootFeature.swift */; };
 		D5188D09944FAA79C2EFFF5E /* SigninUserSelectFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCCDC1DB39BAB9BB3C3E42 /* SigninUserSelectFeature.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 		3E71DABBBC3D1F6EC3828B37 /* FeatureAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		632B708B2A7DF34282810B29 /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
 		67AD049FAFAA16C2203016DA /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8826A1DC2F33273200E6C33C /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
 		97FCD6D5C7FA8363CBF280B5 /* AuthRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRootView.swift; sourceTree = "<group>"; };
 		A9DD593BD035FDBC51CBD38B /* SigninUserSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninUserSelectView.swift; sourceTree = "<group>"; };
 		B0FD2A5C1F13BD18A9BABDCF /* SignupUserSelectFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupUserSelectFeature.swift; sourceTree = "<group>"; };
@@ -72,8 +74,8 @@
 		116F670B51869A8AD85D7B33 /* Signin */ = {
 			isa = PBXGroup;
 			children = (
-				38FCCDC1DB39BAB9BB3C3E42 /* SigninUserSelectFeature.swift */,
-				A9DD593BD035FDBC51CBD38B /* SigninUserSelectView.swift */,
+				8826A1DC2F33273200E6C33C /* SigninView.swift */,
+				8826A1DB2F3326A700E6C33C /* UserSelect */,
 			);
 			path = Signin;
 			sourceTree = "<group>";
@@ -120,6 +122,15 @@
 				F17494BB29EC9B2825B738FB /* STAGE.xcconfig */,
 			);
 			path = FeatureAuth;
+			sourceTree = "<group>";
+		};
+		8826A1DB2F3326A700E6C33C /* UserSelect */ = {
+			isa = PBXGroup;
+			children = (
+				A9DD593BD035FDBC51CBD38B /* SigninUserSelectView.swift */,
+				38FCCDC1DB39BAB9BB3C3E42 /* SigninUserSelectFeature.swift */,
+			);
+			path = UserSelect;
 			sourceTree = "<group>";
 		};
 		93FD9A4E32C0080D5C118122 /* Sources */ = {
@@ -193,8 +204,6 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				ORGANIZATIONNAME = com.finda.app;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 6F17F0004229EC72426DFC2D /* Build configuration list for PBXProject "FeatureAuth" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -256,6 +265,7 @@
 				D5188D09944FAA79C2EFFF5E /* SigninUserSelectFeature.swift in Sources */,
 				639509742900F77035109136 /* SigninUserSelectView.swift in Sources */,
 				6BE3692C23F276FEC6235200 /* SignupUserSelectFeature.swift in Sources */,
+				8826A1DD2F33273700E6C33C /* SigninView.swift in Sources */,
 				3810DFC8A052B8BF3DD9EFD7 /* SignupUserSelectView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,21 +301,7 @@
 					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
 					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = (
-					"$(inherited)",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros",
-				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros";
 				PRODUCT_BUNDLE_IDENTIFIER = com.finda.app.featureauth;
 				PRODUCT_NAME = FeatureAuth;
 				SDKROOT = iphoneos;
@@ -313,10 +309,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-					"$(inherited)",
-					DEBUG,
-				);
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -354,21 +347,7 @@
 					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
 					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = (
-					"$(inherited)",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros",
-				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros";
 				PRODUCT_BUNDLE_IDENTIFIER = com.finda.app.featureauth;
 				PRODUCT_NAME = FeatureAuth;
 				SDKROOT = iphoneos;
@@ -437,10 +416,19 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "$(inherited) -Objc";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-Objc",
+				);
 				"OTHER_LDFLAGS[config=Debug]" = "$(inherited)";
-				"OTHER_LDFLAGS[config=Prod]" = "$(inherited) -all_load";
-				"OTHER_LDFLAGS[config=Stage]" = "$(inherited) -all_load";
+				"OTHER_LDFLAGS[config=Prod]" = (
+					"$(inherited)",
+					"-all_load",
+				);
+				"OTHER_LDFLAGS[config=Stage]" = (
+					"$(inherited)",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -505,10 +493,19 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "$(inherited) -Objc";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-Objc",
+				);
 				"OTHER_LDFLAGS[config=Debug]" = "$(inherited)";
-				"OTHER_LDFLAGS[config=Prod]" = "$(inherited) -all_load";
-				"OTHER_LDFLAGS[config=Stage]" = "$(inherited) -all_load";
+				"OTHER_LDFLAGS[config=Prod]" = (
+					"$(inherited)",
+					"-all_load",
+				);
+				"OTHER_LDFLAGS[config=Stage]" = (
+					"$(inherited)",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = STAGE;
