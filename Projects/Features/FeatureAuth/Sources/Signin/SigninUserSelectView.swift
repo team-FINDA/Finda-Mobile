@@ -1,9 +1,9 @@
 import SwiftUI
-import DesignSystem
 import ComposableArchitecture
+import DesignSystem
 
 public struct SigninUserSelectView: View {
-    let store: StoreOf<SigninUserSelectFeature>
+    var store: StoreOf<SigninUserSelectFeature>
 
     public init(store: StoreOf<SigninUserSelectFeature>) {
         self.store = store
@@ -43,9 +43,11 @@ public struct SigninUserSelectView: View {
 }
 
 #Preview {
-    SigninUserSelectView(
-        store: Store(initialState: SigninUserSelectFeature.State()) {
-            SigninUserSelectFeature()
-        }
-    )
+    NavigationStack {
+        SigninUserSelectView(
+            store: Store(initialState: SigninUserSelectFeature.State()) {
+                SigninUserSelectFeature()
+            }
+        )
+    }
 }

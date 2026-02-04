@@ -1,10 +1,7 @@
-import Foundation
 import ComposableArchitecture
 
 @Reducer
 public struct SigninUserSelectFeature {
-    public init() {}
-
     @ObservableState
     public struct State: Equatable {
         public init() {}
@@ -14,7 +11,9 @@ public struct SigninUserSelectFeature {
         case signupButtonTapped
     }
 
-    public var body: some Reducer<State, Action> {
+    public init() {}
+
+    public var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
             case .signupButtonTapped:
