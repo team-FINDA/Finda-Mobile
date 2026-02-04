@@ -109,7 +109,7 @@ public struct AuthTextField: View {
         case .base:
             return "이메일"
         case .schoolEmail:
-            return "학교 이메일"
+            return "이메일"
         case .verificationEmail:
             return "이메일"
         case .password:

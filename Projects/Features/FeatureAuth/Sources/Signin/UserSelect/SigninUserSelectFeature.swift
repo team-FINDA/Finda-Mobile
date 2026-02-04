@@ -9,6 +9,8 @@ public struct SigninUserSelectFeature {
 
     public enum Action {
         case signupButtonTapped
+        case teacherSigninButtonTapped
+        case studentSigninButtonTapped
     }
 
     public init() {}
@@ -17,6 +19,10 @@ public struct SigninUserSelectFeature {
         Reduce { state, action in
             switch action {
             case .signupButtonTapped:
+                return .none
+            case .teacherSigninButtonTapped:
+                return .none
+            case .studentSigninButtonTapped:
                 return .none
             }
         }

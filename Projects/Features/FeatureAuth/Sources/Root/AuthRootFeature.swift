@@ -17,6 +17,7 @@ public struct AuthRootFeature {
 
     @Reducer
     public enum Path {
+        case signin(SigninFeature)
         case signupUserSelect(SignupUserSelectFeature)
     }
 
@@ -30,6 +31,14 @@ public struct AuthRootFeature {
             switch action {
             case .signinUserSelect(.signupButtonTapped):
                 state.path.append(.signupUserSelect(SignupUserSelectFeature.State()))
+                return .none
+
+            case .signinUserSelect(.studentSigninButtonTapped):
+                state.path.append(.signin(SigninFeature.State(role: .student)))
+                return .none
+
+            case .signinUserSelect(.teacherSigninButtonTapped):
+                state.path.append(.signin(SigninFeature.State(role: .teacher)))
                 return .none
 
             case .path(.element(id: _, action: .signupUserSelect(.signinButtonTapped))):

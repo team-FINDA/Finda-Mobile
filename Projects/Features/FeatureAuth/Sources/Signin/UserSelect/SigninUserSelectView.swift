@@ -21,12 +21,12 @@ public struct SigninUserSelectView: View {
                     UserSelectButton(
                         icon: Image.Images.pencil,
                         text: "학생 로그인",
-                        action: {}
+                        action: { store.send(.studentSigninButtonTapped) }
                     )
                     UserSelectButton(
                         icon: Image.Images.book,
                         text: "선생님 로그인",
-                        action: {}
+                        action: { store.send(.teacherSigninButtonTapped) }
                     )
                     AuthPromptButton(
                         promptText: "계정이 없으신가요?",

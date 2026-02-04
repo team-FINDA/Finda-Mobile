@@ -1,6 +1,5 @@
 import SwiftUI
 import ComposableArchitecture
-import Foundation
 
 public struct AuthRootView: View {
     @Perception.Bindable var store: StoreOf<AuthRootFeature>
@@ -21,12 +20,21 @@ public struct AuthRootView: View {
                     )
                 )
             } destination: { store in
-                SwitchStore(store) { initialState in
+                SwitchStore(store) { state in
+                    switch state {
+                    case .signin:
                     CaseLet(
-                        /AuthRootFeature.Path.State.signupUserSelect,
-                        action: AuthRootFeature.Path.Action.signupUserSelect,
-                        then: SignupUserSelectView.init
+                        /AuthRootFeature.Path.State.signin,
+                        action: AuthRootFeature.Path.Action.signin,
+                        then: SigninView.init
                     )
+                    case .signupUserSelect:
+                        CaseLet(
+                            /AuthRootFeature.Path.State.signupUserSelect,
+                            action: AuthRootFeature.Path.Action.signupUserSelect,
+                            then: SignupUserSelectView.init
+                        )
+                    }
                 }
             }
         }
