@@ -68,7 +68,7 @@ struct SigninView: View {
 }
 
 #Preview {
-    struct SigninView_PreviewWrapper: View {
+    struct SigninViewPreviewWrapper: View {
         @State private var email: String = ""
         @State private var password: String = ""
         var body: some View {
@@ -79,5 +79,5 @@ struct SigninView: View {
             )
         }
     }
-    return SigninView_PreviewWrapper()
+    return SigninViewPreviewWrapper()
 }
