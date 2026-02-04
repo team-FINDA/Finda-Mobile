@@ -7,33 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		019F67E718CE59814B591D9F /* IssueReportingPackageSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D552322B9E1BF50C2E055138 /* IssueReportingPackageSupport.framework */; };
-		0D88D40A02E4F588EE322DB9 /* UIKitNavigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D350F922C889C469B524BA41 /* UIKitNavigation.framework */; };
-		11DC9B9D45E0961E59A8CDAC /* UIKitNavigationShim.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2057C33EF6860CEB46D4AF6 /* UIKitNavigationShim.framework */; };
-		2238DFBD36719854632FDFAF /* Sharing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63C5750862E870F11ACB324 /* Sharing.framework */; };
-		24839E12B2A1D70DD47A92AE /* SwiftUINavigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C39F452C994295295A61C1AF /* SwiftUINavigation.framework */; };
-		27346D294C179A67E80EF211 /* Sharing1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61DE5953801EB4C3178134A5 /* Sharing1.framework */; };
-		29032E69D3151DECBCB7A5E2 /* ConcurrencyExtras.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E0B6203F52E419061F1B23 /* ConcurrencyExtras.framework */; };
-		3249F2B1147B73FF5BFB1128 /* PerceptionCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32361208A453CC1F0A930573 /* PerceptionCore.framework */; };
-		334B90C5EF60DBFE1401EC93 /* CombineSchedulers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AF8D202735F5EC4B472894 /* CombineSchedulers.framework */; };
-		33F2E30F30B5AF13C6C0A41C /* CustomDump.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA0050A05890CD10A60FCD8 /* CustomDump.framework */; };
-		3D80B0642D83CBA8D9C9A45E /* InternalCollectionsUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079BF7F4C71A7E693F7215FC /* InternalCollectionsUtilities.framework */; };
-		561BE5425AC9095EB726ED2B /* OrderedCollections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DFCDDD6DE51C4322E36A18D /* OrderedCollections.framework */; };
 		642AABB73B19A24F599A1E15 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6990196BB876AA6F5C32FFC /* DesignSystem.framework */; };
-		78B06F59973CFC71F1BFE359 /* IdentifiedCollections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8650FCC93BBEFB6D2D820FF3 /* IdentifiedCollections.framework */; };
 		7920BCEB7EB2FF579D141460 /* Et.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16BF08ED07ABA44C4318B74 /* Et.swift */; };
-		9E0183641228D48CE74A72CE /* Dependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037C276382D9F43D44CA7E99 /* Dependencies.framework */; };
-		AB14A3674181E75AEA3C038A /* CasePaths.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E449C41FEF3661501C16A7C /* CasePaths.framework */; };
-		B01466DD64E64AB4B941284A /* IssueReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274E61D98E70A6F8E838427A /* IssueReporting.framework */; };
-		B59DFF4E5A49DD881BB555AC /* SwiftNavigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 555D5EDB906DF373511AA35E /* SwiftNavigation.framework */; };
 		BAF16516E3485AED2F4EF3D4 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FDADF8C1E4459E6F8A2A8DF /* Core.framework */; };
-		D0D820B2AD3783BF2DE76FD9 /* Perception.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D110AF7902A260AAB2A082B /* Perception.framework */; };
-		DD4754553F9CCCE9E6FACCB4 /* XCTestDynamicOverlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77B385052213D6B744E27597 /* XCTestDynamicOverlay.framework */; };
-		E59746AE7AC10207C0CDF6DB /* Clocks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC0696F14996D2C346F10266 /* Clocks.framework */; };
-		E8602707261FD5416169CD99 /* Sharing2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D6C765A196A51C7235307D /* Sharing2.framework */; };
 		E972331F3B4E7A2CA0660D40 /* ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A30B36754A90FF14E11FBA4 /* ComposableArchitecture.framework */; };
-		EF1D769096FE013037C57A79 /* DependenciesMacros.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9D432CA2CC871C11B2D72A0 /* DependenciesMacros.framework */; };
-		FD6451F0998E768FDE4520F8 /* CasePathsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB32AEDD487CB8D7403435C2 /* CasePathsCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,36 +27,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		037C276382D9F43D44CA7E99 /* Dependencies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Dependencies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		079BF7F4C71A7E693F7215FC /* InternalCollectionsUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InternalCollectionsUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A30B36754A90FF14E11FBA4 /* ComposableArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ComposableArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FDADF8C1E4459E6F8A2A8DF /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		274E61D98E70A6F8E838427A /* IssueReporting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IssueReporting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2DFCDDD6DE51C4322E36A18D /* OrderedCollections.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OrderedCollections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		32361208A453CC1F0A930573 /* PerceptionCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PerceptionCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E449C41FEF3661501C16A7C /* CasePaths.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CasePaths.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D110AF7902A260AAB2A082B /* Perception.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Perception.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		555D5EDB906DF373511AA35E /* SwiftNavigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftNavigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		61DE5953801EB4C3178134A5 /* Sharing1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sharing1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		77B385052213D6B744E27597 /* XCTestDynamicOverlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XCTestDynamicOverlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		83AF8D202735F5EC4B472894 /* CombineSchedulers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CombineSchedulers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8650FCC93BBEFB6D2D820FF3 /* IdentifiedCollections.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IdentifiedCollections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9AA0050A05890CD10A60FCD8 /* CustomDump.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CustomDump.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2057C33EF6860CEB46D4AF6 /* UIKitNavigationShim.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIKitNavigationShim.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A63C5750862E870F11ACB324 /* Sharing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sharing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC0696F14996D2C346F10266 /* Clocks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Clocks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFBF68F6060262D45624E86E /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
 		C16BF08ED07ABA44C4318B74 /* Et.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Et.swift; sourceTree = "<group>"; };
-		C39F452C994295295A61C1AF /* SwiftUINavigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftUINavigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB32AEDD487CB8D7403435C2 /* CasePathsCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CasePathsCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D1E0B6203F52E419061F1B23 /* ConcurrencyExtras.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ConcurrencyExtras.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2D6C765A196A51C7235307D /* Sharing2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sharing2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D350F922C889C469B524BA41 /* UIKitNavigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIKitNavigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D552322B9E1BF50C2E055138 /* IssueReportingPackageSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IssueReportingPackageSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6990196BB876AA6F5C32FFC /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D92B1DD6F25184CF3D4BDED0 /* FeatureTeacher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureTeacher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F812395E38AD6D44B929B8C1 /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
-		F9D432CA2CC871C11B2D72A0 /* DependenciesMacros.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DependenciesMacros.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA48AF103C35BAACE102300D /* FeatureTeacher-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "FeatureTeacher-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,32 +42,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB14A3674181E75AEA3C038A /* CasePaths.framework in Frameworks */,
-				FD6451F0998E768FDE4520F8 /* CasePathsCore.framework in Frameworks */,
-				E59746AE7AC10207C0CDF6DB /* Clocks.framework in Frameworks */,
-				334B90C5EF60DBFE1401EC93 /* CombineSchedulers.framework in Frameworks */,
 				E972331F3B4E7A2CA0660D40 /* ComposableArchitecture.framework in Frameworks */,
-				29032E69D3151DECBCB7A5E2 /* ConcurrencyExtras.framework in Frameworks */,
 				BAF16516E3485AED2F4EF3D4 /* Core.framework in Frameworks */,
-				33F2E30F30B5AF13C6C0A41C /* CustomDump.framework in Frameworks */,
-				9E0183641228D48CE74A72CE /* Dependencies.framework in Frameworks */,
-				EF1D769096FE013037C57A79 /* DependenciesMacros.framework in Frameworks */,
 				642AABB73B19A24F599A1E15 /* DesignSystem.framework in Frameworks */,
-				78B06F59973CFC71F1BFE359 /* IdentifiedCollections.framework in Frameworks */,
-				3D80B0642D83CBA8D9C9A45E /* InternalCollectionsUtilities.framework in Frameworks */,
-				B01466DD64E64AB4B941284A /* IssueReporting.framework in Frameworks */,
-				019F67E718CE59814B591D9F /* IssueReportingPackageSupport.framework in Frameworks */,
-				561BE5425AC9095EB726ED2B /* OrderedCollections.framework in Frameworks */,
-				D0D820B2AD3783BF2DE76FD9 /* Perception.framework in Frameworks */,
-				3249F2B1147B73FF5BFB1128 /* PerceptionCore.framework in Frameworks */,
-				2238DFBD36719854632FDFAF /* Sharing.framework in Frameworks */,
-				27346D294C179A67E80EF211 /* Sharing1.framework in Frameworks */,
-				E8602707261FD5416169CD99 /* Sharing2.framework in Frameworks */,
-				B59DFF4E5A49DD881BB555AC /* SwiftNavigation.framework in Frameworks */,
-				24839E12B2A1D70DD47A92AE /* SwiftUINavigation.framework in Frameworks */,
-				0D88D40A02E4F588EE322DB9 /* UIKitNavigation.framework in Frameworks */,
-				11DC9B9D45E0961E59A8CDAC /* UIKitNavigationShim.framework in Frameworks */,
-				DD4754553F9CCCE9E6FACCB4 /* XCTestDynamicOverlay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,33 +97,10 @@
 		C3D854350045398BC7D479A4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3E449C41FEF3661501C16A7C /* CasePaths.framework */,
-				CB32AEDD487CB8D7403435C2 /* CasePathsCore.framework */,
-				AC0696F14996D2C346F10266 /* Clocks.framework */,
-				83AF8D202735F5EC4B472894 /* CombineSchedulers.framework */,
 				1A30B36754A90FF14E11FBA4 /* ComposableArchitecture.framework */,
-				D1E0B6203F52E419061F1B23 /* ConcurrencyExtras.framework */,
 				1FDADF8C1E4459E6F8A2A8DF /* Core.framework */,
-				9AA0050A05890CD10A60FCD8 /* CustomDump.framework */,
-				037C276382D9F43D44CA7E99 /* Dependencies.framework */,
-				F9D432CA2CC871C11B2D72A0 /* DependenciesMacros.framework */,
 				D6990196BB876AA6F5C32FFC /* DesignSystem.framework */,
 				D92B1DD6F25184CF3D4BDED0 /* FeatureTeacher.framework */,
-				8650FCC93BBEFB6D2D820FF3 /* IdentifiedCollections.framework */,
-				079BF7F4C71A7E693F7215FC /* InternalCollectionsUtilities.framework */,
-				274E61D98E70A6F8E838427A /* IssueReporting.framework */,
-				D552322B9E1BF50C2E055138 /* IssueReportingPackageSupport.framework */,
-				2DFCDDD6DE51C4322E36A18D /* OrderedCollections.framework */,
-				4D110AF7902A260AAB2A082B /* Perception.framework */,
-				32361208A453CC1F0A930573 /* PerceptionCore.framework */,
-				A63C5750862E870F11ACB324 /* Sharing.framework */,
-				61DE5953801EB4C3178134A5 /* Sharing1.framework */,
-				D2D6C765A196A51C7235307D /* Sharing2.framework */,
-				555D5EDB906DF373511AA35E /* SwiftNavigation.framework */,
-				C39F452C994295295A61C1AF /* SwiftUINavigation.framework */,
-				D350F922C889C469B524BA41 /* UIKitNavigation.framework */,
-				A2057C33EF6860CEB46D4AF6 /* UIKitNavigationShim.framework */,
-				77B385052213D6B744E27597 /* XCTestDynamicOverlay.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";

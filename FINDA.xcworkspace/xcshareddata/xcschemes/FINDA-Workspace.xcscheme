@@ -812,20 +812,6 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "799C5D97FA7841560405B32D"
-               BuildableName = "swift-composable-architecture_ComposableArchitecture.bundle"
-               BlueprintName = "swift-composable-architecture_ComposableArchitecture"
-               ReferencedContainer = "container:Tuist/.build/tuist-derived/swift-composable-architecture/swift-composable-architecture.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "C00D5305FFA70103095EE03F"
                BuildableName = "swift-sharing_Sharing.bundle"
                BlueprintName = "swift-sharing_Sharing"
