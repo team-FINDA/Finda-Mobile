@@ -1,39 +1,51 @@
 import SwiftUI
 import DesignSystem
+import ComposableArchitecture
 
 public struct SigninUserSelectView: View {
-    public init() {}
+    let store: StoreOf<SigninUserSelectFeature>
+
+    public init(store: StoreOf<SigninUserSelectFeature>) {
+        self.store = store
+    }
+
     public var body: some View {
-        VStack(spacing: 64) {
-            Text("로그인")
-                .font(.finda(.heading4))
-                .foregroundStyle(Color.Gray.gray80)
-                .padding(.top, 64)
+        WithPerceptionTracking {
+            VStack(spacing: 64) {
+                Text("로그인")
+                    .font(.finda(.heading4))
+                    .foregroundStyle(Color.Gray.gray80)
+                    .padding(.top, 64)
 
-            VStack(spacing: 40) {
-                UserSelectButton(
-                    icon: Image.Images.pencil,
-                    text: "학생 로그인",
-                    action: {}
-                )
-                UserSelectButton(
-                    icon: Image.Images.book,
-                    text: "선생님 로그인",
-                    action: {}
-                )
-                AuthPromptButton(
-                    promptText: "계정이 없으신가요?",
-                    buttonText: "회원가입",
-                    action: {}
-                )
+                VStack(spacing: 40) {
+                    UserSelectButton(
+                        icon: Image.Images.pencil,
+                        text: "학생 로그인",
+                        action: {}
+                    )
+                    UserSelectButton(
+                        icon: Image.Images.book,
+                        text: "선생님 로그인",
+                        action: {}
+                    )
+                    AuthPromptButton(
+                        promptText: "계정이 없으신가요?",
+                        buttonText: "회원가입",
+                        action: { store.send(.signupButtonTapped) }
+                    )
+                }
+                .padding(.horizontal, 24)
+
+                Spacer()
             }
-            .padding(.horizontal, 24)
-
-            Spacer()
         }
     }
 }
 
 #Preview {
-    SigninUserSelectView()
+    SigninUserSelectView(
+        store: Store(initialState: SigninUserSelectFeature.State()) {
+            SigninUserSelectFeature()
+        }
+    )
 }
