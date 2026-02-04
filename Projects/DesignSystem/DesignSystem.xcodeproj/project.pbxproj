@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,7 @@
 		4D6F9A9F7E378222A01DCDA6 /* AuthPromptButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99BE9AFD874041C64F1F29 /* AuthPromptButton.swift */; };
 		5A8EFD2B11965BA3BFF164E9 /* Image+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593CD7BFBE22E5E79F338306 /* Image+.swift */; };
 		7ECA1B016B161770DCA93FD4 /* UserSelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D2DBC4518456475CD7CE7D /* UserSelectButton.swift */; };
+		8826A1E02F33397300E6C33C /* DismissKeyboardOnTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8826A1DF2F33397200E6C33C /* DismissKeyboardOnTap.swift */; };
 		ABB14811E13F7B1ECCF8B086 /* TuistAssets+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5263BC75B281154AC0B5A7B /* TuistAssets+DesignSystem.swift */; };
 		ACDAD3EE27CA12E21F8A7A2A /* FindaFontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D97AAEE430A52848A3BF3AE /* FindaFontStyle.swift */; };
 		C8478A3CDE36A8F1A7E401DA /* Gray.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C226A3A3734473E0AF64CD /* Gray.xcassets */; };
@@ -54,6 +55,7 @@
 		5AABBDD28F1353CACF3406AB /* Sub.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Sub.xcassets; sourceTree = "<group>"; };
 		69B7BBEAD5472C7195924AC8 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D97AAEE430A52848A3BF3AE /* FindaFontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindaFontStyle.swift; sourceTree = "<group>"; };
+		8826A1DF2F33397200E6C33C /* DismissKeyboardOnTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissKeyboardOnTap.swift; sourceTree = "<group>"; };
 		8937FA9427EEA938B58C5B3E /* DesignSystem-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DesignSystem-Info.plist"; sourceTree = "<group>"; };
 		8C9DEA24BB8CC6AB9B37685C /* FINDAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FINDAButton.swift; sourceTree = "<group>"; };
 		A5263BC75B281154AC0B5A7B /* TuistAssets+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+DesignSystem.swift"; sourceTree = "<group>"; };
@@ -183,6 +185,14 @@
 			path = Derived;
 			sourceTree = "<group>";
 		};
+		8826A1DE2F33395900E6C33C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8826A1DF2F33397200E6C33C /* DismissKeyboardOnTap.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8BC136006E1D0234B84A94B8 /* Button */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +234,7 @@
 		DADCA588D3E296D27BE4E9DD /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				8826A1DE2F33395900E6C33C /* View */,
 				F0E76573CF74786F9BC5B779 /* Color */,
 				5D733C381594AF5205BB8922 /* Image */,
 			);
@@ -312,8 +323,6 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				ORGANIZATIONNAME = com.finda.app;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 5C0CBBA2BFE0CEE21375AF0A /* Build configuration list for PBXProject "DesignSystem" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -384,6 +393,7 @@
 				4D6F9A9F7E378222A01DCDA6 /* AuthPromptButton.swift in Sources */,
 				1D14E2323B0A8AB8896FFF59 /* FINDAButton.swift in Sources */,
 				7ECA1B016B161770DCA93FD4 /* UserSelectButton.swift in Sources */,
+				8826A1E02F33397300E6C33C /* DismissKeyboardOnTap.swift in Sources */,
 				CEC36DC0BC8D2AF0871D6E58 /* Color+.swift in Sources */,
 				5A8EFD2B11965BA3BFF164E9 /* Image+.swift in Sources */,
 				192A7788250BC66DEBFDF245 /* AuthTextField.swift in Sources */,
@@ -454,10 +464,19 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "$(inherited) -Objc";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-Objc",
+				);
 				"OTHER_LDFLAGS[config=Debug]" = "$(inherited)";
-				"OTHER_LDFLAGS[config=Prod]" = "$(inherited) -all_load";
-				"OTHER_LDFLAGS[config=Stage]" = "$(inherited) -all_load";
+				"OTHER_LDFLAGS[config=Prod]" = (
+					"$(inherited)",
+					"-all_load",
+				);
+				"OTHER_LDFLAGS[config=Stage]" = (
+					"$(inherited)",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = STAGE;
@@ -519,10 +538,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-					"$(inherited)",
-					DEBUG,
-				);
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -584,10 +600,19 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "$(inherited) -Objc";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-Objc",
+				);
 				"OTHER_LDFLAGS[config=Debug]" = "$(inherited)";
-				"OTHER_LDFLAGS[config=Prod]" = "$(inherited) -all_load";
-				"OTHER_LDFLAGS[config=Stage]" = "$(inherited) -all_load";
+				"OTHER_LDFLAGS[config=Prod]" = (
+					"$(inherited)",
+					"-all_load",
+				);
+				"OTHER_LDFLAGS[config=Stage]" = (
+					"$(inherited)",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 			};

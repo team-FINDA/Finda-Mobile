@@ -62,6 +62,7 @@ struct SigninView: View {
 
             Spacer()
         }
+        .dismissKeyboardOnTap()
         .navigationBarBackButtonHidden(true)
         .toolbar(.hidden, for: .navigationBar)
     }
