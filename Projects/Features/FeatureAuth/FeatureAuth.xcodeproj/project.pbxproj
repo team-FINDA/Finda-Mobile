@@ -7,35 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		057016D1BF1555A4C82B7F93 /* Sharing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA6047FE84E8BA8C65C08A6 /* Sharing.framework */; };
-		09C9FEE4D3F99B41E62B000F /* Dependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786EA8CE8E8960E9B23BE590 /* Dependencies.framework */; };
 		37033EA9F7F1C5F4C633D74D /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67AD049FAFAA16C2203016DA /* Core.framework */; };
 		3810DFC8A052B8BF3DD9EFD7 /* SignupUserSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32952F963D4519C8AA119894 /* SignupUserSelectView.swift */; };
-		39CA09107B209E17E829D765 /* ConcurrencyExtras.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BE51B0EE589C3F7A53DD732 /* ConcurrencyExtras.framework */; };
-		3BFC6FD17CAA81C9FC694EF6 /* Sharing2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2FC66EFD823ED6F849716E2 /* Sharing2.framework */; };
-		3F89F2DC278D8F802F59AA5A /* Sharing1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 236292DBDD75C49F0F0DB47D /* Sharing1.framework */; };
-		454F8B4B647B3FB334241C13 /* IssueReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 281EFC257261183E8BE675CE /* IssueReporting.framework */; };
-		4682690468EA2D54330523C6 /* IssueReportingPackageSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F90A3A4D5F8E34FAD2E40242 /* IssueReportingPackageSupport.framework */; };
 		496CE26848160FBE4E41810D /* ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB316CAC7280421811D7AF9C /* ComposableArchitecture.framework */; };
-		4D6867A48E8CAE0A09E71C67 /* UIKitNavigationShim.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6878DD9201DFEAADB50DB9B /* UIKitNavigationShim.framework */; };
 		604691DB4D5F18F52C38178B /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26BC008C17A384BA3020F6B8 /* DesignSystem.framework */; };
 		639509742900F77035109136 /* SigninUserSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD593BD035FDBC51CBD38B /* SigninUserSelectView.swift */; };
-		64A4E237312ED7C251ED7143 /* Perception.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72D4E599C304891EAB7CAD09 /* Perception.framework */; };
-		65030153C80BC29D057E888D /* DependenciesMacros.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D25E9FA3C5CF96533FDADFF4 /* DependenciesMacros.framework */; };
-		6B7A97DCB62E617205F42A79 /* CasePaths.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61ADB952C02B0DDC952B439F /* CasePaths.framework */; };
-		71EE77038E5D7E163A0935FC /* Clocks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9477E9E940208CA142624EC /* Clocks.framework */; };
-		8C919F2098FA2B389C06E312 /* OrderedCollections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82249F64500EBE3D7A043631 /* OrderedCollections.framework */; };
-		999ED0FB240B4893D63B734E /* IdentifiedCollections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F26FDC08E0966E74C8E5E58A /* IdentifiedCollections.framework */; };
-		9CD43C59D5FFA9272E275A82 /* XCTestDynamicOverlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68B613DDB641967BF1D8E032 /* XCTestDynamicOverlay.framework */; };
-		9F1C33BFCD5862E3124263C2 /* CasePathsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A9832616D15DB19208AF88 /* CasePathsCore.framework */; };
-		B0D5FB2A3D27D132FA9CD05A /* CombineSchedulers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FD6A9D4BFE0AE5B76AB0EB /* CombineSchedulers.framework */; };
-		B1D4344A4F43AF579221E3F6 /* CustomDump.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABAA7F01FE3AD480D3AF4928 /* CustomDump.framework */; };
-		B1F6044624BD508D0E2358EE /* InternalCollectionsUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6211237FB8FE1171E11236CD /* InternalCollectionsUtilities.framework */; };
+		66DFB871B75F62FC990694A4 /* AuthRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FCD6D5C7FA8363CBF280B5 /* AuthRootView.swift */; };
+		6BE3692C23F276FEC6235200 /* SignupUserSelectFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FD2A5C1F13BD18A9BABDCF /* SignupUserSelectFeature.swift */; };
+		CB10303FE3B1539F1BEEF91D /* AuthRootFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367E2348CC7D02F2B18E03C9 /* AuthRootFeature.swift */; };
 		D5188D09944FAA79C2EFFF5E /* SigninUserSelectFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCCDC1DB39BAB9BB3C3E42 /* SigninUserSelectFeature.swift */; };
-		DE49F1D59D7820EFE407119E /* UIKitNavigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59BB64E2EEA3F5565C28CB44 /* UIKitNavigation.framework */; };
-		E3873A42289A7F12E7D39FD8 /* SwiftUINavigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61EB945A75B2CCD7411A3472 /* SwiftUINavigation.framework */; };
-		EDBEACEF433D7FF79A2343EA /* PerceptionCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF289DDAB72DD165EAB9D52 /* PerceptionCore.framework */; };
-		FA436B316F9CFDB4C13A7D87 /* SwiftNavigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A515E6F7626E6AE172B96552 /* SwiftNavigation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,38 +33,18 @@
 
 /* Begin PBXFileReference section */
 		219F51B82F2FFD3B3EA4D38F /* FeatureAuth-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "FeatureAuth-Info.plist"; sourceTree = "<group>"; };
-		236292DBDD75C49F0F0DB47D /* Sharing1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sharing1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26BC008C17A384BA3020F6B8 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		281EFC257261183E8BE675CE /* IssueReporting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IssueReporting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32952F963D4519C8AA119894 /* SignupUserSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupUserSelectView.swift; sourceTree = "<group>"; };
+		367E2348CC7D02F2B18E03C9 /* AuthRootFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRootFeature.swift; sourceTree = "<group>"; };
 		38FCCDC1DB39BAB9BB3C3E42 /* SigninUserSelectFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninUserSelectFeature.swift; sourceTree = "<group>"; };
 		3E71DABBBC3D1F6EC3828B37 /* FeatureAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		59BB64E2EEA3F5565C28CB44 /* UIKitNavigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIKitNavigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		61ADB952C02B0DDC952B439F /* CasePaths.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CasePaths.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		61EB945A75B2CCD7411A3472 /* SwiftUINavigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftUINavigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6211237FB8FE1171E11236CD /* InternalCollectionsUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InternalCollectionsUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		632B708B2A7DF34282810B29 /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
 		67AD049FAFAA16C2203016DA /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		68B613DDB641967BF1D8E032 /* XCTestDynamicOverlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XCTestDynamicOverlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6BE51B0EE589C3F7A53DD732 /* ConcurrencyExtras.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ConcurrencyExtras.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		72A9832616D15DB19208AF88 /* CasePathsCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CasePathsCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		72D4E599C304891EAB7CAD09 /* Perception.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Perception.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		786EA8CE8E8960E9B23BE590 /* Dependencies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Dependencies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		82249F64500EBE3D7A043631 /* OrderedCollections.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OrderedCollections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A515E6F7626E6AE172B96552 /* SwiftNavigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftNavigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		97FCD6D5C7FA8363CBF280B5 /* AuthRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRootView.swift; sourceTree = "<group>"; };
 		A9DD593BD035FDBC51CBD38B /* SigninUserSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninUserSelectView.swift; sourceTree = "<group>"; };
-		AAF289DDAB72DD165EAB9D52 /* PerceptionCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PerceptionCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ABAA7F01FE3AD480D3AF4928 /* CustomDump.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CustomDump.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C6878DD9201DFEAADB50DB9B /* UIKitNavigationShim.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIKitNavigationShim.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0FD2A5C1F13BD18A9BABDCF /* SignupUserSelectFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupUserSelectFeature.swift; sourceTree = "<group>"; };
 		CB316CAC7280421811D7AF9C /* ComposableArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ComposableArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CFA6047FE84E8BA8C65C08A6 /* Sharing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sharing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D25E9FA3C5CF96533FDADFF4 /* DependenciesMacros.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DependenciesMacros.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2FC66EFD823ED6F849716E2 /* Sharing2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sharing2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9FD6A9D4BFE0AE5B76AB0EB /* CombineSchedulers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CombineSchedulers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9477E9E940208CA142624EC /* Clocks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Clocks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F17494BB29EC9B2825B738FB /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
-		F26FDC08E0966E74C8E5E58A /* IdentifiedCollections.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IdentifiedCollections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F90A3A4D5F8E34FAD2E40242 /* IssueReportingPackageSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IssueReportingPackageSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,32 +52,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B7A97DCB62E617205F42A79 /* CasePaths.framework in Frameworks */,
-				9F1C33BFCD5862E3124263C2 /* CasePathsCore.framework in Frameworks */,
-				71EE77038E5D7E163A0935FC /* Clocks.framework in Frameworks */,
-				B0D5FB2A3D27D132FA9CD05A /* CombineSchedulers.framework in Frameworks */,
 				496CE26848160FBE4E41810D /* ComposableArchitecture.framework in Frameworks */,
-				39CA09107B209E17E829D765 /* ConcurrencyExtras.framework in Frameworks */,
 				37033EA9F7F1C5F4C633D74D /* Core.framework in Frameworks */,
-				B1D4344A4F43AF579221E3F6 /* CustomDump.framework in Frameworks */,
-				09C9FEE4D3F99B41E62B000F /* Dependencies.framework in Frameworks */,
-				65030153C80BC29D057E888D /* DependenciesMacros.framework in Frameworks */,
 				604691DB4D5F18F52C38178B /* DesignSystem.framework in Frameworks */,
-				999ED0FB240B4893D63B734E /* IdentifiedCollections.framework in Frameworks */,
-				B1F6044624BD508D0E2358EE /* InternalCollectionsUtilities.framework in Frameworks */,
-				454F8B4B647B3FB334241C13 /* IssueReporting.framework in Frameworks */,
-				4682690468EA2D54330523C6 /* IssueReportingPackageSupport.framework in Frameworks */,
-				8C919F2098FA2B389C06E312 /* OrderedCollections.framework in Frameworks */,
-				64A4E237312ED7C251ED7143 /* Perception.framework in Frameworks */,
-				EDBEACEF433D7FF79A2343EA /* PerceptionCore.framework in Frameworks */,
-				057016D1BF1555A4C82B7F93 /* Sharing.framework in Frameworks */,
-				3F89F2DC278D8F802F59AA5A /* Sharing1.framework in Frameworks */,
-				3BFC6FD17CAA81C9FC694EF6 /* Sharing2.framework in Frameworks */,
-				FA436B316F9CFDB4C13A7D87 /* SwiftNavigation.framework in Frameworks */,
-				E3873A42289A7F12E7D39FD8 /* SwiftUINavigation.framework in Frameworks */,
-				DE49F1D59D7820EFE407119E /* UIKitNavigation.framework in Frameworks */,
-				4D6867A48E8CAE0A09E71C67 /* UIKitNavigationShim.framework in Frameworks */,
-				9CD43C59D5FFA9272E275A82 /* XCTestDynamicOverlay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +89,7 @@
 		2CF2C01AF6499A06491F287D /* Signup */ = {
 			isa = PBXGroup;
 			children = (
+				B0FD2A5C1F13BD18A9BABDCF /* SignupUserSelectFeature.swift */,
 				32952F963D4519C8AA119894 /* SignupUserSelectView.swift */,
 			);
 			path = Signup;
@@ -166,6 +104,15 @@
 			path = ../../../XCConfig;
 			sourceTree = "<group>";
 		};
+		718FB7FEB58A33C6875110CB /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				367E2348CC7D02F2B18E03C9 /* AuthRootFeature.swift */,
+				97FCD6D5C7FA8363CBF280B5 /* AuthRootView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		7DC25468D54731BDD1967F6F /* FeatureAuth */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +125,7 @@
 		93FD9A4E32C0080D5C118122 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				718FB7FEB58A33C6875110CB /* Root */,
 				116F670B51869A8AD85D7B33 /* Signin */,
 				2CF2C01AF6499A06491F287D /* Signup */,
 			);
@@ -187,33 +135,10 @@
 		C80E8A67D9F406779E572CFB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				61ADB952C02B0DDC952B439F /* CasePaths.framework */,
-				72A9832616D15DB19208AF88 /* CasePathsCore.framework */,
-				E9477E9E940208CA142624EC /* Clocks.framework */,
-				D9FD6A9D4BFE0AE5B76AB0EB /* CombineSchedulers.framework */,
 				CB316CAC7280421811D7AF9C /* ComposableArchitecture.framework */,
-				6BE51B0EE589C3F7A53DD732 /* ConcurrencyExtras.framework */,
 				67AD049FAFAA16C2203016DA /* Core.framework */,
-				ABAA7F01FE3AD480D3AF4928 /* CustomDump.framework */,
-				786EA8CE8E8960E9B23BE590 /* Dependencies.framework */,
-				D25E9FA3C5CF96533FDADFF4 /* DependenciesMacros.framework */,
 				26BC008C17A384BA3020F6B8 /* DesignSystem.framework */,
 				3E71DABBBC3D1F6EC3828B37 /* FeatureAuth.framework */,
-				F26FDC08E0966E74C8E5E58A /* IdentifiedCollections.framework */,
-				6211237FB8FE1171E11236CD /* InternalCollectionsUtilities.framework */,
-				281EFC257261183E8BE675CE /* IssueReporting.framework */,
-				F90A3A4D5F8E34FAD2E40242 /* IssueReportingPackageSupport.framework */,
-				82249F64500EBE3D7A043631 /* OrderedCollections.framework */,
-				72D4E599C304891EAB7CAD09 /* Perception.framework */,
-				AAF289DDAB72DD165EAB9D52 /* PerceptionCore.framework */,
-				CFA6047FE84E8BA8C65C08A6 /* Sharing.framework */,
-				236292DBDD75C49F0F0DB47D /* Sharing1.framework */,
-				D2FC66EFD823ED6F849716E2 /* Sharing2.framework */,
-				A515E6F7626E6AE172B96552 /* SwiftNavigation.framework */,
-				61EB945A75B2CCD7411A3472 /* SwiftUINavigation.framework */,
-				59BB64E2EEA3F5565C28CB44 /* UIKitNavigation.framework */,
-				C6878DD9201DFEAADB50DB9B /* UIKitNavigationShim.framework */,
-				68B613DDB641967BF1D8E032 /* XCTestDynamicOverlay.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -326,8 +251,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB10303FE3B1539F1BEEF91D /* AuthRootFeature.swift in Sources */,
+				66DFB871B75F62FC990694A4 /* AuthRootView.swift in Sources */,
 				D5188D09944FAA79C2EFFF5E /* SigninUserSelectFeature.swift in Sources */,
 				639509742900F77035109136 /* SigninUserSelectView.swift in Sources */,
+				6BE3692C23F276FEC6235200 /* SignupUserSelectFeature.swift in Sources */,
 				3810DFC8A052B8BF3DD9EFD7 /* SignupUserSelectView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

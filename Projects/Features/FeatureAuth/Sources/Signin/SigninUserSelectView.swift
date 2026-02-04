@@ -15,7 +15,7 @@ public struct SigninUserSelectView: View {
                 Text("로그인")
                     .font(.finda(.heading4))
                     .foregroundStyle(Color.Gray.gray80)
-                    .padding(.top, 64)
+                    .padding(.top, 40)
 
                 VStack(spacing: 40) {
                     UserSelectButton(
@@ -39,6 +39,8 @@ public struct SigninUserSelectView: View {
                 Spacer()
             }
         }
+        .navigationBarBackButtonHidden(true)
+        .toolbar(.hidden, for: .navigationBar)
     }
 }
 
