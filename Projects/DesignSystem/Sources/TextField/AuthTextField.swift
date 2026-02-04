@@ -3,6 +3,7 @@ import SwiftUI
 public enum AuthTextFieldType {
     case base // 기본 텍스트 입력 필드
     case schoolEmail  // 학교 이메일 입력 필드
+    case schoolVerificationEmail // 학교 이메일 인증 코드 발송 필드
     case verificationEmail // 이메일 인증 코드 발송 필드
     case password // 비밀번호 입력 필드
 }
@@ -42,7 +43,7 @@ public struct AuthTextField: View {
                 .font(.finda(.body1))
                 .foregroundColor(Color.Gray.gray80)
 
-            HStack(spacing: 12) {
+            HStack(spacing: 4) {
                 Group {
                     if type == .password && !isPasswordVisible {
                         SecureField(placeholder, text: $text)
@@ -68,25 +69,29 @@ public struct AuthTextField: View {
                             : Image.Icons.eyeOff
                         )
                     }
-                } else if type == .schoolEmail {
-                    Text("@dsm.hs.kr")
-                        .font(.finda(.body2))
-                        .foregroundColor(Color.Gray.gray50)
-                } else if type == .verificationEmail {
-                    Button(action: {
-                        onSendCode?()
-                        hasSentCode = true
-                        startTimer()
-                    }, label: {
-                        Text(buttonText)
-                            .font(.finda(.caption1))
-                            .foregroundColor(Color.Blue.blue50)
-                    })
-                    .disabled(remainingSeconds > 0)
-                    .padding(.vertical, 4)
-                    .padding(.horizontal, 8)
-                    .background(Color.Blue.blue10)
-                    .cornerRadius(20)
+                } else {
+                    if type == .schoolEmail || type == .schoolVerificationEmail {
+                        Text("@dsm.hs.kr")
+                            .font(.finda(.body2))
+                            .foregroundColor(Color.Gray.gray50)
+                    }
+
+                    if type == .verificationEmail || type == .schoolVerificationEmail {
+                        Button(action: {
+                            onSendCode?()
+                            hasSentCode = true
+                            startTimer()
+                        }, label: {
+                            Text(buttonText)
+                                .font(.finda(.caption1))
+                                .foregroundColor(Color.Blue.blue50)
+                        })
+                        .disabled(remainingSeconds > 0)
+                        .padding(.vertical, 4)
+                        .padding(.horizontal, 8)
+                        .background(Color.Blue.blue10)
+                        .cornerRadius(20)
+                    }
                 }
             }
             .padding(.horizontal, 16)
@@ -108,7 +113,7 @@ public struct AuthTextField: View {
         switch type {
         case .base:
             return "이메일"
-        case .schoolEmail:
+        case .schoolEmail, .schoolVerificationEmail:
             return "이메일"
         case .verificationEmail:
             return "이메일"
@@ -119,7 +124,7 @@ public struct AuthTextField: View {
 
     private var keyboardType: UIKeyboardType {
         switch type {
-        case .schoolEmail, .verificationEmail, .base:
+        case .schoolEmail, .schoolVerificationEmail, .verificationEmail, .base:
             return .emailAddress
         case .password:
             return .default
@@ -175,7 +180,7 @@ struct AuthTextField_Previews: PreviewProvider {
             )
 
             AuthTextField(
-                type: .verificationEmail,
+                type: .schoolVerificationEmail,
                 placeholder: "이메일을 입력해주세요",
                 text: .constant(""),
                 onSendCode: {
