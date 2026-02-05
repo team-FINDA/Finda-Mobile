@@ -2,15 +2,15 @@ import SwiftUI
 import ComposableArchitecture
 import DesignSystem
 
-public struct SignupUserSelectView: View {
-    var store: StoreOf<SignupUserSelectFeature>
+struct SignupUserSelectView: View {
+    private let store: StoreOf<SignupUserSelectFeature>
     @Environment(\.dismiss) private var dismiss
 
-    public init(store: StoreOf<SignupUserSelectFeature>) {
+    init(store: StoreOf<SignupUserSelectFeature>) {
         self.store = store
     }
 
-    public var body: some View {
+    var body: some View {
         WithPerceptionTracking {
             VStack(spacing: 8) {
                 HStack {

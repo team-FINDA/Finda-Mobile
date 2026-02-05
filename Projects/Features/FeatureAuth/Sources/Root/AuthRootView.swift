@@ -2,7 +2,7 @@ import SwiftUI
 import ComposableArchitecture
 
 public struct AuthRootView: View {
-    @Perception.Bindable var store: StoreOf<AuthRootFeature>
+    @Perception.Bindable private var store: StoreOf<AuthRootFeature>
 
     public init(store: StoreOf<AuthRootFeature>) {
         self.store = store

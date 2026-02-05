@@ -2,14 +2,14 @@ import SwiftUI
 import ComposableArchitecture
 import DesignSystem
 
-public struct SigninUserSelectView: View {
-    var store: StoreOf<SigninUserSelectFeature>
+struct SigninUserSelectView: View {
+    private let store: StoreOf<SigninUserSelectFeature>
 
-    public init(store: StoreOf<SigninUserSelectFeature>) {
+    init(store: StoreOf<SigninUserSelectFeature>) {
         self.store = store
     }
 
-    public var body: some View {
+    var body: some View {
         WithPerceptionTracking {
             VStack(spacing: 64) {
                 Text("로그인")

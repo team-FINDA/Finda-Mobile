@@ -2,15 +2,15 @@ import SwiftUI
 import ComposableArchitecture
 import DesignSystem
 
-public struct SigninView: View {
+struct SigninView: View {
     @Environment(\.dismiss) private var dismiss
-    @Perception.Bindable var store: StoreOf<SigninFeature>
+    @Perception.Bindable private var store: StoreOf<SigninFeature>
 
-    public init(store: StoreOf<SigninFeature>) {
+    init(store: StoreOf<SigninFeature>) {
         self.store = store
     }
 
-    public var body: some View {
+    var body: some View {
         WithPerceptionTracking {
             VStack {
                 HStack {

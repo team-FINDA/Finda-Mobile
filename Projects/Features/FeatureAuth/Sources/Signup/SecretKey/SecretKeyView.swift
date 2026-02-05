@@ -2,15 +2,15 @@ import SwiftUI
 import ComposableArchitecture
 import DesignSystem
 
-public struct SecretKeyView: View {
+struct SecretKeyView: View {
     @Environment(\.dismiss) private var dismiss
-    @Perception.Bindable var store: StoreOf<SecretKeyFeature>
+    @Perception.Bindable private var store: StoreOf<SecretKeyFeature>
 
-    public init(store: StoreOf<SecretKeyFeature>) {
+    init(store: StoreOf<SecretKeyFeature>) {
         self.store = store
     }
 
-    public var body: some View {
+    var body: some View {
         WithPerceptionTracking {
             VStack {
                 HStack {

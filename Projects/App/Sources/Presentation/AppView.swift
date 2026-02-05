@@ -2,14 +2,14 @@ import SwiftUI
 import ComposableArchitecture
 import FeatureAuth
 
-public struct AppView: View {
-    var store: StoreOf<AppFeature>
+struct AppView: View {
+    private let store: StoreOf<AppFeature>
 
-    public init(store: StoreOf<AppFeature>) {
+    init(store: StoreOf<AppFeature>) {
         self.store = store
     }
 
-    public var body: some View {
+    var body: some View {
         WithPerceptionTracking {
             ZStack {
                 AuthRootView(

@@ -2,24 +2,24 @@ import ComposableArchitecture
 import FeatureAuth
 
 @Reducer
-public struct AppFeature {
+struct AppFeature {
     @ObservableState
-    public struct State: Equatable {
+    struct State: Equatable {
         var isShowingSplash = true
         var authRoot = AuthRootFeature.State()
 
-        public init() {}
+        init() {}
     }
 
-    public enum Action {
+    enum Action {
         case onAppear
         case splashFinished
         case authRoot(AuthRootFeature.Action)
     }
 
-    public init() {}
+    init() {}
 
-    public var body: some ReducerOf<Self> {
+    var body: some ReducerOf<Self> {
         Scope(state: \.authRoot, action: \.authRoot) {
             AuthRootFeature()
         }
