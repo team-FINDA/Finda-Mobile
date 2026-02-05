@@ -20,33 +20,39 @@ public struct AuthRootView: View {
                     )
                 )
             } destination: { store in
-                SwitchStore(store) { state in
-                    switch state {
-                    case .signin:
-                        CaseLet(
-                            /AuthRootFeature.Path.State.signin,
-                            action: AuthRootFeature.Path.Action.signin,
-                            then: SigninView.init
-                        )
-                    case .signupUserSelect:
-                        CaseLet(
-                            /AuthRootFeature.Path.State.signupUserSelect,
-                            action: AuthRootFeature.Path.Action.signupUserSelect,
-                            then: SignupUserSelectView.init
-                        )
-                    case .signinUserSelect:
-                        CaseLet(
-                            /AuthRootFeature.Path.State.signinUserSelect,
-                            action: AuthRootFeature.Path.Action.signinUserSelect,
-                            then: SigninUserSelectView.init
-                        )
-                    case .secretKey:
-                        CaseLet(
-                            /AuthRootFeature.Path.State.secretKey,
-                            action: AuthRootFeature.Path.Action.secretKey,
-                            then: SecretKeyView.init
-                        )
-                    }
+                switch store.state {
+                case .signin:
+                    IfLetStore(
+                        store.scope(
+                            state: \.signin,
+                            action: \.signin
+                        ),
+                        then: SigninView.init
+                    )
+                case .signupUserSelect:
+                    IfLetStore(
+                        store.scope(
+                            state: \.signupUserSelect,
+                            action: \.signupUserSelect
+                        ),
+                        then: SignupUserSelectView.init
+                    )
+                case .signinUserSelect:
+                    IfLetStore(
+                        store.scope(
+                            state: \.signinUserSelect,
+                            action: \.signinUserSelect
+                        ),
+                        then: SigninUserSelectView.init
+                    )
+                case .secretKey:
+                    IfLetStore(
+                        store.scope(
+                            state: \.secretKey,
+                            action: \.secretKey
+                        ),
+                        then: SecretKeyView.init
+                    )
                 }
             }
         }
