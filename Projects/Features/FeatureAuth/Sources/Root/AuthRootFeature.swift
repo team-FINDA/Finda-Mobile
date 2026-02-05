@@ -12,13 +12,16 @@ public struct AuthRootFeature {
 
     public enum Action {
         case signinUserSelect(SigninUserSelectFeature.Action)
+        case signupUserSelect(SignupUserSelectFeature.Action)
         case path(StackActionOf<Path>)
     }
 
     @Reducer
     public enum Path {
         case signin(SigninFeature)
+        case signinUserSelect(SigninUserSelectFeature)
         case signupUserSelect(SignupUserSelectFeature)
+        case secretKey(SecretKeyFeature)
     }
 
     public init() {}
@@ -41,11 +44,15 @@ public struct AuthRootFeature {
                 state.path.append(.signin(SigninFeature.State(role: .teacher)))
                 return .none
 
+            case .path(.element(id: _, action: .signupUserSelect(.teacherSignupButtonTapped))):
+                state.path.append(.secretKey(SecretKeyFeature.State()))
+                return .none
+
             case .path(.element(id: _, action: .signupUserSelect(.signinButtonTapped))):
                 _ = state.path.popLast()
                 return .none
 
-            case .signinUserSelect:
+            case .signinUserSelect, .signupUserSelect:
                 return .none
 
             case .path:

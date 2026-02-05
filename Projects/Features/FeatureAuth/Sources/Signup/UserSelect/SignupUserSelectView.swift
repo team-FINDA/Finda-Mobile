@@ -37,7 +37,7 @@ public struct SignupUserSelectView: View {
                         UserSelectButton(
                             icon: Image.Images.book,
                             text: "선생님 회원가입",
-                            action: {}
+                            action: { store.send(.teacherSignupButtonTapped) }
                         )
                         AuthPromptButton(
                             promptText: "계정이 있으신가요?",

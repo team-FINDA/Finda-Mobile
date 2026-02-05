@@ -23,16 +23,28 @@ public struct AuthRootView: View {
                 SwitchStore(store) { state in
                     switch state {
                     case .signin:
-                    CaseLet(
-                        /AuthRootFeature.Path.State.signin,
-                        action: AuthRootFeature.Path.Action.signin,
-                        then: SigninView.init
-                    )
+                        CaseLet(
+                            /AuthRootFeature.Path.State.signin,
+                            action: AuthRootFeature.Path.Action.signin,
+                            then: SigninView.init
+                        )
                     case .signupUserSelect:
                         CaseLet(
                             /AuthRootFeature.Path.State.signupUserSelect,
                             action: AuthRootFeature.Path.Action.signupUserSelect,
                             then: SignupUserSelectView.init
+                        )
+                    case .signinUserSelect:
+                        CaseLet(
+                            /AuthRootFeature.Path.State.signinUserSelect,
+                            action: AuthRootFeature.Path.Action.signinUserSelect,
+                            then: SigninUserSelectView.init
+                        )
+                    case .secretKey:
+                        CaseLet(
+                            /AuthRootFeature.Path.State.secretKey,
+                            action: AuthRootFeature.Path.Action.secretKey,
+                            then: SecretKeyView.init
                         )
                     }
                 }
