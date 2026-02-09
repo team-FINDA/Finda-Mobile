@@ -1,17 +1,13 @@
 import SwiftUI
+import ComposableArchitecture
 import DesignSystem
 
 struct EmailVerificationView: View {
     @Environment(\.dismiss) private var dismiss
-    @Binding var email: String
-    @Binding var code: String
+    @Perception.Bindable private var store: StoreOf<EmailVerificationFeature>
 
-    init(
-        email: Binding<String>,
-        code: Binding<String>
-    ) {
-        self._email = email
-        self._code = code
+    init(store: StoreOf<EmailVerificationFeature>) {
+        self.store = store
     }
 
     var body: some View {
@@ -35,18 +31,18 @@ struct EmailVerificationView: View {
                 AuthTextField(
                     type: .verificationEmail,
                     placeholder: "이메일을 입력해주세요",
-                    text: $email
+                    text: $store.emailText
                 )
                 AuthTextField(
                     type: .base,
                     placeholder: "인증 코드를 입력해주세요",
                     label: "인증 코드",
-                    text: $code
+                    text: $store.codeText
                 )
 
                 FINDAButton(
                     buttonText: "다음",
-                    isDisabled: false,
+                    isDisabled: store.nextButtonIsDisable,
                     buttonClick: {}
                 )
                 AuthPromptButton(
@@ -66,5 +62,9 @@ struct EmailVerificationView: View {
 }
 
 #Preview {
-    EmailVerificationView(email: .constant(""), code: .constant(""))
+    EmailVerificationView(
+        store: Store(initialState: EmailVerificationFeature.State()) {
+            EmailVerificationFeature()
+        }
+    )
 }

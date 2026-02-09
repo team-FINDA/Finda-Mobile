@@ -16,6 +16,7 @@
 		604691DB4D5F18F52C38178B /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26BC008C17A384BA3020F6B8 /* DesignSystem.framework */; };
 		66DFB871B75F62FC990694A4 /* AuthRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FCD6D5C7FA8363CBF280B5 /* AuthRootView.swift */; };
 		88414C012F39618A008211E6 /* EmailVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88414C002F39617E008211E6 /* EmailVerificationView.swift */; };
+		88414C032F396608008211E6 /* EmailVerificationFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88414C022F3965FC008211E6 /* EmailVerificationFeature.swift */; };
 		92577D85E037A7DDB1FD1858 /* SigninUserSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147528A8272E515C2F9D205B /* SigninUserSelectView.swift */; };
 		B20929F953CE08974E988EB8 /* SigninFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6BAD0D4B1B5CF9C846C0B /* SigninFeature.swift */; };
 		CB10303FE3B1539F1BEEF91D /* AuthRootFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367E2348CC7D02F2B18E03C9 /* AuthRootFeature.swift */; };
@@ -50,6 +51,7 @@
 		67AD049FAFAA16C2203016DA /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E68AEDE0531D2BC18D0448A /* SignupUserSelectFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupUserSelectFeature.swift; sourceTree = "<group>"; };
 		88414C002F39617E008211E6 /* EmailVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationView.swift; sourceTree = "<group>"; };
+		88414C022F3965FC008211E6 /* EmailVerificationFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationFeature.swift; sourceTree = "<group>"; };
 		97FCD6D5C7FA8363CBF280B5 /* AuthRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRootView.swift; sourceTree = "<group>"; };
 		9821C8A30BCF16A7DAEC2210 /* SecretKeyFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKeyFeature.swift; sourceTree = "<group>"; };
 		BFD8212A42397D1E7BC77256 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 		88414BFF2F39614E008211E6 /* EmailVerification */ = {
 			isa = PBXGroup;
 			children = (
+				88414C022F3965FC008211E6 /* EmailVerificationFeature.swift */,
 				88414C002F39617E008211E6 /* EmailVerificationView.swift */,
 			);
 			path = EmailVerification;
@@ -296,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88414C032F396608008211E6 /* EmailVerificationFeature.swift in Sources */,
 				CB10303FE3B1539F1BEEF91D /* AuthRootFeature.swift in Sources */,
 				66DFB871B75F62FC990694A4 /* AuthRootView.swift in Sources */,
 				B20929F953CE08974E988EB8 /* SigninFeature.swift in Sources */,
