@@ -13,7 +13,7 @@ import PackageDescription
         baseSettings: .settings(
             base: env.baseSetting,
             configurations: [
-                .debug(name:  "STAGE"),
+                .debug(name: "STAGE"),
                 .release(name: "PROD")
             ]
         )
