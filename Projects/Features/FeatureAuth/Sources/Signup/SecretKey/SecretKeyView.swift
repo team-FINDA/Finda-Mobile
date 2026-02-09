@@ -5,9 +5,14 @@ import DesignSystem
 struct SecretKeyView: View {
     @Environment(\.dismiss) private var dismiss
     @Perception.Bindable private var store: StoreOf<SecretKeyFeature>
+    private let selectedRole: SigninUserType?
 
-    init(store: StoreOf<SecretKeyFeature>) {
+    init(
+        store: StoreOf<SecretKeyFeature>,
+        selectedRole: SigninUserType?
+    ) {
         self.store = store
+        self.selectedRole = selectedRole
     }
 
     var body: some View {
@@ -61,6 +66,7 @@ struct SecretKeyView: View {
     SecretKeyView(
         store: Store(initialState: SecretKeyFeature.State()) {
             SecretKeyFeature()
-        }
+        },
+        selectedRole: .student
     )
 }

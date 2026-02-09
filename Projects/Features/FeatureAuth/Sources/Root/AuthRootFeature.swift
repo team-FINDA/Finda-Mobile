@@ -6,6 +6,7 @@ public struct AuthRootFeature {
     public struct State: Equatable {
         var signinUserSelect = SigninUserSelectFeature.State()
         var path = StackState<Path.State>()
+        var selectedRole: SigninUserType?
 
         public init() {}
     }
@@ -39,10 +40,12 @@ public struct AuthRootFeature {
                 return .none
 
             case .signinUserSelect(.studentSigninButtonTapped):
+                state.selectedRole = .student
                 state.path.append(.signin(SigninFeature.State(role: .student)))
                 return .none
 
             case .signinUserSelect(.teacherSigninButtonTapped):
+                state.selectedRole = .teacher
                 state.path.append(.signin(SigninFeature.State(role: .teacher)))
                 return .none
 
@@ -50,7 +53,13 @@ public struct AuthRootFeature {
                 state.path.append(.emailVerification(EmailVerificationFeature.State()))
                 return .none
 
+            case .path(.element(id: _, action: .signupUserSelect(.studentSignupButtonTapped))):
+                state.selectedRole = .student
+                state.path.append(.emailVerification(EmailVerificationFeature.State()))
+                return .none
+
             case .path(.element(id: _, action: .signupUserSelect(.teacherSignupButtonTapped))):
+                state.selectedRole = .teacher
                 state.path.append(.secretKey(SecretKeyFeature.State()))
                 return .none
 

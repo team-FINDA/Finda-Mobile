@@ -8,6 +8,7 @@ public struct SignupUserSelectFeature {
     }
 
     public enum Action {
+        case studentSignupButtonTapped
         case teacherSignupButtonTapped
         case signinButtonTapped
     }
@@ -17,6 +18,8 @@ public struct SignupUserSelectFeature {
     public var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
+            case .studentSignupButtonTapped:
+                return .none
             case .teacherSignupButtonTapped:
                 return .none
             case .signinButtonTapped:

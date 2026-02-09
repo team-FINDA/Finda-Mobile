@@ -32,7 +32,7 @@ struct SignupUserSelectView: View {
                         UserSelectButton(
                             icon: Image.Images.pencil,
                             text: "학생 회원가입",
-                            action: {}
+                            action: { store.send(.studentSignupButtonTapped) }
                         )
                         UserSelectButton(
                             icon: Image.Images.book,

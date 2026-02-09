@@ -10,6 +10,7 @@ public struct AuthRootView: View {
 
     public var body: some View {
         WithPerceptionTracking {
+            let selectedRole = store.selectedRole
             NavigationStackStore(
                 store.scope(state: \.path, action: \.path)
             ) {
@@ -51,7 +52,7 @@ public struct AuthRootView: View {
                             state: \.secretKey,
                             action: \.secretKey
                         ),
-                        then: SecretKeyView.init
+                        then: { SecretKeyView(store: $0, selectedRole: selectedRole) }
                     )
                 case .emailVerification:
                     IfLetStore(
@@ -59,7 +60,7 @@ public struct AuthRootView: View {
                             state: \.emailVerification,
                             action: \.emailVerification
                         ),
-                        then: EmailVerificationView.init
+                        then: { EmailVerificationView(store: $0, selectedRole: selectedRole) }
                     )
                 }
             }
