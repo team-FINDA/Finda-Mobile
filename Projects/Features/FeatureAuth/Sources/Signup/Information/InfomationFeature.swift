@@ -1,7 +1,7 @@
 import ComposableArchitecture
 
 @Reducer
-public struct InfomationFeature {
+public struct InformationFeature {
     @ObservableState
     public struct State: Equatable {
         var nameText: String = ""

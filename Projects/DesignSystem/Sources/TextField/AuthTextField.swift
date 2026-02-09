@@ -103,6 +103,10 @@ public struct AuthTextField: View {
                     .stroke(borderColor, lineWidth: 1)
             )
         }
+        .onDisappear {
+            timer?.invalidate()
+            timer = nil
+        }
     }
 
     private var labelText: String {

@@ -23,7 +23,7 @@ public struct AuthRootFeature {
         case signupUserSelect(SignupUserSelectFeature)
         case secretKey(SecretKeyFeature)
         case emailVerification(EmailVerificationFeature)
-        case infomation(InfomationFeature)
+        case information(InformationFeature)
     }
 
     public init() {}
@@ -82,7 +82,7 @@ public struct AuthRootFeature {
                 state.path = StackState()
                 return .none
 
-            case .path(.element(id: _, action: .infomation(.signinButtonTapped))):
+            case .path(.element(id: _, action: .information(.signinButtonTapped))):
                 state.selectedRole = nil
                 state.path = StackState()
                 return .none
@@ -92,7 +92,7 @@ public struct AuthRootFeature {
                 return .none
 
             case .path(.element(id: _, action: .emailVerification(.nextButtonTapped))):
-                state.path.append(.infomation(InfomationFeature.State()))
+                state.path.append(.information(InformationFeature.State()))
                 return .none
 
             case .signinUserSelect:

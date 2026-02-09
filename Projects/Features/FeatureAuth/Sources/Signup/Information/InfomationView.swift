@@ -2,13 +2,13 @@ import SwiftUI
 import ComposableArchitecture
 import DesignSystem
 
-struct InfomationView: View {
+struct InformationView: View {
     @Environment(\.dismiss) private var dismiss
-    @Perception.Bindable private var store: StoreOf<InfomationFeature>
+    @Perception.Bindable private var store: StoreOf<InformationFeature>
     private let selectedRole: SigninUserType?
 
     init(
-        store: StoreOf<InfomationFeature>,
+        store: StoreOf<InformationFeature>,
         selectedRole: SigninUserType?
     ) {
         self.store = store
@@ -87,9 +87,9 @@ struct InfomationView: View {
 }
 
 #Preview {
-    InfomationView(
-        store: Store(initialState: InfomationFeature.State()) {
-            InfomationFeature()
+    InformationView(
+        store: Store(initialState: InformationFeature.State()) {
+            InformationFeature()
         },
         selectedRole: .student
     )
