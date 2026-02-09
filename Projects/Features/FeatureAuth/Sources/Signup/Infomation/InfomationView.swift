@@ -1,23 +1,18 @@
 import SwiftUI
+import ComposableArchitecture
 import DesignSystem
 
 struct InfomationView: View {
     @Environment(\.dismiss) private var dismiss
+    @Perception.Bindable private var store: StoreOf<InfomationFeature>
     private let selectedRole: SigninUserType?
-    @Binding private var name: String
-    @Binding private var password: String
-    @Binding private var passwordConfirm: String
 
     init(
-        selectedRole: SigninUserType?,
-        name: Binding<String>,
-        password: Binding<String>,
-        passwordConfirm: Binding<String>
+        store: StoreOf<InfomationFeature>,
+        selectedRole: SigninUserType?
     ) {
+        self.store = store
         self.selectedRole = selectedRole
-        self._name = name
-        self._password = password
-        self._passwordConfirm = passwordConfirm
     }
 
     var body: some View {
@@ -48,13 +43,13 @@ struct InfomationView: View {
                     type: .base,
                     placeholder: selectedRole == .student ? "ex. 2216 하원" : "실명을 입력해주세요",
                     label: selectedRole == .student ? "학번 이름" : "이름",
-                    text: $name
+                    text: $store.nameText
                 )
                 VStack(alignment: .leading, spacing: 4) {
                     AuthTextField(
                         type: .password,
                         placeholder: "비밀번호를 입력해주세요",
-                        text: $password
+                        text: $store.passwordText
                     )
                     Text("비밀번호는 이런이런이런 형식으로 ㄱㄱ")
                         .font(.finda(.body4))
@@ -64,18 +59,18 @@ struct InfomationView: View {
                     type: .password,
                     placeholder: "비밀번호를 다시 입력해주세요",
                     label: "비밀번호 확인",
-                    text: $passwordConfirm
+                    text: $store.passwordConfirmText
                 )
 
                 FINDAButton(
                     buttonText: "다음",
-                    isDisabled: false,
+                    isDisabled: store.signupButtonIsDisable,
                     buttonClick: {}
                 )
                 AuthPromptButton(
                     promptText: "계정이 있으신가요?",
                     buttonText: "로그인",
-                    action: {}
+                    action: {store.send(.signupButtonTapped)}
                 )
             }
             .padding(.horizontal, 24)
@@ -92,5 +87,10 @@ struct InfomationView: View {
 }
 
 #Preview {
-    InfomationView(selectedRole: .student, name: .constant(""), password: .constant(""), passwordConfirm: .constant(""))
+    InfomationView(
+        store: Store(initialState: InfomationFeature.State()) {
+            InfomationFeature()
+        },
+        selectedRole: .student
+    )
 }
