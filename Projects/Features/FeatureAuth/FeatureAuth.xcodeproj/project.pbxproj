@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14DAC8AAB07A0EEE92DA788B /* SignupUserSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3689A6BC7F4332ED388328 /* SignupUserSelectView.swift */; };
+		2335EF4A8BDD26E1EBF5D417 /* SecretKeyFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9821C8A30BCF16A7DAEC2210 /* SecretKeyFeature.swift */; };
 		32098C382F0C60DB3865428F /* SecretKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988D79C851E4832A5FC8C1E /* SecretKeyView.swift */; };
 		37033EA9F7F1C5F4C633D74D /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67AD049FAFAA16C2203016DA /* Core.framework */; };
-		3810DFC8A052B8BF3DD9EFD7 /* SignupUserSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32952F963D4519C8AA119894 /* SignupUserSelectView.swift */; };
+		42E83C57C3FB26A985F51E18 /* SignupUserSelectFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E68AEDE0531D2BC18D0448A /* SignupUserSelectFeature.swift */; };
 		496CE26848160FBE4E41810D /* ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB316CAC7280421811D7AF9C /* ComposableArchitecture.framework */; };
 		604691DB4D5F18F52C38178B /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26BC008C17A384BA3020F6B8 /* DesignSystem.framework */; };
 		66DFB871B75F62FC990694A4 /* AuthRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FCD6D5C7FA8363CBF280B5 /* AuthRootView.swift */; };
-		6BE3692C23F276FEC6235200 /* SignupUserSelectFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FD2A5C1F13BD18A9BABDCF /* SignupUserSelectFeature.swift */; };
-		88A54C942F349F33004E227D /* SecretKeyFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A54C932F349F24004E227D /* SecretKeyFeature.swift */; };
+		88414C012F39618A008211E6 /* EmailVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88414C002F39617E008211E6 /* EmailVerificationView.swift */; };
 		92577D85E037A7DDB1FD1858 /* SigninUserSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147528A8272E515C2F9D205B /* SigninUserSelectView.swift */; };
 		B20929F953CE08974E988EB8 /* SigninFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6BAD0D4B1B5CF9C846C0B /* SigninFeature.swift */; };
 		CB10303FE3B1539F1BEEF91D /* AuthRootFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367E2348CC7D02F2B18E03C9 /* AuthRootFeature.swift */; };
@@ -41,15 +42,16 @@
 		219F51B82F2FFD3B3EA4D38F /* FeatureAuth-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "FeatureAuth-Info.plist"; sourceTree = "<group>"; };
 		26BC008C17A384BA3020F6B8 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E6D7B2EF198805DFB63763C /* SigninUserSelectFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninUserSelectFeature.swift; sourceTree = "<group>"; };
+		2F3689A6BC7F4332ED388328 /* SignupUserSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupUserSelectView.swift; sourceTree = "<group>"; };
 		2FC6BAD0D4B1B5CF9C846C0B /* SigninFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninFeature.swift; sourceTree = "<group>"; };
-		32952F963D4519C8AA119894 /* SignupUserSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupUserSelectView.swift; sourceTree = "<group>"; };
 		367E2348CC7D02F2B18E03C9 /* AuthRootFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRootFeature.swift; sourceTree = "<group>"; };
 		3E71DABBBC3D1F6EC3828B37 /* FeatureAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		632B708B2A7DF34282810B29 /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
 		67AD049FAFAA16C2203016DA /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		88A54C932F349F24004E227D /* SecretKeyFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKeyFeature.swift; sourceTree = "<group>"; };
+		7E68AEDE0531D2BC18D0448A /* SignupUserSelectFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupUserSelectFeature.swift; sourceTree = "<group>"; };
+		88414C002F39617E008211E6 /* EmailVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationView.swift; sourceTree = "<group>"; };
 		97FCD6D5C7FA8363CBF280B5 /* AuthRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRootView.swift; sourceTree = "<group>"; };
-		B0FD2A5C1F13BD18A9BABDCF /* SignupUserSelectFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupUserSelectFeature.swift; sourceTree = "<group>"; };
+		9821C8A30BCF16A7DAEC2210 /* SecretKeyFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKeyFeature.swift; sourceTree = "<group>"; };
 		BFD8212A42397D1E7BC77256 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
 		CB316CAC7280421811D7AF9C /* ComposableArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ComposableArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F17494BB29EC9B2825B738FB /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
@@ -98,8 +100,9 @@
 		2CF2C01AF6499A06491F287D /* Signup */ = {
 			isa = PBXGroup;
 			children = (
-				88A54C952F34A412004E227D /* UserSelect */,
+				88414BFF2F39614E008211E6 /* EmailVerification */,
 				4CFC244B756FC09673B44E2E /* SecretKey */,
+				502444DA944E09F6C9767ADF /* UserSelect */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -116,10 +119,19 @@
 		4CFC244B756FC09673B44E2E /* SecretKey */ = {
 			isa = PBXGroup;
 			children = (
-				88A54C932F349F24004E227D /* SecretKeyFeature.swift */,
+				9821C8A30BCF16A7DAEC2210 /* SecretKeyFeature.swift */,
 				0988D79C851E4832A5FC8C1E /* SecretKeyView.swift */,
 			);
 			path = SecretKey;
+			sourceTree = "<group>";
+		};
+		502444DA944E09F6C9767ADF /* UserSelect */ = {
+			isa = PBXGroup;
+			children = (
+				7E68AEDE0531D2BC18D0448A /* SignupUserSelectFeature.swift */,
+				2F3689A6BC7F4332ED388328 /* SignupUserSelectView.swift */,
+			);
+			path = UserSelect;
 			sourceTree = "<group>";
 		};
 		718FB7FEB58A33C6875110CB /* Root */ = {
@@ -140,13 +152,12 @@
 			path = FeatureAuth;
 			sourceTree = "<group>";
 		};
-		88A54C952F34A412004E227D /* UserSelect */ = {
+		88414BFF2F39614E008211E6 /* EmailVerification */ = {
 			isa = PBXGroup;
 			children = (
-				32952F963D4519C8AA119894 /* SignupUserSelectView.swift */,
-				B0FD2A5C1F13BD18A9BABDCF /* SignupUserSelectFeature.swift */,
+				88414C002F39617E008211E6 /* EmailVerificationView.swift */,
 			);
-			path = UserSelect;
+			path = EmailVerification;
 			sourceTree = "<group>";
 		};
 		93FD9A4E32C0080D5C118122 /* Sources */ = {
@@ -289,12 +300,13 @@
 				66DFB871B75F62FC990694A4 /* AuthRootView.swift in Sources */,
 				B20929F953CE08974E988EB8 /* SigninFeature.swift in Sources */,
 				E91F7EC0A262B29212D443A9 /* SigninView.swift in Sources */,
+				88414C012F39618A008211E6 /* EmailVerificationView.swift in Sources */,
 				D2471A4B74BB97C615E36701 /* SigninUserSelectFeature.swift in Sources */,
 				92577D85E037A7DDB1FD1858 /* SigninUserSelectView.swift in Sources */,
-				88A54C942F349F33004E227D /* SecretKeyFeature.swift in Sources */,
+				2335EF4A8BDD26E1EBF5D417 /* SecretKeyFeature.swift in Sources */,
 				32098C382F0C60DB3865428F /* SecretKeyView.swift in Sources */,
-				6BE3692C23F276FEC6235200 /* SignupUserSelectFeature.swift in Sources */,
-				3810DFC8A052B8BF3DD9EFD7 /* SignupUserSelectView.swift in Sources */,
+				42E83C57C3FB26A985F51E18 /* SignupUserSelectFeature.swift in Sources */,
+				14DAC8AAB07A0EEE92DA788B /* SignupUserSelectView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
