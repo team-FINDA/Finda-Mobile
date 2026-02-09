@@ -86,7 +86,7 @@ public struct AuthTextField: View {
                                 .font(.finda(.caption1))
                                 .foregroundColor(Color.Blue.blue50)
                         })
-                        .disabled(remainingSeconds > 0)
+                        .disabled(remainingSeconds > 0 || text.isEmpty)
                         .padding(.vertical, 4)
                         .padding(.horizontal, 8)
                         .background(Color.Blue.blue10)
