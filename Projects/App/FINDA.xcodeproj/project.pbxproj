@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		03595CF90234D7F72A044FBC /* TuistAssets+FINDA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A393666F4BAFA3AEE7537 /* TuistAssets+FINDA.swift */; };
-		183F170025D94B5D868EE58A /* Moya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2527C49D5FA1596907136DAB /* Moya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2AB37BCCF8DE710ECB91B9A6 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A859DFBF1DE3A7684455CCF /* Shared.framework */; };
 		2C97E84C75BB426451763FBF /* DesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D4F47AE0F7B8C603C4BF9BCC /* DesignSystem.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2D0F62E1E8F583EF44616A42 /* Alamofire_Alamofire.bundle in Dependencies */ = {isa = PBXBuildFile; fileRef = 802B520F178400D24CE43EF2 /* Alamofire_Alamofire.bundle */; };
@@ -17,6 +16,7 @@
 		3729012057FC8027F1CE1F13 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF27ECB1068C94CAC1C9590 /* SplashView.swift */; };
 		3AC89FA615B48582CBDC21AB /* swift-sharing_Sharing.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AA31530203733886C59CBAB2 /* swift-sharing_Sharing.bundle */; };
 		3D480CF69ECA4D1ED46F7261 /* swift-sharing_Sharing.bundle in Dependencies */ = {isa = PBXBuildFile; fileRef = AA31530203733886C59CBAB2 /* swift-sharing_Sharing.bundle */; };
+		41CBCF11DAC289BF6FB2783C /* FeatureAuth.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A21FEEE3C47ED000E39E66FE /* FeatureAuth.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		52D7A98D910A3036B0AF5D43 /* FeatureSchedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3738402DF01F7641707456 /* FeatureSchedule.framework */; };
 		5899A5AC24731545A9A98BC0 /* FINDAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8C79E00C4C6174549E1E0 /* FINDAApp.swift */; };
 		5C1D00FDE97CEB09996CD48F /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 481B2FEBFFF0167F53790302 /* Core.framework */; };
@@ -28,11 +28,14 @@
 		930A5FF4BF88DF197DAAE710 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 481B2FEBFFF0167F53790302 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		958630994DE1B5F03CA7C189 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A859DFBF1DE3A7684455CCF /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9C91C55DE9E92D6502D01FEC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD9D55EA60686EF008CCA3 /* ContentView.swift */; };
+		9FA56AB8C86BD0475A61DFE8 /* FeatureAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21FEEE3C47ED000E39E66FE /* FeatureAuth.framework */; };
 		A058FFAB4BD82C3932A791E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61063F1E224C880D4CCDA8C4 /* Images.xcassets */; };
 		AB58A2774789DD5726CA1C10 /* ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B8930050DCC67613F8B5DB /* ComposableArchitecture.framework */; };
 		DE3B9E41D406162EC36A54B3 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F47AE0F7B8C603C4BF9BCC /* DesignSystem.framework */; };
+		E19D3FF1EA3C442972FDE7F4 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7F2964E75D596B85FC8B77 /* AppView.swift */; };
 		E2C6D42A6A160AF30D853702 /* FeatureStudent.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 870C91B5DEBD7DDB08399748 /* FeatureStudent.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F6EB3E77A0F0A7F6929B074B /* ComposableArchitecture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 61B8930050DCC67613F8B5DB /* ComposableArchitecture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FD9F98DF6CA0DB4D822E0F1A /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94CC5191ECA84F652AA921B /* AppFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,11 +48,11 @@
 				F6EB3E77A0F0A7F6929B074B /* ComposableArchitecture.framework in Embed Frameworks */,
 				930A5FF4BF88DF197DAAE710 /* Core.framework in Embed Frameworks */,
 				2C97E84C75BB426451763FBF /* DesignSystem.framework in Embed Frameworks */,
+				41CBCF11DAC289BF6FB2783C /* FeatureAuth.framework in Embed Frameworks */,
 				62C8898F5D42A3F0CCF978C7 /* FeatureSchedule.framework in Embed Frameworks */,
 				E2C6D42A6A160AF30D853702 /* FeatureStudent.framework in Embed Frameworks */,
 				8C2DE1A54C0F895A29C947F8 /* FeatureTeacher.framework in Embed Frameworks */,
 				3652BB69A4A30943F4843758 /* KeychainSwift.framework in Embed Frameworks */,
-				183F170025D94B5D868EE58A /* Moya.framework in Embed Frameworks */,
 				958630994DE1B5F03CA7C189 /* Shared.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -69,7 +72,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2527C49D5FA1596907136DAB /* Moya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Moya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3738402DF01F7641707456 /* FeatureSchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureSchedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		423DD23C681CAF479B6023AA /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeychainSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		481B2FEBFFF0167F53790302 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,11 +86,14 @@
 		8A859DFBF1DE3A7684455CCF /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BDD9D55EA60686EF008CCA3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9BAFC1A65D3EB2CDD5501BE2 /* FeatureTeacher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureTeacher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A21FEEE3C47ED000E39E66FE /* FeatureAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA31530203733886C59CBAB2 /* swift-sharing_Sharing.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-sharing_Sharing.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C53502CE8E7D2861852C6902 /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
+		C94CC5191ECA84F652AA921B /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
 		D053AFF575073D61DAF6E3F6 /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
 		D4F47AE0F7B8C603C4BF9BCC /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF27ECB1068C94CAC1C9590 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		EF7F2964E75D596B85FC8B77 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		F99433141C503EF7708A2A0A /* FINDA-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "FINDA-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +105,7 @@
 				AB58A2774789DD5726CA1C10 /* ComposableArchitecture.framework in Frameworks */,
 				5C1D00FDE97CEB09996CD48F /* Core.framework in Frameworks */,
 				DE3B9E41D406162EC36A54B3 /* DesignSystem.framework in Frameworks */,
+				9FA56AB8C86BD0475A61DFE8 /* FeatureAuth.framework in Frameworks */,
 				52D7A98D910A3036B0AF5D43 /* FeatureSchedule.framework in Frameworks */,
 				6B4C980ECB95DF53C20E2832 /* FeatureStudent.framework in Frameworks */,
 				7BA9A1C51BC38C933AD4884F /* FeatureTeacher.framework in Frameworks */,
@@ -137,12 +143,12 @@
 				61B8930050DCC67613F8B5DB /* ComposableArchitecture.framework */,
 				481B2FEBFFF0167F53790302 /* Core.framework */,
 				D4F47AE0F7B8C603C4BF9BCC /* DesignSystem.framework */,
+				A21FEEE3C47ED000E39E66FE /* FeatureAuth.framework */,
 				3C3738402DF01F7641707456 /* FeatureSchedule.framework */,
 				870C91B5DEBD7DDB08399748 /* FeatureStudent.framework */,
 				9BAFC1A65D3EB2CDD5501BE2 /* FeatureTeacher.framework */,
 				8449417FF2BD1FF979D9585E /* FINDA.app */,
 				423DD23C681CAF479B6023AA /* KeychainSwift.framework */,
-				2527C49D5FA1596907136DAB /* Moya.framework */,
 				8A859DFBF1DE3A7684455CCF /* Shared.framework */,
 				AA31530203733886C59CBAB2 /* swift-sharing_Sharing.bundle */,
 			);
@@ -193,10 +199,20 @@
 			);
 			sourceTree = "<group>";
 		};
+		C15CD25E631C3F5E0B947FB5 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C94CC5191ECA84F652AA921B /* AppFeature.swift */,
+				EF7F2964E75D596B85FC8B77 /* AppView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		C48403CE41E007F5A5E0D0BD /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				AF47195497D125C49C5DD28C /* Application */,
+				C15CD25E631C3F5E0B947FB5 /* Presentation */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -317,6 +333,8 @@
 				9C91C55DE9E92D6502D01FEC /* ContentView.swift in Sources */,
 				5899A5AC24731545A9A98BC0 /* FINDAApp.swift in Sources */,
 				3729012057FC8027F1CE1F13 /* SplashView.swift in Sources */,
+				FD9F98DF6CA0DB4D822E0F1A /* AppFeature.swift in Sources */,
+				E19D3FF1EA3C442972FDE7F4 /* AppView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

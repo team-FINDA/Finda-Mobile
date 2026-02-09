@@ -9,6 +9,7 @@ let project = Project.makeModule(
     packages: [],
     dependencies: [
         .Projects.shared,
+        .Features.featureAuth,
         .Features.featureStudent,
         .Features.featureTeacher,
         .Features.featureSchedule,

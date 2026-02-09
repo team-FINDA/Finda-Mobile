@@ -3,14 +3,20 @@ import PackageDescription
 
 #if TUIST
     import ProjectDescription
+    import EnvironmentPlugin
 
     let packageSettings = PackageSettings(
         productTypes: [
-            "ComposableArchitecture": .framework,
-            "Moya": .framework,
             "KeychainSwift": .framework,
-            "Kingfisher": .framework
-        ]
+            "ComposableArchitecture": .framework
+        ],
+        baseSettings: .settings(
+            base: env.baseSetting,
+            configurations: [
+                .debug(name: "STAGE"),
+                .release(name: "PROD")
+            ]
+        )
     )
 #endif
 

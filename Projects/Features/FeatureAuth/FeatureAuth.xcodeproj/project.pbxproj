@@ -7,10 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		10C40AB8DCEC69884778D8CA /* Et.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037F2FB021A4B1D2634F8AEE /* Et.swift */; };
+		14DAC8AAB07A0EEE92DA788B /* SignupUserSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3689A6BC7F4332ED388328 /* SignupUserSelectView.swift */; };
+		2335EF4A8BDD26E1EBF5D417 /* SecretKeyFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9821C8A30BCF16A7DAEC2210 /* SecretKeyFeature.swift */; };
+		32098C382F0C60DB3865428F /* SecretKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988D79C851E4832A5FC8C1E /* SecretKeyView.swift */; };
 		37033EA9F7F1C5F4C633D74D /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67AD049FAFAA16C2203016DA /* Core.framework */; };
+		423B41BCA1547CB252671722 /* InfomationFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4E73B31B2297CA37BB1B35 /* InfomationFeature.swift */; };
+		42E83C57C3FB26A985F51E18 /* SignupUserSelectFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E68AEDE0531D2BC18D0448A /* SignupUserSelectFeature.swift */; };
 		496CE26848160FBE4E41810D /* ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB316CAC7280421811D7AF9C /* ComposableArchitecture.framework */; };
 		604691DB4D5F18F52C38178B /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26BC008C17A384BA3020F6B8 /* DesignSystem.framework */; };
+		66DFB871B75F62FC990694A4 /* AuthRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FCD6D5C7FA8363CBF280B5 /* AuthRootView.swift */; };
+		728C6D0B49D5BFE86019DAC0 /* InfomationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE36F9AEDD8D03E330216EEC /* InfomationView.swift */; };
+		8531C4433873BA99176DD511 /* EmailVerificationFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B06E6ABCA5F28AB9409E8A /* EmailVerificationFeature.swift */; };
+		92577D85E037A7DDB1FD1858 /* SigninUserSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147528A8272E515C2F9D205B /* SigninUserSelectView.swift */; };
+		A6889783781F131D4A8C06CD /* EmailVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A969BF3DE850540D349FA5 /* EmailVerificationView.swift */; };
+		B20929F953CE08974E988EB8 /* SigninFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6BAD0D4B1B5CF9C846C0B /* SigninFeature.swift */; };
+		CB10303FE3B1539F1BEEF91D /* AuthRootFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367E2348CC7D02F2B18E03C9 /* AuthRootFeature.swift */; };
+		D2471A4B74BB97C615E36701 /* SigninUserSelectFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6D7B2EF198805DFB63763C /* SigninUserSelectFeature.swift */; };
+		E91F7EC0A262B29212D443A9 /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8212A42397D1E7BC77256 /* SigninView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,13 +40,26 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		037F2FB021A4B1D2634F8AEE /* Et.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Et.swift; sourceTree = "<group>"; };
+		0988D79C851E4832A5FC8C1E /* SecretKeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKeyView.swift; sourceTree = "<group>"; };
+		09B06E6ABCA5F28AB9409E8A /* EmailVerificationFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationFeature.swift; sourceTree = "<group>"; };
+		147528A8272E515C2F9D205B /* SigninUserSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninUserSelectView.swift; sourceTree = "<group>"; };
 		219F51B82F2FFD3B3EA4D38F /* FeatureAuth-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "FeatureAuth-Info.plist"; sourceTree = "<group>"; };
 		26BC008C17A384BA3020F6B8 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E6D7B2EF198805DFB63763C /* SigninUserSelectFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninUserSelectFeature.swift; sourceTree = "<group>"; };
+		2F3689A6BC7F4332ED388328 /* SignupUserSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupUserSelectView.swift; sourceTree = "<group>"; };
+		2FC6BAD0D4B1B5CF9C846C0B /* SigninFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninFeature.swift; sourceTree = "<group>"; };
+		367E2348CC7D02F2B18E03C9 /* AuthRootFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRootFeature.swift; sourceTree = "<group>"; };
 		3E71DABBBC3D1F6EC3828B37 /* FeatureAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		632B708B2A7DF34282810B29 /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
 		67AD049FAFAA16C2203016DA /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E68AEDE0531D2BC18D0448A /* SignupUserSelectFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupUserSelectFeature.swift; sourceTree = "<group>"; };
+		97FCD6D5C7FA8363CBF280B5 /* AuthRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRootView.swift; sourceTree = "<group>"; };
+		9821C8A30BCF16A7DAEC2210 /* SecretKeyFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKeyFeature.swift; sourceTree = "<group>"; };
+		BFD8212A42397D1E7BC77256 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
 		CB316CAC7280421811D7AF9C /* ComposableArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ComposableArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0A969BF3DE850540D349FA5 /* EmailVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationView.swift; sourceTree = "<group>"; };
+		DA4E73B31B2297CA37BB1B35 /* InfomationFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfomationFeature.swift; sourceTree = "<group>"; };
+		EE36F9AEDD8D03E330216EEC /* InfomationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfomationView.swift; sourceTree = "<group>"; };
 		F17494BB29EC9B2825B738FB /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,12 +85,51 @@
 			);
 			sourceTree = "<group>";
 		};
+		116F670B51869A8AD85D7B33 /* Signin */ = {
+			isa = PBXGroup;
+			children = (
+				959853F6126EAB943A86AD37 /* UserSelect */,
+				2FC6BAD0D4B1B5CF9C846C0B /* SigninFeature.swift */,
+				BFD8212A42397D1E7BC77256 /* SigninView.swift */,
+			);
+			path = Signin;
+			sourceTree = "<group>";
+		};
 		15F78977F3EB2368F53EB008 /* Derived */ = {
 			isa = PBXGroup;
 			children = (
 				F9BAE7762CC8B36509AD0625 /* InfoPlists */,
 			);
 			path = Derived;
+			sourceTree = "<group>";
+		};
+		24B3D06DD3460A4DCA4BEB61 /* EmailVerification */ = {
+			isa = PBXGroup;
+			children = (
+				09B06E6ABCA5F28AB9409E8A /* EmailVerificationFeature.swift */,
+				D0A969BF3DE850540D349FA5 /* EmailVerificationView.swift */,
+			);
+			path = EmailVerification;
+			sourceTree = "<group>";
+		};
+		2CF2C01AF6499A06491F287D /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				24B3D06DD3460A4DCA4BEB61 /* EmailVerification */,
+				35C0DB3F8B76A5CB7BC72CB5 /* Information */,
+				4CFC244B756FC09673B44E2E /* SecretKey */,
+				502444DA944E09F6C9767ADF /* UserSelect */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		35C0DB3F8B76A5CB7BC72CB5 /* Information */ = {
+			isa = PBXGroup;
+			children = (
+				DA4E73B31B2297CA37BB1B35 /* InfomationFeature.swift */,
+				EE36F9AEDD8D03E330216EEC /* InfomationView.swift */,
+			);
+			path = Information;
 			sourceTree = "<group>";
 		};
 		42C674E5761CB65C91EEE57A /* XCConfig */ = {
@@ -74,6 +139,33 @@
 			);
 			name = XCConfig;
 			path = ../../../XCConfig;
+			sourceTree = "<group>";
+		};
+		4CFC244B756FC09673B44E2E /* SecretKey */ = {
+			isa = PBXGroup;
+			children = (
+				9821C8A30BCF16A7DAEC2210 /* SecretKeyFeature.swift */,
+				0988D79C851E4832A5FC8C1E /* SecretKeyView.swift */,
+			);
+			path = SecretKey;
+			sourceTree = "<group>";
+		};
+		502444DA944E09F6C9767ADF /* UserSelect */ = {
+			isa = PBXGroup;
+			children = (
+				7E68AEDE0531D2BC18D0448A /* SignupUserSelectFeature.swift */,
+				2F3689A6BC7F4332ED388328 /* SignupUserSelectView.swift */,
+			);
+			path = UserSelect;
+			sourceTree = "<group>";
+		};
+		718FB7FEB58A33C6875110CB /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				367E2348CC7D02F2B18E03C9 /* AuthRootFeature.swift */,
+				97FCD6D5C7FA8363CBF280B5 /* AuthRootView.swift */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 		7DC25468D54731BDD1967F6F /* FeatureAuth */ = {
@@ -88,9 +180,20 @@
 		93FD9A4E32C0080D5C118122 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				037F2FB021A4B1D2634F8AEE /* Et.swift */,
+				718FB7FEB58A33C6875110CB /* Root */,
+				116F670B51869A8AD85D7B33 /* Signin */,
+				2CF2C01AF6499A06491F287D /* Signup */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		959853F6126EAB943A86AD37 /* UserSelect */ = {
+			isa = PBXGroup;
+			children = (
+				2E6D7B2EF198805DFB63763C /* SigninUserSelectFeature.swift */,
+				147528A8272E515C2F9D205B /* SigninUserSelectView.swift */,
+			);
+			path = UserSelect;
 			sourceTree = "<group>";
 		};
 		C80E8A67D9F406779E572CFB /* Products */ = {
@@ -212,7 +315,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10C40AB8DCEC69884778D8CA /* Et.swift in Sources */,
+				CB10303FE3B1539F1BEEF91D /* AuthRootFeature.swift in Sources */,
+				66DFB871B75F62FC990694A4 /* AuthRootView.swift in Sources */,
+				B20929F953CE08974E988EB8 /* SigninFeature.swift in Sources */,
+				E91F7EC0A262B29212D443A9 /* SigninView.swift in Sources */,
+				D2471A4B74BB97C615E36701 /* SigninUserSelectFeature.swift in Sources */,
+				92577D85E037A7DDB1FD1858 /* SigninUserSelectView.swift in Sources */,
+				8531C4433873BA99176DD511 /* EmailVerificationFeature.swift in Sources */,
+				A6889783781F131D4A8C06CD /* EmailVerificationView.swift in Sources */,
+				423B41BCA1547CB252671722 /* InfomationFeature.swift in Sources */,
+				728C6D0B49D5BFE86019DAC0 /* InfomationView.swift in Sources */,
+				2335EF4A8BDD26E1EBF5D417 /* SecretKeyFeature.swift in Sources */,
+				32098C382F0C60DB3865428F /* SecretKeyView.swift in Sources */,
+				42E83C57C3FB26A985F51E18 /* SignupUserSelectFeature.swift in Sources */,
+				14DAC8AAB07A0EEE92DA788B /* SignupUserSelectView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,7 +509,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "$(inherited) -all_load";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -458,7 +574,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "$(inherited) -all_load";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = STAGE;

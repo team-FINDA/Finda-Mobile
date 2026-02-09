@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0DB67146907DC47543A53859 /* Et3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15158026EE900927B2CF66C6 /* Et3.swift */; };
+		27ECE37DA37CDC0E38D78AEB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA3F13E23B6662B1FDAD4536 /* CFNetwork.framework */; };
 		30D5D0832B911075EFDCAA49 /* Et4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6462332A65B6A7AC566D1DDA /* Et4.swift */; };
 		359AF43AC848ABE9A9D1A92B /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E481F76A48C00550F37F55 /* Shared.framework */; };
+		4ABE35EBE06A40EB2418C11F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A672C80AC40AD7ADFD38507 /* Alamofire.framework */; };
 		78DE9E2870EA091066A98F3E /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6260F75C087362295DDE52AE /* Moya.framework */; };
 		887EBC2FF03A101E2EAA63DA /* ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB18C1565FE3EAC96777EC0F /* ComposableArchitecture.framework */; };
 		C048CD4EE3A5C4BC30EAB976 /* Et1.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF6053ED913EE669B16C0EA /* Et1.swift */; };
@@ -38,6 +40,7 @@
 		2B0FA7F85F3573FB522F9478 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DFAE44774A52144636E0AA1 /* Et5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Et5.swift; sourceTree = "<group>"; };
 		3E632BB9212AB9D755AE7CEA /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeychainSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A672C80AC40AD7ADFD38507 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6260F75C087362295DDE52AE /* Moya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Moya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6462332A65B6A7AC566D1DDA /* Et4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Et4.swift; sourceTree = "<group>"; };
 		8846F5710E7D55DE506620D5 /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
@@ -45,6 +48,7 @@
 		B8E481F76A48C00550F37F55 /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF6053ED913EE669B16C0EA /* Et1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Et1.swift; sourceTree = "<group>"; };
 		BB18C1565FE3EAC96777EC0F /* ComposableArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ComposableArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA3F13E23B6662B1FDAD4536 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27ECE37DA37CDC0E38D78AEB /* CFNetwork.framework in Frameworks */,
+				4ABE35EBE06A40EB2418C11F /* Alamofire.framework in Frameworks */,
 				887EBC2FF03A101E2EAA63DA /* ComposableArchitecture.framework in Frameworks */,
 				D7B2DB6D8B0AE99D8C9A2329 /* KeychainSwift.framework in Frameworks */,
 				78DE9E2870EA091066A98F3E /* Moya.framework in Frameworks */,
@@ -82,6 +88,7 @@
 		250C62EE12DB56ECEBB473C3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				4A672C80AC40AD7ADFD38507 /* Alamofire.framework */,
 				BB18C1565FE3EAC96777EC0F /* ComposableArchitecture.framework */,
 				2B0FA7F85F3573FB522F9478 /* Core.framework */,
 				3E632BB9212AB9D755AE7CEA /* KeychainSwift.framework */,
@@ -129,7 +136,16 @@
 			children = (
 				E12816BA35F79D21E0D77318 /* Project */,
 				250C62EE12DB56ECEBB473C3 /* Products */,
+				64E34141D18153ACC8D4E5F8 /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		64E34141D18153ACC8D4E5F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA3F13E23B6662B1FDAD4536 /* CFNetwork.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		81104ECEC5CD1B0F5111557B /* Sources */ = {
@@ -339,7 +355,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "$(inherited) -all_load";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -463,7 +479,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "$(inherited) -all_load";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = STAGE;
