@@ -63,14 +63,14 @@ struct InfomationView: View {
                 )
 
                 FINDAButton(
-                    buttonText: "다음",
+                    buttonText: "회원가입",
                     isDisabled: store.signupButtonIsDisable,
-                    buttonClick: {}
+                    buttonClick: { store.send(.signupButtonTapped) }
                 )
                 AuthPromptButton(
                     promptText: "계정이 있으신가요?",
                     buttonText: "로그인",
-                    action: {store.send(.signupButtonTapped)}
+                    action: { store.send(.signinButtonTapped) }
                 )
             }
             .padding(.horizontal, 24)

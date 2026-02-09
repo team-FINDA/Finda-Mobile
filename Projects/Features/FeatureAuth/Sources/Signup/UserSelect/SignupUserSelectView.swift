@@ -14,7 +14,7 @@ struct SignupUserSelectView: View {
         WithPerceptionTracking {
             VStack(spacing: 8) {
                 HStack {
-                    Button(action: { dismiss() }, label: {
+                    Button(action: { store.send(.backButtonTapped) }, label: {
                         Image.Icons.leftArrow
                             .foregroundStyle(Color.Gray.gray80)
                     })

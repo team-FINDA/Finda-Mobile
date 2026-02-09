@@ -54,7 +54,7 @@ struct EmailVerificationView: View {
                     AuthPromptButton(
                         promptText: "계정이 있으신가요?",
                         buttonText: "로그인",
-                        action: {}
+                        action: { store.send(.signinButtonTapped) }
                     )
                 }
                 .padding(.horizontal, 24)

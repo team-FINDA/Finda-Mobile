@@ -49,7 +49,7 @@ struct SigninView: View {
                     AuthPromptButton(
                         promptText: "계정이 없으신가요?",
                         buttonText: "회원가입",
-                        action: {}
+                        action: { store.send(.signupButtonTapped) }
                     )
                 }
                 .padding(.horizontal, 24)

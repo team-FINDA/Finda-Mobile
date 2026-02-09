@@ -13,9 +13,6 @@ public struct AuthRootFeature {
 
     public enum Action {
         case signinUserSelect(SigninUserSelectFeature.Action)
-        case signupUserSelect(SignupUserSelectFeature.Action)
-        case secretKey(SecretKeyFeature.Action)
-        case emailVerification(EmailVerificationFeature.Action)
         case path(StackActionOf<Path>)
     }
 
@@ -51,14 +48,6 @@ public struct AuthRootFeature {
                 state.path.append(.signin(SigninFeature.State(role: .teacher)))
                 return .none
 
-            case .secretKey(.nextButtonTapped):
-                state.path.append(.emailVerification(EmailVerificationFeature.State()))
-                return .none
-
-            case .emailVerification(.nextButtonTapped):
-                state.path.append(.infomation(InfomationFeature.State()))
-                return .none
-
             case .path(.element(id: _, action: .signupUserSelect(.studentSignupButtonTapped))):
                 state.selectedRole = .student
                 state.path.append(.emailVerification(EmailVerificationFeature.State()))
@@ -69,8 +58,33 @@ public struct AuthRootFeature {
                 state.path.append(.secretKey(SecretKeyFeature.State()))
                 return .none
 
+            case .path(.element(id: _, action: .signupUserSelect(.backButtonTapped))):
+                state.selectedRole = nil
+                state.path = StackState()
+                return .none
+
             case .path(.element(id: _, action: .signupUserSelect(.signinButtonTapped))):
-                _ = state.path.popLast()
+                state.path.append(.signupUserSelect(SignupUserSelectFeature.State()))
+                return .none
+
+            case .path(.element(id: _, action: .signin(.signupButtonTapped))):
+                state.selectedRole = nil
+                state.path.append(.signupUserSelect(SignupUserSelectFeature.State()))
+                return .none
+
+            case .path(.element(id: _, action: .secretKey(.signinButtonTapped))):
+                state.selectedRole = nil
+                state.path = StackState()
+                return .none
+
+            case .path(.element(id: _, action: .emailVerification(.signinButtonTapped))):
+                state.selectedRole = nil
+                state.path = StackState()
+                return .none
+
+            case .path(.element(id: _, action: .infomation(.signinButtonTapped))):
+                state.selectedRole = nil
+                state.path = StackState()
                 return .none
 
             case .path(.element(id: _, action: .secretKey(.nextButtonTapped))):
@@ -81,7 +95,7 @@ public struct AuthRootFeature {
                 state.path.append(.infomation(InfomationFeature.State()))
                 return .none
 
-            case .signinUserSelect, .signupUserSelect, .secretKey, .emailVerification:
+            case .signinUserSelect:
                 return .none
 
             case .path:

@@ -13,6 +13,7 @@ public struct SecretKeyFeature {
     public enum Action: BindableAction {
         case binding(BindingAction<State>)
         case nextButtonTapped
+        case signinButtonTapped
     }
 
     public init() {}
@@ -25,6 +26,8 @@ public struct SecretKeyFeature {
                 state.signupButtonIsDisable = state.secretKeyText.isEmpty
                 return .none
             case .nextButtonTapped:
+                return .none
+            case .signinButtonTapped:
                 return .none
             }
         }

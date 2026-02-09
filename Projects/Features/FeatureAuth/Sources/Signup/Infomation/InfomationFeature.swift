@@ -15,6 +15,7 @@ public struct InfomationFeature {
     public enum Action: BindableAction {
         case binding(BindingAction<State>)
         case signupButtonTapped
+        case signinButtonTapped
     }
 
     public init() {}
@@ -30,6 +31,8 @@ public struct InfomationFeature {
                     state.passwordConfirmText.isEmpty
                 return .none
             case .signupButtonTapped:
+                return .none
+            case .signinButtonTapped:
                 return .none
             }
         }

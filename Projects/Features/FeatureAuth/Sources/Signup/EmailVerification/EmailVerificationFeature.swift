@@ -14,6 +14,7 @@ public struct EmailVerificationFeature {
     public enum Action: BindableAction {
         case binding(BindingAction<State>)
         case nextButtonTapped
+        case signinButtonTapped
     }
 
     public init() {}
@@ -26,6 +27,8 @@ public struct EmailVerificationFeature {
                 state.nextButtonIsDisable = state.emailText.isEmpty || state.codeText.isEmpty
                 return .none
             case .nextButtonTapped:
+                return .none
+            case.signinButtonTapped:
                 return .none
             }
         }
