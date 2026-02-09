@@ -42,7 +42,7 @@ struct SecretKeyView: View {
                     )
                     FINDAButton(
                         buttonText: "다음",
-                        isDisabled: store.signupButtonIsDisable,
+                        isDisabled: store.signupButtonIsDisabled,
                         buttonClick: { store.send(.nextButtonTapped) }
                     )
                     AuthPromptButton(

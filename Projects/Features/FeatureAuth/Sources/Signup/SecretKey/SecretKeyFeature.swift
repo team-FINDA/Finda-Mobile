@@ -5,7 +5,7 @@ public struct SecretKeyFeature {
     @ObservableState
     public struct State: Equatable {
         var secretKeyText = ""
-        var signupButtonIsDisable = true
+        var signupButtonIsDisabled = true
 
         public init() {}
     }
@@ -23,7 +23,7 @@ public struct SecretKeyFeature {
         Reduce { state, action in
             switch action {
             case .binding:
-                state.signupButtonIsDisable = state.secretKeyText.isEmpty
+                state.signupButtonIsDisabled = state.secretKeyText.isEmpty
                 return .none
             case .nextButtonTapped:
                 return .none

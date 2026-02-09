@@ -64,7 +64,7 @@ struct InformationView: View {
 
                 FINDAButton(
                     buttonText: "회원가입",
-                    isDisabled: store.signupButtonIsDisable,
+                    isDisabled: store.signupButtonIsDisabled,
                     buttonClick: { store.send(.signupButtonTapped) }
                 )
                 AuthPromptButton(

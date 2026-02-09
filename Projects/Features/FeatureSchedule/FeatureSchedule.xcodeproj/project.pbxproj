@@ -331,8 +331,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "$(inherited) -Objc";
-				"OTHER_LDFLAGS[config=Prod]" = "$(inherited) -all_load";
-				"OTHER_LDFLAGS[config=Stage]" = "$(inherited) -all_load";
+				"OTHER_LDFLAGS[config=PROD]" = "$(inherited) -all_load";
+				"OTHER_LDFLAGS[config=STAGE]" = "$(inherited) -all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -461,8 +461,8 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited) -Objc";
-				"OTHER_LDFLAGS[config=Prod]" = "$(inherited) -all_load";
-				"OTHER_LDFLAGS[config=Stage]" = "$(inherited) -all_load";
+				"OTHER_LDFLAGS[config=PROD]" = "$(inherited) -all_load";
+				"OTHER_LDFLAGS[config=STAGE]" = "$(inherited) -all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = STAGE;

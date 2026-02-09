@@ -6,7 +6,7 @@ public struct EmailVerificationFeature {
     public struct State: Equatable {
         var emailText = ""
         var codeText = ""
-        var nextButtonIsDisable = true
+        var nextButtonIsDisabled = true
 
         public init() {}
     }
@@ -24,11 +24,11 @@ public struct EmailVerificationFeature {
         Reduce { state, action in
             switch action {
             case .binding:
-                state.nextButtonIsDisable = state.emailText.isEmpty || state.codeText.isEmpty
+                state.nextButtonIsDisabled = state.emailText.isEmpty || state.codeText.isEmpty
                 return .none
             case .nextButtonTapped:
                 return .none
-            case.signinButtonTapped:
+            case .signinButtonTapped:
                 return .none
             }
         }

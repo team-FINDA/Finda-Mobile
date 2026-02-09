@@ -48,7 +48,7 @@ struct EmailVerificationView: View {
 
                     FINDAButton(
                         buttonText: "다음",
-                        isDisabled: store.nextButtonIsDisable,
+                        isDisabled: store.nextButtonIsDisabled,
                         buttonClick: { store.send(.nextButtonTapped) }
                     )
                     AuthPromptButton(

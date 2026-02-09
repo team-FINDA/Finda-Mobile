@@ -7,7 +7,7 @@ public struct InformationFeature {
         var nameText: String = ""
         var passwordText: String = ""
         var passwordConfirmText: String = ""
-        var signupButtonIsDisable = true
+        var signupButtonIsDisabled = true
 
         public init() {}
     }
@@ -25,10 +25,10 @@ public struct InformationFeature {
         Reduce { state, action in
             switch action {
             case .binding:
-                state.signupButtonIsDisable =
+                state.signupButtonIsDisabled =
                     state.nameText.isEmpty ||
                     state.passwordText.isEmpty ||
-                    state.passwordConfirmText.isEmpty
+                    state.passwordText.isEmpty != state.passwordConfirmText.isEmpty
                 return .none
             case .signupButtonTapped:
                 return .none

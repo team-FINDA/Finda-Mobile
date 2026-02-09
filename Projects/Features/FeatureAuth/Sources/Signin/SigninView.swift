@@ -44,7 +44,7 @@ struct SigninView: View {
                     FINDAButton(
                         buttonText: "로그인",
                         isDisabled: store.signinButtonIsDisabled,
-                        buttonClick: {}
+                        buttonClick: { store.send(.signinButtonTapped) }
                     )
                     AuthPromptButton(
                         promptText: "계정이 없으신가요?",
