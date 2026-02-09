@@ -26,9 +26,8 @@ public extension Project {
 
         let ldFlagsSettings: SettingsDictionary = product == .framework ?
             [
-                "OTHER_LDFLAGS[config=Stage]": .string("$(inherited) -all_load"),
-                "OTHER_LDFLAGS[config=Prod]": .string("$(inherited) -all_load"),
-                "OTHER_LDFLAGS[config=Debug]": .string("$(inherited)"),
+                "OTHER_LDFLAGS[config=STAGE]": .string("$(inherited) -all_load"),
+                "OTHER_LDFLAGS[config=PROD]": .string("$(inherited) -all_load")
             ] :
             ["OTHER_LDFLAGS": .string("$(inherited)")]
 

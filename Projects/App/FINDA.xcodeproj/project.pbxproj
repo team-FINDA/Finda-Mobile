@@ -24,7 +24,6 @@
 		63AA7D60B4B6D234357E43C9 /* Alamofire_Alamofire.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 802B520F178400D24CE43EF2 /* Alamofire_Alamofire.bundle */; };
 		6B4C980ECB95DF53C20E2832 /* FeatureStudent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870C91B5DEBD7DDB08399748 /* FeatureStudent.framework */; };
 		7BA9A1C51BC38C933AD4884F /* FeatureTeacher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BAFC1A65D3EB2CDD5501BE2 /* FeatureTeacher.framework */; };
-		8850145013D3988AAE3F4575 /* Dependencies.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4CCBA5EE75B8A53C30A89FB /* Dependencies.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8C2DE1A54C0F895A29C947F8 /* FeatureTeacher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9BAFC1A65D3EB2CDD5501BE2 /* FeatureTeacher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		930A5FF4BF88DF197DAAE710 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 481B2FEBFFF0167F53790302 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		958630994DE1B5F03CA7C189 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A859DFBF1DE3A7684455CCF /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -48,7 +47,6 @@
 			files = (
 				F6EB3E77A0F0A7F6929B074B /* ComposableArchitecture.framework in Embed Frameworks */,
 				930A5FF4BF88DF197DAAE710 /* Core.framework in Embed Frameworks */,
-				8850145013D3988AAE3F4575 /* Dependencies.framework in Embed Frameworks */,
 				2C97E84C75BB426451763FBF /* DesignSystem.framework in Embed Frameworks */,
 				41CBCF11DAC289BF6FB2783C /* FeatureAuth.framework in Embed Frameworks */,
 				62C8898F5D42A3F0CCF978C7 /* FeatureSchedule.framework in Embed Frameworks */,
@@ -96,7 +94,6 @@
 		D4F47AE0F7B8C603C4BF9BCC /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF27ECB1068C94CAC1C9590 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		EF7F2964E75D596B85FC8B77 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
-		F4CCBA5EE75B8A53C30A89FB /* Dependencies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Dependencies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F99433141C503EF7708A2A0A /* FINDA-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "FINDA-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,7 +142,6 @@
 				802B520F178400D24CE43EF2 /* Alamofire_Alamofire.bundle */,
 				61B8930050DCC67613F8B5DB /* ComposableArchitecture.framework */,
 				481B2FEBFFF0167F53790302 /* Core.framework */,
-				F4CCBA5EE75B8A53C30A89FB /* Dependencies.framework */,
 				D4F47AE0F7B8C603C4BF9BCC /* DesignSystem.framework */,
 				A21FEEE3C47ED000E39E66FE /* FeatureAuth.framework */,
 				3C3738402DF01F7641707456 /* FeatureSchedule.framework */,

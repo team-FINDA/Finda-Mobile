@@ -8,8 +8,7 @@ import PackageDescription
     let packageSettings = PackageSettings(
         productTypes: [
             "KeychainSwift": .framework,
-            "ComposableArchitecture": .framework,
-            "Dependencies": .framework
+            "ComposableArchitecture": .framework
         ],
         baseSettings: .settings(
             base: env.baseSetting,
