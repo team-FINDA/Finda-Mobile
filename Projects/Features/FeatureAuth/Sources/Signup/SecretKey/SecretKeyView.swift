@@ -38,7 +38,7 @@ struct SecretKeyView: View {
                     FINDAButton(
                         buttonText: "다음",
                         isDisabled: store.signupButtonIsDisable,
-                        buttonClick: {}
+                        buttonClick: { store.send(.nextButtonTapped) }
                     )
                     AuthPromptButton(
                         promptText: "계정이 있으신가요?",

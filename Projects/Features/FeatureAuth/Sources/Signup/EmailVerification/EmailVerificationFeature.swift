@@ -1,7 +1,7 @@
 import ComposableArchitecture
 
 @Reducer
-struct EmailVerificationFeature {
+public struct EmailVerificationFeature {
     @ObservableState
     public struct State: Equatable {
         var emailText = ""

@@ -53,6 +53,14 @@ public struct AuthRootView: View {
                         ),
                         then: SecretKeyView.init
                     )
+                case .emailVerification:
+                    IfLetStore(
+                        store.scope(
+                            state: \.emailVerification,
+                            action: \.emailVerification
+                        ),
+                        then: EmailVerificationView.init
+                    )
                 }
             }
         }
