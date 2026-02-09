@@ -38,14 +38,6 @@ public struct AuthRootView: View {
                         ),
                         then: SignupUserSelectView.init
                     )
-                case .signinUserSelect:
-                    IfLetStore(
-                        store.scope(
-                            state: \.signinUserSelect,
-                            action: \.signinUserSelect
-                        ),
-                        then: SigninUserSelectView.init
-                    )
                 case .secretKey:
                     IfLetStore(
                         store.scope(

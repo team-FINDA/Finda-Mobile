@@ -16,16 +16,17 @@ struct InformationView: View {
     }
 
     var body: some View {
-        VStack {
-            HStack {
-                Button(action: { dismiss() }, label: {
-                    Image.Icons.leftArrow
-                        .foregroundStyle(Color.Gray.gray80)
-                })
-                Spacer()
-            }
-            .padding(.horizontal, 24)
-            .padding(.vertical, 8)
+        WithPerceptionTracking {
+            VStack {
+                HStack {
+                    Button(action: { dismiss() }, label: {
+                        Image.Icons.leftArrow
+                            .foregroundStyle(Color.Gray.gray80)
+                    })
+                    Spacer()
+                }
+                .padding(.horizontal, 24)
+                .padding(.vertical, 8)
 
             ViewThatFits(in: .vertical) {
                 Text("회원가입")
@@ -75,14 +76,15 @@ struct InformationView: View {
             }
             .padding(.horizontal, 24)
 
-            Spacer()
+                Spacer()
+            }
+            .safeAreaInset(edge: .bottom) {
+                Color.clear.frame(height: 32)
+            }
+            .dismissKeyboardOnTap()
+            .navigationBarBackButtonHidden(true)
+            .toolbar(.hidden, for: .navigationBar)
         }
-        .safeAreaInset(edge: .bottom) {
-            Color.clear.frame(height: 32)
-        }
-        .dismissKeyboardOnTap()
-        .navigationBarBackButtonHidden(true)
-        .toolbar(.hidden, for: .navigationBar)
     }
 }
 

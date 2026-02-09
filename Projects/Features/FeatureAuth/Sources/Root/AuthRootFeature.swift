@@ -19,7 +19,6 @@ public struct AuthRootFeature {
     @Reducer
     public enum Path {
         case signin(SigninFeature)
-        case signinUserSelect(SigninUserSelectFeature)
         case signupUserSelect(SignupUserSelectFeature)
         case secretKey(SecretKeyFeature)
         case emailVerification(EmailVerificationFeature)

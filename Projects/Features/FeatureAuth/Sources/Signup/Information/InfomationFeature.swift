@@ -28,7 +28,8 @@ public struct InformationFeature {
                 state.signupButtonIsDisabled =
                     state.nameText.isEmpty ||
                     state.passwordText.isEmpty ||
-                    state.passwordText.isEmpty != state.passwordConfirmText.isEmpty
+                    state.passwordConfirmText.isEmpty ||
+                    state.passwordText != state.passwordConfirmText
                 return .none
             case .signupButtonTapped:
                 return .none
