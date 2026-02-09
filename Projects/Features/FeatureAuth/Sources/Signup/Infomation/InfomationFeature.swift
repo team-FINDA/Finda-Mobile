@@ -24,7 +24,10 @@ public struct InfomationFeature {
         Reduce { state, action in
             switch action {
             case .binding:
-                state.signupButtonIsDisable = state.nameText.isEmpty || state.passwordText.isEmpty || state.passwordConfirmText.isEmpty
+                state.signupButtonIsDisable =
+                    state.nameText.isEmpty ||
+                    state.passwordText.isEmpty ||
+                    state.passwordConfirmText.isEmpty
                 return .none
             case .signupButtonTapped:
                 return .none

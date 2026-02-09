@@ -15,6 +15,7 @@ public struct AuthRootFeature {
         case signinUserSelect(SigninUserSelectFeature.Action)
         case signupUserSelect(SignupUserSelectFeature.Action)
         case secretKey(SecretKeyFeature.Action)
+        case emailVerification(EmailVerificationFeature.Action)
         case path(StackActionOf<Path>)
     }
 
@@ -25,6 +26,7 @@ public struct AuthRootFeature {
         case signupUserSelect(SignupUserSelectFeature)
         case secretKey(SecretKeyFeature)
         case emailVerification(EmailVerificationFeature)
+        case infomation(InfomationFeature)
     }
 
     public init() {}
@@ -53,6 +55,10 @@ public struct AuthRootFeature {
                 state.path.append(.emailVerification(EmailVerificationFeature.State()))
                 return .none
 
+            case .emailVerification(.nextButtonTapped):
+                state.path.append(.infomation(InfomationFeature.State()))
+                return .none
+
             case .path(.element(id: _, action: .signupUserSelect(.studentSignupButtonTapped))):
                 state.selectedRole = .student
                 state.path.append(.emailVerification(EmailVerificationFeature.State()))
@@ -71,7 +77,11 @@ public struct AuthRootFeature {
                 state.path.append(.emailVerification(EmailVerificationFeature.State()))
                 return .none
 
-            case .signinUserSelect, .signupUserSelect, .secretKey:
+            case .path(.element(id: _, action: .emailVerification(.nextButtonTapped))):
+                state.path.append(.infomation(InfomationFeature.State()))
+                return .none
+
+            case .signinUserSelect, .signupUserSelect, .secretKey, .emailVerification:
                 return .none
 
             case .path:

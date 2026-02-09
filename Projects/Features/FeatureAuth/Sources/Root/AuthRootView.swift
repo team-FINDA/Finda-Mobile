@@ -62,6 +62,13 @@ public struct AuthRootView: View {
                         ),
                         then: { EmailVerificationView(store: $0, selectedRole: selectedRole) }
                     )
+                case .infomation:
+                    IfLetStore(
+                        store.scope(
+                            state: \.infomation,
+                            action: \.infomation
+                        ), then: { InfomationView(store: $0, selectedRole: selectedRole) }
+                    )
                 }
             }
         }
