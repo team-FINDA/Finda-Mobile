@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5334046277BB1B64DE6549F1 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB1566187A3993BADD819EB /* Shared.framework */; };
 		642AABB73B19A24F599A1E15 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6990196BB876AA6F5C32FFC /* DesignSystem.framework */; };
 		7920BCEB7EB2FF579D141460 /* Et.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16BF08ED07ABA44C4318B74 /* Et.swift */; };
 		BAF16516E3485AED2F4EF3D4 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FDADF8C1E4459E6F8A2A8DF /* Core.framework */; };
@@ -35,6 +36,7 @@
 		D92B1DD6F25184CF3D4BDED0 /* FeatureTeacher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureTeacher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F812395E38AD6D44B929B8C1 /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
 		FA48AF103C35BAACE102300D /* FeatureTeacher-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "FeatureTeacher-Info.plist"; sourceTree = "<group>"; };
+		FAB1566187A3993BADD819EB /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 				E972331F3B4E7A2CA0660D40 /* ComposableArchitecture.framework in Frameworks */,
 				BAF16516E3485AED2F4EF3D4 /* Core.framework in Frameworks */,
 				642AABB73B19A24F599A1E15 /* DesignSystem.framework in Frameworks */,
+				5334046277BB1B64DE6549F1 /* Shared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +104,7 @@
 				1FDADF8C1E4459E6F8A2A8DF /* Core.framework */,
 				D6990196BB876AA6F5C32FFC /* DesignSystem.framework */,
 				D92B1DD6F25184CF3D4BDED0 /* FeatureTeacher.framework */,
+				FAB1566187A3993BADD819EB /* Shared.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";

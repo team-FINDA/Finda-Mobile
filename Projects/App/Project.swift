@@ -13,6 +13,7 @@ let project = Project.makeModule(
         .Features.featureStudent,
         .Features.featureTeacher,
         .Features.featureSchedule,
+        .Features.featureMy,
         .Projects.core,
         .Projects.designSystem,
         .tca

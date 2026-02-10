@@ -14,16 +14,16 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "283839053DFC12C549E8D90C"
-               BuildableName = "FINDA.app"
-               BlueprintName = "FINDA"
-               ReferencedContainer = "container:FINDA.xcodeproj">
+               BlueprintIdentifier = "2DD1AAE427D7E46991B1DB6B"
+               BuildableName = "FeatureMy.framework"
+               BlueprintName = "FeatureMy"
+               ReferencedContainer = "container:FeatureMy.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "STAGE"
+      buildConfiguration = "PROD"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
@@ -32,7 +32,7 @@
       </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "STAGE"
+      buildConfiguration = "PROD"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -41,39 +41,37 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "283839053DFC12C549E8D90C"
-            BuildableName = "FINDA.app"
-            BlueprintName = "FINDA"
-            ReferencedContainer = "container:FINDA.xcodeproj">
+            BlueprintIdentifier = "2DD1AAE427D7E46991B1DB6B"
+            BuildableName = "FeatureMy.framework"
+            BlueprintName = "FeatureMy"
+            ReferencedContainer = "container:FeatureMy.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "STAGE"
+      buildConfiguration = "PROD"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "283839053DFC12C549E8D90C"
-            BuildableName = "FINDA.app"
-            BlueprintName = "FINDA"
-            ReferencedContainer = "container:FINDA.xcodeproj">
+            BlueprintIdentifier = "2DD1AAE427D7E46991B1DB6B"
+            BuildableName = "FeatureMy.framework"
+            BlueprintName = "FeatureMy"
+            ReferencedContainer = "container:FeatureMy.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "STAGE">
+      buildConfiguration = "PROD">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "STAGE"
+      buildConfiguration = "PROD"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

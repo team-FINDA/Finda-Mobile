@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		08071E933F7E8B57252DBA5E /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19714E06C88D81D46A1F341E /* DesignSystem.framework */; };
+		3FE80C743238C6D3F7061DC5 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 364FF98E8EB2F5B94CCF0FB6 /* Shared.framework */; };
 		68988D372755F50D171AFF51 /* ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6878A12F7AFFAA7700F82992 /* ComposableArchitecture.framework */; };
 		7FAC19343ECD752BAAD7680E /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC96B29E12AA4484A480B5DF /* Core.framework */; };
 		BA04C4D864ABFFEF291601AB /* Et.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F043ED6220D24A7E5ADF9B /* Et.swift */; };
@@ -30,6 +31,7 @@
 		19714E06C88D81D46A1F341E /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EBAC13CBE87E5594373D4D8 /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
 		31F043ED6220D24A7E5ADF9B /* Et.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Et.swift; sourceTree = "<group>"; };
+		364FF98E8EB2F5B94CCF0FB6 /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4915014AE82AA6954E5C9967 /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
 		6878A12F7AFFAA7700F82992 /* ComposableArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ComposableArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC96B29E12AA4484A480B5DF /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +47,7 @@
 				68988D372755F50D171AFF51 /* ComposableArchitecture.framework in Frameworks */,
 				7FAC19343ECD752BAAD7680E /* Core.framework in Frameworks */,
 				08071E933F7E8B57252DBA5E /* DesignSystem.framework in Frameworks */,
+				3FE80C743238C6D3F7061DC5 /* Shared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +105,7 @@
 				BC96B29E12AA4484A480B5DF /* Core.framework */,
 				19714E06C88D81D46A1F341E /* DesignSystem.framework */,
 				F2ED4B7D72FA3A770AB1920B /* FeatureStudent.framework */,
+				364FF98E8EB2F5B94CCF0FB6 /* Shared.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";

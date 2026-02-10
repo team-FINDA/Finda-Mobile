@@ -23,6 +23,9 @@
             location = "group:FeatureAuth/FeatureAuth.xcodeproj">
          </FileRef>
          <FileRef
+            location = "group:FeatureMy/FeatureMy.xcodeproj">
+         </FileRef>
+         <FileRef
             location = "group:FeatureSchedule/FeatureSchedule.xcodeproj">
          </FileRef>
          <FileRef
