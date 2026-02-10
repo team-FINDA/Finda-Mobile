@@ -3,14 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		26C1D83730A005800CEB2B9A /* ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC598270D2E18BAA56861838 /* ComposableArchitecture.framework */; };
 		6D643E00F48A4175C5FF556A /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0FF3339A9472B5423DB2EF /* Shared.framework */; };
-		88E2CB835396519E724DF3A1 /* Et.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6087D3A8B10100C431AD4 /* Et.swift */; };
 		8F8AB04B00A002ABB6D7DA68 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4BCA2EB5199D14C002D08A /* DesignSystem.framework */; };
+		B3D1350B05F9E742EE22FAB3 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C7DE561CBB0DA717BC420B /* MyView.swift */; };
 		F00628E7F7BC786C30B6DCF1 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A8054F5CCC9AB7C0E7DA39 /* Core.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +28,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		43C7DE561CBB0DA717BC420B /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 		4A0FF3339A9472B5423DB2EF /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		706BE6009C5B57A3EE65AE7B /* FeatureMy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureMy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A660683DAA87CD4A880216E /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
@@ -36,7 +37,6 @@
 		C1A8054F5CCC9AB7C0E7DA39 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC598270D2E18BAA56861838 /* ComposableArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ComposableArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9FA9C1DCD6083CCAE72342 /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
-		F5D6087D3A8B10100C431AD4 /* Et.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Et.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +75,7 @@
 		8FC8E1CCD202365C8DF98FC3 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				F5D6087D3A8B10100C431AD4 /* Et.swift */,
+				43C7DE561CBB0DA717BC420B /* MyView.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -158,8 +158,6 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				ORGANIZATIONNAME = com.finda.app;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 71E809662695D584EB1D996C /* Build configuration list for PBXProject "FeatureMy" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -216,7 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88E2CB835396519E724DF3A1 /* Et.swift in Sources */,
+				B3D1350B05F9E742EE22FAB3 /* MyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,21 +307,7 @@
 					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
 					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = (
-					"$(inherited)",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros",
-				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros";
 				PRODUCT_BUNDLE_IDENTIFIER = com.finda.app.featuremy;
 				PRODUCT_NAME = FeatureMy;
 				SDKROOT = iphoneos;
@@ -331,10 +315,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-					"$(inherited)",
-					DEBUG,
-				);
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -372,21 +353,7 @@
 					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
 					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = (
-					"$(inherited)",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros",
-				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros";
 				PRODUCT_BUNDLE_IDENTIFIER = com.finda.app.featuremy;
 				PRODUCT_NAME = FeatureMy;
 				SDKROOT = iphoneos;

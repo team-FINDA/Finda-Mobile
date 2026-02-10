@@ -12,12 +12,23 @@ struct AppView: View {
     var body: some View {
         WithPerceptionTracking {
             ZStack {
-                AuthRootView(
-                    store: store.scope(
-                        state: \.authRoot,
-                        action: \.authRoot
-                    )
-                )
+                Group {
+                    IfLetStore(
+                        store.scope(
+                            state: \.mainTab,
+                            action: \.mainTab
+                        )
+                    ) {
+                        MainTabView(store: $0)
+                    } else: {
+                        AuthRootView(
+                            store: store.scope(
+                                state: \.authRoot,
+                                action: \.authRoot
+                            )
+                        )
+                    }
+                }
                 .opacity(store.isShowingSplash ? 0 : 1)
 
                 if store.isShowingSplash {
