@@ -23,6 +23,7 @@ public extension TargetDependency.Features {
     static let featureSchedule = feature(name: "FeatureSchedule")
     static let featureStudent = feature(name: "FeatureStudent")
     static let featureTeacher = feature(name: "FeatureTeacher")
+    static let featureMy = feature(name: "FeatureMy")
 
     static func feature(name: String) -> TargetDependency {
         return .project(

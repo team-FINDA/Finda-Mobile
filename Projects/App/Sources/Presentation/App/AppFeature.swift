@@ -1,5 +1,6 @@
 import ComposableArchitecture
 import FeatureAuth
+import Shared
 
 @Reducer
 struct AppFeature {
@@ -7,6 +8,7 @@ struct AppFeature {
     struct State: Equatable {
         var isShowingSplash = true
         var authRoot = AuthRootFeature.State()
+        var mainTab: MainTabFeature.State?
 
         init() {}
     }
@@ -15,6 +17,7 @@ struct AppFeature {
         case onAppear
         case splashFinished
         case authRoot(AuthRootFeature.Action)
+        case mainTab(MainTabFeature.Action)
     }
 
     init() {}
@@ -22,6 +25,9 @@ struct AppFeature {
     var body: some ReducerOf<Self> {
         Scope(state: \.authRoot, action: \.authRoot) {
             AuthRootFeature()
+        }
+        .ifLet(\.mainTab, action: \.mainTab) {
+            MainTabFeature()
         }
 
         Reduce { state, action in
@@ -36,7 +42,15 @@ struct AppFeature {
                 state.isShowingSplash = false
                 return .none
 
+            case .authRoot(.path(.element(id: _, action: .signin(.signinButtonTapped)))):
+                let role = state.authRoot.selectedRole ?? .student
+                state.mainTab = MainTabFeature.State(role: role)
+                return .none
+
             case .authRoot:
+                return .none
+
+            case .mainTab:
                 return .none
             }
         }

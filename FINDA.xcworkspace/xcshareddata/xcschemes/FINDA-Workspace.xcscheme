@@ -266,6 +266,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2DD1AAE427D7E46991B1DB6B"
+               BuildableName = "FeatureMy.framework"
+               BlueprintName = "FeatureMy"
+               ReferencedContainer = "container:Projects/Features/FeatureMy/FeatureMy.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "1C4E9BFE448EEFE450F3F2DD"
                BuildableName = "FeatureSchedule.framework"
                BlueprintName = "FeatureSchedule"

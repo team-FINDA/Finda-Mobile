@@ -1,20 +1,16 @@
 import ComposableArchitecture
-
-public enum SigninUserType: Equatable {
-    case student
-    case teacher
-}
+import Shared
 
 @Reducer
 public struct SigninFeature {
     @ObservableState
     public struct State: Equatable {
-        var role: SigninUserType
+        var role: UserRole
         var emailText = ""
         var passwordText = ""
         var signinButtonIsDisabled = true
 
-        public init(role: SigninUserType) {
+        public init(role: UserRole) {
             self.role = role
         }
     }
