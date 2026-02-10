@@ -6,11 +6,6 @@ public extension Image {
 }
 
 public extension Image.Icons {
-    static let tabbarCalendar = DesignSystemAsset.Icons.tabbarCalendar.swiftUIImage
-    static let tabbarLogo = DesignSystemAsset.Icons.tabbarLogo.swiftUIImage
-    static let tabbarPerson = DesignSystemAsset.Icons.tabbarPerson.swiftUIImage
-    static let tabbarQR = DesignSystemAsset.Icons.tabbarQR.swiftUIImage
-
     static let add = DesignSystemAsset.Icons.add.swiftUIImage
     static let bell = DesignSystemAsset.Icons.bell.swiftUIImage
     static let calendar = DesignSystemAsset.Icons.calendar.swiftUIImage
