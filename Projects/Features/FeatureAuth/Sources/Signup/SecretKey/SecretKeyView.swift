@@ -1,15 +1,16 @@
 import SwiftUI
+import Shared
 import ComposableArchitecture
 import DesignSystem
 
 struct SecretKeyView: View {
     @Environment(\.dismiss) private var dismiss
     @Perception.Bindable private var store: StoreOf<SecretKeyFeature>
-    private let selectedRole: SigninUserType?
+    private let selectedRole: UserRole?
 
     init(
         store: StoreOf<SecretKeyFeature>,
-        selectedRole: SigninUserType?
+        selectedRole: UserRole?
     ) {
         self.store = store
         self.selectedRole = selectedRole

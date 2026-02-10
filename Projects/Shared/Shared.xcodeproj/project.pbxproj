@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14CDAF5A1C1E46398F35D3FB /* UserRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7554AC036A4B0FEEECC0C722 /* UserRole.swift */; };
 		3F965F7F8DCD6BEC18BF43EE /* Et.swift in Sources */ = {isa = PBXBuildFile; fileRef = B377F6B50F2D26E3A5E29922 /* Et.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		080C58231FCEDC083F899294 /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		10BE71EB043539D7D60E68C4 /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
+		7554AC036A4B0FEEECC0C722 /* UserRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRole.swift; sourceTree = "<group>"; };
 		82251A63363E7CFD1E807647 /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
 		B377F6B50F2D26E3A5E29922 /* Et.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Et.swift; sourceTree = "<group>"; };
 		D72BA6AE8B9AF02B56D8FC04 /* Shared-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Shared-Info.plist"; sourceTree = "<group>"; };
@@ -42,6 +44,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00E417DC3D6E0F711E4394A5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7554AC036A4B0FEEECC0C722 /* UserRole.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		01BCDFAEA3D6A345FB1A94D5 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +98,7 @@
 		8DBC6BAA6C2105D09B097177 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				00E417DC3D6E0F711E4394A5 /* Models */,
 				1A720BCCAD4A051277FD9063 /* Utils */,
 			);
 			path = Sources;
@@ -208,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14CDAF5A1C1E46398F35D3FB /* UserRole.swift in Sources */,
 				3F965F7F8DCD6BEC18BF43EE /* Et.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

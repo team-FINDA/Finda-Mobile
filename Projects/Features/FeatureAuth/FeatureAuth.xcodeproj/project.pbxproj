@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		14DAC8AAB07A0EEE92DA788B /* SignupUserSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3689A6BC7F4332ED388328 /* SignupUserSelectView.swift */; };
 		2335EF4A8BDD26E1EBF5D417 /* SecretKeyFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9821C8A30BCF16A7DAEC2210 /* SecretKeyFeature.swift */; };
+		28EDFC8DEA6A82FCA2F361A9 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7FCE9153D15DA4A504FE137 /* Shared.framework */; };
 		32098C382F0C60DB3865428F /* SecretKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988D79C851E4832A5FC8C1E /* SecretKeyView.swift */; };
 		37033EA9F7F1C5F4C633D74D /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67AD049FAFAA16C2203016DA /* Core.framework */; };
 		423B41BCA1547CB252671722 /* InfomationFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4E73B31B2297CA37BB1B35 /* InfomationFeature.swift */; };
@@ -61,6 +62,7 @@
 		DA4E73B31B2297CA37BB1B35 /* InfomationFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfomationFeature.swift; sourceTree = "<group>"; };
 		EE36F9AEDD8D03E330216EEC /* InfomationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfomationView.swift; sourceTree = "<group>"; };
 		F17494BB29EC9B2825B738FB /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
+		F7FCE9153D15DA4A504FE137 /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				496CE26848160FBE4E41810D /* ComposableArchitecture.framework in Frameworks */,
 				37033EA9F7F1C5F4C633D74D /* Core.framework in Frameworks */,
 				604691DB4D5F18F52C38178B /* DesignSystem.framework in Frameworks */,
+				28EDFC8DEA6A82FCA2F361A9 /* Shared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +206,7 @@
 				67AD049FAFAA16C2203016DA /* Core.framework */,
 				26BC008C17A384BA3020F6B8 /* DesignSystem.framework */,
 				3E71DABBBC3D1F6EC3828B37 /* FeatureAuth.framework */,
+				F7FCE9153D15DA4A504FE137 /* Shared.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";

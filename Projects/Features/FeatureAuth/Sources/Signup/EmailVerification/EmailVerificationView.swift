@@ -1,15 +1,16 @@
 import SwiftUI
+import Shared
 import ComposableArchitecture
 import DesignSystem
 
 struct EmailVerificationView: View {
     @Environment(\.dismiss) private var dismiss
     @Perception.Bindable private var store: StoreOf<EmailVerificationFeature>
-    private let selectedRole: SigninUserType?
+    private let selectedRole: UserRole?
 
     init(
         store: StoreOf<EmailVerificationFeature>,
-        selectedRole: SigninUserType?
+        selectedRole: UserRole?
     ) {
         self.store = store
         self.selectedRole = selectedRole

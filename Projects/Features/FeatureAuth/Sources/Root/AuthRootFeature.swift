@@ -1,4 +1,5 @@
 import ComposableArchitecture
+import Shared
 
 @Reducer
 public struct AuthRootFeature {
@@ -6,7 +7,7 @@ public struct AuthRootFeature {
     public struct State: Equatable {
         var signinUserSelect = SigninUserSelectFeature.State()
         var path = StackState<Path.State>()
-        var selectedRole: SigninUserType?
+        public var selectedRole: UserRole?
 
         public init() {}
     }
