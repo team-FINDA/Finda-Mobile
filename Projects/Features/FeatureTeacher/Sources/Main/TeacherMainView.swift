@@ -18,7 +18,7 @@ public struct TeacherMainView: View {
                         Text("환경지킴이")
                             .font(.finda(.body1))
                             .foregroundColor(.Gray.gray90)
-                        
+
                         Image.Icons.change
                     }
                     .padding(12)
