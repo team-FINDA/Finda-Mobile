@@ -12,6 +12,27 @@ public struct TeacherMainView: View {
                 shortNotificationAction: {}
             )
 
+            HStack(spacing: 12) {
+                Button(action: {}, label: {
+                    HStack(spacing: 8) {
+                        Text("환경지킴이")
+                            .font(.finda(.body1))
+                            .foregroundColor(.Gray.gray90)
+                        
+                        Image.Icons.change
+                    }
+                    .padding(12)
+                    .background(Color.Gray.gray20)
+                    .cornerRadius(4)
+                })
+
+                Text("학생")
+                    .font(.finda(.body1))
+                    .foregroundColor(.Gray.gray90)
+
+                Spacer()
+            }
+
             Spacer()
         }
         .padding(.horizontal, 24)

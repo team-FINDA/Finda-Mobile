@@ -9,6 +9,7 @@ public extension Image.Icons {
     static let add = DesignSystemAsset.Icons.add.swiftUIImage
     static let bell = DesignSystemAsset.Icons.bell.swiftUIImage
     static let calendar = DesignSystemAsset.Icons.calendar.swiftUIImage
+    static let change = DesignSystemAsset.Icons.change.swiftUIImage
     static let check = DesignSystemAsset.Icons.check.swiftUIImage
     static let delete = DesignSystemAsset.Icons.delete.swiftUIImage
     static let eyeOff = DesignSystemAsset.Icons.eyeOff.swiftUIImage
