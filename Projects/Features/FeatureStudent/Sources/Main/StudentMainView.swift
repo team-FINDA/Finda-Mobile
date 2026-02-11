@@ -1,61 +1,76 @@
 import SwiftUI
+import ComposableArchitecture
 import DesignSystem
 
 public struct StudentMainView: View {
-    public init() {}
+    @Perception.Bindable private var store: StoreOf<StudentMainFeature>
+
+    public init(store: StoreOf<StudentMainFeature>) {
+        self.store = store
+    }
 
     public var body: some View {
-        ScrollView {
-            VStack(spacing: 20) {
-                HStack(spacing: 16) {
-                    Image.Images.baseProfile
-                        .resizable()
-                        .frame(width: 48, height: 48)
-                        .clipShape(Circle())
+        WithPerceptionTracking {
+            ScrollView {
+                VStack(spacing: 20) {
+                    HStack(spacing: 16) {
+                        Image.Images.baseProfile
+                            .resizable()
+                            .frame(width: 48, height: 48)
+                            .clipShape(Circle())
 
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text("Welcome,")
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("Welcome,")
+                                .font(.finda(.body4))
+                                .foregroundStyle(Color.Gray.gray60)
+                            Text("2216 하원")
+                                .font(.finda(.body1))
+                        }
+
+                        Spacer()
+
+                        Button {
+                            store.send(.notificationButtonTapped)
+                        } label: {
+                            Image.Icons.bell
+                        }
+
+                    }
+                    .padding(.top, 20)
+
+                    HStack(spacing: 3.5) {
+                        Image.Icons.speakerphone
+
+                        Text("FINDA에 새로운 기능이 추가되었어요!")
                             .font(.finda(.body4))
-                            .foregroundStyle(Color.Gray.gray60)
-                        Text("2216 하원")
-                            .font(.finda(.body1))
+                            .foregroundStyle(Color.Gray.gray80)
+
+                        Spacer()
+                    }
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 9)
+                    .background(Color.Blue.blue10.cornerRadius(20))
+                    .onTapGesture {
+                        store.send(.shortnotificationButtonTapped)
                     }
 
-                    Spacer()
+                    TotalTimeView(volunteerTime: 16)
 
-                    Button { } label: {
-                        Image.Icons.bell
-                    }
+                    GraphView()
 
-                }
-                .padding(.top, 20)
-
-                HStack(spacing: 3.5) {
-                    Image.Icons.speakerphone
-
-                    Text("FINDA에 새로운 기능이 추가되었어요!")
-                        .font(.finda(.body4))
-                        .foregroundStyle(Color.Gray.gray80)
+                    VolunteerSearchButton(action: { store.send(.volunteerfindButtonTapped) })
 
                     Spacer()
                 }
-                .padding(.horizontal, 12)
-                .padding(.vertical, 9)
-                .background(Color.Blue.blue10.cornerRadius(20))
-
-                TotalTimeView(volunteerTime: 16)
-
-                GraphView()
-
-                VolunteerSearchButton(action: {})
-
-                Spacer()
+                .padding(.horizontal, 24.5)
             }
-            .padding(.horizontal, 24.5)
         }
     }
 }
 
 #Preview {
-    StudentMainView()
+    StudentMainView(
+        store: Store(initialState: StudentMainFeature.State()) {
+            StudentMainFeature()
+        })
 }

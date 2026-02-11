@@ -22,7 +22,7 @@ struct MainTabView: View {
                     }
                     .tag(Tab.qr)
 
-                HomeTabView(role: store.role)
+                HomeTabView(role: store.role, store: store)
                     .tabItem {
                         Image(store.selectedTab == .main ? "tabbarLogo" : "tabbarLogoNot")
                     }
@@ -59,11 +59,17 @@ private struct QRTabView: View {
 
 private struct HomeTabView: View {
     let role: UserRole
+    let store: StoreOf<MainTabFeature>
 
     var body: some View {
         switch role {
         case .student:
-            StudentMainView()
+            StudentMainView(
+                store: store.scope(
+                    state: \.studentMain,
+                    action: \.studentMain
+                )
+            )
         case .teacher:
             TeacherMainView()
         }
