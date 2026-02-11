@@ -43,6 +43,8 @@ public struct StudentMainView: View {
                 .padding(.vertical, 9)
                 .background(Color.Blue.blue10.cornerRadius(20))
 
+                TotalTimeView(volunteerTime: 16)
+
                 Spacer()
             }
             .padding(.horizontal, 24.5)
