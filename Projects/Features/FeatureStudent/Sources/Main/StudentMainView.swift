@@ -45,6 +45,10 @@ public struct StudentMainView: View {
 
                 TotalTimeView(volunteerTime: 16)
 
+                GraphView()
+
+                VolunteerSearchButton(action: {})
+
                 Spacer()
             }
             .padding(.horizontal, 24.5)
