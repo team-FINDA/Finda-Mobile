@@ -36,9 +36,12 @@ struct MainTabFeature {
         Scope(state: \.studentMain, action: \.studentMain) {
             StudentMainFeature()
         }
+        Scope(state: \.teacherMain, action: \.teacherMain) {
+            TeacherMainFeature()
+        }
 
         BindingReducer()
-        Reduce { state, action in
+        Reduce { _, action in
             switch action {
             case .binding:
                 return .none

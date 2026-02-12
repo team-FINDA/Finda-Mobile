@@ -9,8 +9,8 @@ public struct StudentMainFeature {
 
     public enum Action {
         case notificationButtonTapped
-        case shortnotificationButtonTapped
-        case volunteerfindButtonTapped
+        case shortNotificationButtonTapped
+        case volunteerFindButtonTapped
     }
 
     public init() {}
@@ -20,9 +20,9 @@ public struct StudentMainFeature {
             switch action {
             case .notificationButtonTapped:
                 return .none
-            case .shortnotificationButtonTapped:
+            case .shortNotificationButtonTapped:
                 return .none
-            case .volunteerfindButtonTapped:
+            case .volunteerFindButtonTapped:
                 return .none
             }
         }

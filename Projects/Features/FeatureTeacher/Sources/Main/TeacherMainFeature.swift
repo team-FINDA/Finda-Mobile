@@ -9,7 +9,7 @@ public struct TeacherMainFeature {
 
     public enum Action {
         case notificationButtonTapped
-        case shortnotificationButtonTapped
+        case shortNotificationButtonTapped
         case changeButtonTapped
     }
 
@@ -20,7 +20,7 @@ public struct TeacherMainFeature {
             switch action {
             case .notificationButtonTapped:
                 return .none
-            case .shortnotificationButtonTapped:
+            case .shortNotificationButtonTapped:
                 return .none
             case .changeButtonTapped:
                 return .none

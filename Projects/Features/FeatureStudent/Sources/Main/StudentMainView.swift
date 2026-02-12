@@ -16,14 +16,14 @@ public struct StudentMainView: View {
                     MainHeaderView(
                         name: "2216 하원",
                         notificationAction: { store.send(.notificationButtonTapped) },
-                        shortNotificationAction: { store.send(.shortnotificationButtonTapped) }
+                        shortNotificationAction: { store.send(.shortNotificationButtonTapped) }
                     )
 
                     TotalTimeView(volunteerTime: 16)
 
                     GraphView()
 
-                    VolunteerSearchButton(action: { store.send(.volunteerfindButtonTapped) })
+                    VolunteerSearchButton(action: { store.send(.volunteerFindButtonTapped) })
 
                     Spacer()
                 }
