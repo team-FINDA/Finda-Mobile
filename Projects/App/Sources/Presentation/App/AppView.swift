@@ -20,6 +20,7 @@ struct AppView: View {
                         )
                     ) {
                         MainTabView(store: $0)
+                            .transition(.opacity)
                     } else: {
                         AuthRootView(
                             store: store.scope(
@@ -27,6 +28,7 @@ struct AppView: View {
                                 action: \.authRoot
                             )
                         )
+                        .transition(.opacity)
                     }
                 }
                 .opacity(store.isShowingSplash ? 0 : 1)
@@ -41,6 +43,7 @@ struct AppView: View {
                 store.send(.onAppear)
             }
             .animation(.easeInOut(duration: 0.3), value: store.isShowingSplash)
+            .animation(.easeInOut(duration: 0.35), value: store.mainTab != nil)
         }
     }
 }

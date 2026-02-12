@@ -3,13 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		03595CF90234D7F72A044FBC /* TuistAssets+FINDA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A393666F4BAFA3AEE7537 /* TuistAssets+FINDA.swift */; };
-		0BEE08CD9212B69CFBC39F46 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2592ECAF6F4D12C31ACFC0 /* MainTabView.swift */; };
 		1E77F113228D28171536EA24 /* FeatureMy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA20EED30874904E320AB7C1 /* FeatureMy.framework */; };
+		21BBDD61E5B863D00CAA0707 /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF77ACB88EF14B103E4BD189 /* AppFeature.swift */; };
 		234B046D9D1F50030AF9F264 /* FeatureMy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA20EED30874904E320AB7C1 /* FeatureMy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2AB37BCCF8DE710ECB91B9A6 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A859DFBF1DE3A7684455CCF /* Shared.framework */; };
 		2C97E84C75BB426451763FBF /* DesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D4F47AE0F7B8C603C4BF9BCC /* DesignSystem.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -26,8 +26,8 @@
 		62C8898F5D42A3F0CCF978C7 /* FeatureSchedule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3738402DF01F7641707456 /* FeatureSchedule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		63AA7D60B4B6D234357E43C9 /* Alamofire_Alamofire.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 802B520F178400D24CE43EF2 /* Alamofire_Alamofire.bundle */; };
 		6B4C980ECB95DF53C20E2832 /* FeatureStudent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870C91B5DEBD7DDB08399748 /* FeatureStudent.framework */; };
+		705637576270F6DE26438E58 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C111A90C7C082D985816535 /* AppView.swift */; };
 		7BA9A1C51BC38C933AD4884F /* FeatureTeacher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BAFC1A65D3EB2CDD5501BE2 /* FeatureTeacher.framework */; };
-		8017DADAA0952F557EDF6526 /* MainTabFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423A83ACA813AF419F8816C6 /* MainTabFeature.swift */; };
 		8C2DE1A54C0F895A29C947F8 /* FeatureTeacher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9BAFC1A65D3EB2CDD5501BE2 /* FeatureTeacher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		930A5FF4BF88DF197DAAE710 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 481B2FEBFFF0167F53790302 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		958630994DE1B5F03CA7C189 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A859DFBF1DE3A7684455CCF /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -35,11 +35,11 @@
 		9FA56AB8C86BD0475A61DFE8 /* FeatureAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21FEEE3C47ED000E39E66FE /* FeatureAuth.framework */; };
 		A058FFAB4BD82C3932A791E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61063F1E224C880D4CCDA8C4 /* Images.xcassets */; };
 		AB58A2774789DD5726CA1C10 /* ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B8930050DCC67613F8B5DB /* ComposableArchitecture.framework */; };
+		B9D020351217135F104B8557 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9B13DB44479C7D44F0C444 /* MainTabView.swift */; };
 		DE3B9E41D406162EC36A54B3 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F47AE0F7B8C603C4BF9BCC /* DesignSystem.framework */; };
-		E19D3FF1EA3C442972FDE7F4 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7F2964E75D596B85FC8B77 /* AppView.swift */; };
 		E2C6D42A6A160AF30D853702 /* FeatureStudent.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 870C91B5DEBD7DDB08399748 /* FeatureStudent.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E82EBAB7A4F604D06192FFA3 /* MainTabFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9342C141E25A9192330A9B /* MainTabFeature.swift */; };
 		F6EB3E77A0F0A7F6929B074B /* ComposableArchitecture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 61B8930050DCC67613F8B5DB /* ComposableArchitecture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FD9F98DF6CA0DB4D822E0F1A /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94CC5191ECA84F652AA921B /* AppFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -77,9 +77,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2C2592ECAF6F4D12C31ACFC0 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		2C111A90C7C082D985816535 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		3C3738402DF01F7641707456 /* FeatureSchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureSchedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		423A83ACA813AF419F8816C6 /* MainTabFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabFeature.swift; sourceTree = "<group>"; };
 		423DD23C681CAF479B6023AA /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeychainSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		481B2FEBFFF0167F53790302 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		498A393666F4BAFA3AEE7537 /* TuistAssets+FINDA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+FINDA.swift"; sourceTree = "<group>"; };
@@ -96,12 +95,13 @@
 		A21FEEE3C47ED000E39E66FE /* FeatureAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA20EED30874904E320AB7C1 /* FeatureMy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureMy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA31530203733886C59CBAB2 /* swift-sharing_Sharing.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-sharing_Sharing.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC9342C141E25A9192330A9B /* MainTabFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabFeature.swift; sourceTree = "<group>"; };
+		BF77ACB88EF14B103E4BD189 /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
 		C53502CE8E7D2861852C6902 /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
-		C94CC5191ECA84F652AA921B /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
 		D053AFF575073D61DAF6E3F6 /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
 		D4F47AE0F7B8C603C4BF9BCC /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA9B13DB44479C7D44F0C444 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		DAF27ECB1068C94CAC1C9590 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
-		EF7F2964E75D596B85FC8B77 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		F99433141C503EF7708A2A0A /* FINDA-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "FINDA-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,30 +174,21 @@
 			path = FINDA;
 			sourceTree = "<group>";
 		};
-		88414C092F3AD9E9008211E6 /* MainTab */ = {
-			isa = PBXGroup;
-			children = (
-				423A83ACA813AF419F8816C6 /* MainTabFeature.swift */,
-				2C2592ECAF6F4D12C31ACFC0 /* MainTabView.swift */,
-			);
-			path = MainTab;
-			sourceTree = "<group>";
-		};
-		88414C0A2F3AD9F8008211E6 /* App */ = {
-			isa = PBXGroup;
-			children = (
-				C94CC5191ECA84F652AA921B /* AppFeature.swift */,
-				EF7F2964E75D596B85FC8B77 /* AppView.swift */,
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
 		88A1F28609A7F4F4980C630E /* InfoPlists */ = {
 			isa = PBXGroup;
 			children = (
 				F99433141C503EF7708A2A0A /* FINDA-Info.plist */,
 			);
 			path = InfoPlists;
+			sourceTree = "<group>";
+		};
+		88F0640C029D807B1FF22CA5 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BF77ACB88EF14B103E4BD189 /* AppFeature.swift */,
+				2C111A90C7C082D985816535 /* AppView.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 		AF47195497D125C49C5DD28C /* Application */ = {
@@ -230,8 +221,8 @@
 		C15CD25E631C3F5E0B947FB5 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				88414C0A2F3AD9F8008211E6 /* App */,
-				88414C092F3AD9E9008211E6 /* MainTab */,
+				88F0640C029D807B1FF22CA5 /* App */,
+				FA9DFC4576C6B7567CDFB10E /* MainTab */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -260,6 +251,15 @@
 				2F39E5D6098415281116C7A7 /* Sources */,
 			);
 			path = Derived;
+			sourceTree = "<group>";
+		};
+		FA9DFC4576C6B7567CDFB10E /* MainTab */ = {
+			isa = PBXGroup;
+			children = (
+				AC9342C141E25A9192330A9B /* MainTabFeature.swift */,
+				DA9B13DB44479C7D44F0C444 /* MainTabView.swift */,
+			);
+			path = MainTab;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +295,8 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				ORGANIZATIONNAME = com.finda.app;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = 1051A9F12BD5364DB015CAF1 /* Build configuration list for PBXProject "FINDA" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -359,10 +361,10 @@
 				9C91C55DE9E92D6502D01FEC /* ContentView.swift in Sources */,
 				5899A5AC24731545A9A98BC0 /* FINDAApp.swift in Sources */,
 				3729012057FC8027F1CE1F13 /* SplashView.swift in Sources */,
-				FD9F98DF6CA0DB4D822E0F1A /* AppFeature.swift in Sources */,
-				E19D3FF1EA3C442972FDE7F4 /* AppView.swift in Sources */,
-				8017DADAA0952F557EDF6526 /* MainTabFeature.swift in Sources */,
-				0BEE08CD9212B69CFBC39F46 /* MainTabView.swift in Sources */,
+				21BBDD61E5B863D00CAA0707 /* AppFeature.swift in Sources */,
+				705637576270F6DE26438E58 /* AppView.swift in Sources */,
+				E82EBAB7A4F604D06192FFA3 /* MainTabFeature.swift in Sources */,
+				B9D020351217135F104B8557 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,14 +394,31 @@
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros";
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.finda.app.finda;
 				PRODUCT_NAME = FINDA;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -488,7 +507,21 @@
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
 					"-fmodule-map-file=$(SRCROOT)/../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros";
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.finda.app.finda;
 				PRODUCT_NAME = FINDA;
 				SDKROOT = iphoneos;
