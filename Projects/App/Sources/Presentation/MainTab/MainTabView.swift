@@ -71,7 +71,12 @@ private struct HomeTabView: View {
                 )
             )
         case .teacher:
-            TeacherMainView()
+            TeacherMainView(
+                store: store.scope(
+                    state: \.teacherMain,
+                    action: \.teacherMain
+                )
+            )
         }
     }
 }

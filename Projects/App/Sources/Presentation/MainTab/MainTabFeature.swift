@@ -1,5 +1,6 @@
 import ComposableArchitecture
 import FeatureStudent
+import FeatureTeacher
 import Shared
 
 enum Tab: Hashable {
@@ -16,6 +17,7 @@ struct MainTabFeature {
         var role: UserRole
         var selectedTab: Tab = .main
         var studentMain = StudentMainFeature.State()
+        var teacherMain = TeacherMainFeature.State()
 
         init(role: UserRole) {
             self.role = role
@@ -25,6 +27,7 @@ struct MainTabFeature {
     enum Action: BindableAction {
         case binding(BindingAction<State>)
         case studentMain(StudentMainFeature.Action)
+        case teacherMain(TeacherMainFeature.Action)
     }
 
     init() {}
@@ -41,6 +44,9 @@ struct MainTabFeature {
                 return .none
 
             case .studentMain:
+                return .none
+
+            case .teacherMain:
                 return .none
             }
         }
