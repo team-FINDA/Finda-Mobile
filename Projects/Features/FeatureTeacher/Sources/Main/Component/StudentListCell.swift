@@ -27,11 +27,10 @@ struct StudentListCell: View {
             .background(state ? Color.Sub.green10 : Color.Sub.red10)
             .cornerRadius(40)
         }
-        .padding(.vertical, 18)
-        .padding(.horizontal, 16)
-        .border(
-            state ? Color.Sub.green20 : Color.Sub.red20,
-            width: 0.5
+        .padding(16)
+        .overlay(
+            RoundedRectangle(cornerRadius: 5)
+                .stroke(state ? Color.Sub.green20 : Color.Sub.red20, lineWidth: 0.5)
         )
     }
 }
