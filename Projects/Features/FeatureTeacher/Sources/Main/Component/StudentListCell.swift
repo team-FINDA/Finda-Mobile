@@ -30,7 +30,7 @@ struct StudentListCell: View {
         .padding(16)
         .overlay(
             RoundedRectangle(cornerRadius: 5)
-                .stroke(state ? Color.Sub.green20 : Color.Sub.red20, lineWidth: 0.5)
+                .strokeBorder(state ? Color.Sub.green20 : Color.Sub.red20, lineWidth: 0.8)
         )
     }
 }

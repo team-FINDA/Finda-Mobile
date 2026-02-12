@@ -2,6 +2,12 @@ import SwiftUI
 import DesignSystem
 
 public struct TeacherMainView: View {
+    private let students: [(name: String, state: Bool)] = [
+        ("2216 하원", false),
+        ("2205 김시우", false),
+        ("2207 변도휘", true)
+    ]
+
     public init() {}
 
     public var body: some View {
@@ -31,6 +37,14 @@ public struct TeacherMainView: View {
                     .foregroundColor(.Gray.gray90)
 
                 Spacer()
+            }
+
+            ScrollView {
+                LazyVStack(spacing: 8) {
+                    ForEach(Array(students.enumerated()), id: \.offset) { _, student in
+                        StudentListCell(name: student.name, state: student.state)
+                    }
+                }
             }
 
             Spacer()
