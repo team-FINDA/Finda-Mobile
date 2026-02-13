@@ -19,17 +19,17 @@ public struct VolunteerListCell: View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
                 Text(volunteerName)
-                    .font(.finda(.body3))
+                    .font(.finda(.body1))
                     .foregroundColor(.Gray.gray90)
                 Text(date)
-                    .font(.finda(.caption4))
+                    .font(.finda(.caption2))
                     .foregroundColor(.Gray.gray80)
             }
 
             Spacer()
 
             Text("\(time)시간")
-                .font(.finda(.caption1))
+                .font(.finda(.body3))
                 .foregroundColor(.Blue.blue40)
         }
         .padding(20)
