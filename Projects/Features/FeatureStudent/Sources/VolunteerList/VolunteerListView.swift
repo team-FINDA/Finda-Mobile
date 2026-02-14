@@ -2,7 +2,11 @@ import SwiftUI
 import DesignSystem
 
 struct VolunteerListView: View {
-    private let volunteerPosts: [(name: String, date: String, time: Int)] = [
+    private let volunteerPosts: [(
+        name: String,
+        date: String,
+        time: Int
+    )] = [
         ("환경지킴이", "2025/04/16 ~ 2025/07/30", 8),
         ("교내 도서관 정리", "2025/03/10 ~ 2025/05/28", 12),
         ("지역사회 환경 캠페인", "2025/06/01 ~ 2025/08/15", 6)
@@ -50,6 +54,7 @@ struct VolunteerListView: View {
         }
         .navigationBarBackButtonHidden(true)
         .toolbar(.hidden, for: .navigationBar)
+        .toolbar(.hidden, for: .tabBar)
     }
 }
 

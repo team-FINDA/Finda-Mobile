@@ -4,6 +4,7 @@ import ComposableArchitecture
 public struct StudentMainFeature {
     @ObservableState
     public struct State: Equatable {
+        var path = StackState<Path.State>()
         public init() {}
     }
 
@@ -11,6 +12,12 @@ public struct StudentMainFeature {
         case notificationButtonTapped
         case shortNotificationButtonTapped
         case volunteerFindButtonTapped
+        case path(StackActionOf<Path>)
+    }
+
+    @Reducer
+    public enum Path {
+        case volunteerList(VolunteerListFeature)
     }
 
     public init() {}
@@ -23,8 +30,14 @@ public struct StudentMainFeature {
             case .shortNotificationButtonTapped:
                 return .none
             case .volunteerFindButtonTapped:
+                state.path.append(.volunteerList(VolunteerListFeature.State()))
+                return .none
+            case .path:
                 return .none
             }
         }
+        .forEach(\.path, action: \.path)
     }
 }
+
+extension StudentMainFeature.Path.State: Equatable {}

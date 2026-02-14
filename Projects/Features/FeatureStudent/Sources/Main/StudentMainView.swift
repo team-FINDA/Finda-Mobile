@@ -11,23 +11,38 @@ public struct StudentMainView: View {
 
     public var body: some View {
         WithPerceptionTracking {
-            ScrollView {
-                VStack(spacing: 20) {
-                    MainHeaderView(
-                        name: "2216 하원",
-                        notificationAction: { store.send(.notificationButtonTapped) },
-                        shortNotificationAction: { store.send(.shortNotificationButtonTapped) }
-                    )
+            NavigationStackStore(
+                store.scope(state: \.path, action: \.path)
+            ) {
+                ScrollView {
+                    VStack(spacing: 20) {
+                        MainHeaderView(
+                            name: "2216 하원",
+                            notificationAction: { store.send(.notificationButtonTapped) },
+                            shortNotificationAction: { store.send(.shortNotificationButtonTapped) }
+                        )
 
-                    TotalTimeView(volunteerTime: 16)
+                        TotalTimeView(volunteerTime: 16)
 
-                    GraphView()
+                        GraphView()
 
-                    VolunteerSearchButton(action: { store.send(.volunteerFindButtonTapped) })
+                        VolunteerSearchButton(action: { store.send(.volunteerFindButtonTapped) })
 
-                    Spacer()
+                        Spacer()
+                    }
+                    .padding(.horizontal, 24.5)
                 }
-                .padding(.horizontal, 24.5)
+            } destination: { store in
+                switch store.state {
+                case .volunteerList:
+                    IfLetStore(
+                        store.scope(
+                            state: \.volunteerList,
+                            action: \.volunteerList
+                        ),
+                        then: { _ in VolunteerListView() }
+                    )
+                }
             }
         }
     }
