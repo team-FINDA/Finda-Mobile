@@ -11,6 +11,7 @@ struct VolunteerListView: View {
         ("교내 도서관 정리", "2025/03/10 ~ 2025/05/28", 12),
         ("지역사회 환경 캠페인", "2025/06/01 ~ 2025/08/15", 6)
     ]
+    @State private var isShowingVolunteerPost = false
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
@@ -38,11 +39,16 @@ struct VolunteerListView: View {
 
             List {
                 ForEach(Array(volunteerPosts.enumerated()), id: \.offset) { _, post in
-                    VolunteerListCell(
-                        volunteerName: post.name,
-                        date: post.date,
-                        time: post.time
-                    )
+                    Button(action: {
+                        isShowingVolunteerPost = true
+                    }, label: {
+                        VolunteerListCell(
+                            volunteerName: post.name,
+                            date: post.date,
+                            time: post.time
+                        )
+                    })
+                    .buttonStyle(.plain)
                     .listRowSeparator(.hidden)
                     .listRowInsets(EdgeInsets(top: 8, leading: 24, bottom: 8, trailing: 24))
                     .listRowBackground(Color.clear)
@@ -55,6 +61,9 @@ struct VolunteerListView: View {
         .navigationBarBackButtonHidden(true)
         .toolbar(.hidden, for: .navigationBar)
         .toolbar(.hidden, for: .tabBar)
+        .navigationDestination(isPresented: $isShowingVolunteerPost) {
+            VolunteerPostView()
+        }
     }
 }
 

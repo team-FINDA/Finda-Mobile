@@ -83,6 +83,8 @@ struct VolunteerPostView: View {
                     HStack(spacing: 18) {
                         Image.Icons.location
                         Text("대덕소프트웨어마이스터고")
+                            .font(.finda(.body3))
+                            .foregroundColor(.Gray.gray90)
                         Spacer()
                     }
                     .padding(12)
@@ -96,6 +98,8 @@ struct VolunteerPostView: View {
                 .padding(.horizontal, 24)
             }
         }
+        .navigationBarBackButtonHidden(true)
+        .toolbar(.hidden, for: .navigationBar)
 
         FINDAButton(
             buttonText: "신청",
