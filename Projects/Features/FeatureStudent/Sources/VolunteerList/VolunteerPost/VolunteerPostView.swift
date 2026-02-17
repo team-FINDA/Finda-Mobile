@@ -29,7 +29,7 @@ struct VolunteerPostView: View {
             .padding(.vertical, 8)
 
             ScrollView {
-                VStack(spacing: 20) {
+                VStack(alignment: .leading, spacing: 20) {
                     VStack(alignment: .leading, spacing: 5) {
                         Text("봉사활동 제목")
                             .font(.finda(.heading5))
@@ -40,7 +40,7 @@ struct VolunteerPostView: View {
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.top, 20)
-                    
+
                     VStack(spacing: 15) {
                         HStack(spacing: 13) {
                             InfoView(
@@ -73,14 +73,36 @@ struct VolunteerPostView: View {
                             .frame(maxWidth: .infinity)
                         }
                     }
-                    
+
                     ActivityTagSection(tags: activityTags)
-                    
+
+                    Text("활동 장소")
+                        .font(.finda(.caption1))
+                        .foregroundColor(.Gray.gray60)
+
+                    HStack(spacing: 18) {
+                        Image.Icons.location
+                        Text("대덕소프트웨어마이스터고")
+                        Spacer()
+                    }
+                    .padding(12)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .strokeBorder(Color.Gray.gray70, lineWidth: 0.5)
+                    )
+
                     Spacer()
                 }
                 .padding(.horizontal, 24)
             }
         }
+
+        FINDAButton(
+            buttonText: "신청",
+            buttonColor: Color.Blue.blue40,
+            buttonClick: {}
+        )
+            .padding(20)
     }
 }
 
