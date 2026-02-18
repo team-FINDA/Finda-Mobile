@@ -11,6 +11,7 @@
 		081634FE070B0A4C2CC0E641 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBD3CF9B93DB5CAE4CB88C8E /* Icons.xcassets */; };
 		12E6F8D5A1B74FBAA859A17B /* Sub.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AABBDD28F1353CACF3406AB /* Sub.xcassets */; };
 		192A7788250BC66DEBFDF245 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1304941C5E8C7083BE0EB257 /* AuthTextField.swift */; };
+		1B62A2DC88FC69AD42496662 /* VolunteerListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3D7CD9459830ABA3C6F842 /* VolunteerListCell.swift */; };
 		1CDC7DDFBC0374FBD4076030 /* Blue.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24D93F7D818D17A03E1017E5 /* Blue.xcassets */; };
 		1D14E2323B0A8AB8896FFF59 /* FINDAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9DEA24BB8CC6AB9B37685C /* FINDAButton.swift */; };
 		2C2A6F1B0843699ACFE53D23 /* TuistFonts+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1489E7809DA4DADA471C2CDC /* TuistFonts+DesignSystem.swift */; };
@@ -66,6 +67,7 @@
 		A8631F72BB16A3A9A9FDB973 /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
 		B32F42237E0E489BDCA10FDB /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		BC5A53524CF95D1B02B3C29E /* FindaFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindaFont.swift; sourceTree = "<group>"; };
+		BD3D7CD9459830ABA3C6F842 /* VolunteerListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerListCell.swift; sourceTree = "<group>"; };
 		BE4AD9735556ECA8C8008FEC /* TuistBundle+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+DesignSystem.swift"; sourceTree = "<group>"; };
 		C3EF56EE58728F4397BB9DA8 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		D25C1C589AF4FC204EF5E571 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				8BC136006E1D0234B84A94B8 /* Button */,
+				C5F8B69B747C1C93422C089D /* Cell */,
 				DADCA588D3E296D27BE4E9DD /* Extension */,
 				F9E8E6CAFD528DBE7A3EA0F0 /* TextField */,
 				3685E88874D8B1F3BEE6A129 /* Typography */,
@@ -225,6 +228,14 @@
 				F9D2DBC4518456475CD7CE7D /* UserSelectButton.swift */,
 			);
 			path = UserSelect;
+			sourceTree = "<group>";
+		};
+		C5F8B69B747C1C93422C089D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BD3D7CD9459830ABA3C6F842 /* VolunteerListCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		D5FD3537E28AE857DC09D214 /* Sources */ = {
@@ -409,6 +420,7 @@
 				4D6F9A9F7E378222A01DCDA6 /* AuthPromptButton.swift in Sources */,
 				1D14E2323B0A8AB8896FFF59 /* FINDAButton.swift in Sources */,
 				7ECA1B016B161770DCA93FD4 /* UserSelectButton.swift in Sources */,
+				1B62A2DC88FC69AD42496662 /* VolunteerListCell.swift in Sources */,
 				CEC36DC0BC8D2AF0871D6E58 /* Color+.swift in Sources */,
 				5A8EFD2B11965BA3BFF164E9 /* Image+.swift in Sources */,
 				2F0F96599C1EAF80CD313D4B /* DismissKeyboardOnTap.swift in Sources */,

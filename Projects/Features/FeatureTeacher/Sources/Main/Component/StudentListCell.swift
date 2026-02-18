@@ -17,13 +17,13 @@ struct StudentListCell: View {
 
             Spacer()
 
-            Button(action: {}) {
+            Button(action: {}, label: {
                 Text(state ? "출석" : "미출석")
                     .font(.finda(.caption1))
                     .foregroundColor(state ? .Sub.green20 : .Sub.red20)
                     .padding(.vertical, 6)
                     .padding(.horizontal, 12)
-            }
+            })
             .background(state ? Color.Sub.green10 : Color.Sub.red10)
             .cornerRadius(40)
         }
