@@ -73,7 +73,6 @@ struct CalendarMonth {
 
 struct CalendarView: View {
     let monthlyEvents: [MonthlyEventResponse]
-    let accentColor: Color
     let onSelectDay: (Int, Int) -> Void
 
     @State private var currentMonth: CalendarMonth
@@ -83,14 +82,11 @@ struct CalendarView: View {
 
     init(
         monthlyEvents: [MonthlyEventResponse],
-        initialDate: Date = Date(),
-        accentColor: Color,
         onSelectDay: @escaping (Int, Int) -> Void
     ) {
         self.monthlyEvents = monthlyEvents
-        self.accentColor = accentColor
         self.onSelectDay = onSelectDay
-        _currentMonth = State(initialValue: CalendarMonth(date: initialDate))
+        _currentMonth = State(initialValue: CalendarMonth(date: Date()))
         _selectedDate = State(initialValue: nil)
     }
 
@@ -154,8 +150,7 @@ struct CalendarView: View {
                 DayCellView(
                     calDay: day,
                     isSelected: isSelected(day),
-                    isToday: isToday(day),
-                    accentColor: accentColor
+                    isToday: isToday(day)
                 ) {
                     guard let date = day.date else { return }
                     selectedDate = date
@@ -198,7 +193,6 @@ struct DayCellView: View {
     let calDay: CalendarDay
     let isSelected: Bool
     let isToday: Bool
-    let accentColor: Color
     let action: () -> Void
 
     var body: some View {
@@ -258,8 +252,6 @@ struct CalendarView_Previews: PreviewProvider {
     static var previews: some View {
         CalendarView(
             monthlyEvents: previewEvents,
-            initialDate: CalendarMonth(year: 2026, month: 2).firstDate,
-            accentColor: .blue,
             onSelectDay: { _, _ in }
         )
     }
