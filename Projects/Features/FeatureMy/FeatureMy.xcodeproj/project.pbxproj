@@ -3,15 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		26C1D83730A005800CEB2B9A /* ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC598270D2E18BAA56861838 /* ComposableArchitecture.framework */; };
 		6D643E00F48A4175C5FF556A /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0FF3339A9472B5423DB2EF /* Shared.framework */; };
+		88BCB97F2F471B3000BCF183 /* VolunteerFilterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BCB97E2F471B2900BCF183 /* VolunteerFilterListView.swift */; };
+		88BCB9822F47206900BCF183 /* VolunteerFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BCB9812F47205200BCF183 /* VolunteerFilter.swift */; };
 		8F8AB04B00A002ABB6D7DA68 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4BCA2EB5199D14C002D08A /* DesignSystem.framework */; };
 		B3D1350B05F9E742EE22FAB3 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C7DE561CBB0DA717BC420B /* MyView.swift */; };
 		F00628E7F7BC786C30B6DCF1 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A8054F5CCC9AB7C0E7DA39 /* Core.framework */; };
+		FAFB6C9FE3261102F8B8FCCA /* VolunteerRoleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75358356FF54D62500BB6248 /* VolunteerRoleScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,7 +34,10 @@
 		43C7DE561CBB0DA717BC420B /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 		4A0FF3339A9472B5423DB2EF /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		706BE6009C5B57A3EE65AE7B /* FeatureMy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureMy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75358356FF54D62500BB6248 /* VolunteerRoleScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerRoleScrollView.swift; sourceTree = "<group>"; };
 		7A660683DAA87CD4A880216E /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
+		88BCB97E2F471B2900BCF183 /* VolunteerFilterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerFilterListView.swift; sourceTree = "<group>"; };
+		88BCB9812F47205200BCF183 /* VolunteerFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerFilter.swift; sourceTree = "<group>"; };
 		AA4BCA2EB5199D14C002D08A /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2A434088CC8F5EEF11042B7 /* FeatureMy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "FeatureMy-Info.plist"; sourceTree = "<group>"; };
 		C1A8054F5CCC9AB7C0E7DA39 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,9 +78,28 @@
 			);
 			sourceTree = "<group>";
 		};
+		88BCB97D2F47198E00BCF183 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				88BCB9832F47214700BCF183 /* VolunteerFilter */,
+				75358356FF54D62500BB6248 /* VolunteerRoleScrollView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		88BCB9832F47214700BCF183 /* VolunteerFilter */ = {
+			isa = PBXGroup;
+			children = (
+				88BCB9812F47205200BCF183 /* VolunteerFilter.swift */,
+				88BCB97E2F471B2900BCF183 /* VolunteerFilterListView.swift */,
+			);
+			path = VolunteerFilter;
+			sourceTree = "<group>";
+		};
 		8FC8E1CCD202365C8DF98FC3 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				88BCB97D2F47198E00BCF183 /* Component */,
 				43C7DE561CBB0DA717BC420B /* MyView.swift */,
 			);
 			path = Sources;
@@ -158,8 +183,6 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				ORGANIZATIONNAME = com.finda.app;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 71E809662695D584EB1D996C /* Build configuration list for PBXProject "FeatureMy" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -216,6 +239,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAFB6C9FE3261102F8B8FCCA /* VolunteerRoleScrollView.swift in Sources */,
+				88BCB97F2F471B3000BCF183 /* VolunteerFilterListView.swift in Sources */,
+				88BCB9822F47206900BCF183 /* VolunteerFilter.swift in Sources */,
 				B3D1350B05F9E742EE22FAB3 /* MyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,21 +335,7 @@
 					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
 					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = (
-					"$(inherited)",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros",
-				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros";
 				PRODUCT_BUNDLE_IDENTIFIER = com.finda.app.featuremy;
 				PRODUCT_NAME = FeatureMy;
 				SDKROOT = iphoneos;
@@ -331,10 +343,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-					"$(inherited)",
-					DEBUG,
-				);
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -372,21 +381,7 @@
 					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
 					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = (
-					"$(inherited)",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros",
-				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros";
 				PRODUCT_BUNDLE_IDENTIFIER = com.finda.app.featuremy;
 				PRODUCT_NAME = FeatureMy;
 				SDKROOT = iphoneos;
