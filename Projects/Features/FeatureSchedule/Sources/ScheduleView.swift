@@ -55,7 +55,7 @@ public struct ScheduleView: View {
                     .foregroundColor(.Gray.gray90)
             }
             .padding(.vertical, 12)
-            
+
             VStack(spacing: 16) {
                 CalendarView(
                     monthlyEvents: ScheduleView.exampleEvents,
@@ -64,12 +64,12 @@ public struct ScheduleView: View {
                         selectDay = day
                     }
                 )
-                
+
                 VStack(alignment: .leading, spacing: 16) {
                     Text("\(selectMonth)월 \(selectDay)일")
                         .font(.finda(.caption2))
                         .foregroundColor(.Gray.gray80)
-                    
+
                     if selectedEvents.isEmpty {
                         HStack {
                             Text("일정이 없습니다")
@@ -84,7 +84,7 @@ public struct ScheduleView: View {
                                 Circle()
                                     .fill(Color.Blue.blue30)
                                     .frame(width: 5, height: 5)
-                                
+
                                 Text(event.eventName)
                                     .font(.finda(.caption1))
                                     .foregroundColor(.Gray.gray90)
@@ -103,7 +103,7 @@ public struct ScheduleView: View {
                 .padding(15)
                 .background(Color.Gray.gray20)
                 .cornerRadius(10)
-                
+
                 Spacer()
             }
             .padding(.horizontal, 24)
