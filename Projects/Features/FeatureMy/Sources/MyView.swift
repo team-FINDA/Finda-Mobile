@@ -58,10 +58,8 @@ public struct MyView: View {
             .background(Color.Blue.blue10)
             .cornerRadius(16)
 
-            if role == .student {
-                VolunteerFilterView(selectedFilter: $selectedFilter)
-                VolunteerListView(activities: filteredActivities)
-            }
+            VolunteerFilterView(selectedFilter: $selectedFilter)
+            VolunteerListView(activities: filteredActivities)
 
             Spacer()
         }
