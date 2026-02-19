@@ -16,7 +16,7 @@ public struct MyView: View {
         if selectedFilter == .all {
             return dummyActivities
         }
-        return dummyActivities.filter { $0.status == selectedFilter.rawValue }
+        return dummyActivities.filter { $0.status == selectedFilter }
     }
 
     public var body: some View {

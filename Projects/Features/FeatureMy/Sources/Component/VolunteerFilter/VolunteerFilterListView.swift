@@ -6,7 +6,7 @@ struct VolunteerListResponse: Identifiable {
     let title: String
     let startDate: String
     let endDate: String
-    let status: String
+    let status: VolunteerStatus
 }
 
 enum VolunteerStatus: String, CaseIterable {
@@ -17,12 +17,12 @@ enum VolunteerStatus: String, CaseIterable {
 }
 
 let dummyActivities: [VolunteerListResponse] = [
-    VolunteerListResponse(id: "1", title: "환경 지킴이 활동", startDate: "2025/04/16", endDate: "2025/07/30", status: "대기중"),
-    VolunteerListResponse(id: "2", title: "환경 지킴이 활동", startDate: "2025/04/16", endDate: "2025/07/30", status: "대기중"),
-    VolunteerListResponse(id: "3", title: "환경 지킴이 활동", startDate: "2025/04/16", endDate: "2025/07/30", status: "진행중"),
-    VolunteerListResponse(id: "4", title: "환경 지킴이 활동", startDate: "2025/04/16", endDate: "2025/07/30", status: "종료"),
-    VolunteerListResponse(id: "5", title: "환경 지킴이 활동", startDate: "2025/04/16", endDate: "2025/07/30", status: "진행중"),
-    VolunteerListResponse(id: "6", title: "환경 지킴이 활동", startDate: "2025/04/16", endDate: "2025/07/30", status: "대기중")
+    VolunteerListResponse(id: "1", title: "환경 지킴이 활동", startDate: "2025/04/16", endDate: "2025/07/30", status: .waiting),
+    VolunteerListResponse(id: "2", title: "환경 지킴이 활동", startDate: "2025/04/16", endDate: "2025/07/30", status: .waiting),
+    VolunteerListResponse(id: "3", title: "환경 지킴이 활동", startDate: "2025/04/16", endDate: "2025/07/30", status: .inProgress),
+    VolunteerListResponse(id: "4", title: "환경 지킴이 활동", startDate: "2025/04/16", endDate: "2025/07/30", status: .ended),
+    VolunteerListResponse(id: "5", title: "환경 지킴이 활동", startDate: "2025/04/16", endDate: "2025/07/30", status: .inProgress),
+    VolunteerListResponse(id: "6", title: "환경 지킴이 활동", startDate: "2025/04/16", endDate: "2025/07/30", status: .waiting)
 ]
 
 struct VolunteerListView: View {
@@ -70,37 +70,37 @@ private struct VolunteerCell: View {
 }
 
 private struct StatusTag: View {
-    let status: String
+    let status: VolunteerStatus
 
     private var borderColor: Color {
         switch status {
-        case "대기중": return .Blue.blue50
-        case "진행중": return .Sub.green20
-        case "종료": return .Sub.red20
-        default: return .Gray.gray50
+        case .waiting: return .Blue.blue50
+        case .inProgress: return .Sub.green20
+        case .ended: return .Sub.red20
+        case .all: return .Gray.gray50
         }
     }
 
     private var textColor: Color {
         switch status {
-        case "대기중": return .Blue.blue40
-        case "진행중": return .Sub.green20
-        case "종료": return .Sub.red20
-        default: return .Gray.gray50
+        case .waiting: return .Blue.blue40
+        case .inProgress: return .Sub.green20
+        case .ended: return .Sub.red20
+        case .all: return .Gray.gray50
         }
     }
 
     private var backgroundColor: Color {
         switch status {
-        case "대기중": return .Blue.blue10
-        case "진행중": return .Sub.green10
-        case "종료": return .Sub.red10
-        default: return .Gray.gray10
+        case .waiting: return .Blue.blue10
+        case .inProgress: return .Sub.green10
+        case .ended: return .Sub.red10
+        case .all: return .Gray.gray10
         }
     }
 
     var body: some View {
-        Text(status)
+        Text(status.rawValue)
             .font(.finda(.caption1))
             .foregroundColor(textColor)
             .padding(.horizontal, 7)
