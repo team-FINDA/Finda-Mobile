@@ -77,6 +77,7 @@ struct CalendarView: View {
 
     @State private var currentMonth: CalendarMonth
     @State private var selectedDate: Date?
+    @State private var didSendInitialSelection = false
 
     private let weekdays = ["일", "월", "화", "수", "목", "금", "토"]
 
@@ -106,6 +107,11 @@ struct CalendarView: View {
             RoundedRectangle(cornerRadius: 10)
                 .fill(Color.Gray.gray20)
         )
+        .onAppear {
+            guard !didSendInitialSelection else { return }
+            didSendInitialSelection = true
+            select(date: Date())
+        }
     }
 
     private var monthHeader: some View {
@@ -153,13 +159,17 @@ struct CalendarView: View {
                     isToday: isToday(day)
                 ) {
                     guard let date = day.date else { return }
-                    selectedDate = date
-                    let selectedDay = Calendar.current.component(.day, from: date)
-                    let selectedMonth = Calendar.current.component(.month, from: date)
-                    onSelectDay(selectedDay, selectedMonth)
+                    select(date: date)
                 }
             }
         }
+    }
+
+    private func select(date: Date) {
+        selectedDate = date
+        let selectedMonth = Calendar.current.component(.month, from: date)
+        let selectedDay = Calendar.current.component(.day, from: date)
+        onSelectDay(selectedMonth, selectedDay)
     }
 
     private func eventMap(for month: CalendarMonth) -> [Int: [MonthlyEventResponse]] {
