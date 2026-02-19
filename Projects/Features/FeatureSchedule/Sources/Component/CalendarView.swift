@@ -197,13 +197,13 @@ struct DayCellView: View {
 
     var body: some View {
         Button(action: action) {
-            VStack(spacing: 4) {
+            VStack(spacing: 2) {
                 if let date = calDay.date {
                     let dayNum = Calendar.current.component(.day, from: date)
                     Text("\(dayNum)")
                         .font(.finda(.body4))
                         .foregroundColor(.Gray.gray90)
-                        .frame(width: 32, height: 32)
+                        .frame(width: 28, height: 28)
                         .background(Circle().fill(isToday ? Color.Blue.blue20 : .clear))
 
                     Circle()
@@ -214,7 +214,7 @@ struct DayCellView: View {
                         .frame(width: 4, height: 4)
                 }
             }
-            .frame(width: 36, height: 44)
+            .frame(width: 36, height: 42)
             .background(
                 RoundedRectangle(cornerRadius: 5)
                     .fill((isSelected && !isToday) ? Color.Blue.blue10 : .clear)
