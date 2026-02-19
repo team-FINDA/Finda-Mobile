@@ -93,7 +93,7 @@ private struct ProfileTabView: View {
     let role: UserRole
 
     var body: some View {
-        MyView()
+        MyView(role: role)
     }
 }
 
