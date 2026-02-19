@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		275EEA37E6749FC6AC83EEFE /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30610912F77B4CD3CFA4A042 /* DesignSystem.framework */; };
 		45553FA1B90DCC7E5C88E30B /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D453D257C08D844CD5F942F /* ScheduleView.swift */; };
+		4A051ED6DBFD59A3718A0B81 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C30C887A5EDA2041C9EF51 /* CalendarView.swift */; };
 		62FCDE7EBE646F6209A9FE38 /* ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB989B9B300C2C1DB4205B0F /* ComposableArchitecture.framework */; };
 		D532568B2AC9E85F9947C365 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6855BDD0E3F7282AC069FDE0 /* Core.framework */; };
 		EAC6669B851A20C28B24551D /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB75C1C4D14835B45F0C453 /* Shared.framework */; };
@@ -35,6 +36,7 @@
 		5D453D257C08D844CD5F942F /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		6855BDD0E3F7282AC069FDE0 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABACFE37D66842D0035E3A70 /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
+		B1C30C887A5EDA2041C9EF51 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		EB989B9B300C2C1DB4205B0F /* ComposableArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ComposableArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8FD076F34AA7C4398FAC13C /* FeatureSchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureSchedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -66,6 +68,7 @@
 		5B1E09E9C310BE1453503CDF /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				787772F740CC03D5E4DC8678 /* Component */,
 				5D453D257C08D844CD5F942F /* ScheduleView.swift */,
 			);
 			path = Sources;
@@ -77,6 +80,14 @@
 				1DD26F1280C695B7036E9758 /* FeatureSchedule-Info.plist */,
 			);
 			path = InfoPlists;
+			sourceTree = "<group>";
+		};
+		787772F740CC03D5E4DC8678 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				B1C30C887A5EDA2041C9EF51 /* CalendarView.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		787F3B4C531EBA0A9C8A0B13 /* FeatureSchedule */ = {
@@ -216,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A051ED6DBFD59A3718A0B81 /* CalendarView.swift in Sources */,
 				45553FA1B90DCC7E5C88E30B /* ScheduleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
