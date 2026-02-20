@@ -11,10 +11,10 @@
 		535B56C57694D2BD7C59A3A4 /* TeacherMainFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4592BD277596DB67E01241BF /* TeacherMainFeature.swift */; };
 		60A14050F200114794A5A305 /* StudentListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513A1737CE12CCD033F96ED0 /* StudentListCell.swift */; };
 		642AABB73B19A24F599A1E15 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6990196BB876AA6F5C32FFC /* DesignSystem.framework */; };
+		B26959CCED835F0E053CED5B /* QRCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606CD6600162E9A55A961491 /* QRCreateView.swift */; };
 		BAF16516E3485AED2F4EF3D4 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FDADF8C1E4459E6F8A2A8DF /* Core.framework */; };
 		CCEA6B85B7E7ACD8D2A2B523 /* TeacherMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D40C114790079CAF74CA13B /* TeacherMainView.swift */; };
 		E972331F3B4E7A2CA0660D40 /* ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A30B36754A90FF14E11FBA4 /* ComposableArchitecture.framework */; };
-		F3185FF05F38EFDC05D67E97 /* QRCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B78A69313CC6C9E63B81C /* QRCreateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,7 +36,7 @@
 		1FDADF8C1E4459E6F8A2A8DF /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4592BD277596DB67E01241BF /* TeacherMainFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherMainFeature.swift; sourceTree = "<group>"; };
 		513A1737CE12CCD033F96ED0 /* StudentListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListCell.swift; sourceTree = "<group>"; };
-		8C8B78A69313CC6C9E63B81C /* QRCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCreateView.swift; sourceTree = "<group>"; };
+		606CD6600162E9A55A961491 /* QRCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCreateView.swift; sourceTree = "<group>"; };
 		AFBF68F6060262D45624E86E /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
 		D6990196BB876AA6F5C32FFC /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D92B1DD6F25184CF3D4BDED0 /* FeatureTeacher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureTeacher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +103,14 @@
 			path = InfoPlists;
 			sourceTree = "<group>";
 		};
+		8850EF35B37702D62B41440B /* QR */ = {
+			isa = PBXGroup;
+			children = (
+				606CD6600162E9A55A961491 /* QRCreateView.swift */,
+			);
+			path = QR;
+			sourceTree = "<group>";
+		};
 		C3D854350045398BC7D479A4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				D45EA77424A5EA9344BD9961 /* Main */,
-				8C8B78A69313CC6C9E63B81C /* QRCreateView.swift */,
+				8850EF35B37702D62B41440B /* QR */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -244,7 +252,7 @@
 				60A14050F200114794A5A305 /* StudentListCell.swift in Sources */,
 				535B56C57694D2BD7C59A3A4 /* TeacherMainFeature.swift in Sources */,
 				CCEA6B85B7E7ACD8D2A2B523 /* TeacherMainView.swift in Sources */,
-				F3185FF05F38EFDC05D67E97 /* QRCreateView.swift in Sources */,
+				B26959CCED835F0E053CED5B /* QRCreateView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
