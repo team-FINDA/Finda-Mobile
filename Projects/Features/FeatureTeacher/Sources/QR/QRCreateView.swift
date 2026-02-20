@@ -2,6 +2,13 @@ import SwiftUI
 import DesignSystem
 
 public struct QRCreateView: View {
+    private let pages: [QRPage] = [
+        QRPage(id: "1231231", title: "환경지킴이"),
+        QRPage(id: "3543453", title: "바둑두기"),
+        QRPage(id: "7867656", title: "화분에 물주기")
+    ]
+    @State private var selectedPageID: String?
+
     public init() {}
 
     public var body: some View {
@@ -25,6 +32,13 @@ public struct QRCreateView: View {
             .padding(15)
             .background(Color.Blue.blue10)
             .cornerRadius(10)
+
+            QRListView(
+                pages: pages,
+                onGenerateRequest: { pageID in
+                    selectedPageID = pageID
+                }
+            )
 
             Spacer()
         }
