@@ -23,6 +23,7 @@
 		7ECA1B016B161770DCA93FD4 /* UserSelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D2DBC4518456475CD7CE7D /* UserSelectButton.swift */; };
 		ABB14811E13F7B1ECCF8B086 /* TuistAssets+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5263BC75B281154AC0B5A7B /* TuistAssets+DesignSystem.swift */; };
 		ACDAD3EE27CA12E21F8A7A2A /* FindaFontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D97AAEE430A52848A3BF3AE /* FindaFontStyle.swift */; };
+		B75AF519B97E1E5BDB630737 /* ConfirmPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B72E76EEF0B95242FC74B85 /* ConfirmPopupView.swift */; };
 		C8478A3CDE36A8F1A7E401DA /* Gray.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C226A3A3734473E0AF64CD /* Gray.xcassets */; };
 		CA2CCB6E800DED7F783CE76A /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 02F6CE72280B49A87F296776 /* Pretendard-SemiBold.otf */; };
 		CEC36DC0BC8D2AF0871D6E58 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4AC63533057A09401E9ACB /* Color+.swift */; };
@@ -52,6 +53,7 @@
 		1489E7809DA4DADA471C2CDC /* TuistFonts+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistFonts+DesignSystem.swift"; sourceTree = "<group>"; };
 		1CA11073843FE4E5B67AAAE0 /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
 		24D93F7D818D17A03E1017E5 /* Blue.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Blue.xcassets; sourceTree = "<group>"; };
+		2B72E76EEF0B95242FC74B85 /* ConfirmPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPopupView.swift; sourceTree = "<group>"; };
 		4C99BE9AFD874041C64F1F29 /* AuthPromptButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPromptButton.swift; sourceTree = "<group>"; };
 		56A7772AA0518B04428BE5C5 /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		593CD7BFBE22E5E79F338306 /* Image+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+.swift"; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				8BC136006E1D0234B84A94B8 /* Button */,
 				C5F8B69B747C1C93422C089D /* Cell */,
 				DADCA588D3E296D27BE4E9DD /* Extension */,
+				19EDB96E44056176A3F928A5 /* Popup */,
 				F9E8E6CAFD528DBE7A3EA0F0 /* TextField */,
 				3685E88874D8B1F3BEE6A129 /* Typography */,
 				886F251B9E5A79002E70F823 /* View */,
@@ -118,6 +121,14 @@
 			);
 			name = XCConfig;
 			path = ../../XCConfig;
+			sourceTree = "<group>";
+		};
+		19EDB96E44056176A3F928A5 /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				2B72E76EEF0B95242FC74B85 /* ConfirmPopupView.swift */,
+			);
+			path = Popup;
 			sourceTree = "<group>";
 		};
 		1AC66E6767016E7C72081D81 /* Fonts */ = {
@@ -424,6 +435,7 @@
 				CEC36DC0BC8D2AF0871D6E58 /* Color+.swift in Sources */,
 				5A8EFD2B11965BA3BFF164E9 /* Image+.swift in Sources */,
 				2F0F96599C1EAF80CD313D4B /* DismissKeyboardOnTap.swift in Sources */,
+				B75AF519B97E1E5BDB630737 /* ConfirmPopupView.swift in Sources */,
 				192A7788250BC66DEBFDF245 /* AuthTextField.swift in Sources */,
 				F92BA348F451BC1488B0FD4D /* FindaFont.swift in Sources */,
 				ACDAD3EE27CA12E21F8A7A2A /* FindaFontStyle.swift in Sources */,
