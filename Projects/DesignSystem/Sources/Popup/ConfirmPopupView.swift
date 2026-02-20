@@ -21,11 +21,11 @@ public struct ConfirmPopupView: View {
                 Image.Icons.check
 
                 Text(title)
-                    .font(.finda(.body3))
+                    .font(.finda(.body1))
                     .foregroundColor(.Gray.gray90)
 
                 Text(content)
-                    .font(.finda(.caption4))
+                    .font(.finda(.caption2))
                     .foregroundColor(.Gray.gray80)
             }
 
@@ -35,15 +35,20 @@ public struct ConfirmPopupView: View {
                 Text("확인")
                     .font(.finda(.caption1))
                     .frame(maxWidth: .infinity)
-                    .padding(.vertical, 10)
+                    .padding(.vertical, 14)
                     .foregroundStyle(Color.Gray.gray10)
             }
             .background(Color.Blue.blue40)
             .cornerRadius(32)
         }
         .padding(20)
+        .background(
+            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                .fill(Color.Gray.gray10)
+        )
+        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
         .overlay(
-            RoundedRectangle(cornerRadius: 10)
+            RoundedRectangle(cornerRadius: 10, style: .continuous)
                 .stroke(Color.Gray.gray80, lineWidth: 0.5)
         )
     }

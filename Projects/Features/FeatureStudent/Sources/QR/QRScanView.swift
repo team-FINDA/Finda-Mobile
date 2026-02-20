@@ -1,4 +1,5 @@
 import SwiftUI
+import DesignSystem
 
 public struct QRScanView: View {
     @State private var scannedURI: String = ""
@@ -14,11 +15,18 @@ public struct QRScanView: View {
                 isShowingScanAlert = true
             }
             .ignoresSafeArea()
-        }
-        .alert("QR 인식 완료", isPresented: $isShowingScanAlert) {
-            Button("확인", role: .cancel) {}
-        } message: {
-            Text(scannedURI)
+
+            if isShowingScanAlert {
+                Color.black.opacity(0.6)
+                    .ignoresSafeArea()
+
+                ConfirmPopupView(
+                    title: "QR 인식 완료",
+                    content: scannedURI,
+                    action: { isShowingScanAlert = false }
+                )
+                .padding(.horizontal, 64)
+            }
         }
     }
 }
