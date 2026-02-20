@@ -40,8 +40,10 @@ private final class QRScannerViewController: UIViewController, AVCaptureMetadata
     var onCodeScanned: ((String) -> Void)?
 
     private let captureSession = AVCaptureSession()
+    private let sessionQueue = DispatchQueue(label: "com.finda.qr.capture-session")
     private var previewLayer: AVCaptureVideoPreviewLayer?
     private var lastScannedCode: String?
+    private var isSessionConfigured = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,10 +56,18 @@ private final class QRScannerViewController: UIViewController, AVCaptureMetadata
         previewLayer?.frame = view.bounds
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if isSessionConfigured {
+            startSessionIfNeeded()
+        }
+    }
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if captureSession.isRunning {
-            captureSession.stopRunning()
+        sessionQueue.async { [weak self] in
+            guard let self, self.captureSession.isRunning else { return }
+            self.captureSession.stopRunning()
         }
     }
 
@@ -78,6 +88,11 @@ private final class QRScannerViewController: UIViewController, AVCaptureMetadata
     }
 
     private func setupSessionAndStart() {
+        if isSessionConfigured {
+            startSessionIfNeeded()
+            return
+        }
+
         guard let backCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) else {
             return
         }
@@ -92,6 +107,8 @@ private final class QRScannerViewController: UIViewController, AVCaptureMetadata
             if captureSession.canAddOutput(output) {
                 captureSession.addOutput(output)
                 output.setMetadataObjectsDelegate(self, queue: .main)
+                let availableTypes = output.availableMetadataObjectTypes
+                guard availableTypes.contains(.qr) else { return }
                 output.metadataObjectTypes = [.qr]
             }
 
@@ -101,14 +118,17 @@ private final class QRScannerViewController: UIViewController, AVCaptureMetadata
             view.layer.insertSublayer(preview, at: 0)
             previewLayer = preview
 
-            DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-                guard let self else { return }
-                if !self.captureSession.isRunning {
-                    self.captureSession.startRunning()
-                }
-            }
+            isSessionConfigured = true
+            startSessionIfNeeded()
         } catch {
             return
+        }
+    }
+
+    private func startSessionIfNeeded() {
+        sessionQueue.async { [weak self] in
+            guard let self, !self.captureSession.isRunning else { return }
+            self.captureSession.startRunning()
         }
     }
 

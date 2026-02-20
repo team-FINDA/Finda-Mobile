@@ -3,15 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		08071E933F7E8B57252DBA5E /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19714E06C88D81D46A1F341E /* DesignSystem.framework */; };
 		3FE80C743238C6D3F7061DC5 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 364FF98E8EB2F5B94CCF0FB6 /* Shared.framework */; };
-		4FCD22482F38B5A07C9E2787 /* QRScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067C3F2E9C9D820498E306F /* QRScanView.swift */; };
 		55873B2132939B3744B32237 /* VolunteerSearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A1BB06708F1D0281DBD1C6 /* VolunteerSearchButton.swift */; };
 		5BD7BAD020F83F9A14534228 /* ActivityTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D242B2F4A4821954959B1CF0 /* ActivityTagCell.swift */; };
+		677CED86042A16C716CB96D8 /* QRScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC09C10F0EE1ADC12B8FAD11 /* QRScanView.swift */; };
 		68988D372755F50D171AFF51 /* ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6878A12F7AFFAA7700F82992 /* ComposableArchitecture.framework */; };
 		7DB35617766E15DBDF7066B3 /* VolunteerPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BB85FB4ACD82DF1FAB75E4 /* VolunteerPostView.swift */; };
 		7FAC19343ECD752BAAD7680E /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC96B29E12AA4484A480B5DF /* Core.framework */; };
@@ -54,8 +54,8 @@
 		BF3B9CCE1DC9D69712AC00CE /* FeatureStudent-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "FeatureStudent-Info.plist"; sourceTree = "<group>"; };
 		D242B2F4A4821954959B1CF0 /* ActivityTagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTagCell.swift; sourceTree = "<group>"; };
 		DDC3F4A1AC4F1C4C90D16338 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
-		F067C3F2E9C9D820498E306F /* QRScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScanView.swift; sourceTree = "<group>"; };
 		F2ED4B7D72FA3A770AB1920B /* FeatureStudent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureStudent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC09C10F0EE1ADC12B8FAD11 /* QRScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScanView.swift; sourceTree = "<group>"; };
 		FD8E2324226FCF953AC4AEF6 /* VolunteerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,7 +97,6 @@
 		17625D813C35F1BB52EB9E10 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				88BCB97A2F46FB2200BCF183 /* QR */,
 				B19BB22BEB3B287694EE4855 /* Component */,
 				A4BC661457230BAC38FFF089 /* StudentMainFeature.swift */,
 				A8CAE168605701B9E303450B /* StudentMainView.swift */,
@@ -157,6 +156,14 @@
 			);
 			sourceTree = "<group>";
 		};
+		7FA4D7CF59CB568401B8133E /* QR */ = {
+			isa = PBXGroup;
+			children = (
+				FC09C10F0EE1ADC12B8FAD11 /* QRScanView.swift */,
+			);
+			path = QR;
+			sourceTree = "<group>";
+		};
 		8310561AC897DB028D995CD4 /* Component */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,14 +179,6 @@
 				DDC3F4A1AC4F1C4C90D16338 /* GraphView.swift */,
 			);
 			path = Graph;
-			sourceTree = "<group>";
-		};
-		88BCB97A2F46FB2200BCF183 /* QR */ = {
-			isa = PBXGroup;
-			children = (
-				F067C3F2E9C9D820498E306F /* QRScanView.swift */,
-			);
-			path = QR;
 			sourceTree = "<group>";
 		};
 		94175DCA3911575FC387986C /* Products */ = {
@@ -198,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				17625D813C35F1BB52EB9E10 /* Main */,
+				7FA4D7CF59CB568401B8133E /* QR */,
 				03D3081FF92D1E49490428CF /* VolunteerList */,
 			);
 			path = Sources;
@@ -252,6 +252,8 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				ORGANIZATIONNAME = com.finda.app;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = 51CEFD28C59F4658311EC350 /* Build configuration list for PBXProject "FeatureStudent" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -312,7 +314,7 @@
 				55873B2132939B3744B32237 /* VolunteerSearchButton.swift in Sources */,
 				8558643580FD6F8196DA3D20 /* StudentMainFeature.swift in Sources */,
 				C08A4707D2765F3568730430 /* StudentMainView.swift in Sources */,
-				4FCD22482F38B5A07C9E2787 /* QRScanView.swift in Sources */,
+				677CED86042A16C716CB96D8 /* QRScanView.swift in Sources */,
 				EDCB9466D1BC3A421B3ADC23 /* VolunteerListFeature.swift in Sources */,
 				BFC6524ACAC1B3D9B1ED43E4 /* VolunteerListView.swift in Sources */,
 				5BD7BAD020F83F9A14534228 /* ActivityTagCell.swift in Sources */,
@@ -353,7 +355,21 @@
 					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
 					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros";
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.finda.app.featurestudent;
 				PRODUCT_NAME = FeatureStudent;
 				SDKROOT = iphoneos;
@@ -361,7 +377,10 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -399,7 +418,21 @@
 					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
 					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros";
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.finda.app.featurestudent;
 				PRODUCT_NAME = FeatureStudent;
 				SDKROOT = iphoneos;
