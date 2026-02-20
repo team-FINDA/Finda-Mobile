@@ -28,5 +28,6 @@ public extension Image.Images {
     static let book = DesignSystemAsset.Images.book.swiftUIImage
     static let emptyLogo = DesignSystemAsset.Images.emptyLogo.swiftUIImage
     static let findVolunteer = DesignSystemAsset.Images.findVolunteer.swiftUIImage
+    static let logo = DesignSystemAsset.Images.logo.swiftUIImage
     static let pencil = DesignSystemAsset.Images.pencil.swiftUIImage
 }
