@@ -9,7 +9,7 @@ public struct QRScanView: View {
 
     public var body: some View {
         ZStack {
-            QRScannerRepresentable { code in
+            QRScannerRepresentable(isPopupPresented: isShowingScanAlert) { code in
                 guard !isShowingScanAlert else { return }
                 scannedURI = code
                 isShowingScanAlert = true
