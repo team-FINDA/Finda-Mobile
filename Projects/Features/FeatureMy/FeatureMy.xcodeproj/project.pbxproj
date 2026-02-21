@@ -10,6 +10,7 @@
 		26C1D83730A005800CEB2B9A /* ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC598270D2E18BAA56861838 /* ComposableArchitecture.framework */; };
 		6D643E00F48A4175C5FF556A /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0FF3339A9472B5423DB2EF /* Shared.framework */; };
 		88B726E32F485247003AD410 /* VolunteerHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B726E22F48523D003AD410 /* VolunteerHistoryView.swift */; };
+		88B726E52F497A82003AD410 /* HistoryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B726E42F497A81003AD410 /* HistoryListCell.swift */; };
 		88BCB97F2F471B3000BCF183 /* VolunteerFilterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BCB97E2F471B2900BCF183 /* VolunteerFilterListView.swift */; };
 		88BCB9822F47206900BCF183 /* VolunteerFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BCB9812F47205200BCF183 /* VolunteerFilter.swift */; };
 		8F8AB04B00A002ABB6D7DA68 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4BCA2EB5199D14C002D08A /* DesignSystem.framework */; };
@@ -38,6 +39,7 @@
 		75358356FF54D62500BB6248 /* VolunteerRoleScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerRoleScrollView.swift; sourceTree = "<group>"; };
 		7A660683DAA87CD4A880216E /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
 		88B726E22F48523D003AD410 /* VolunteerHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerHistoryView.swift; sourceTree = "<group>"; };
+		88B726E42F497A81003AD410 /* HistoryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListCell.swift; sourceTree = "<group>"; };
 		88BCB97E2F471B2900BCF183 /* VolunteerFilterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerFilterListView.swift; sourceTree = "<group>"; };
 		88BCB9812F47205200BCF183 /* VolunteerFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerFilter.swift; sourceTree = "<group>"; };
 		AA4BCA2EB5199D14C002D08A /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,9 +85,18 @@
 		88B726E12F485212003AD410 /* VolunteerHistory */ = {
 			isa = PBXGroup;
 			children = (
+				88B726E62F497A84003AD410 /* Component */,
 				88B726E22F48523D003AD410 /* VolunteerHistoryView.swift */,
 			);
 			path = VolunteerHistory;
+			sourceTree = "<group>";
+		};
+		88B726E62F497A84003AD410 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				88B726E42F497A81003AD410 /* HistoryListCell.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		88BCB97D2F47198E00BCF183 /* Component */ = {
@@ -250,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88B726E52F497A82003AD410 /* HistoryListCell.swift in Sources */,
 				FAFB6C9FE3261102F8B8FCCA /* VolunteerRoleScrollView.swift in Sources */,
 				88BCB97F2F471B3000BCF183 /* VolunteerFilterListView.swift in Sources */,
 				88BCB9822F47206900BCF183 /* VolunteerFilter.swift in Sources */,
