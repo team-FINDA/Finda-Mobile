@@ -24,25 +24,25 @@ struct VolunteerHistoryView: View {
                         Image.Icons.leftArrow
                             .foregroundStyle(Color.Gray.gray80)
                     })
-                    
+
                     Spacer()
-                    
+
                     Text("봉사활동 내역")
                         .font(.finda(.body1))
                         .foregroundColor(.Gray.gray90)
-                    
+
                     Spacer()
-                    
+
                     Image.Icons.leftArrow
                         .opacity(0)
                         .accessibilityHidden(true)
                 }
                 .padding(.horizontal, 24)
                 .padding(.vertical, 8)
-                
+
                 VStack {
                     TotalTimeView(volunteerTime: 102.1)
-                    
+
                     ScrollView(showsIndicators: false) {
                         LazyVStack(spacing: 12) {
                             ForEach(historyItems) { item in
