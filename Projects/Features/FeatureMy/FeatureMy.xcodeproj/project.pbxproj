@@ -14,6 +14,7 @@
 		88B726E82F49803B003AD410 /* MyFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B726E72F498036003AD410 /* MyFeature.swift */; };
 		88B726EA2F4981AB003AD410 /* VolunteerHistoryFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B726E92F49819D003AD410 /* VolunteerHistoryFeature.swift */; };
 		88B726ED2F498511003AD410 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B726EC2F49850D003AD410 /* SettingView.swift */; };
+		88B726F02F498733003AD410 /* SettingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B726EF2F498726003AD410 /* SettingButton.swift */; };
 		88BCB97F2F471B3000BCF183 /* VolunteerFilterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BCB97E2F471B2900BCF183 /* VolunteerFilterListView.swift */; };
 		88BCB9822F47206900BCF183 /* VolunteerFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BCB9812F47205200BCF183 /* VolunteerFilter.swift */; };
 		8F8AB04B00A002ABB6D7DA68 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4BCA2EB5199D14C002D08A /* DesignSystem.framework */; };
@@ -46,6 +47,7 @@
 		88B726E72F498036003AD410 /* MyFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeature.swift; sourceTree = "<group>"; };
 		88B726E92F49819D003AD410 /* VolunteerHistoryFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerHistoryFeature.swift; sourceTree = "<group>"; };
 		88B726EC2F49850D003AD410 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		88B726EF2F498726003AD410 /* SettingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButton.swift; sourceTree = "<group>"; };
 		88BCB97E2F471B2900BCF183 /* VolunteerFilterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerFilterListView.swift; sourceTree = "<group>"; };
 		88BCB9812F47205200BCF183 /* VolunteerFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerFilter.swift; sourceTree = "<group>"; };
 		AA4BCA2EB5199D14C002D08A /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,9 +111,18 @@
 		88B726EB2F498502003AD410 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				88B726EE2F49871A003AD410 /* Component */,
 				88B726EC2F49850D003AD410 /* SettingView.swift */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		88B726EE2F49871A003AD410 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				88B726EF2F498726003AD410 /* SettingButton.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		88BCB97D2F47198E00BCF183 /* Component */ = {
@@ -286,6 +297,7 @@
 				88B726E82F49803B003AD410 /* MyFeature.swift in Sources */,
 				88BCB9822F47206900BCF183 /* VolunteerFilter.swift in Sources */,
 				88B726E32F485247003AD410 /* VolunteerHistoryView.swift in Sources */,
+				88B726F02F498733003AD410 /* SettingButton.swift in Sources */,
 				B3D1350B05F9E742EE22FAB3 /* MyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
