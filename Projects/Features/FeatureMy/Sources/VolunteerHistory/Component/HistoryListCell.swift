@@ -1,15 +1,16 @@
 import SwiftUI
 import DesignSystem
+import Foundation
 
 struct HistoryListCell: View {
     var title: String
     var date: String
-    var time: Int
+    var time: Float
 
     init(
         title: String,
         date: String,
-        time: Int
+        time: Float
     ) {
         self.title = title
         self.date = date
@@ -18,7 +19,7 @@ struct HistoryListCell: View {
 
     var body: some View {
         HStack {
-            VStack(spacing: 4) {
+            VStack(alignment: .leading, spacing: 4) {
                 Text(title)
                     .font(.finda(.body3))
                     .foregroundStyle(Color.Gray.gray90)
@@ -30,7 +31,7 @@ struct HistoryListCell: View {
 
             Spacer()
 
-            Text("+ \(time)시간")
+            Text("+ \(String(format: "%.1f", time))시간")
                 .font(.finda(.body3))
                 .foregroundStyle(Color.Blue.blue50)
         }

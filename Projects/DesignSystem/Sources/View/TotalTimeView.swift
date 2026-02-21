@@ -1,9 +1,9 @@
 import SwiftUI
 
 public struct TotalTimeView: View {
-    var volunteerTime: Int
+    var volunteerTime: Float
 
-    public init(volunteerTime: Int) {
+    public init(volunteerTime: Float) {
         self.volunteerTime = volunteerTime
     }
 
@@ -14,7 +14,7 @@ public struct TotalTimeView: View {
                     .font(.finda(.body3))
                     .foregroundStyle(Color.Gray.gray60)
 
-                Text("\(volunteerTime) 시간")
+                Text("\(String(format: "%.1f", volunteerTime)) 시간")
                     .font(.finda(.heading2))
                     .foregroundStyle(Color.Gray.gray90)
             }
