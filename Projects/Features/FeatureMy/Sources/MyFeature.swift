@@ -15,12 +15,14 @@ public struct MyFeature {
 
     public enum Action: BindableAction {
         case binding(BindingAction<State>)
+        case settingButtonTapped
         case volunteerHistoryButtonTapped
         case path(StackActionOf<Path>)
     }
 
     @Reducer
     public enum Path {
+        case setting(SettingFeature)
         case volunteerHistory(VolunteerHistoryFeature)
     }
 
@@ -30,6 +32,9 @@ public struct MyFeature {
         BindingReducer()
         Reduce { state, action in
             switch action {
+            case .settingButtonTapped:
+                state.path.append(.setting(SettingFeature.State()))
+                return .none
             case .volunteerHistoryButtonTapped:
                 guard state.role == .student else { return .none }
                 state.path.append(.volunteerHistory(VolunteerHistoryFeature.State()))

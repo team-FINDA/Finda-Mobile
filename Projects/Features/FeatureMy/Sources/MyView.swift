@@ -43,7 +43,7 @@ public struct MyView: View {
                         }
                         Spacer()
 
-                        Button(action: {}, label: {
+                        Button(action: { store.send(.settingButtonTapped) }, label: {
                             Image.Icons.setting
                         })
                     }
@@ -72,6 +72,14 @@ public struct MyView: View {
                 .padding(.top, 24)
             } destination: { pathStore in
                 switch pathStore.state {
+                case .setting:
+                    IfLetStore(pathStore.scope(
+                        state: \.setting,
+                        action: \.setting
+                    ),
+                    then: SettingView.init
+                    )
+
                 case .volunteerHistory:
                     IfLetStore(
                         pathStore.scope(
