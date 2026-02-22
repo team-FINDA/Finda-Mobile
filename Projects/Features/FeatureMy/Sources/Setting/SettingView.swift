@@ -5,6 +5,7 @@ import DesignSystem
 struct SettingView: View {
     @Environment(\.dismiss) private var dismiss
     @Perception.Bindable private var store: StoreOf<SettingFeature>
+    @State private var isPasswordChangePresented = false
 
     init(store: StoreOf<SettingFeature>) {
         self.store = store
@@ -46,7 +47,7 @@ struct SettingView: View {
                     SettingButton(
                         buttonText: "비밀번호 설정",
                         textColor: Color.Blue.blue50,
-                        action: {}
+                        action: { isPasswordChangePresented = true }
                     )
 
                     VStack(spacing: 16) {
@@ -82,6 +83,14 @@ struct SettingView: View {
                         .padding(.horizontal, 52)
                     }
                 }
+            }
+            .navigationDestination(isPresented: $isPasswordChangePresented) {
+                PasswordChangeEmailVerificationView(
+                    store: Store(initialState: PasswordChangeEmailVerificationFeature.State()) {
+                        PasswordChangeEmailVerificationFeature()
+                    },
+                    selectedRole: nil
+                )
             }
         }
     }
