@@ -19,11 +19,11 @@ struct MainTabFeature {
         var selectedTab: Tab = .main
         var studentMain = StudentMainFeature.State()
         var teacherMain = TeacherMainFeature.State()
-        var my: MyFeature.State
+        var my: MyRootFeature.State
 
         init(role: UserRole) {
             self.role = role
-            self.my = MyFeature.State(role: role)
+            self.my = MyRootFeature.State(role: role)
         }
     }
 
@@ -31,7 +31,7 @@ struct MainTabFeature {
         case binding(BindingAction<State>)
         case studentMain(StudentMainFeature.Action)
         case teacherMain(TeacherMainFeature.Action)
-        case my(MyFeature.Action)
+        case my(MyRootFeature.Action)
     }
 
     init() {}
@@ -44,7 +44,7 @@ struct MainTabFeature {
             TeacherMainFeature()
         }
         Scope(state: \.my, action: \.my) {
-            MyFeature()
+            MyRootFeature()
         }
 
         BindingReducer()

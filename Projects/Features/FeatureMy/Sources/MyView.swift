@@ -22,74 +22,52 @@ public struct MyView: View {
 
     public var body: some View {
         WithPerceptionTracking {
-            NavigationStackStore(
-                store.scope(state: \.path, action: \.path)
-            ) {
-                VStack(spacing: 16) {
-                    HStack(spacing: 16) {
-                        Image.Images.baseProfile
-                            .resizable()
-                            .frame(width: 48, height: 48)
-                            .clipShape(Circle())
+            VStack(spacing: 16) {
+                HStack(spacing: 16) {
+                    Image.Images.baseProfile
+                        .resizable()
+                        .frame(width: 48, height: 48)
+                        .clipShape(Circle())
 
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(studentName)
-                                .font(.finda(.body1))
-                                .foregroundColor(.Gray.gray90)
-
-                            if store.role == .student {
-                                VolunteerRoleScrollView(roles: roles)
-                            }
-                        }
-                        Spacer()
-
-                        Button(action: { store.send(.settingButtonTapped) }, label: {
-                            Image.Icons.setting
-                        })
-                    }
-
-                    Button(action: { store.send(.volunteerHistoryButtonTapped) }, label: {
-                        Text(store.role == .student ? "봉사 활동 내역 확인" : "공지사항 관리/생성")
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(studentName)
                             .font(.finda(.body1))
-                            .foregroundColor(.Blue.blue50)
+                            .foregroundColor(.Gray.gray90)
 
-                        Spacer()
+                        if store.role == .student {
+                            VolunteerRoleScrollView(roles: roles)
+                        }
+                    }
+                    Spacer()
 
-                        Image.Icons.rightArrow
-                            .renderingMode(.template)
-                            .foregroundColor(.Blue.blue50)
+                    Button(action: { store.send(.settingButtonTapped) }, label: {
+                        Image.Icons.setting
                     })
-                    .padding(18)
-                    .background(Color.Blue.blue10)
-                    .cornerRadius(16)
+                }
 
-                    VolunteerFilterView(selectedFilter: $selectedFilter)
-                    VolunteerListView(activities: filteredActivities)
+                Button(action: { store.send(.volunteerHistoryButtonTapped) }, label: {
+                    Text(store.role == .student ? "봉사 활동 내역 확인" : "공지사항 관리/생성")
+                        .font(.finda(.body1))
+                        .foregroundColor(.Blue.blue50)
 
                     Spacer()
-                }
-                .padding(.horizontal, 24)
-                .padding(.top, 24)
-            } destination: { pathStore in
-                switch pathStore.state {
-                case .setting:
-                    IfLetStore(pathStore.scope(
-                        state: \.setting,
-                        action: \.setting
-                    ),
-                    then: SettingView.init
-                    )
 
-                case .volunteerHistory:
-                    IfLetStore(
-                        pathStore.scope(
-                            state: \.volunteerHistory,
-                            action: \.volunteerHistory
-                        ),
-                        then: VolunteerHistoryView.init
-                    )
-                }
+                    Image.Icons.rightArrow
+                        .renderingMode(.template)
+                        .foregroundColor(.Blue.blue50)
+                })
+                .padding(18)
+                .background(Color.Blue.blue10)
+                .cornerRadius(16)
+
+                VolunteerFilterView(selectedFilter: $selectedFilter)
+                VolunteerListView(activities: filteredActivities)
+
+                Spacer()
             }
+            .toolbar(.hidden, for: .navigationBar)
+            .padding(.horizontal, 24)
+            .padding(.top, 24)
         }
     }
 }
