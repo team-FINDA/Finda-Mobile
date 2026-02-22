@@ -1,13 +1,13 @@
 import SwiftUI
 import DesignSystem
 
-public struct SettingPopup: View {
+struct SettingPopup: View {
     var title: String
     var content: String
     var cancelAction: () -> Void
     var okAction: () -> Void
 
-    public init(
+    init(
         title: String,
         content: String,
         cancelAction: @escaping () -> Void = {},
@@ -19,7 +19,7 @@ public struct SettingPopup: View {
         self.okAction = okAction
     }
 
-    public var body: some View {
+    var body: some View {
         VStack(spacing: 12) {
             Text(title)
                 .font(.finda(.subheading2))

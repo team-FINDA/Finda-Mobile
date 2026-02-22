@@ -5,9 +5,6 @@ import DesignSystem
 struct SettingView: View {
     @Environment(\.dismiss) private var dismiss
     @Perception.Bindable private var store: StoreOf<SettingFeature>
-    @State private var isPopupPresented = false
-    @State private var popupTitle = ""
-    @State private var popupContent = ""
 
     init(store: StoreOf<SettingFeature>) {
         self.store = store
@@ -55,19 +52,11 @@ struct SettingView: View {
                     VStack(spacing: 16) {
                         SettingButton(
                             buttonText: "로그아웃",
-                            action: {
-                                popupTitle = "로그아웃"
-                                popupContent = "정말 로그아웃 하시겠습니까?\n로그아웃 시 다시 로그인해야 합니다."
-                                isPopupPresented = true
-                            }
+                            action: { store.send(.signoutButtonTapped) }
                         )
                         SettingButton(
                             buttonText: "회원탈퇴",
-                            action: {
-                                popupTitle = "회원탈퇴"
-                                popupContent = "정말 회원탈퇴 하시겠습니까?\n회원탈퇴 시 모든 정보가 사라집니다."
-                                isPopupPresented = true
-                            }
+                            action: { store.send(.resignButtonTapped) }
                         )
                     }
 
@@ -79,16 +68,16 @@ struct SettingView: View {
             .toolbar(.hidden, for: .navigationBar)
             .toolbar(.hidden, for: .tabBar)
             .overlay {
-                if isPopupPresented {
+                if store.isPopupPresented {
                     ZStack {
                         Color.black.opacity(0.5)
                             .ignoresSafeArea()
 
                         SettingPopup(
-                            title: popupTitle,
-                            content: popupContent,
-                            cancelAction: { isPopupPresented = false },
-                            okAction: { isPopupPresented = false }
+                            title: store.popupTitle,
+                            content: store.popupContent,
+                            cancelAction: { store.send(.dismissPopup) },
+                            okAction: { store.send(.popupOkButtonTapped) }
                         )
                         .padding(.horizontal, 52)
                     }

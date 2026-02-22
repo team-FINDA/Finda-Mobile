@@ -6,7 +6,7 @@ struct SettingButton: View {
     var textColor: Color?
     var action: () -> Void
 
-    public init(
+    init(
         buttonText: String,
         textColor: Color? = Color.Sub.red20,
         action: @escaping () -> Void
