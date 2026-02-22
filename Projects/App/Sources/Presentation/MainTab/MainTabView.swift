@@ -34,7 +34,7 @@ struct MainTabView: View {
                     }
                     .tag(Tab.schedule)
 
-                ProfileTabView(role: store.role)
+                ProfileTabView(store: store)
                     .tabItem {
                         Image(store.selectedTab == .profile ? "tabbarPerson" : "tabbarPersonNot")
                     }
@@ -90,10 +90,15 @@ private struct ScheduleTabView: View {
 }
 
 private struct ProfileTabView: View {
-    let role: UserRole
+    let store: StoreOf<MainTabFeature>
 
     var body: some View {
-        MyView(role: role)
+        MyView(
+            store: store.scope(
+                state: \.my,
+                action: \.my
+            )
+        )
     }
 }
 
