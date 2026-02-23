@@ -18,6 +18,7 @@
 		6D96A1C37BB859520897BAC3 /* AlertSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27561352E625FC27A8932381 /* AlertSettingView.swift */; };
 		6EB1484DE4C98FF8171EEBBF /* PasswordChangeEmailVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A976FD40D63C27FAC08EE6D3 /* PasswordChangeEmailVerificationView.swift */; };
 		8895DD042F4C46340014C56E /* CustomToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8895DD032F4C46300014C56E /* CustomToggle.swift */; };
+		8895DD062F4C5C5D0014C56E /* AlertSettingFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8895DD052F4C5C580014C56E /* AlertSettingFeature.swift */; };
 		8F8AB04B00A002ABB6D7DA68 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4BCA2EB5199D14C002D08A /* DesignSystem.framework */; };
 		9D384827AAF726D309F3640B /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983EBE0CA76BA580E6853FA4 /* SettingView.swift */; };
 		A4967FE32E8FBFE79CF81AFE /* VolunteerHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ED391582F32D1A605F83F7 /* VolunteerHistoryView.swift */; };
@@ -63,6 +64,7 @@
 		7A660683DAA87CD4A880216E /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
 		82ED391582F32D1A605F83F7 /* VolunteerHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerHistoryView.swift; sourceTree = "<group>"; };
 		8895DD032F4C46300014C56E /* CustomToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggle.swift; sourceTree = "<group>"; };
+		8895DD052F4C5C580014C56E /* AlertSettingFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertSettingFeature.swift; sourceTree = "<group>"; };
 		8EAFBC6D3ACABFE3625B0053 /* VolunteerRoleScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerRoleScrollView.swift; sourceTree = "<group>"; };
 		983EBE0CA76BA580E6853FA4 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		A5E085B90B16E46E7E44FA82 /* HistoryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListCell.swift; sourceTree = "<group>"; };
@@ -190,8 +192,8 @@
 			isa = PBXGroup;
 			children = (
 				DFA9824A46629F6BBA9F1BA2 /* AlertSetting */,
-				D1FA8481FCA4310B2092DB7C /* Component */,
 				8BB55072AEE29D4425C91273 /* PasswordChange */,
+				D1FA8481FCA4310B2092DB7C /* Component */,
 				27B234D75E194338C5293AAE /* SettingFeature.swift */,
 				983EBE0CA76BA580E6853FA4 /* SettingView.swift */,
 			);
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				8895DD022F4C46050014C56E /* Component */,
+				8895DD052F4C5C580014C56E /* AlertSettingFeature.swift */,
 				27561352E625FC27A8932381 /* AlertSettingView.swift */,
 			);
 			path = AlertSetting;
@@ -371,6 +374,7 @@
 				E1CB6179E355E74AC9BA44B0 /* VolunteerFilterListView.swift in Sources */,
 				8895DD042F4C46340014C56E /* CustomToggle.swift in Sources */,
 				EA9875BE67A5AB9A1D794CFC /* VolunteerRoleScrollView.swift in Sources */,
+				8895DD062F4C5C5D0014C56E /* AlertSettingFeature.swift in Sources */,
 				62834F5E9A0CF2B58FED76C8 /* MyFeature.swift in Sources */,
 				B3D1350B05F9E742EE22FAB3 /* MyView.swift in Sources */,
 				D9AA9999937DEF6577B21ADA /* MyRootFeature.swift in Sources */,

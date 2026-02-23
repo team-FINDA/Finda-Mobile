@@ -14,6 +14,7 @@ public struct SettingFeature {
 
     public enum Action: BindableAction {
         case binding(BindingAction<State>)
+        case alertSettingButtonTapped
         case passwordChangeButtonTapped
         case signoutButtonTapped
         case resignButtonTapped
@@ -27,6 +28,9 @@ public struct SettingFeature {
         BindingReducer()
         Reduce { state, action in
             switch action {
+            case .alertSettingButtonTapped:
+                return .none
+
             case .passwordChangeButtonTapped:
                 return .none
 

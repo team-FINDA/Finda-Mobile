@@ -24,6 +24,7 @@ public struct MyRootFeature {
     public enum Path {
         case setting(SettingFeature)
         case volunteerHistory(VolunteerHistoryFeature)
+        case alertSetting(AlertSettingFeature)
         case passwordChangeEmailVerification(PasswordChangeEmailVerificationFeature)
         case newPassword(NevPasswordFeature)
     }
@@ -43,6 +44,10 @@ public struct MyRootFeature {
             case .my(.volunteerHistoryButtonTapped):
                 guard state.role == .student else { return .none }
                 state.path.append(.volunteerHistory(VolunteerHistoryFeature.State()))
+                return .none
+
+            case .path(.element(id: _, action: .setting(.alertSettingButtonTapped))):
+                state.path.append(.alertSetting(AlertSettingFeature.State()))
                 return .none
 
             case .path(.element(id: _, action: .setting(.passwordChangeButtonTapped))):

@@ -1,4 +1,5 @@
 import SwiftUI
+import ComposableArchitecture
 import DesignSystem
 
 struct VolunteerAlertSettingItem: Identifiable, Equatable {
@@ -9,70 +10,76 @@ struct VolunteerAlertSettingItem: Identifiable, Equatable {
 
 struct AlertSettingView: View {
     @Environment(\.dismiss) private var dismiss
-    @State private var noticeToggleOn = false
-    @State private var totalToggleOn = false
+    @Perception.Bindable private var store: StoreOf<AlertSettingFeature>
+    @State private var noticeToggleOn: Bool
+    @State private var totalToggleOn: Bool
     @State private var volunteerAlertItems: [VolunteerAlertSettingItem]
 
-    init(volunteerAlertItems: [VolunteerAlertSettingItem] = Self.previewVolunteerAlertItems) {
-        self._volunteerAlertItems = State(initialValue: volunteerAlertItems)
+    init(store: StoreOf<AlertSettingFeature>) {
+        self.store = store
+        _noticeToggleOn = State(initialValue: false)
+        _totalToggleOn = State(initialValue: false)
+        _volunteerAlertItems = State(initialValue: Self.previewVolunteerAlertItems)
     }
 
     var body: some View {
-        VStack(spacing: 20) {
-            HStack {
-                Button(action: { dismiss() }, label: {
+        WithPerceptionTracking {
+            VStack(spacing: 20) {
+                HStack {
+                    Button(action: { dismiss() }, label: {
+                        Image.Icons.leftArrow
+                            .foregroundStyle(Color.Gray.gray80)
+                    })
+
+                     Spacer()
+
+                    Text("알림 설정")
+                        .font(.finda(.body1))
+                        .foregroundColor(.Gray.gray90)
+
+                    Spacer()
+
                     Image.Icons.leftArrow
-                        .foregroundStyle(Color.Gray.gray80)
-                })
+                        .opacity(0)
+                        .accessibilityHidden(true)
+                }
+                .padding(.horizontal, 24)
+                .padding(.vertical, 8)
 
-                Spacer()
+                VStack(spacing: 40) {
+                    CustomToggle(title: "공지사항", font: .finda(.subheading2), isOn: $noticeToggleOn)
+                    CustomToggle(title: "봉사활동 전체", font: .finda(.subheading2), isOn: $totalToggleOn)
+                        .onChange(of: totalToggleOn) { isOn in
+                            guard isOn else { return }
+                            for index in volunteerAlertItems.indices {
+                                volunteerAlertItems[index].isOn = true
+                            }
+                        }
 
-                Text("알림 설정")
-                    .font(.finda(.body1))
-                    .foregroundColor(.Gray.gray90)
-
-                Spacer()
-
-                Image.Icons.leftArrow
-                    .opacity(0)
-                    .accessibilityHidden(true)
-            }
-            .padding(.horizontal, 24)
-            .padding(.vertical, 8)
-
-            VStack(spacing: 40) {
-                CustomToggle(title: "공지사항", font: .finda(.subheading2), isOn: $noticeToggleOn)
-                CustomToggle(title: "봉사활동 전체", font: .finda(.subheading2), isOn: $totalToggleOn)
-                    .onChange(of: totalToggleOn) { isOn in
-                        guard isOn else { return }
-                        for index in volunteerAlertItems.indices {
-                            volunteerAlertItems[index].isOn = true
+                    VStack(spacing: 20) {
+                        ForEach(Array(volunteerAlertItems.enumerated()), id: \.element.id) { index, item in
+                            let isOnBinding = Binding(
+                                get: { volunteerAlertItems[index].isOn },
+                                set: { newValue in
+                                    volunteerAlertItems[index].isOn = newValue
+                                    if !newValue {
+                                        totalToggleOn = false
+                                    } else {
+                                        totalToggleOn = volunteerAlertItems.allSatisfy(\.isOn)
+                                    }
+                                }
+                            )
+                            CustomToggle(title: item.title, font: .finda(.body1), isOn: isOnBinding)
                         }
                     }
 
-                VStack(spacing: 20) {
-                    ForEach(Array(volunteerAlertItems.enumerated()), id: \.element.id) { index, item in
-                        let isOnBinding = Binding(
-                            get: { volunteerAlertItems[index].isOn },
-                            set: { newValue in
-                                volunteerAlertItems[index].isOn = newValue
-                                if !newValue {
-                                    totalToggleOn = false
-                                } else {
-                                    totalToggleOn = volunteerAlertItems.allSatisfy(\.isOn)
-                                }
-                            }
-                        )
-                        CustomToggle(title: item.title, font: .finda(.subheading2), isOn: isOnBinding)
-                    }
+                    Spacer()
                 }
-
-                Spacer()
+                .padding(.horizontal, 24)
             }
-            .padding(.horizontal, 24)
+            .navigationBarBackButtonHidden(true)
+            .toolbar(.hidden, for: .navigationBar)
         }
-        .navigationBarBackButtonHidden(true)
-        .toolbar(.hidden, for: .navigationBar)
     }
 }
 private extension AlertSettingView {
@@ -84,5 +91,9 @@ private extension AlertSettingView {
 }
 
 #Preview {
-    AlertSettingView()
+    AlertSettingView(
+        store: Store(initialState: AlertSettingFeature.State()) {
+            AlertSettingFeature()
+        }
+    )
 }

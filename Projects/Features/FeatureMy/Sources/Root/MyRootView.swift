@@ -39,6 +39,15 @@ public struct MyRootView: View {
                         then: VolunteerHistoryView.init
                     )
 
+                case.alertSetting:
+                    IfLetStore(
+                        pathStore.scope(
+                            state: \.alertSetting,
+                            action: \.alertSetting
+                        ),
+                        then: AlertSettingView.init
+                    )
+
                 case .passwordChangeEmailVerification:
                     IfLetStore(
                         pathStore.scope(
