@@ -14,6 +14,8 @@ public struct SettingFeature {
 
     public enum Action: BindableAction {
         case binding(BindingAction<State>)
+        case alertSettingButtonTapped
+        case passwordChangeButtonTapped
         case signoutButtonTapped
         case resignButtonTapped
         case dismissPopup
@@ -26,6 +28,12 @@ public struct SettingFeature {
         BindingReducer()
         Reduce { state, action in
             switch action {
+            case .alertSettingButtonTapped:
+                return .none
+
+            case .passwordChangeButtonTapped:
+                return .none
+
             case .signoutButtonTapped:
                 state.popupTitle = "로그아웃"
                 state.popupContent = "정말 로그아웃 하시겠습니까?\n로그아웃 시 다시 로그인해야 합니다."

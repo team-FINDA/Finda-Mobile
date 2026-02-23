@@ -41,12 +41,12 @@ struct SettingView: View {
                     SettingButton(
                         buttonText: "알림 설정",
                         textColor: Color.Gray.gray90,
-                        action: {}
+                        action: { store.send(.alertSettingButtonTapped) }
                     )
                     SettingButton(
                         buttonText: "비밀번호 설정",
                         textColor: Color.Blue.blue50,
-                        action: {}
+                        action: { store.send(.passwordChangeButtonTapped) }
                     )
 
                     VStack(spacing: 16) {

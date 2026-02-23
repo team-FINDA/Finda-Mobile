@@ -93,7 +93,7 @@ private struct ProfileTabView: View {
     let store: StoreOf<MainTabFeature>
 
     var body: some View {
-        MyView(
+        MyRootView(
             store: store.scope(
                 state: \.my,
                 action: \.my

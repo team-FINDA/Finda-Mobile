@@ -1,36 +1,31 @@
 import ComposableArchitecture
-import Shared
 
 @Reducer
-public struct MyFeature {
+public struct PasswordChangeEmailVerificationFeature {
     @ObservableState
     public struct State: Equatable {
-        var role: UserRole
+        var emailText = ""
+        var codeText = ""
+        var nextButtonIsDisabled = true
 
-        public init(role: UserRole) {
-            self.role = role
-        }
+        public init() {}
     }
 
     public enum Action: BindableAction {
         case binding(BindingAction<State>)
-        case settingButtonTapped
-        case volunteerHistoryButtonTapped
+        case nextButtonTapped
     }
 
     public init() {}
 
     public var body: some ReducerOf<Self> {
         BindingReducer()
-        Reduce { _, action in
+        Reduce { state, action in
             switch action {
-            case .settingButtonTapped:
-                return .none
-
-            case .volunteerHistoryButtonTapped:
-                return .none
-
             case .binding:
+                state.nextButtonIsDisabled = state.emailText.isEmpty || state.codeText.isEmpty
+                return .none
+            case .nextButtonTapped:
                 return .none
             }
         }
