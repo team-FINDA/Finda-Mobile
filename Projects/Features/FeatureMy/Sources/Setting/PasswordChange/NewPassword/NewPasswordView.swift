@@ -5,11 +5,11 @@ import Shared
 
 struct NewPasswordView: View {
     @Environment(\.dismiss) private var dismiss
-    @Perception.Bindable private var store: StoreOf<NevPasswordFeature>
+    @Perception.Bindable private var store: StoreOf<NewPasswordFeature>
     private let selectedRole: UserRole?
 
     init(
-        store: StoreOf<NevPasswordFeature>,
+        store: StoreOf<NewPasswordFeature>,
         selectedRole: UserRole?
     ) {
         self.store = store
@@ -73,8 +73,8 @@ struct NewPasswordView: View {
 
 #Preview {
     NewPasswordView(
-        store: Store(initialState: NevPasswordFeature.State()) {
-            NevPasswordFeature()
+        store: Store(initialState: NewPasswordFeature.State()) {
+            NewPasswordFeature()
         },
         selectedRole: .student
     )

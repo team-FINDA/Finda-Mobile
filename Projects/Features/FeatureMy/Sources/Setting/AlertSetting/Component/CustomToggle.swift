@@ -20,7 +20,7 @@ struct CustomToggle: View {
 
             Spacer()
 
-            Toggle("", isOn: $isOn)
+            Toggle(title, isOn: $isOn)
                 .labelsHidden()
                 .toggleStyle(SwitchToggleStyle(tint: Color.Blue.blue30))
         }

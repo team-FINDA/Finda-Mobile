@@ -1,7 +1,7 @@
 import ComposableArchitecture
 
 @Reducer
-public struct NevPasswordFeature {
+public struct NewPasswordFeature {
     @ObservableState
     public struct State: Equatable {
         var passwordText: String = ""

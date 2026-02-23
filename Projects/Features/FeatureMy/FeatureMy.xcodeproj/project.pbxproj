@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		039B496D44B92CE74880E344 /* NevPasswordFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C304E41F6CE97BF85E8E4F5 /* NevPasswordFeature.swift */; };
+		039B496D44B92CE74880E344 /* NewPasswordFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C304E41F6CE97BF85E8E4F5 /* NewPasswordFeature.swift */; };
 		26C1D83730A005800CEB2B9A /* ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC598270D2E18BAA56861838 /* ComposableArchitecture.framework */; };
 		2C008117BED5FD10CFE140C8 /* VolunteerHistoryFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DD0DCDA468F8564524CA52 /* VolunteerHistoryFeature.swift */; };
 		2F5CB00CBE14B92352D8A22D /* PasswordChangeEmailVerificationFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CAA530F2E456C82D2BBE67 /* PasswordChangeEmailVerificationFeature.swift */; };
@@ -58,7 +58,7 @@
 		54C6E516219E668C7B1F6465 /* SettingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButton.swift; sourceTree = "<group>"; };
 		64DD0DCDA468F8564524CA52 /* VolunteerHistoryFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerHistoryFeature.swift; sourceTree = "<group>"; };
 		6B8F2C981BA23FF70BB73584 /* SettingPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPopup.swift; sourceTree = "<group>"; };
-		6C304E41F6CE97BF85E8E4F5 /* NevPasswordFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NevPasswordFeature.swift; sourceTree = "<group>"; };
+		6C304E41F6CE97BF85E8E4F5 /* NewPasswordFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordFeature.swift; sourceTree = "<group>"; };
 		706BE6009C5B57A3EE65AE7B /* FeatureMy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureMy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76B23B4769CB9235FBB75960 /* NewPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordView.swift; sourceTree = "<group>"; };
 		7A660683DAA87CD4A880216E /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 		1AC554512977DEBC0DEE1930 /* NewPassword */ = {
 			isa = PBXGroup;
 			children = (
-				6C304E41F6CE97BF85E8E4F5 /* NevPasswordFeature.swift */,
+				6C304E41F6CE97BF85E8E4F5 /* NewPasswordFeature.swift */,
 				76B23B4769CB9235FBB75960 /* NewPasswordView.swift */,
 			);
 			path = NewPassword;
@@ -382,7 +382,7 @@
 				6D96A1C37BB859520897BAC3 /* AlertSettingView.swift in Sources */,
 				C550DD69C526AE7815C1553D /* SettingButton.swift in Sources */,
 				E5D7353C0475A17CD1E450E1 /* SettingPopup.swift in Sources */,
-				039B496D44B92CE74880E344 /* NevPasswordFeature.swift in Sources */,
+				039B496D44B92CE74880E344 /* NewPasswordFeature.swift in Sources */,
 				69A5E8B187CDC9169C1A2A61 /* NewPasswordView.swift in Sources */,
 				2F5CB00CBE14B92352D8A22D /* PasswordChangeEmailVerificationFeature.swift in Sources */,
 				6EB1484DE4C98FF8171EEBBF /* PasswordChangeEmailVerificationView.swift in Sources */,

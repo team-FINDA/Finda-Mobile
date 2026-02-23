@@ -2,24 +2,12 @@ import SwiftUI
 import ComposableArchitecture
 import DesignSystem
 
-struct VolunteerAlertSettingItem: Identifiable, Equatable {
-    let id: String
-    let title: String
-    var isOn: Bool
-}
-
 struct AlertSettingView: View {
     @Environment(\.dismiss) private var dismiss
     @Perception.Bindable private var store: StoreOf<AlertSettingFeature>
-    @State private var noticeToggleOn: Bool
-    @State private var totalToggleOn: Bool
-    @State private var volunteerAlertItems: [VolunteerAlertSettingItem]
 
     init(store: StoreOf<AlertSettingFeature>) {
         self.store = store
-        _noticeToggleOn = State(initialValue: false)
-        _totalToggleOn = State(initialValue: false)
-        _volunteerAlertItems = State(initialValue: Self.previewVolunteerAlertItems)
     }
 
     var body: some View {
@@ -47,29 +35,33 @@ struct AlertSettingView: View {
                 .padding(.vertical, 8)
 
                 VStack(spacing: 40) {
-                    CustomToggle(title: "공지사항", font: .finda(.subheading2), isOn: $noticeToggleOn)
-                    CustomToggle(title: "봉사활동 전체", font: .finda(.subheading2), isOn: $totalToggleOn)
-                        .onChange(of: totalToggleOn) { isOn in
-                            guard isOn else { return }
-                            for index in volunteerAlertItems.indices {
-                                volunteerAlertItems[index].isOn = true
-                            }
-                        }
+                    CustomToggle(
+                        title: "공지사항",
+                        font: .finda(.subheading2),
+                        isOn: Binding(
+                            get: { store.noticeToggleOn },
+                            set: { store.send(.noticeToggleChanged($0)) }
+                        )
+                    )
+                    CustomToggle(
+                        title: "봉사활동 전체",
+                        font: .finda(.subheading2),
+                        isOn: Binding(
+                            get: { store.totalToggleOn },
+                            set: { store.send(.totalToggleChanged($0)) }
+                        )
+                    )
 
                     VStack(spacing: 20) {
-                        ForEach(Array(volunteerAlertItems.enumerated()), id: \.element.id) { index, item in
-                            let isOnBinding = Binding(
-                                get: { volunteerAlertItems[index].isOn },
-                                set: { newValue in
-                                    volunteerAlertItems[index].isOn = newValue
-                                    if !newValue {
-                                        totalToggleOn = false
-                                    } else {
-                                        totalToggleOn = volunteerAlertItems.allSatisfy(\.isOn)
-                                    }
-                                }
+                        ForEach(store.volunteerAlertItems) { item in
+                            CustomToggle(
+                                title: item.title,
+                                font: .finda(.body1),
+                                isOn: Binding(
+                                    get: { item.isOn },
+                                    set: { store.send(.volunteerToggleChanged(id: item.id, isOn: $0)) }
+                                )
                             )
-                            CustomToggle(title: item.title, font: .finda(.body1), isOn: isOnBinding)
                         }
                     }
 
@@ -81,13 +73,6 @@ struct AlertSettingView: View {
             .toolbar(.hidden, for: .navigationBar)
         }
     }
-}
-private extension AlertSettingView {
-    static let previewVolunteerAlertItems: [VolunteerAlertSettingItem] = [
-        .init(id: "1", title: "환경 지킴이 활동", isOn: false),
-        .init(id: "2", title: "교감쌤과 바둑두기", isOn: true),
-        .init(id: "3", title: "화단에 물주기", isOn: false)
-    ]
 }
 
 #Preview {

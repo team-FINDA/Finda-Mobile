@@ -10,6 +10,8 @@ public struct MyRootView: View {
 
     public var body: some View {
         WithPerceptionTracking {
+            let selectedRole = store.role
+
             NavigationStackStore(
                 store.scope(state: \.path, action: \.path)
             ) {
@@ -39,13 +41,13 @@ public struct MyRootView: View {
                         then: VolunteerHistoryView.init
                     )
 
-                case.alertSetting:
+                case .alertSetting:
                     IfLetStore(
                         pathStore.scope(
                             state: \.alertSetting,
                             action: \.alertSetting
                         ),
-                        then: AlertSettingView.init
+                        then: { AlertSettingView(store: $0) }
                     )
 
                 case .passwordChangeEmailVerification:
@@ -54,7 +56,7 @@ public struct MyRootView: View {
                             state: \.passwordChangeEmailVerification,
                             action: \.passwordChangeEmailVerification
                         ),
-                        then: { PasswordChangeEmailVerificationView(store: $0, selectedRole: nil) }
+                        then: { PasswordChangeEmailVerificationView(store: $0, selectedRole: selectedRole) }
                     )
 
                 case .newPassword:
@@ -63,7 +65,7 @@ public struct MyRootView: View {
                             state: \.newPassword,
                             action: \.newPassword
                         ),
-                        then: { NewPasswordView(store: $0, selectedRole: nil) }
+                        then: { NewPasswordView(store: $0, selectedRole: selectedRole) }
                     )
                 }
             }

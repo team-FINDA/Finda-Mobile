@@ -26,7 +26,7 @@ public struct MyRootFeature {
         case volunteerHistory(VolunteerHistoryFeature)
         case alertSetting(AlertSettingFeature)
         case passwordChangeEmailVerification(PasswordChangeEmailVerificationFeature)
-        case newPassword(NevPasswordFeature)
+        case newPassword(NewPasswordFeature)
     }
 
     public init() {}
@@ -55,7 +55,7 @@ public struct MyRootFeature {
                 return .none
 
             case .path(.element(id: _, action: .passwordChangeEmailVerification(.nextButtonTapped))):
-                state.path.append(.newPassword(NevPasswordFeature.State()))
+                state.path.append(.newPassword(NewPasswordFeature.State()))
                 return .none
 
             case .path(.element(id: _, action: .newPassword(.passwordChangeButtonTapped))):
