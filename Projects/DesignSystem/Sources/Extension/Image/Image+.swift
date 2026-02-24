@@ -16,6 +16,7 @@ public extension Image.Icons {
     static let eyeOpen = DesignSystemAsset.Icons.eyeOpen.swiftUIImage
     static let leftArrow = DesignSystemAsset.Icons.leftArrow.swiftUIImage
     static let location = DesignSystemAsset.Icons.location.swiftUIImage
+    static let notification = DesignSystemAsset.Icons.notification.swiftUIImage
     static let people = DesignSystemAsset.Icons.people.swiftUIImage
     static let rightArrow = DesignSystemAsset.Icons.rightArrow.swiftUIImage
     static let setting = DesignSystemAsset.Icons.setting.swiftUIImage
