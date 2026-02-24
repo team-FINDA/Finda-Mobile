@@ -20,6 +20,7 @@
 		6EB1484DE4C98FF8171EEBBF /* PasswordChangeEmailVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A976FD40D63C27FAC08EE6D3 /* PasswordChangeEmailVerificationView.swift */; };
 		721F7FB4F6F0380A2531EC90 /* NoticeAlertListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D6573D9095323508ED78D /* NoticeAlertListCell.swift */; };
 		8895DD122F4D48D80014C56E /* NoticeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8895DD112F4D48D00014C56E /* NoticeDetailView.swift */; };
+		8895DD152F4D4E800014C56E /* NoticeContentEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8895DD142F4D4E7D0014C56E /* NoticeContentEditor.swift */; };
 		8F8AB04B00A002ABB6D7DA68 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4BCA2EB5199D14C002D08A /* DesignSystem.framework */; };
 		9D384827AAF726D309F3640B /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983EBE0CA76BA580E6853FA4 /* SettingView.swift */; };
 		A4967FE32E8FBFE79CF81AFE /* VolunteerHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ED391582F32D1A605F83F7 /* VolunteerHistoryView.swift */; };
@@ -70,6 +71,7 @@
 		7A660683DAA87CD4A880216E /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
 		82ED391582F32D1A605F83F7 /* VolunteerHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerHistoryView.swift; sourceTree = "<group>"; };
 		8895DD112F4D48D00014C56E /* NoticeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailView.swift; sourceTree = "<group>"; };
+		8895DD142F4D4E7D0014C56E /* NoticeContentEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeContentEditor.swift; sourceTree = "<group>"; };
 		8EAFBC6D3ACABFE3625B0053 /* VolunteerRoleScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerRoleScrollView.swift; sourceTree = "<group>"; };
 		983EBE0CA76BA580E6853FA4 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		9D99480639D217A7339EECE2 /* NoticeManageFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeManageFeature.swift; sourceTree = "<group>"; };
@@ -187,9 +189,18 @@
 		8895DD102F4D48BB0014C56E /* NoticeDetail */ = {
 			isa = PBXGroup;
 			children = (
+				8895DD132F4D4E760014C56E /* Component */,
 				8895DD112F4D48D00014C56E /* NoticeDetailView.swift */,
 			);
 			path = NoticeDetail;
+			sourceTree = "<group>";
+		};
+		8895DD132F4D4E760014C56E /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				8895DD142F4D4E7D0014C56E /* NoticeContentEditor.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		8BB55072AEE29D4425C91273 /* PasswordChange */ = {
@@ -412,6 +423,7 @@
 				62834F5E9A0CF2B58FED76C8 /* MyFeature.swift in Sources */,
 				B3D1350B05F9E742EE22FAB3 /* MyView.swift in Sources */,
 				721F7FB4F6F0380A2531EC90 /* NoticeAlertListCell.swift in Sources */,
+				8895DD152F4D4E800014C56E /* NoticeContentEditor.swift in Sources */,
 				CEBA64601DB6CCFAF7E6A7A9 /* NoticeManageFeature.swift in Sources */,
 				0C57F23F2402148F7777649D /* NoticeManageView.swift in Sources */,
 				D9AA9999937DEF6577B21ADA /* MyRootFeature.swift in Sources */,
