@@ -21,6 +21,7 @@
 		721F7FB4F6F0380A2531EC90 /* NoticeAlertListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D6573D9095323508ED78D /* NoticeAlertListCell.swift */; };
 		8895DD122F4D48D80014C56E /* NoticeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8895DD112F4D48D00014C56E /* NoticeDetailView.swift */; };
 		8895DD152F4D4E800014C56E /* NoticeContentEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8895DD142F4D4E7D0014C56E /* NoticeContentEditor.swift */; };
+		8895DD172F4D64200014C56E /* DatePickerBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8895DD162F4D64110014C56E /* DatePickerBottomSheet.swift */; };
 		8F8AB04B00A002ABB6D7DA68 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4BCA2EB5199D14C002D08A /* DesignSystem.framework */; };
 		9D384827AAF726D309F3640B /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983EBE0CA76BA580E6853FA4 /* SettingView.swift */; };
 		A4967FE32E8FBFE79CF81AFE /* VolunteerHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ED391582F32D1A605F83F7 /* VolunteerHistoryView.swift */; };
@@ -72,6 +73,7 @@
 		82ED391582F32D1A605F83F7 /* VolunteerHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerHistoryView.swift; sourceTree = "<group>"; };
 		8895DD112F4D48D00014C56E /* NoticeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailView.swift; sourceTree = "<group>"; };
 		8895DD142F4D4E7D0014C56E /* NoticeContentEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeContentEditor.swift; sourceTree = "<group>"; };
+		8895DD162F4D64110014C56E /* DatePickerBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerBottomSheet.swift; sourceTree = "<group>"; };
 		8EAFBC6D3ACABFE3625B0053 /* VolunteerRoleScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerRoleScrollView.swift; sourceTree = "<group>"; };
 		983EBE0CA76BA580E6853FA4 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		9D99480639D217A7339EECE2 /* NoticeManageFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeManageFeature.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 		8895DD132F4D4E760014C56E /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				8895DD162F4D64110014C56E /* DatePickerBottomSheet.swift */,
 				8895DD142F4D4E7D0014C56E /* NoticeContentEditor.swift */,
 			);
 			path = Component;
@@ -427,6 +430,7 @@
 				CEBA64601DB6CCFAF7E6A7A9 /* NoticeManageFeature.swift in Sources */,
 				0C57F23F2402148F7777649D /* NoticeManageView.swift in Sources */,
 				D9AA9999937DEF6577B21ADA /* MyRootFeature.swift in Sources */,
+				8895DD172F4D64200014C56E /* DatePickerBottomSheet.swift in Sources */,
 				D29A89C20700E8876CE29FEF /* MyRootView.swift in Sources */,
 				FA864EC6FD85C0989D9E6258 /* AlertSettingFeature.swift in Sources */,
 				6D96A1C37BB859520897BAC3 /* AlertSettingView.swift in Sources */,
