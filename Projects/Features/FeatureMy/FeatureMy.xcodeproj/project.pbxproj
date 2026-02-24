@@ -3,13 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0C57F23F2402148F7777649D /* NoticeManageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16B9FAA00511ACFBF85C07E /* NoticeManageView.swift */; };
+		0ED7B2123A68B229CE2A7513 /* DatePickerBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D8EFEDF1325570C0491A53 /* DatePickerBottomSheet.swift */; };
+		1C743A1C45F6CC7D5E55380F /* NoticeDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8904D8D2467E52A50276D2C /* NoticeDetailFeature.swift */; };
 		26C1D83730A005800CEB2B9A /* ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC598270D2E18BAA56861838 /* ComposableArchitecture.framework */; };
 		2C008117BED5FD10CFE140C8 /* VolunteerHistoryFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DD0DCDA468F8564524CA52 /* VolunteerHistoryFeature.swift */; };
+		2E336A000187E46333095EA4 /* NoticeContentEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF46670B08730C6362AA344D /* NoticeContentEditor.swift */; };
 		2F5CB00CBE14B92352D8A22D /* PasswordChangeEmailVerificationFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CAA530F2E456C82D2BBE67 /* PasswordChangeEmailVerificationFeature.swift */; };
 		4D95A1173050AACD5CFF0E45 /* VolunteerFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8BE516E81C1FC40C91A542 /* VolunteerFilter.swift */; };
 		62834F5E9A0CF2B58FED76C8 /* MyFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18947BF7590754554D5A8F /* MyFeature.swift */; };
@@ -19,12 +22,10 @@
 		6D96A1C37BB859520897BAC3 /* AlertSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27561352E625FC27A8932381 /* AlertSettingView.swift */; };
 		6EB1484DE4C98FF8171EEBBF /* PasswordChangeEmailVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A976FD40D63C27FAC08EE6D3 /* PasswordChangeEmailVerificationView.swift */; };
 		721F7FB4F6F0380A2531EC90 /* NoticeAlertListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D6573D9095323508ED78D /* NoticeAlertListCell.swift */; };
-		8895DD122F4D48D80014C56E /* NoticeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8895DD112F4D48D00014C56E /* NoticeDetailView.swift */; };
-		8895DD152F4D4E800014C56E /* NoticeContentEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8895DD142F4D4E7D0014C56E /* NoticeContentEditor.swift */; };
-		8895DD172F4D64200014C56E /* DatePickerBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8895DD162F4D64110014C56E /* DatePickerBottomSheet.swift */; };
 		8F8AB04B00A002ABB6D7DA68 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4BCA2EB5199D14C002D08A /* DesignSystem.framework */; };
 		9D384827AAF726D309F3640B /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983EBE0CA76BA580E6853FA4 /* SettingView.swift */; };
 		A4967FE32E8FBFE79CF81AFE /* VolunteerHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ED391582F32D1A605F83F7 /* VolunteerHistoryView.swift */; };
+		A4E2E8810F43997DCB956877 /* NoticeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F82D913085339C11378300 /* NoticeDetailView.swift */; };
 		A7C2EA9A6C580C815C812D61 /* HistoryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E085B90B16E46E7E44FA82 /* HistoryListCell.swift */; };
 		B3D1350B05F9E742EE22FAB3 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C7DE561CBB0DA717BC420B /* MyView.swift */; };
 		C550DD69C526AE7815C1553D /* SettingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C6E516219E668C7B1F6465 /* SettingButton.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		20F82D913085339C11378300 /* NoticeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailView.swift; sourceTree = "<group>"; };
 		21CAA530F2E456C82D2BBE67 /* PasswordChangeEmailVerificationFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeEmailVerificationFeature.swift; sourceTree = "<group>"; };
 		27561352E625FC27A8932381 /* AlertSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertSettingView.swift; sourceTree = "<group>"; };
 		27B234D75E194338C5293AAE /* SettingFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingFeature.swift; sourceTree = "<group>"; };
@@ -71,9 +73,6 @@
 		778FA82C390A2B7AA1C03881 /* NewPasswordFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordFeature.swift; sourceTree = "<group>"; };
 		7A660683DAA87CD4A880216E /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
 		82ED391582F32D1A605F83F7 /* VolunteerHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerHistoryView.swift; sourceTree = "<group>"; };
-		8895DD112F4D48D00014C56E /* NoticeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailView.swift; sourceTree = "<group>"; };
-		8895DD142F4D4E7D0014C56E /* NoticeContentEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeContentEditor.swift; sourceTree = "<group>"; };
-		8895DD162F4D64110014C56E /* DatePickerBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerBottomSheet.swift; sourceTree = "<group>"; };
 		8EAFBC6D3ACABFE3625B0053 /* VolunteerRoleScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerRoleScrollView.swift; sourceTree = "<group>"; };
 		983EBE0CA76BA580E6853FA4 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		9D99480639D217A7339EECE2 /* NoticeManageFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeManageFeature.swift; sourceTree = "<group>"; };
@@ -81,14 +80,17 @@
 		A5E085B90B16E46E7E44FA82 /* HistoryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListCell.swift; sourceTree = "<group>"; };
 		A976FD40D63C27FAC08EE6D3 /* PasswordChangeEmailVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeEmailVerificationView.swift; sourceTree = "<group>"; };
 		AA4BCA2EB5199D14C002D08A /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF46670B08730C6362AA344D /* NoticeContentEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeContentEditor.swift; sourceTree = "<group>"; };
 		B2A434088CC8F5EEF11042B7 /* FeatureMy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "FeatureMy-Info.plist"; sourceTree = "<group>"; };
 		BF502BE77F3FC44FF3FF35F0 /* MyRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRootView.swift; sourceTree = "<group>"; };
 		C0BFEFE2F4F58881E69059B5 /* VolunteerFilterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerFilterListView.swift; sourceTree = "<group>"; };
 		C1A8054F5CCC9AB7C0E7DA39 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8904D8D2467E52A50276D2C /* NoticeDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailFeature.swift; sourceTree = "<group>"; };
 		DE18947BF7590754554D5A8F /* MyFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeature.swift; sourceTree = "<group>"; };
 		EC598270D2E18BAA56861838 /* ComposableArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ComposableArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9FA9C1DCD6083CCAE72342 /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
 		F0F93A1AAF0711BB2EE4BD59 /* AlertSettingFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertSettingFeature.swift; sourceTree = "<group>"; };
+		F2D8EFEDF1325570C0491A53 /* DatePickerBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerBottomSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +111,8 @@
 		0E8C3B6F8D5CF77339ECFD03 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
-				8895DD102F4D48BB0014C56E /* NoticeDetail */,
 				679520AB7159174AA22A8F81 /* Component */,
+				E5A507DBD511BA2FD1F13F7C /* NoticeDetail */,
 				9D99480639D217A7339EECE2 /* NoticeManageFeature.swift */,
 				A16B9FAA00511ACFBF85C07E /* NoticeManageView.swift */,
 			);
@@ -188,24 +190,6 @@
 			);
 			sourceTree = "<group>";
 		};
-		8895DD102F4D48BB0014C56E /* NoticeDetail */ = {
-			isa = PBXGroup;
-			children = (
-				8895DD132F4D4E760014C56E /* Component */,
-				8895DD112F4D48D00014C56E /* NoticeDetailView.swift */,
-			);
-			path = NoticeDetail;
-			sourceTree = "<group>";
-		};
-		8895DD132F4D4E760014C56E /* Component */ = {
-			isa = PBXGroup;
-			children = (
-				8895DD162F4D64110014C56E /* DatePickerBottomSheet.swift */,
-				8895DD142F4D4E7D0014C56E /* NoticeContentEditor.swift */,
-			);
-			path = Component;
-			sourceTree = "<group>";
-		};
 		8BB55072AEE29D4425C91273 /* PasswordChange */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +232,15 @@
 				983EBE0CA76BA580E6853FA4 /* SettingView.swift */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		C33E9A3857B2D676CD82C383 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				F2D8EFEDF1325570C0491A53 /* DatePickerBottomSheet.swift */,
+				AF46670B08730C6362AA344D /* NoticeContentEditor.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		C893D5CDE1454AD6941477E3 /* FeatureMy */ = {
@@ -304,6 +297,16 @@
 				A5E085B90B16E46E7E44FA82 /* HistoryListCell.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		E5A507DBD511BA2FD1F13F7C /* NoticeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				C33E9A3857B2D676CD82C383 /* Component */,
+				D8904D8D2467E52A50276D2C /* NoticeDetailFeature.swift */,
+				20F82D913085339C11378300 /* NoticeDetailView.swift */,
+			);
+			path = NoticeDetail;
 			sourceTree = "<group>";
 		};
 		E6BDCB3F119F05DD243A6B5D /* Derived */ = {
@@ -364,6 +367,8 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				ORGANIZATIONNAME = com.finda.app;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = 71E809662695D584EB1D996C /* Build configuration list for PBXProject "FeatureMy" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -426,11 +431,13 @@
 				62834F5E9A0CF2B58FED76C8 /* MyFeature.swift in Sources */,
 				B3D1350B05F9E742EE22FAB3 /* MyView.swift in Sources */,
 				721F7FB4F6F0380A2531EC90 /* NoticeAlertListCell.swift in Sources */,
-				8895DD152F4D4E800014C56E /* NoticeContentEditor.swift in Sources */,
+				0ED7B2123A68B229CE2A7513 /* DatePickerBottomSheet.swift in Sources */,
+				2E336A000187E46333095EA4 /* NoticeContentEditor.swift in Sources */,
+				1C743A1C45F6CC7D5E55380F /* NoticeDetailFeature.swift in Sources */,
+				A4E2E8810F43997DCB956877 /* NoticeDetailView.swift in Sources */,
 				CEBA64601DB6CCFAF7E6A7A9 /* NoticeManageFeature.swift in Sources */,
 				0C57F23F2402148F7777649D /* NoticeManageView.swift in Sources */,
 				D9AA9999937DEF6577B21ADA /* MyRootFeature.swift in Sources */,
-				8895DD172F4D64200014C56E /* DatePickerBottomSheet.swift in Sources */,
 				D29A89C20700E8876CE29FEF /* MyRootView.swift in Sources */,
 				FA864EC6FD85C0989D9E6258 /* AlertSettingFeature.swift in Sources */,
 				6D96A1C37BB859520897BAC3 /* AlertSettingView.swift in Sources */,
@@ -440,7 +447,6 @@
 				D7C10FA9E13A3001B8C7A0E3 /* NewPasswordFeature.swift in Sources */,
 				69A5E8B187CDC9169C1A2A61 /* NewPasswordView.swift in Sources */,
 				2F5CB00CBE14B92352D8A22D /* PasswordChangeEmailVerificationFeature.swift in Sources */,
-				8895DD122F4D48D80014C56E /* NoticeDetailView.swift in Sources */,
 				6EB1484DE4C98FF8171EEBBF /* PasswordChangeEmailVerificationView.swift in Sources */,
 				DE9399CB1629908B9F4096F1 /* SettingFeature.swift in Sources */,
 				9D384827AAF726D309F3640B /* SettingView.swift in Sources */,
@@ -539,7 +545,21 @@
 					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
 					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros";
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.finda.app.featuremy;
 				PRODUCT_NAME = FeatureMy;
 				SDKROOT = iphoneos;
@@ -547,7 +567,10 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -585,7 +608,21 @@
 					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
 					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros";
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.finda.app.featuremy;
 				PRODUCT_NAME = FeatureMy;
 				SDKROOT = iphoneos;

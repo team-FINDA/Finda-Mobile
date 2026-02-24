@@ -2,21 +2,9 @@ import SwiftUI
 import ComposableArchitecture
 import DesignSystem
 
-private struct NoticeAlertItem: Identifiable {
-    let id: String
-    let title: String
-    let date: String
-    let time: String
-}
-
 struct NoticeManageView: View {
     @Environment(\.dismiss) private var dismiss
     @Perception.Bindable private var store: StoreOf<NoticeManageFeature>
-    private let noticeItems: [NoticeAlertItem] = [
-        .init(id: "1", title: "꽃에 물주러 오세요", date: "2025.06.30", time: "13:00"),
-        .init(id: "2", title: "교감쌤과 바둑 활동 안내", date: "2025.07.01", time: "09:30"),
-        .init(id: "3", title: "환경 지킴이하러 오세요~", date: "2025.07.03", time: "15:10")
-    ]
 
     public init(store: StoreOf<NoticeManageFeature>) {
         self.store = store
@@ -39,7 +27,9 @@ struct NoticeManageView: View {
 
                     Spacer()
 
-                    Button(action: {}, label: {
+                    Button(action: {
+                        store.send(.addButtonTapped)
+                    }, label: {
                         Image.Icons.add
                     })
                 }
@@ -48,12 +38,14 @@ struct NoticeManageView: View {
 
                 ScrollView {
                     LazyVStack(spacing: 4) {
-                        ForEach(noticeItems) { item in
+                        ForEach(store.noticeItems) { item in
                             NoticeAlertListCell(
                                 title: item.title,
                                 date: item.date,
                                 time: item.time,
-                                action: {}
+                                action: {
+                                    store.send(.noticeItemTapped(item))
+                                }
                             )
                         }
                     }

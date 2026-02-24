@@ -50,6 +50,9 @@ public struct MyRootView: View {
                         then: NoticeManageView.init
                     )
 
+                case let .noticeDetail(state):
+                    NoticeDetailView(mode: state.mode)
+
                 case .alertSetting:
                     IfLetStore(
                         pathStore.scope(
