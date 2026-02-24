@@ -45,7 +45,7 @@ public struct MyView: View {
                     })
                 }
 
-                Button(action: { store.send(.volunteerHistoryButtonTapped) }, label: {
+                Button(action: { store.send(.myButtonTapped) }, label: {
                     Text(store.role == .student ? "봉사 활동 내역 확인" : "공지사항 관리/생성")
                         .font(.finda(.body1))
                         .foregroundColor(.Blue.blue50)

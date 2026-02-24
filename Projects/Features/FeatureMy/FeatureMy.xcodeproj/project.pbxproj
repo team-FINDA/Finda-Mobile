@@ -25,6 +25,7 @@
 		A7C2EA9A6C580C815C812D61 /* HistoryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E085B90B16E46E7E44FA82 /* HistoryListCell.swift */; };
 		B3D1350B05F9E742EE22FAB3 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C7DE561CBB0DA717BC420B /* MyView.swift */; };
 		C550DD69C526AE7815C1553D /* SettingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C6E516219E668C7B1F6465 /* SettingButton.swift */; };
+		CEBA64601DB6CCFAF7E6A7A9 /* NoticeManageFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D99480639D217A7339EECE2 /* NoticeManageFeature.swift */; };
 		D29A89C20700E8876CE29FEF /* MyRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF502BE77F3FC44FF3FF35F0 /* MyRootView.swift */; };
 		D7C10FA9E13A3001B8C7A0E3 /* NewPasswordFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778FA82C390A2B7AA1C03881 /* NewPasswordFeature.swift */; };
 		D9AA9999937DEF6577B21ADA /* MyRootFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A4272A9CFF6269B627EC1D /* MyRootFeature.swift */; };
@@ -69,6 +70,7 @@
 		82ED391582F32D1A605F83F7 /* VolunteerHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerHistoryView.swift; sourceTree = "<group>"; };
 		8EAFBC6D3ACABFE3625B0053 /* VolunteerRoleScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerRoleScrollView.swift; sourceTree = "<group>"; };
 		983EBE0CA76BA580E6853FA4 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		9D99480639D217A7339EECE2 /* NoticeManageFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeManageFeature.swift; sourceTree = "<group>"; };
 		A16B9FAA00511ACFBF85C07E /* NoticeManageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeManageView.swift; sourceTree = "<group>"; };
 		A5E085B90B16E46E7E44FA82 /* HistoryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListCell.swift; sourceTree = "<group>"; };
 		A976FD40D63C27FAC08EE6D3 /* PasswordChangeEmailVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeEmailVerificationView.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				679520AB7159174AA22A8F81 /* Component */,
+				9D99480639D217A7339EECE2 /* NoticeManageFeature.swift */,
 				A16B9FAA00511ACFBF85C07E /* NoticeManageView.swift */,
 			);
 			path = Notification;
@@ -400,6 +403,7 @@
 				62834F5E9A0CF2B58FED76C8 /* MyFeature.swift in Sources */,
 				B3D1350B05F9E742EE22FAB3 /* MyView.swift in Sources */,
 				721F7FB4F6F0380A2531EC90 /* NoticeAlertListCell.swift in Sources */,
+				CEBA64601DB6CCFAF7E6A7A9 /* NoticeManageFeature.swift in Sources */,
 				0C57F23F2402148F7777649D /* NoticeManageView.swift in Sources */,
 				D9AA9999937DEF6577B21ADA /* MyRootFeature.swift in Sources */,
 				D29A89C20700E8876CE29FEF /* MyRootView.swift in Sources */,
