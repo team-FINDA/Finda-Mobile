@@ -24,6 +24,8 @@ public struct MyRootFeature {
     public enum Path {
         case setting(SettingFeature)
         case volunteerHistory(VolunteerHistoryFeature)
+        case noticeManage(NoticeManageFeature)
+        case noticeDetail(NoticeDetailFeature)
         case alertSetting(AlertSettingFeature)
         case passwordChangeEmailVerification(PasswordChangeEmailVerificationFeature)
         case newPassword(NewPasswordFeature)
@@ -41,13 +43,37 @@ public struct MyRootFeature {
                 state.path.append(.setting(SettingFeature.State()))
                 return .none
 
-            case .my(.volunteerHistoryButtonTapped):
-                guard state.role == .student else { return .none }
-                state.path.append(.volunteerHistory(VolunteerHistoryFeature.State()))
+            case .my(.myButtonTapped):
+                if state.role == .student {
+                    state.path.append(.volunteerHistory(VolunteerHistoryFeature.State()))
+                } else {
+                    state.path.append(.noticeManage(NoticeManageFeature.State()))
+                }
                 return .none
 
             case .path(.element(id: _, action: .setting(.alertSettingButtonTapped))):
                 state.path.append(.alertSetting(AlertSettingFeature.State()))
+                return .none
+
+            case .path(.element(id: _, action: .noticeManage(.addButtonTapped))):
+                state.path.append(.noticeDetail(NoticeDetailFeature.State(mode: .create)))
+                return .none
+
+            case let .path(.element(id: _, action: .noticeManage(.noticeItemTapped(item)))):
+                state.path.append(
+                    .noticeDetail(
+                        NoticeDetailFeature.State(
+                            mode: .edit(
+                                .init(
+                                    title: item.title,
+                                    content: item.content,
+                                    date: item.date,
+                                    time: item.time
+                                )
+                            )
+                        )
+                    )
+                )
                 return .none
 
             case .path(.element(id: _, action: .setting(.passwordChangeButtonTapped))):

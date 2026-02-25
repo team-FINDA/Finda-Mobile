@@ -15,7 +15,7 @@ public struct MyFeature {
     public enum Action: BindableAction {
         case binding(BindingAction<State>)
         case settingButtonTapped
-        case volunteerHistoryButtonTapped
+        case myButtonTapped
     }
 
     public init() {}
@@ -27,7 +27,7 @@ public struct MyFeature {
             case .settingButtonTapped:
                 return .none
 
-            case .volunteerHistoryButtonTapped:
+            case .myButtonTapped:
                 return .none
 
             case .binding:

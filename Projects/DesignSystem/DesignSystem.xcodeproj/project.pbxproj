@@ -18,6 +18,7 @@
 		2F0F96599C1EAF80CD313D4B /* DismissKeyboardOnTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9070B86E1907B564787E5489 /* DismissKeyboardOnTap.swift */; };
 		313FB8E862B2BF5242789879 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25C1C589AF4FC204EF5E571 /* Images.xcassets */; };
 		4D6F9A9F7E378222A01DCDA6 /* AuthPromptButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99BE9AFD874041C64F1F29 /* AuthPromptButton.swift */; };
+		501584BB62955CE7C4F7244C /* FINDAHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185C0452B2D317505B0AEB11 /* FINDAHeader.swift */; };
 		5A8EFD2B11965BA3BFF164E9 /* Image+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593CD7BFBE22E5E79F338306 /* Image+.swift */; };
 		77353C1F0514644BD6B0019A /* MainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92831B470B2295D65BEA260E /* MainHeaderView.swift */; };
 		7ECA1B016B161770DCA93FD4 /* UserSelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D2DBC4518456475CD7CE7D /* UserSelectButton.swift */; };
@@ -51,6 +52,7 @@
 		02F6CE72280B49A87F296776 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		1304941C5E8C7083BE0EB257 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		1489E7809DA4DADA471C2CDC /* TuistFonts+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistFonts+DesignSystem.swift"; sourceTree = "<group>"; };
+		185C0452B2D317505B0AEB11 /* FINDAHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FINDAHeader.swift; sourceTree = "<group>"; };
 		1CA11073843FE4E5B67AAAE0 /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
 		24D93F7D818D17A03E1017E5 /* Blue.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Blue.xcassets; sourceTree = "<group>"; };
 		2B72E76EEF0B95242FC74B85 /* ConfirmPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPopupView.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				8BC136006E1D0234B84A94B8 /* Button */,
 				C5F8B69B747C1C93422C089D /* Cell */,
 				DADCA588D3E296D27BE4E9DD /* Extension */,
+				6E3D58CF574ED9C690700F1D /* Header */,
 				19EDB96E44056176A3F928A5 /* Popup */,
 				F9E8E6CAFD528DBE7A3EA0F0 /* TextField */,
 				3685E88874D8B1F3BEE6A129 /* Typography */,
@@ -174,6 +177,14 @@
 				593CD7BFBE22E5E79F338306 /* Image+.swift */,
 			);
 			path = Image;
+			sourceTree = "<group>";
+		};
+		6E3D58CF574ED9C690700F1D /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				185C0452B2D317505B0AEB11 /* FINDAHeader.swift */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 		7A598F64DE446EA65E8B61CE /* Colors */ = {
@@ -435,6 +446,7 @@
 				CEC36DC0BC8D2AF0871D6E58 /* Color+.swift in Sources */,
 				5A8EFD2B11965BA3BFF164E9 /* Image+.swift in Sources */,
 				2F0F96599C1EAF80CD313D4B /* DismissKeyboardOnTap.swift in Sources */,
+				501584BB62955CE7C4F7244C /* FINDAHeader.swift in Sources */,
 				B75AF519B97E1E5BDB630737 /* ConfirmPopupView.swift in Sources */,
 				192A7788250BC66DEBFDF245 /* AuthTextField.swift in Sources */,
 				F92BA348F451BC1488B0FD4D /* FindaFont.swift in Sources */,

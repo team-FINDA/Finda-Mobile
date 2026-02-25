@@ -41,6 +41,18 @@ public struct MyRootView: View {
                         then: VolunteerHistoryView.init
                     )
 
+                case .noticeManage:
+                    IfLetStore(
+                        pathStore.scope(
+                            state: \.noticeManage,
+                            action: \.noticeManage
+                        ),
+                        then: NoticeManageView.init
+                    )
+
+                case let .noticeDetail(state):
+                    NoticeDetailView(mode: state.mode)
+
                 case .alertSetting:
                     IfLetStore(
                         pathStore.scope(

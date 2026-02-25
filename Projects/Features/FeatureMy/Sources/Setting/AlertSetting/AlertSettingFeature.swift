@@ -16,9 +16,9 @@ public struct AlertSettingFeature {
 
     @ObservableState
     public struct State: Equatable {
-        var noticeToggleOn: Bool
-        var totalToggleOn: Bool
-        var volunteerAlertItems: [VolunteerAlertItem]
+        public var noticeToggleOn: Bool
+        public var totalToggleOn: Bool
+        public var volunteerAlertItems: [VolunteerAlertItem]
 
         public init(
             noticeToggleOn: Bool = false,
@@ -30,7 +30,7 @@ public struct AlertSettingFeature {
             self.volunteerAlertItems = volunteerAlertItems
         }
 
-        static let defaultVolunteerAlertItems: [VolunteerAlertItem] = [
+        public static let defaultVolunteerAlertItems: [VolunteerAlertItem] = [
             .init(id: "1", title: "환경 지킴이 활동", isOn: false),
             .init(id: "2", title: "교감쌤과 바둑두기", isOn: true),
             .init(id: "3", title: "화단에 물주기", isOn: false)
