@@ -21,7 +21,9 @@ public struct NoticeDetailFeature {
 
     public init() {}
 
-    public var body: some ReducerOf<Self> {}
+    public var body: some ReducerOf<Self> {
+        Reduce { _, _ in .none }
+    }
 }
 
 public struct EditData: Equatable {
