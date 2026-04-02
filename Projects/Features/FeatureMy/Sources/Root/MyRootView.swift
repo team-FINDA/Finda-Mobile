@@ -15,8 +15,8 @@ public struct MyRootView: View {
             NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
                 MyView(
                     store: store.scope(
-                        state: \.my,
-                        action: \.my
+                        state: \.myPage,
+                        action: \.myPage
                     )
                 )
             } destination: { pathStore in

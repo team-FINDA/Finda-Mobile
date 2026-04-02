@@ -6,17 +6,17 @@ public struct MyRootFeature {
     @ObservableState
     public struct State: Equatable {
         var role: UserRole
-        var my: MyFeature.State
+        var myPage: MyFeature.State
         var path = StackState<Path.State>()
 
         public init(role: UserRole) {
             self.role = role
-            self.my = MyFeature.State(role: role)
+            self.myPage = MyFeature.State(role: role)
         }
     }
 
     public enum Action {
-        case my(MyFeature.Action)
+        case myPage(MyFeature.Action)
         case path(StackActionOf<Path>)
     }
 
@@ -34,16 +34,16 @@ public struct MyRootFeature {
     public init() {}
 
     public var body: some ReducerOf<Self> {
-        Scope(state: \.my, action: \.my) {
+        Scope(state: \.myPage, action: \.myPage) {
             MyFeature()
         }
         Reduce { state, action in
             switch action {
-            case .my(.settingButtonTapped):
+            case .myPage(.settingButtonTapped):
                 state.path.append(.setting(SettingFeature.State()))
                 return .none
 
-            case .my(.myButtonTapped):
+            case .myPage(.myButtonTapped):
                 if state.role == .student {
                     state.path.append(.volunteerHistory(VolunteerHistoryFeature.State()))
                 } else {
@@ -91,7 +91,7 @@ public struct MyRootFeature {
             case .path:
                 return .none
 
-            case .my:
+            case .myPage:
                 return .none
             }
         }

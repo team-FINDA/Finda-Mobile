@@ -18,9 +18,9 @@ struct MainTabView: View {
             TabView(selection: $store.selectedTab) {
                 QRTabView(role: store.role)
                     .tabItem {
-                        Image(store.selectedTab == .qr ? "tabbarQR" : "tabbarQRNot")
+                        Image(store.selectedTab == .QRCode ? "tabbarQR" : "tabbarQRNot")
                     }
-                    .tag(Tab.qr)
+                    .tag(Tab.QRCode)
 
                 HomeTabView(role: store.role, store: store)
                     .tabItem {
@@ -95,8 +95,8 @@ private struct ProfileTabView: View {
     var body: some View {
         MyRootView(
             store: store.scope(
-                state: \.my,
-                action: \.my
+                state: \.myPage,
+                action: \.myPage
             )
         )
     }
