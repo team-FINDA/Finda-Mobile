@@ -11,9 +11,7 @@ public struct AuthRootView: View {
     public var body: some View {
         WithPerceptionTracking {
             let selectedRole = store.selectedRole
-            NavigationStackStore(
-                store.scope(state: \.path, action: \.path)
-            ) {
+            NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
                 SigninUserSelectView(
                     store: store.scope(
                         state: \.signinUserSelect,
@@ -21,46 +19,17 @@ public struct AuthRootView: View {
                     )
                 )
             } destination: { store in
-                switch store.state {
-                case .signin:
-                    IfLetStore(
-                        store.scope(
-                            state: \.signin,
-                            action: \.signin
-                        ),
-                        then: SigninView.init
-                    )
-                case .signupUserSelect:
-                    IfLetStore(
-                        store.scope(
-                            state: \.signupUserSelect,
-                            action: \.signupUserSelect
-                        ),
-                        then: SignupUserSelectView.init
-                    )
-                case .secretKey:
-                    IfLetStore(
-                        store.scope(
-                            state: \.secretKey,
-                            action: \.secretKey
-                        ),
-                        then: { SecretKeyView(store: $0, selectedRole: selectedRole) }
-                    )
-                case .emailVerification:
-                    IfLetStore(
-                        store.scope(
-                            state: \.emailVerification,
-                            action: \.emailVerification
-                        ),
-                        then: { EmailVerificationView(store: $0, selectedRole: selectedRole) }
-                    )
-                case .information:
-                    IfLetStore(
-                        store.scope(
-                            state: \.information,
-                            action: \.information
-                        ), then: { InformationView(store: $0, selectedRole: selectedRole) }
-                    )
+                switch store.case {
+                case .signin(let store):
+                    SigninView(store: store)
+                case .signupUserSelect(let store):
+                    SignupUserSelectView(store: store)
+                case .secretKey(let store):
+                    SecretKeyView(store: store, selectedRole: selectedRole)
+                case .emailVerification(let store):
+                    EmailVerificationView(store: store, selectedRole: selectedRole)
+                case .information(let store):
+                    InformationView(store: store, selectedRole: selectedRole)
                 }
             }
         }

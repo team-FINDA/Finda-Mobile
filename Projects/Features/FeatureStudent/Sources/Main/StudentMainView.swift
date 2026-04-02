@@ -11,9 +11,7 @@ public struct StudentMainView: View {
 
     public var body: some View {
         WithPerceptionTracking {
-            NavigationStackStore(
-                store.scope(state: \.path, action: \.path)
-            ) {
+            NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
                 ScrollView {
                     VStack(spacing: 20) {
                         MainHeaderView(
@@ -33,15 +31,9 @@ public struct StudentMainView: View {
                     .padding(.horizontal, 24.5)
                 }
             } destination: { store in
-                switch store.state {
+                switch store.case {
                 case .volunteerList:
-                    IfLetStore(
-                        store.scope(
-                            state: \.volunteerList,
-                            action: \.volunteerList
-                        ),
-                        then: { _ in VolunteerListView() }
-                    )
+                    VolunteerListView()
                 }
             }
         }

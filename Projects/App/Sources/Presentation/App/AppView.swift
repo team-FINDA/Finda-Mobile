@@ -13,15 +13,13 @@ struct AppView: View {
         WithPerceptionTracking {
             ZStack {
                 Group {
-                    IfLetStore(
-                        store.scope(
-                            state: \.mainTab,
-                            action: \.mainTab
-                        )
+                    if let store = store.scope(
+                        state: \.mainTab,
+                        action: \.mainTab
                     ) {
-                        MainTabView(store: $0)
+                        MainTabView(store: store)
                             .transition(.opacity)
-                    } else: {
+                    } else {
                         AuthRootView(
                             store: store.scope(
                                 state: \.authRoot,
