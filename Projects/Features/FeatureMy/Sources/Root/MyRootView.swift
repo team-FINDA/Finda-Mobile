@@ -12,73 +12,35 @@ public struct MyRootView: View {
         WithPerceptionTracking {
             let selectedRole = store.role
 
-            NavigationStackStore(
-                store.scope(state: \.path, action: \.path)
-            ) {
+            NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
                 MyView(
                     store: store.scope(
-                        state: \.my,
-                        action: \.my
+                        state: \.myPage,
+                        action: \.myPage
                     )
                 )
             } destination: { pathStore in
-                switch pathStore.state {
-                case .setting:
-                    IfLetStore(
-                        pathStore.scope(
-                            state: \.setting,
-                            action: \.setting
-                        ),
-                        then: SettingView.init
-                    )
+                switch pathStore.case {
+                case .setting(let store):
+                    SettingView(store: store)
 
-                case .volunteerHistory:
-                    IfLetStore(
-                        pathStore.scope(
-                            state: \.volunteerHistory,
-                            action: \.volunteerHistory
-                        ),
-                        then: VolunteerHistoryView.init
-                    )
+                case .volunteerHistory(let store):
+                    VolunteerHistoryView(store: store)
 
-                case .noticeManage:
-                    IfLetStore(
-                        pathStore.scope(
-                            state: \.noticeManage,
-                            action: \.noticeManage
-                        ),
-                        then: NoticeManageView.init
-                    )
+                case .noticeManage(let store):
+                    NoticeManageView(store: store)
 
-                case let .noticeDetail(state):
-                    NoticeDetailView(mode: state.mode)
+                case .noticeDetail(let store):
+                    NoticeDetailView(mode: store.mode)
 
-                case .alertSetting:
-                    IfLetStore(
-                        pathStore.scope(
-                            state: \.alertSetting,
-                            action: \.alertSetting
-                        ),
-                        then: { AlertSettingView(store: $0) }
-                    )
+                case .alertSetting(let store):
+                    AlertSettingView(store: store)
 
-                case .passwordChangeEmailVerification:
-                    IfLetStore(
-                        pathStore.scope(
-                            state: \.passwordChangeEmailVerification,
-                            action: \.passwordChangeEmailVerification
-                        ),
-                        then: { PasswordChangeEmailVerificationView(store: $0, selectedRole: selectedRole) }
-                    )
+                case .passwordChangeEmailVerification(let store):
+                    PasswordChangeEmailVerificationView(store: store, selectedRole: selectedRole)
 
-                case .newPassword:
-                    IfLetStore(
-                        pathStore.scope(
-                            state: \.newPassword,
-                            action: \.newPassword
-                        ),
-                        then: { NewPasswordView(store: $0, selectedRole: selectedRole) }
-                    )
+                case .newPassword(let store):
+                    NewPasswordView(store: store, selectedRole: selectedRole)
                 }
             }
         }

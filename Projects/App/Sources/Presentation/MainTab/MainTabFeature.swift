@@ -5,7 +5,7 @@ import FeatureTeacher
 import Shared
 
 enum Tab: Hashable {
-    case qr
+    case QRCode
     case main
     case schedule
     case profile
@@ -19,11 +19,11 @@ struct MainTabFeature {
         var selectedTab: Tab = .main
         var studentMain = StudentMainFeature.State()
         var teacherMain = TeacherMainFeature.State()
-        var my: MyRootFeature.State
+        var myPage: MyRootFeature.State
 
         init(role: UserRole) {
             self.role = role
-            self.my = MyRootFeature.State(role: role)
+            self.myPage = MyRootFeature.State(role: role)
         }
     }
 
@@ -31,7 +31,7 @@ struct MainTabFeature {
         case binding(BindingAction<State>)
         case studentMain(StudentMainFeature.Action)
         case teacherMain(TeacherMainFeature.Action)
-        case my(MyRootFeature.Action)
+        case myPage(MyRootFeature.Action)
     }
 
     init() {}
@@ -43,7 +43,7 @@ struct MainTabFeature {
         Scope(state: \.teacherMain, action: \.teacherMain) {
             TeacherMainFeature()
         }
-        Scope(state: \.my, action: \.my) {
+        Scope(state: \.myPage, action: \.myPage) {
             MyRootFeature()
         }
 
@@ -59,7 +59,7 @@ struct MainTabFeature {
             case .teacherMain:
                 return .none
 
-            case .my:
+            case .myPage:
                 return .none
             }
         }

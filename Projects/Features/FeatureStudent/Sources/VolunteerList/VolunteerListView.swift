@@ -2,15 +2,19 @@ import SwiftUI
 import DesignSystem
 
 struct VolunteerListView: View {
-    private let volunteerPosts: [(
-        name: String,
-        date: String,
-        time: Int
-    )] = [
-        ("환경지킴이", "2025/04/16 ~ 2025/07/30", 8),
-        ("교내 도서관 정리", "2025/03/10 ~ 2025/05/28", 12),
-        ("지역사회 환경 캠페인", "2025/06/01 ~ 2025/08/15", 6)
+    private struct VolunteerPost: Identifiable {
+        let id = UUID()
+        let name: String
+        let date: String
+        let time: Int
+    }
+
+    private let volunteerPosts: [VolunteerPost] = [
+        .init(name: "환경지킴이", date: "2025/04/16 ~ 2025/07/30", time: 8),
+        .init(name: "교내 도서관 정리", date: "2025/03/10 ~ 2025/05/28", time: 12),
+        .init(name: "지역사회 환경 캠페인", date: "2025/06/01 ~ 2025/08/15", time: 6)
     ]
+
     @State private var isShowingVolunteerPost = false
     @Environment(\.dismiss) private var dismiss
 
@@ -38,7 +42,7 @@ struct VolunteerListView: View {
             .padding(.vertical, 8)
 
             List {
-                ForEach(Array(volunteerPosts.enumerated()), id: \.offset) { _, post in
+                ForEach(volunteerPosts) { post in
                     Button(action: {
                         isShowingVolunteerPost = true
                     }, label: {

@@ -14,7 +14,7 @@ public struct VolunteerListFeature {
     public init() {}
 
     public var body: some ReducerOf<Self> {
-        Reduce { state, action in
+        Reduce { _, action in
             switch action {
             case .onAppear:
                 return .none
