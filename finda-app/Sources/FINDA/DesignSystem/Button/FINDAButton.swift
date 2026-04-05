@@ -8,7 +8,7 @@ public struct FINDAButton: View {
 
     public init(
         buttonText: String,
-        buttonColor: Color = Color.Blue.blue50,
+        buttonColor: Color = Color.blue50,
         isDisabled: Bool = false,
         buttonClick: @escaping (() -> Void)
     ) {
@@ -26,10 +26,10 @@ public struct FINDAButton: View {
                 .font(.finda(.button))
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 17)
-                .foregroundStyle(Color.Gray.gray10)
+                .foregroundStyle(Color.gray10)
         }
         .disabled(isDisabled)
-        .background(isDisabled ? Color.Gray.gray40 : buttonColor)
+        .background(isDisabled ? Color.gray40 : buttonColor)
         .cornerRadius(32)
     }
 }

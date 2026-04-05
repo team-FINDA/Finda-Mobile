@@ -12,16 +12,16 @@ public struct TotalTimeView: View {
             VStack(alignment: .leading) {
                 Text("총 봉사 시간")
                     .font(.finda(.body3))
-                    .foregroundStyle(Color.Gray.gray60)
+                    .foregroundStyle(Color.gray60)
 
                 Text("\(String(format: "%.1f", volunteerTime)) 시간")
                     .font(.finda(.heading2))
-                    .foregroundStyle(Color.Gray.gray90)
+                    .foregroundStyle(Color.gray90)
             }
             Spacer()
         }
         .padding(24)
-        .background(Color.Gray.gray20)
+        .background(Color.gray20)
         .cornerRadius(20)
     }
 }

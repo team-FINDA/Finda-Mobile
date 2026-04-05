@@ -20,23 +20,23 @@ public struct VolunteerListCell: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(volunteerName)
                     .font(.finda(.body1))
-                    .foregroundColor(.Gray.gray90)
+                    .foregroundColor(.gray90)
                 Text(date)
                     .font(.finda(.caption2))
-                    .foregroundColor(.Gray.gray80)
+                    .foregroundColor(.gray80)
             }
 
             Spacer()
 
             Text("\(time)시간")
                 .font(.finda(.body3))
-                .foregroundColor(.Blue.blue40)
+                .foregroundColor(.blue40)
         }
         .padding(20)
-        .overlay(
+        .overlay(alignment: .center) {
             RoundedRectangle(cornerRadius: 5)
-                .strokeBorder(Color.Gray.gray40, lineWidth: 0.8)
-        )
+                .strokeBorder(Color.gray40, lineWidth: 0.8)
+        }
     }
 }
 

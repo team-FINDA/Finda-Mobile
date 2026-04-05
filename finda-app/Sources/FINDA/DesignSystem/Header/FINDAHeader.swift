@@ -29,7 +29,7 @@ public struct FINDAHeader: View {
 
             Text(title)
                 .font(.finda(.body1))
-                .foregroundColor(.Gray.gray90)
+                .foregroundColor(.gray90)
 
             Spacer()
 
@@ -59,9 +59,9 @@ public struct FINDAHeader: View {
 #Preview {
     FINDAHeader(
         title: "공지사항 관리",
-        leftItemImage: Image.Icons.leftArrow,
+        leftItemImage: Image("leftArrow"),
         leftItemAction: {},
-        rightItemImage: Image.Icons.add,
+        rightItemImage: Image("add"),
         rightItemAction: {}
     )
 }

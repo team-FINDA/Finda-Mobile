@@ -19,13 +19,13 @@ public struct AuthPromptButton: View {
         HStack(spacing: 4) {
             Text(promptText)
                 .font(.finda(.body4))
-                .foregroundStyle(Color.Gray.gray60)
+                .foregroundStyle(Color.gray60)
             Button(
                 action: action
             ) {
                 Text(buttonText)
                     .font(.finda(.body3))
-                    .foregroundStyle(Color.Gray.gray80)
+                    .foregroundStyle(Color.gray80)
             }
         }
     }

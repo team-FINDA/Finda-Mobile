@@ -41,7 +41,7 @@ public struct AuthTextField: View {
         VStack(alignment: .leading, spacing: 12) {
             Text(labelText)
                 .font(.finda(.body1))
-                .foregroundColor(Color.Gray.gray80)
+                .foregroundColor(Color.gray80)
 
             HStack(spacing: 4) {
                 Group {
@@ -55,9 +55,6 @@ public struct AuthTextField: View {
                 }
                 .font(.system(size: 15))
                 .foregroundColor(textColor)
-                .autocapitalization(.none)
-                .disableAutocorrection(true)
-                .keyboardType(keyboardType)
 
                 if type == .password {
                     Button {
@@ -65,15 +62,15 @@ public struct AuthTextField: View {
                     } label: {
                         (
                             isPasswordVisible
-                            ? Image.Icons.eyeOpen
-                            : Image.Icons.eyeOff
+                            ? Image("eyeOpen")
+                            : Image("eyeOff")
                         )
                     }
                 } else {
                     if type == .schoolEmail || type == .schoolVerificationEmail {
                         Text("@dsm.hs.kr")
                             .font(.finda(.body2))
-                            .foregroundColor(Color.Gray.gray50)
+                            .foregroundColor(Color.gray50)
                     }
 
                     if type == .verificationEmail || type == .schoolVerificationEmail {
@@ -84,24 +81,24 @@ public struct AuthTextField: View {
                         }, label: {
                             Text(buttonText)
                                 .font(.finda(.caption1))
-                                .foregroundColor(Color.Blue.blue50)
+                                .foregroundColor(Color.blue50)
                         })
                         .disabled(remainingSeconds > 0 || text.isEmpty)
                         .padding(.vertical, 4)
                         .padding(.horizontal, 8)
-                        .background(Color.Blue.blue10)
+                        .background(Color.blue10)
                         .cornerRadius(20)
                     }
                 }
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 17)
-            .background(Color.Gray.gray20)
+            .background(Color.gray20)
             .cornerRadius(16)
-            .overlay(
+            .overlay(alignment: .center) {
                 RoundedRectangle(cornerRadius: 16)
                     .stroke(borderColor, lineWidth: 1)
-            )
+            }
         }
         .onDisappear {
             timer?.invalidate()
@@ -126,25 +123,16 @@ public struct AuthTextField: View {
         }
     }
 
-    private var keyboardType: UIKeyboardType {
-        switch type {
-        case .schoolEmail, .schoolVerificationEmail, .verificationEmail, .base:
-            return .emailAddress
-        case .password:
-            return .default
-        }
-    }
-
     private var borderColor: Color {
         if isError {
-            return Color.Sub.red20
+            return Color.red20
         }
-        return isFocused ? Color.Blue.blue50 : Color.Gray.gray20
+        return isFocused ? Color.blue50 : Color.gray20
     }
 
     private var textColor: Color {
         if isError {
-            return Color.Sub.red20
+            return Color.red20
         }
         return Color.black
     }
