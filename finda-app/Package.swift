@@ -14,9 +14,21 @@ let package = Package(
         .package(url: "https://source.skip.tools/skip-ui.git", from: "1.0.0")
     ],
     targets: [
-        .target(name: "FINDA", dependencies: [
-            .product(name: "SkipUI", package: "skip-ui")
-        ], resources: [.process("Resources")], plugins: [.plugin(name: "skipstone", package: "skip")]),
+        .target(
+            name: "FINDA",
+            dependencies: [
+                .product(name: "SkipUI", package: "skip-ui")
+            ],
+            path: "Sources/FINDA",
+            sources: [
+                "ContentView.swift",
+                "FINDAApp.swift",
+                "ViewModel.swift",
+                "DesignSystem",
+            ],
+            resources: [.process("Resources")],
+            plugins: [.plugin(name: "skipstone", package: "skip")]
+        ),
         .testTarget(name: "FINDATests", dependencies: [
             "FINDA",
             .product(name: "SkipTest", package: "skip")
