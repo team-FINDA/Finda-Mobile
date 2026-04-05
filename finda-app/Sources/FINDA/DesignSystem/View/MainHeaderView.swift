@@ -18,7 +18,7 @@ public struct MainHeaderView: View {
     public var body: some View {
         VStack(spacing: 20) {
             HStack(spacing: 16) {
-                Image.Images.baseProfile
+                Image("baseProfile")
                     .resizable()
                     .frame(width: 48, height: 48)
                     .clipShape(Circle())
@@ -26,7 +26,7 @@ public struct MainHeaderView: View {
                 VStack(alignment: .leading, spacing: 4) {
                     Text("Welcome,")
                         .font(.finda(.body4))
-                        .foregroundStyle(Color.Gray.gray60)
+                        .foregroundStyle(Color.gray60)
                     Text(name)
                         .font(.finda(.body1))
                 }
@@ -34,24 +34,27 @@ public struct MainHeaderView: View {
                 Spacer()
 
                 Button { notificationAction() } label: {
-                    Image.Icons.bell
+                    Image("bell")
                 }
 
             }
             .padding(.top, 20)
 
             HStack(spacing: 3.5) {
-                Image.Icons.speakerphone
+                Image("speakerphone")
 
                 Text("FINDA에 새로운 기능이 추가되었어요!")
                     .font(.finda(.body4))
-                    .foregroundStyle(Color.Gray.gray80)
+                    .foregroundStyle(Color.gray80)
 
                 Spacer()
             }
             .padding(.horizontal, 12)
             .padding(.vertical, 9)
-            .background(Color.Blue.blue10.cornerRadius(20))
+            .background(
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .fill(Color.blue10)
+            )
             .onTapGesture { shortNotificationAction() }
         }
     }

@@ -24,29 +24,20 @@ public struct UserSelectButton: View {
             .padding(.vertical, 36)
             .background(
                 RoundedRectangle(cornerRadius: 16)
-                    .fill(Color.Blue.blue10)
+                    .fill(Color.blue10)
             )
         }
-        .buttonStyle(ScaleButtonStyle())
-    }
-}
-
-struct ScaleButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .scaleEffect(configuration.isPressed ? 0.95 : 1.0)
-            .animation(.easeInOut(duration: 0.15), value: configuration.isPressed)
     }
 }
 
 #Preview {
     UserSelectButton(
-        icon: Image.Images.pencil,
+        icon: Image("pencil"),
         text: "학생 로그인",
         action: {}
     )
     UserSelectButton(
-        icon: Image.Images.book,
+        icon: Image("book"),
         text: "학생 로그인",
         action: {}
     )

@@ -2,6 +2,10 @@ import SwiftUI
 
 struct DismissKeyboardOnTap: ViewModifier {
     func body(content: Content) -> some View {
+        #if SKIP
+        content
+        #else
+        #if canImport(UIKit)
         content
             .contentShape(Rectangle())
             .onTapGesture {
@@ -12,6 +16,10 @@ struct DismissKeyboardOnTap: ViewModifier {
                     for: nil
                 )
             }
+        #else
+        content
+        #endif
+        #endif
     }
 }
 
