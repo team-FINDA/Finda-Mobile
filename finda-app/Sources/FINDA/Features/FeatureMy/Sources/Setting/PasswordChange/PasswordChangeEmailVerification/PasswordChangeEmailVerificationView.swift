@@ -1,8 +1,6 @@
-#if !SKIP
+#if !SKIP && canImport(UIKit)
 import SwiftUI
-import Shared
 import ComposableArchitecture
-import DesignSystem
 
 struct PasswordChangeEmailVerificationView: View {
     @Environment(\.dismiss) private var dismiss

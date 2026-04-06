@@ -1,8 +1,6 @@
-#if !SKIP
+#if !SKIP && canImport(UIKit)
 import SwiftUI
 import ComposableArchitecture
-import DesignSystem
-import Shared
 
 struct NewPasswordView: View {
     @Environment(\.dismiss) private var dismiss

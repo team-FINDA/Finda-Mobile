@@ -1,6 +1,5 @@
-#if !SKIP
+#if !SKIP && canImport(UIKit)
 import ComposableArchitecture
-import Shared
 
 @Reducer
 public struct SigninFeature {

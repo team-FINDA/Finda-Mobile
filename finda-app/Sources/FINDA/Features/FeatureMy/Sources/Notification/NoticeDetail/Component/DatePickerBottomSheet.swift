@@ -1,6 +1,5 @@
-#if !SKIP
+#if !SKIP && canImport(UIKit)
 import SwiftUI
-import DesignSystem
 
 struct DatePickerBottomSheet: View {
     @Environment(\.dismiss) private var dismiss

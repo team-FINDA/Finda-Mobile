@@ -1,6 +1,5 @@
-#if !SKIP
+#if !SKIP && canImport(UIKit)
 import SwiftUI
-import DesignSystem
 
 public struct ScheduleView: View {
     private static let exampleEvents: [MonthlyEventResponse] = [

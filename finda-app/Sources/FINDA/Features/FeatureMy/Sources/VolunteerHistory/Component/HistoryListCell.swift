@@ -1,6 +1,5 @@
-#if !SKIP
+#if !SKIP && canImport(UIKit)
 import SwiftUI
-import DesignSystem
 import Foundation
 
 struct HistoryListCell: View {

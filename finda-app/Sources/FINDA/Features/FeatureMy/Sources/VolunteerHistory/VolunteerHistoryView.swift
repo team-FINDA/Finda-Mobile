@@ -1,7 +1,6 @@
-#if !SKIP
+#if !SKIP && canImport(UIKit)
 import SwiftUI
 import ComposableArchitecture
-import DesignSystem
 
 struct VolunteerHistoryView: View {
     @Environment(\.dismiss) private var dismiss

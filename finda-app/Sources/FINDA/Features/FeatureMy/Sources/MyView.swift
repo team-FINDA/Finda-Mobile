@@ -1,7 +1,6 @@
-#if !SKIP
+#if !SKIP && canImport(UIKit)
 import SwiftUI
 import ComposableArchitecture
-import DesignSystem
 
 public struct MyView: View {
     @Perception.Bindable private var store: StoreOf<MyFeature>

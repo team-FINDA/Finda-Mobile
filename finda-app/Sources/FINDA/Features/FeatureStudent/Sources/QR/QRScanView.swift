@@ -1,6 +1,5 @@
-#if !SKIP
+#if !SKIP && canImport(UIKit)
 import SwiftUI
-import DesignSystem
 
 public struct QRScanView: View {
     @State private var scannedURI: String = ""
@@ -9,6 +8,7 @@ public struct QRScanView: View {
     public init() {}
 
     public var body: some View {
+        #if canImport(UIKit)
         ZStack {
             QRScannerRepresentable(isPopupPresented: isShowingScanAlert) { code in
                 guard !isShowingScanAlert else { return }
@@ -29,6 +29,9 @@ public struct QRScanView: View {
                 .padding(.horizontal, 64)
             }
         }
+        #else
+        Text("QR scanning is unavailable on this platform.")
+        #endif
     }
 }
 

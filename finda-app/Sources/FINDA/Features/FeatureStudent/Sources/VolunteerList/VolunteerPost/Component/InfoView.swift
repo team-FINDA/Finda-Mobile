@@ -1,6 +1,5 @@
-#if !SKIP
+#if !SKIP && canImport(UIKit)
 import SwiftUI
-import DesignSystem
 
 struct InfoView: View {
     var icon: Image
@@ -26,26 +25,26 @@ struct InfoView: View {
                 icon
                 Text(title)
                     .font(.finda(.caption3))
-                    .foregroundColor(.Blue.blue50)
+                    .foregroundColor(.blue50)
             }
 
             Text(content)
                 .lineLimit(nil)
                 .font(.finda(date ? .caption1 : .body1))
-                .foregroundColor(.Gray.gray90)
+                .foregroundColor(.gray90)
                 .fixedSize(horizontal: false, vertical: true)
         }
         .frame(maxWidth: .infinity, minHeight: 56, alignment: .topLeading)
         .padding(14)
         .overlay(
             RoundedRectangle(cornerRadius: 10)
-                .strokeBorder(Color.Gray.gray70, lineWidth: 0.5)
+                .strokeBorder(Color.gray70, lineWidth: 0.5)
         )
     }
 }
 
 #Preview {
-    InfoView(icon: Image.Icons.calendar, title: "신청 기간", content: "2025.3.10 ~2025.3.12")
+    InfoView(icon: Image("calendar"), title: "신청 기간", content: "2025.3.10 ~2025.3.12")
 }
 
 #endif

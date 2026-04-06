@@ -1,7 +1,6 @@
-#if !SKIP
+#if !SKIP && canImport(UIKit)
 import SwiftUI
 import ComposableArchitecture
-import DesignSystem
 
 struct SignupUserSelectView: View {
     private let store: StoreOf<SignupUserSelectFeature>

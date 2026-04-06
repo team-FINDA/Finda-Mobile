@@ -1,7 +1,6 @@
-#if !SKIP
+#if !SKIP && canImport(UIKit)
 import SwiftUI
 import ComposableArchitecture
-import DesignSystem
 
 public struct TeacherMainView: View {
     private let students: [(name: String, state: Bool)] = [

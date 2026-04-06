@@ -1,4 +1,4 @@
-#if !SKIP
+#if !SKIP && canImport(UIKit)
 import SwiftUI
 
 struct QRScannerRepresentable: UIViewControllerRepresentable {
