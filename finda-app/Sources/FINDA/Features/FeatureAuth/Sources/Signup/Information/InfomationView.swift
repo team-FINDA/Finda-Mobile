@@ -20,8 +20,8 @@ struct InformationView: View {
             VStack {
                 HStack {
                     Button(action: { dismiss() }, label: {
-                        Image.Icons.leftArrow
-                            .foregroundStyle(Color.Gray.gray80)
+                        Image("leftArrow")
+                            .foregroundStyle(Color.gray80)
                     })
                     Spacer()
                 }
@@ -31,11 +31,11 @@ struct InformationView: View {
             ViewThatFits(in: .vertical) {
                 Text("회원가입")
                     .font(.finda(.heading4))
-                    .foregroundStyle(Color.Gray.gray80)
+                    .foregroundStyle(Color.gray80)
                     .padding(.bottom, 64)
                 Text("회원가입")
                     .font(.finda(.heading4))
-                    .foregroundStyle(Color.Gray.gray80)
+                    .foregroundStyle(Color.gray80)
                     .padding(.bottom, 48)
             }
 
@@ -54,7 +54,7 @@ struct InformationView: View {
                     )
                     Text("비밀번호는 이런이런이런 형식으로 ㄱㄱ")
                         .font(.finda(.body4))
-                        .foregroundStyle(Color.Blue.blue50)
+                        .foregroundStyle(Color.blue50)
                 }
                 AuthTextField(
                     type: .password,

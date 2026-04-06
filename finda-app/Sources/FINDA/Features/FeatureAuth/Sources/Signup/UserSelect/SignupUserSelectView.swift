@@ -15,8 +15,8 @@ struct SignupUserSelectView: View {
             VStack(spacing: 8) {
                 HStack {
                     Button(action: { store.send(.backButtonTapped) }, label: {
-                        Image.Icons.leftArrow
-                            .foregroundStyle(Color.Gray.gray80)
+                        Image("leftArrow")
+                            .foregroundStyle(Color.gray80)
                     })
                     Spacer()
                 }
@@ -26,16 +26,16 @@ struct SignupUserSelectView: View {
                 VStack(spacing: 64) {
                     Text("회원가입")
                         .font(.finda(.heading4))
-                        .foregroundStyle(Color.Gray.gray80)
+                        .foregroundStyle(Color.gray80)
 
                     VStack(spacing: 40) {
                         UserSelectButton(
-                            icon: Image.Images.pencil,
+                            icon: Image("pencil"),
                             text: "학생 회원가입",
                             action: { store.send(.studentSignupButtonTapped) }
                         )
                         UserSelectButton(
-                            icon: Image.Images.book,
+                            icon: Image("book"),
                             text: "선생님 회원가입",
                             action: { store.send(.teacherSignupButtonTapped) }
                         )

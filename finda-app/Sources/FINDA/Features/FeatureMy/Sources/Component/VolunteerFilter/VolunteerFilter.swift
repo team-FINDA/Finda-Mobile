@@ -28,12 +28,12 @@ private struct FilterCell: View {
         Button(action: onTap) {
             Text(title)
                 .font(.finda(.body3))
-                .foregroundColor(isSelected ? .Blue.blue40 : .Gray.gray50)
+                .foregroundColor(isSelected ? .blue40 : .gray50)
                 .padding(.horizontal, 14)
                 .padding(.vertical, 8)
                 .overlay(
                     RoundedRectangle(cornerRadius: 20)
-                        .strokeBorder(isSelected ? Color.Blue.blue40 : Color.Gray.gray50)
+                        .strokeBorder(isSelected ? Color.blue40 : Color.gray50)
                 )
         }
     }

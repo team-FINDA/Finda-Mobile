@@ -10,12 +10,12 @@ struct VolunteerRoleScrollView: View {
                 ForEach(Array(roles.enumerated()), id: \.offset) { _, interest in
                     HStack(spacing: 8) {
                         Circle()
-                            .fill(Color.Blue.blue40)
+                            .fill(Color.blue40)
                             .frame(width: 4, height: 4)
 
                         Text(interest)
                             .font(.finda(.caption1))
-                            .foregroundColor(.Gray.gray60)
+                            .foregroundColor(.gray60)
                     }
                 }
             }

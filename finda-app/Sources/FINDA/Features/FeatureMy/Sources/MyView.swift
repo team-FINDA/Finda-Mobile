@@ -24,7 +24,7 @@ public struct MyView: View {
         WithPerceptionTracking {
             VStack(spacing: 16) {
                 HStack(spacing: 16) {
-                    Image.Images.baseProfile
+                    Image("baseProfile")
                         .resizable()
                         .frame(width: 48, height: 48)
                         .clipShape(Circle())
@@ -32,7 +32,7 @@ public struct MyView: View {
                     VStack(alignment: .leading, spacing: 4) {
                         Text(studentName)
                             .font(.finda(.body1))
-                            .foregroundColor(.Gray.gray90)
+                            .foregroundColor(.gray90)
 
                         if store.role == .student {
                             VolunteerRoleScrollView(roles: roles)

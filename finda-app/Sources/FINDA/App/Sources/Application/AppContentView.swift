@@ -5,7 +5,13 @@ import ComposableArchitecture
 struct AppContentView: View {
     private let store: StoreOf<AppFeature>
 
-    init(store: StoreOf<AppFeature> = StoreOf<AppFeature>(initialState: AppFeature.State()) { AppFeature() }) {
+    init() {
+        self.store = Store(initialState: AppFeature.State()) {
+            AppFeature()
+        }
+    }
+
+    init(store: StoreOf<AppFeature>) {
         self.store = store
     }
 

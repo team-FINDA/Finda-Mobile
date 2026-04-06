@@ -48,11 +48,11 @@ private struct VolunteerCell: View {
             VStack(alignment: .leading, spacing: 6) {
                 Text(item.title)
                     .font(.finda(.body3))
-                    .foregroundColor(.Gray.gray90)
+                    .foregroundColor(.gray90)
 
                 Text("\(item.startDate) ~ \(item.endDate)")
                     .font(.finda(.caption4))
-                    .foregroundColor(.Gray.gray80)
+                    .foregroundColor(.gray80)
             }
 
             Spacer()
@@ -64,7 +64,7 @@ private struct VolunteerCell: View {
         .cornerRadius(5)
         .overlay(
             RoundedRectangle(cornerRadius: 5)
-                .strokeBorder(Color.Gray.gray40, lineWidth: 0.8)
+                .strokeBorder(Color.gray40, lineWidth: 0.8)
         )
     }
 }
@@ -74,28 +74,28 @@ private struct StatusTag: View {
 
     private var borderColor: Color {
         switch status {
-        case .waiting: return .Blue.blue50
-        case .inProgress: return .Sub.green20
-        case .ended: return .Sub.red20
-        case .all: return .Gray.gray50
+        case .waiting: return .blue50
+        case .inProgress: return .green20
+        case .ended: return .red20
+        case .all: return .gray50
         }
     }
 
     private var textColor: Color {
         switch status {
-        case .waiting: return .Blue.blue40
-        case .inProgress: return .Sub.green20
-        case .ended: return .Sub.red20
-        case .all: return .Gray.gray50
+        case .waiting: return .blue40
+        case .inProgress: return .green20
+        case .ended: return .red20
+        case .all: return .gray50
         }
     }
 
     private var backgroundColor: Color {
         switch status {
-        case .waiting: return .Blue.blue10
-        case .inProgress: return .Sub.green10
-        case .ended: return .Sub.red10
-        case .all: return .Gray.gray10
+        case .waiting: return .blue10
+        case .inProgress: return .green10
+        case .ended: return .red10
+        case .all: return .gray10
         }
     }
 

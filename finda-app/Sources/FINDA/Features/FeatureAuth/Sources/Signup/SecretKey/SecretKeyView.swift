@@ -20,8 +20,8 @@ struct SecretKeyView: View {
             VStack {
                 HStack {
                     Button(action: { dismiss() }, label: {
-                        Image.Icons.leftArrow
-                            .foregroundStyle(Color.Gray.gray80)
+                        Image("leftArrow")
+                            .foregroundStyle(Color.gray80)
                     })
                     Spacer()
                 }
@@ -30,7 +30,7 @@ struct SecretKeyView: View {
 
                 Text("회원가입")
                     .font(.finda(.heading4))
-                    .foregroundStyle(Color.Gray.gray80)
+                    .foregroundStyle(Color.gray80)
                     .padding(.bottom, 64)
 
                 VStack(spacing: 32) {
