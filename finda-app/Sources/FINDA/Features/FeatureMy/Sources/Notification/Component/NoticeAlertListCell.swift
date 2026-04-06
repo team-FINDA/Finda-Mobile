@@ -22,7 +22,7 @@ struct NoticeAlertListCell: View {
     var body: some View {
         Button(action: action) {
             HStack(spacing: 12) {
-                Image("notification")
+                FINDAImage("notification")
                     .padding(8)
                     .background(Color.blue10)
                     .clipShape(.rect(cornerRadius: 8))

@@ -9,7 +9,7 @@ struct VolunteerPostView: View {
         VStack {
             HStack {
                 Button(action: { dismiss() }, label: {
-                    Image("leftArrow")
+                    FINDAImage("leftArrow")
                         .foregroundStyle(Color.gray80)
                 })
 
@@ -21,7 +21,7 @@ struct VolunteerPostView: View {
 
                 Spacer()
 
-                Image("leftArrow")
+                FINDAImage("leftArrow")
                     .opacity(0)
                     .accessibilityHidden(true)
             }
@@ -44,14 +44,14 @@ struct VolunteerPostView: View {
                     VStack(spacing: 15) {
                         HStack(spacing: 13) {
                             InfoView(
-                                icon: Image("calendar"),
+                                icon: FINDAImage("calendar"),
                                 title: "신청 기간",
                                 content: "2025.3.10 ~\n2025.3.12",
                                 date: true
                             )
                             .frame(maxWidth: .infinity)
                             InfoView(
-                                icon: Image("calendar"),
+                                icon: FINDAImage("calendar"),
                                 title: "활동 기간",
                                 content: "2025.3.10 ~\n2025.3.12",
                                 date: true
@@ -60,13 +60,13 @@ struct VolunteerPostView: View {
                         }
                         HStack(spacing: 13) {
                             InfoView(
-                                icon: Image("time"),
+                                icon: FINDAImage("time"),
                                 title: "봉사 기간",
                                 content: "8시간"
                             )
                             .frame(maxWidth: .infinity)
                             InfoView(
-                                icon: Image("people"),
+                                icon: FINDAImage("people"),
                                 title: "활동 기간",
                                 content: "20명"
                             )
@@ -81,7 +81,7 @@ struct VolunteerPostView: View {
                         .foregroundColor(.gray60)
 
                     HStack(spacing: 18) {
-                        Image("location")
+                        FINDAImage("location")
                         Text("대덕소프트웨어마이스터고")
                             .font(.finda(.body3))
                             .foregroundColor(.gray90)

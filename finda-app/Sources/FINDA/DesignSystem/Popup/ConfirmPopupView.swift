@@ -18,7 +18,7 @@ public struct ConfirmPopupView: View {
     public var body: some View {
         VStack(spacing: 15) {
             VStack(spacing: 5) {
-                Image("check")
+                FINDAImage("check")
 
                 Text(title)
                     .font(.finda(.body1))

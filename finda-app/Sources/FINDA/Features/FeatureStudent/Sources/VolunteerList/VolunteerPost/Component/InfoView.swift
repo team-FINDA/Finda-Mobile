@@ -44,7 +44,7 @@ struct InfoView: View {
 }
 
 #Preview {
-    InfoView(icon: Image("calendar"), title: "신청 기간", content: "2025.3.10 ~2025.3.12")
+    InfoView(icon: FINDAImage("calendar"), title: "신청 기간", content: "2025.3.10 ~2025.3.12")
 }
 
 #endif

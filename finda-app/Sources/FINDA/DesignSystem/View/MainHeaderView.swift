@@ -18,7 +18,7 @@ public struct MainHeaderView: View {
     public var body: some View {
         VStack(spacing: 20) {
             HStack(spacing: 16) {
-                Image("baseProfile")
+                FINDAImage("baseProfile")
                     .resizable()
                     .frame(width: 48, height: 48)
                     .clipShape(Circle())
@@ -34,14 +34,14 @@ public struct MainHeaderView: View {
                 Spacer()
 
                 Button { notificationAction() } label: {
-                    Image("bell")
+                    FINDAImage("bell")
                 }
 
             }
             .padding(.top, 20)
 
             HStack(spacing: 3.5) {
-                Image("speakerphone")
+                FINDAImage("speakerphone")
 
                 Text("FINDA에 새로운 기능이 추가되었어요!")
                     .font(.finda(.body4))

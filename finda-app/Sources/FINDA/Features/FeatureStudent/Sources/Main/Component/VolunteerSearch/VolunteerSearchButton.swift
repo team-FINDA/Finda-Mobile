@@ -29,7 +29,7 @@ struct VolunteerSearchButton: View {
 
             Spacer()
 
-            Image("findVolunteer")
+            FINDAImage("findVolunteer")
                 .padding(.leading, 20)
                 .padding(.vertical, 13)
         }

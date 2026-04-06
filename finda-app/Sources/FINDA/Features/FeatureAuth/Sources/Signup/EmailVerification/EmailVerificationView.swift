@@ -20,7 +20,7 @@ struct EmailVerificationView: View {
             VStack {
                 HStack {
                     Button(action: { dismiss() }, label: {
-                        Image("leftArrow")
+                        FINDAImage("leftArrow")
                             .foregroundStyle(Color.gray80)
                     })
                     Spacer()

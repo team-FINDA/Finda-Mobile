@@ -24,7 +24,7 @@ public struct MyView: View {
         WithPerceptionTracking {
             VStack(spacing: 16) {
                 HStack(spacing: 16) {
-                    Image("baseProfile")
+                    FINDAImage("baseProfile")
                         .resizable()
                         .frame(width: 48, height: 48)
                         .clipShape(Circle())
@@ -41,7 +41,7 @@ public struct MyView: View {
                     Spacer()
 
                     Button(action: { store.send(.settingButtonTapped) }, label: {
-                        Image("setting")
+                        FINDAImage("setting")
                     })
                 }
 
@@ -52,7 +52,7 @@ public struct MyView: View {
 
                     Spacer()
 
-                    Image("rightArrow")
+                    FINDAImage("rightArrow")
                         .renderingMode(.template)
                         .foregroundColor(.blue50)
                 })

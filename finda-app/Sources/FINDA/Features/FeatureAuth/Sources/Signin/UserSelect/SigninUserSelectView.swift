@@ -19,12 +19,12 @@ struct SigninUserSelectView: View {
 
                 VStack(spacing: 40) {
                     UserSelectButton(
-                        icon: Image("pencil"),
+                        icon: FINDAImage("pencil"),
                         text: "학생 로그인",
                         action: { store.send(.studentSigninButtonTapped) }
                     )
                     UserSelectButton(
-                        icon: Image("book"),
+                        icon: FINDAImage("book"),
                         text: "선생님 로그인",
                         action: { store.send(.teacherSigninButtonTapped) }
                     )

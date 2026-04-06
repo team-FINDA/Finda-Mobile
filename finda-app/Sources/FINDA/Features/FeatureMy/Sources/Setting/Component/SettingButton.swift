@@ -27,7 +27,7 @@ struct SettingButton: View {
 
                 Spacer()
 
-                Image("rightArrow")
+                FINDAImage("rightArrow")
             }
             .padding(18)
             .background(Color.gray20)

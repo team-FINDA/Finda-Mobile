@@ -15,7 +15,7 @@ struct NoticeManageView: View {
             VStack(spacing: 20) {
                 HStack {
                     Button(action: { dismiss() }, label: {
-                        Image("leftArrow")
+                        FINDAImage("leftArrow")
                             .foregroundStyle(Color.gray80)
                     })
 
@@ -30,7 +30,7 @@ struct NoticeManageView: View {
                     Button(action: {
                         store.send(.addButtonTapped)
                     }, label: {
-                        Image("add")
+                        FINDAImage("add")
                     })
                 }
                 .padding(.horizontal, 24)

@@ -59,9 +59,9 @@ public struct FINDAHeader: View {
 #Preview {
     FINDAHeader(
         title: "공지사항 관리",
-        leftItemImage: Image("leftArrow"),
+        leftItemImage: FINDAImage("leftArrow"),
         leftItemAction: {},
-        rightItemImage: Image("add"),
+        rightItemImage: FINDAImage("add"),
         rightItemAction: {}
     )
 }

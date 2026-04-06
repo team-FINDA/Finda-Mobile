@@ -30,7 +30,7 @@ public struct TeacherMainView: View {
                                 .font(.finda(.body1))
                                 .foregroundColor(.gray90)
 
-                            Image("change")
+                            FINDAImage("change")
                         }
                         .padding(12)
                         .background(Color.gray20)

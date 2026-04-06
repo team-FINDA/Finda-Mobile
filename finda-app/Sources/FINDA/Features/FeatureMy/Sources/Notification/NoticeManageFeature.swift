@@ -50,7 +50,7 @@ public struct NoticeManageFeature {
     }
 }
 
-public struct NoticeItem: Equatable, Identifiable {
+public struct NoticeItem: Equatable, Identifiable, Sendable {
     public let id: String
     public let title: String
     public let content: String

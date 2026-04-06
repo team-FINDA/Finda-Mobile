@@ -39,9 +39,9 @@ struct NoticeDetailView: View {
         VStack(spacing: 20) {
             FINDAHeader(
                 title: isEditMode ? "공지사항 수정" : "공지사항 생성",
-                leftItemImage: Image("leftArrow"),
+                leftItemImage: FINDAImage("leftArrow"),
                 leftItemAction: { dismiss() },
-                rightItemImage: isEditMode ? Image("delete") : nil,
+                rightItemImage: isEditMode ? FINDAImage("delete") : nil,
                 rightItemAction: isEditMode ? (rightButtonAction ?? {}) : nil
             )
 
@@ -80,7 +80,7 @@ struct NoticeDetailView: View {
                                     .font(.finda(.body4))
                                     .foregroundStyle(Color.gray60)
 
-                                Image("rightArrow")
+                                FINDAImage("rightArrow")
                             }
                             .padding(18)
                             .background(Color.gray20)

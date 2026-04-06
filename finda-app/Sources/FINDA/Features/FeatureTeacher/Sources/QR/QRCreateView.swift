@@ -21,7 +21,7 @@ public struct QRCreateView: View {
             .padding(.vertical, 12)
 
             HStack(spacing: 10) {
-                Image("logo")
+                FINDAImage("logo")
 
                 Text("학생이 QR을 찍으면\n자동으로 다른 QR로 변경됩니다!")
                     .font(.finda(.body4))

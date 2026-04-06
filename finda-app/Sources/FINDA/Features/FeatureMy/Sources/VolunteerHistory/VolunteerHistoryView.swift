@@ -21,7 +21,7 @@ struct VolunteerHistoryView: View {
             VStack(spacing: 20) {
                 HStack {
                     Button(action: { dismiss() }, label: {
-                        Image("leftArrow")
+                        FINDAImage("leftArrow")
                             .foregroundStyle(Color.gray80)
                     })
 
@@ -33,7 +33,7 @@ struct VolunteerHistoryView: View {
 
                     Spacer()
 
-                    Image("leftArrow")
+                    FINDAImage("leftArrow")
                         .opacity(0)
                         .accessibilityHidden(true)
                 }

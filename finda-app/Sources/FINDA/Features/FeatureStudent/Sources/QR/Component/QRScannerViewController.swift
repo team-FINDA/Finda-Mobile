@@ -2,7 +2,7 @@
 import UIKit
 import AVFoundation
 
-final class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+final class QRScannerViewController: UIViewController, @preconcurrency AVCaptureMetadataOutputObjectsDelegate {
     var onCodeScanned: ((String) -> Void)?
 
     private let captureSession = AVCaptureSession()

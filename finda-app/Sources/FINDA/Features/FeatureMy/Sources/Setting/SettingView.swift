@@ -15,7 +15,7 @@ struct SettingView: View {
             VStack(spacing: 20) {
                 HStack {
                     Button(action: { dismiss() }, label: {
-                        Image("leftArrow")
+                        FINDAImage("leftArrow")
                             .foregroundStyle(Color.gray80)
                     })
 
@@ -27,7 +27,7 @@ struct SettingView: View {
 
                     Spacer()
 
-                    Image("leftArrow")
+                    FINDAImage("leftArrow")
                         .opacity(0)
                         .accessibilityHidden(true)
                 }
@@ -35,7 +35,7 @@ struct SettingView: View {
                 .padding(.vertical, 8)
 
                 VStack(spacing: 40) {
-                    Image("baseProfile")
+                    FINDAImage("baseProfile")
                         .clipShape(.circle)
 
                     SettingButton(

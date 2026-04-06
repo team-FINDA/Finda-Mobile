@@ -32,12 +32,12 @@ public struct UserSelectButton: View {
 
 #Preview {
     UserSelectButton(
-        icon: Image("pencil"),
+        icon: FINDAImage("pencil"),
         text: "학생 로그인",
         action: {}
     )
     UserSelectButton(
-        icon: Image("book"),
+        icon: FINDAImage("book"),
         text: "학생 로그인",
         action: {}
     )

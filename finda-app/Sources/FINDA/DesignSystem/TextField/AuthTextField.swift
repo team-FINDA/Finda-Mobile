@@ -62,8 +62,8 @@ public struct AuthTextField: View {
                     } label: {
                         (
                             isPasswordVisible
-                            ? Image("eyeOpen")
-                            : Image("eyeOff")
+                            ? FINDAImage("eyeOpen")
+                            : FINDAImage("eyeOff")
                         )
                     }
                 } else {

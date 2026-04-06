@@ -3,7 +3,7 @@ import ComposableArchitecture
 
 @Reducer
 public struct AlertSettingFeature {
-    public struct VolunteerAlertItem: Equatable, Identifiable {
+    public struct VolunteerAlertItem: Equatable, Identifiable, Sendable {
         public let id: String
         public let title: String
         public var isOn: Bool

@@ -22,7 +22,7 @@ struct VolunteerListView: View {
         VStack {
             HStack {
                 Button(action: { dismiss() }, label: {
-                    Image("leftArrow")
+                    FINDAImage("leftArrow")
                         .foregroundStyle(Color.gray80)
                 })
 
@@ -34,7 +34,7 @@ struct VolunteerListView: View {
 
                 Spacer()
 
-                Image("leftArrow")
+                FINDAImage("leftArrow")
                     .opacity(0)
                     .accessibilityHidden(true)
             }
