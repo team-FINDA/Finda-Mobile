@@ -4,7 +4,7 @@ import ComposableArchitecture
 
 struct VolunteerHistoryView: View {
     @Environment(\.dismiss) private var dismiss
-    @Perception.Bindable private var store: StoreOf<VolunteerHistoryFeature>
+    @Bindable private var store: StoreOf<VolunteerHistoryFeature>
 
     private let historyItems: [VolunteerHistoryItem] = [
         .init(title: "환경지킴이", date: "2025.12.28", time: 2),
@@ -21,19 +21,19 @@ struct VolunteerHistoryView: View {
             VStack(spacing: 20) {
                 HStack {
                     Button(action: { dismiss() }, label: {
-                        Image.Icons.leftArrow
-                            .foregroundStyle(Color.Gray.gray80)
+                        Image("leftArrow")
+                            .foregroundStyle(Color.gray80)
                     })
 
                     Spacer()
 
                     Text("봉사활동 내역")
                         .font(.finda(.body1))
-                        .foregroundColor(.Gray.gray90)
+                        .foregroundColor(.gray90)
 
                     Spacer()
 
-                    Image.Icons.leftArrow
+                    Image("leftArrow")
                         .opacity(0)
                         .accessibilityHidden(true)
                 }

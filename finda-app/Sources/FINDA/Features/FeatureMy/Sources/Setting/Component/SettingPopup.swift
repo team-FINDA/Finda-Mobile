@@ -23,43 +23,43 @@ struct SettingPopup: View {
         VStack(spacing: 12) {
             Text(title)
                 .font(.finda(.subheading2))
-                .foregroundStyle(Color.Sub.red20)
+                .foregroundStyle(Color.red20)
 
             Text(content)
                 .font(.finda(.body4))
-                .foregroundStyle(Color.Gray.gray60)
+                .foregroundStyle(Color.gray60)
                 .multilineTextAlignment(.center)
 
             HStack(spacing: 16) {
                 Button(action: { cancelAction() }, label: {
                     Text("취소")
                         .font(.finda(.body3))
-                        .foregroundStyle(Color.Gray.gray60)
+                        .foregroundStyle(Color.gray60)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 8)
                 })
                 .background(
                     RoundedRectangle(cornerRadius: 5, style: .continuous)
-                        .fill(Color.Gray.gray30)
+                        .fill(Color.gray30)
                 )
 
                 Button(action: { okAction() }, label: {
                     Text(title)
                         .font(.finda(.body3))
-                        .foregroundStyle(Color.Sub.red20)
+                        .foregroundStyle(Color.red20)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 8)
                 })
                 .background(
                     RoundedRectangle(cornerRadius: 5, style: .continuous)
-                        .fill(Color.Sub.red10)
+                        .fill(Color.red10)
                 )
             }
         }
         .padding(20)
         .background(
             RoundedRectangle(cornerRadius: 10, style: .continuous)
-                .fill(Color.Gray.gray10)
+                .fill(Color.gray10)
         )
     }
 }

@@ -22,19 +22,19 @@ struct VolunteerListView: View {
         VStack {
             HStack {
                 Button(action: { dismiss() }, label: {
-                    Image.Icons.leftArrow
-                        .foregroundStyle(Color.Gray.gray80)
+                    Image("leftArrow")
+                        .foregroundStyle(Color.gray80)
                 })
 
                 Spacer()
 
                 Text("봉사활동 게시물")
                     .font(.finda(.body1))
-                    .foregroundColor(.Gray.gray90)
+                    .foregroundColor(.gray90)
 
                 Spacer()
 
-                Image.Icons.leftArrow
+                Image("leftArrow")
                     .opacity(0)
                     .accessibilityHidden(true)
             }

@@ -8,7 +8,7 @@ public struct TeacherMainView: View {
         ("2205 김시우", false),
         ("2207 변도휘", true)
     ]
-    @Perception.Bindable private var store: StoreOf<TeacherMainFeature>
+    @Bindable private var store: StoreOf<TeacherMainFeature>
 
     public init(store: StoreOf<TeacherMainFeature>) {
         self.store = store
@@ -28,18 +28,18 @@ public struct TeacherMainView: View {
                         HStack(spacing: 8) {
                             Text("환경지킴이")
                                 .font(.finda(.body1))
-                                .foregroundColor(.Gray.gray90)
+                                .foregroundColor(.gray90)
 
-                            Image.Icons.change
+                            Image("change")
                         }
                         .padding(12)
-                        .background(Color.Gray.gray20)
+                        .background(Color.gray20)
                         .cornerRadius(4)
                     })
 
                     Text("학생")
                         .font(.finda(.body1))
-                        .foregroundColor(.Gray.gray90)
+                        .foregroundColor(.gray90)
 
                     Spacer()
                 }

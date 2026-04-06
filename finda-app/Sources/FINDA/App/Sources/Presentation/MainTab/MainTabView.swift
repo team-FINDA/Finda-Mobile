@@ -3,7 +3,7 @@ import SwiftUI
 import ComposableArchitecture
 
 struct MainTabView: View {
-    @Perception.Bindable private var store: StoreOf<MainTabFeature>
+    @Bindable private var store: StoreOf<MainTabFeature>
 
     init(store: StoreOf<MainTabFeature>) {
         self.store = store

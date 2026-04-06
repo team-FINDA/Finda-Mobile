@@ -8,7 +8,7 @@ struct SettingButton: View {
 
     init(
         buttonText: String,
-        textColor: Color? = Color.Sub.red20,
+        textColor: Color? = Color.red20,
         action: @escaping () -> Void
     ) {
         self.buttonText = buttonText
@@ -27,10 +27,10 @@ struct SettingButton: View {
 
                 Spacer()
 
-                Image.Icons.rightArrow
+                Image("rightArrow")
             }
             .padding(18)
-            .background(Color.Gray.gray20)
+            .background(Color.gray20)
             .clipShape(.rect(cornerRadius: 16))
         }
     }

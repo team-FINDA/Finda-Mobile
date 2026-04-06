@@ -14,20 +14,20 @@ struct QRCodeView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
-                .fill(Color.Blue.blue10)
+                .fill(Color.blue10)
 
             GeometryReader { geo in
                 Path { path in
                     path.move(to: CGPoint(x: geo.size.width / 2, y: 0))
                     path.addLine(to: CGPoint(x: geo.size.width / 2, y: geo.size.height))
                 }
-                .stroke(Color.Blue.blue40, lineWidth: 0.3)
+                .stroke(Color.blue40, lineWidth: 0.3)
 
                 Path { path in
                     path.move(to: CGPoint(x: 0, y: geo.size.height / 2))
                     path.addLine(to: CGPoint(x: geo.size.width, y: geo.size.height / 2))
                 }
-                .stroke(Color.Blue.blue40, lineWidth: 0.3)
+                .stroke(Color.blue40, lineWidth: 0.3)
             }
             .padding(16)
             .clipShape(RoundedRectangle(cornerRadius: 24))
@@ -37,12 +37,12 @@ struct QRCodeView: View {
             } label: {
                 Text("QR 생성하기")
                     .font(.finda(.body3))
-                    .foregroundColor(.Blue.blue10)
+                    .foregroundColor(.blue10)
                 .padding(.horizontal, 27)
                 .padding(.vertical, 14)
                 .background(
                     Capsule()
-                        .fill(Color.Blue.blue50)
+                        .fill(Color.blue50)
                 )
             }
         }
@@ -58,7 +58,7 @@ struct PageIndicator: View {
         HStack(spacing: 8) {
             ForEach(0..<total, id: \.self) { index in
                 Circle()
-                    .fill(index == current ? Color.Blue.blue50 : Color.Blue.blue10)
+                    .fill(index == current ? Color.blue50 : Color.blue10)
                     .frame(
                         width: index == current ? 7 : 6,
                         height: index == current ? 7 : 6
@@ -87,7 +87,7 @@ struct QRListView: View {
             if pages.indices.contains(currentPage) {
                 Text(pages[currentPage].title)
                     .font(.finda(.subheading2))
-                    .foregroundColor(.Gray.gray90)
+                    .foregroundColor(.gray90)
                     .padding(.bottom, 12)
                     .id(currentPage)
                     .transition(.asymmetric(

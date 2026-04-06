@@ -15,7 +15,7 @@ struct GraphView: View {
         VStack(alignment: .leading, spacing: 0) {
             Text("봉사활동 출석률")
                 .font(.finda(.body1))
-                .foregroundStyle(Color.Gray.gray90)
+                .foregroundStyle(Color.gray90)
                 .padding(.top, 15)
                 .padding(.leading, 15)
 
@@ -27,7 +27,7 @@ struct GraphView: View {
                 .foregroundStyle(
                     LinearGradient(
                         gradient: Gradient(colors: [
-                            Color.Blue.blue60.opacity(0.2)
+                            Color.blue60.opacity(0.2)
                         ]),
                         startPoint: .top,
                         endPoint: .bottom
@@ -38,25 +38,25 @@ struct GraphView: View {
                     x: .value("월", item.month),
                     y: .value("값", item.value)
                 )
-                .foregroundStyle(Color.Blue.blue60)
+                .foregroundStyle(Color.blue60)
                 .lineStyle(StrokeStyle(lineWidth: 2))
 
                 PointMark(
                     x: .value("월", item.month),
                     y: .value("값", item.value)
                 )
-                .foregroundStyle(Color.Gray.gray10)
+                .foregroundStyle(Color.gray10)
                 .symbolSize(100)
 
                 PointMark(
                     x: .value("월", item.month),
                     y: .value("값", item.value)
                 )
-                .foregroundStyle(Color.Blue.blue60)
+                .foregroundStyle(Color.blue60)
                 .symbolSize(100)
                 .symbol {
                     Circle()
-                        .strokeBorder(Color.Blue.blue60, lineWidth: 3)
+                        .strokeBorder(Color.blue60, lineWidth: 3)
                         .frame(width: 10, height: 10)
                 }
             }
@@ -65,17 +65,17 @@ struct GraphView: View {
             .chartYAxis {
                 AxisMarks(position: .leading, values: [0, 25, 50, 75, 100]) { _ in
                     AxisGridLine(stroke: StrokeStyle(lineWidth: 1, dash: [5, 5]))
-                        .foregroundStyle(Color.Gray.gray40)
+                        .foregroundStyle(Color.gray40)
                     AxisValueLabel()
-                        .foregroundStyle(Color.Gray.gray90)
+                        .foregroundStyle(Color.gray90)
                 }
             }
             .chartXAxis {
                 AxisMarks(values: .automatic) { _ in
                     AxisGridLine(stroke: StrokeStyle(lineWidth: 1, dash: [5, 5]))
-                        .foregroundStyle(Color.Gray.gray40)
+                        .foregroundStyle(Color.gray40)
                     AxisValueLabel()
-                        .foregroundStyle(Color.Gray.gray90)
+                        .foregroundStyle(Color.gray90)
                 }
             }
             .frame(height: 100)
@@ -84,7 +84,7 @@ struct GraphView: View {
                 loadData()
             }
         }
-        .background(Color.Gray.gray20)
+        .background(Color.gray20)
         .cornerRadius(10)
     }
 

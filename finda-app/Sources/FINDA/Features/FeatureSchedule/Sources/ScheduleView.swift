@@ -52,7 +52,7 @@ public struct ScheduleView: View {
             HStack {
                 Text("봉사활동 일정")
                     .font(.finda(.body1))
-                    .foregroundColor(.Gray.gray90)
+                    .foregroundColor(.gray90)
             }
             .padding(.vertical, 12)
 
@@ -68,13 +68,13 @@ public struct ScheduleView: View {
                 VStack(alignment: .leading, spacing: 16) {
                     Text("\(selectMonth)월 \(selectDay)일")
                         .font(.finda(.caption2))
-                        .foregroundColor(.Gray.gray80)
+                        .foregroundColor(.gray80)
 
                     if selectedEvents.isEmpty {
                         HStack {
                             Text("일정이 없습니다")
                                 .font(.finda(.caption1))
-                                .foregroundColor(.Gray.gray80)
+                                .foregroundColor(.gray80)
                             Spacer()
                         }
                         .padding(.bottom, 8)
@@ -82,12 +82,12 @@ public struct ScheduleView: View {
                         List(selectedEvents) { event in
                             HStack(spacing: 12) {
                                 Circle()
-                                    .fill(Color.Blue.blue30)
+                                    .fill(Color.blue30)
                                     .frame(width: 5, height: 5)
 
                                 Text(event.eventName)
                                     .font(.finda(.caption1))
-                                    .foregroundColor(.Gray.gray90)
+                                    .foregroundColor(.gray90)
                             }
                             .padding(.vertical, 8)
                             .listRowInsets(EdgeInsets())
@@ -101,7 +101,7 @@ public struct ScheduleView: View {
                     }
                 }
                 .padding(15)
-                .background(Color.Gray.gray20)
+                .background(Color.gray20)
                 .cornerRadius(10)
 
                 Spacer()

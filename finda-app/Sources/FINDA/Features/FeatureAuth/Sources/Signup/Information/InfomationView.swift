@@ -4,7 +4,7 @@ import ComposableArchitecture
 
 struct InformationView: View {
     @Environment(\.dismiss) private var dismiss
-    @Perception.Bindable private var store: StoreOf<InformationFeature>
+    @Bindable private var store: StoreOf<InformationFeature>
     private let selectedRole: UserRole?
 
     init(

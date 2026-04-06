@@ -3,7 +3,7 @@ import SwiftUI
 import ComposableArchitecture
 
 public struct AuthRootView: View {
-    @Perception.Bindable private var store: StoreOf<AuthRootFeature>
+    @Bindable private var store: StoreOf<AuthRootFeature>
 
     public init(store: StoreOf<AuthRootFeature>) {
         self.store = store

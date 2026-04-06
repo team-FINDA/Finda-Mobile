@@ -4,7 +4,7 @@ import ComposableArchitecture
 
 struct SettingView: View {
     @Environment(\.dismiss) private var dismiss
-    @Perception.Bindable private var store: StoreOf<SettingFeature>
+    @Bindable private var store: StoreOf<SettingFeature>
 
     init(store: StoreOf<SettingFeature>) {
         self.store = store
@@ -15,19 +15,19 @@ struct SettingView: View {
             VStack(spacing: 20) {
                 HStack {
                     Button(action: { dismiss() }, label: {
-                        Image.Icons.leftArrow
-                            .foregroundStyle(Color.Gray.gray80)
+                        Image("leftArrow")
+                            .foregroundStyle(Color.gray80)
                     })
 
                     Spacer()
 
                     Text("설정")
                         .font(.finda(.body1))
-                        .foregroundColor(.Gray.gray90)
+                        .foregroundColor(.gray90)
 
                     Spacer()
 
-                    Image.Icons.leftArrow
+                    Image("leftArrow")
                         .opacity(0)
                         .accessibilityHidden(true)
                 }
@@ -35,17 +35,17 @@ struct SettingView: View {
                 .padding(.vertical, 8)
 
                 VStack(spacing: 40) {
-                    Image.Images.baseProfile
+                    Image("baseProfile")
                         .clipShape(.circle)
 
                     SettingButton(
                         buttonText: "알림 설정",
-                        textColor: Color.Gray.gray90,
+                        textColor: Color.gray90,
                         action: { store.send(.alertSettingButtonTapped) }
                     )
                     SettingButton(
                         buttonText: "비밀번호 설정",
-                        textColor: Color.Blue.blue50,
+                        textColor: Color.blue50,
                         action: { store.send(.passwordChangeButtonTapped) }
                     )
 

@@ -105,7 +105,7 @@ struct CalendarView: View {
         .padding(.vertical, 24)
         .background(
             RoundedRectangle(cornerRadius: 10)
-                .fill(Color.Gray.gray20)
+                .fill(Color.gray20)
         )
         .onAppear {
             guard !didSendInitialSelection else { return }
@@ -121,19 +121,19 @@ struct CalendarView: View {
             } label: {
                 Image(systemName: "chevron.left")
                     .font(.system(size: 16, weight: .medium))
-                    .foregroundColor(.Gray.gray90)
+                    .foregroundColor(.gray90)
             }
 
             Text(currentMonth.title)
                 .font(.finda(.body1))
-                .foregroundColor(.Gray.gray90)
+                .foregroundColor(.gray90)
 
             Button {
                 currentMonth = currentMonth.shifted(by: 1)
             } label: {
                 Image(systemName: "chevron.right")
                     .font(.system(size: 16, weight: .medium))
-                    .foregroundColor(.Gray.gray90)
+                    .foregroundColor(.gray90)
             }
         }
     }
@@ -143,7 +143,7 @@ struct CalendarView: View {
             ForEach(weekdays, id: \.self) { day in
                 Text(day)
                     .font(.finda(.body1))
-                    .foregroundColor(.Gray.gray90)
+                    .foregroundColor(.gray90)
                     .frame(maxWidth: .infinity)
             }
         }
@@ -212,13 +212,13 @@ struct DayCellView: View {
                     let dayNum = Calendar.current.component(.day, from: date)
                     Text("\(dayNum)")
                         .font(.finda(.body4))
-                        .foregroundColor(.Gray.gray90)
+                        .foregroundColor(.gray90)
                         .frame(width: 28, height: 28)
-                        .background(Circle().fill(isToday ? Color.Blue.blue20 : .clear))
+                        .background(Circle().fill(isToday ? Color.blue20 : .clear))
 
                     Circle()
                         .fill(
-                            (Color.Blue.blue30)
+                            (Color.blue30)
                                 .opacity(calDay.hasEvents ? 1 : 0)
                         )
                         .frame(width: 4, height: 4)
@@ -227,7 +227,7 @@ struct DayCellView: View {
             .frame(width: 36, height: 42)
             .background(
                 RoundedRectangle(cornerRadius: 5)
-                    .fill((isSelected && !isToday) ? Color.Blue.blue10 : .clear)
+                    .fill((isSelected && !isToday) ? Color.blue10 : .clear)
             )
         }
         .buttonStyle(.plain)

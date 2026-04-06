@@ -4,7 +4,7 @@ import ComposableArchitecture
 
 struct NoticeManageView: View {
     @Environment(\.dismiss) private var dismiss
-    @Perception.Bindable private var store: StoreOf<NoticeManageFeature>
+    @Bindable private var store: StoreOf<NoticeManageFeature>
 
     public init(store: StoreOf<NoticeManageFeature>) {
         self.store = store
@@ -15,22 +15,22 @@ struct NoticeManageView: View {
             VStack(spacing: 20) {
                 HStack {
                     Button(action: { dismiss() }, label: {
-                        Image.Icons.leftArrow
-                            .foregroundStyle(Color.Gray.gray80)
+                        Image("leftArrow")
+                            .foregroundStyle(Color.gray80)
                     })
 
                     Spacer()
 
                     Text("공지사항 관리")
                         .font(.finda(.body1))
-                        .foregroundColor(.Gray.gray90)
+                        .foregroundColor(.gray90)
 
                     Spacer()
 
                     Button(action: {
                         store.send(.addButtonTapped)
                     }, label: {
-                        Image.Icons.add
+                        Image("add")
                     })
                 }
                 .padding(.horizontal, 24)

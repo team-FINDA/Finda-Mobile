@@ -3,7 +3,7 @@ import SwiftUI
 import ComposableArchitecture
 
 public struct MyView: View {
-    @Perception.Bindable private var store: StoreOf<MyFeature>
+    @Bindable private var store: StoreOf<MyFeature>
 
     private let studentName = "2216 하원"
     private let roles = ["환경지킴이", "교감쌤과 바둑두기", "화단에 물주기"]
@@ -41,27 +41,27 @@ public struct MyView: View {
                     Spacer()
 
                     Button(action: { store.send(.settingButtonTapped) }, label: {
-                        Image.Icons.setting
+                        Image("setting")
                     })
                 }
 
                 Button(action: { store.send(.myButtonTapped) }, label: {
                     Text(store.role == .student ? "봉사 활동 내역 확인" : "공지사항 관리/생성")
                         .font(.finda(.body1))
-                        .foregroundColor(.Blue.blue50)
+                        .foregroundColor(.blue50)
 
                     Spacer()
 
-                    Image.Icons.rightArrow
+                    Image("rightArrow")
                         .renderingMode(.template)
-                        .foregroundColor(.Blue.blue50)
+                        .foregroundColor(.blue50)
                 })
                 .padding(18)
-                .background(Color.Blue.blue10)
+                .background(Color.blue10)
                 .cornerRadius(16)
 
                 VolunteerFilterView(selectedFilter: $selectedFilter)
-                VolunteerListView(activities: filteredActivities)
+                VolunteerFilterListView(activities: filteredActivities)
 
                 Spacer()
             }

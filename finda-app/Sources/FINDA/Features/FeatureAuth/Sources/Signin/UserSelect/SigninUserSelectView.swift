@@ -14,17 +14,17 @@ struct SigninUserSelectView: View {
             VStack(spacing: 64) {
                 Text("로그인")
                     .font(.finda(.heading4))
-                    .foregroundStyle(Color.Gray.gray80)
+                    .foregroundStyle(Color.gray80)
                     .padding(.top, 40)
 
                 VStack(spacing: 40) {
                     UserSelectButton(
-                        icon: Image.Images.pencil,
+                        icon: Image("pencil"),
                         text: "학생 로그인",
                         action: { store.send(.studentSigninButtonTapped) }
                     )
                     UserSelectButton(
-                        icon: Image.Images.book,
+                        icon: Image("book"),
                         text: "선생님 로그인",
                         action: { store.send(.teacherSigninButtonTapped) }
                     )

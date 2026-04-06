@@ -4,7 +4,7 @@ import ComposableArchitecture
 
 struct EmailVerificationView: View {
     @Environment(\.dismiss) private var dismiss
-    @Perception.Bindable private var store: StoreOf<EmailVerificationFeature>
+    @Bindable private var store: StoreOf<EmailVerificationFeature>
     private let selectedRole: UserRole?
 
     init(
@@ -20,8 +20,8 @@ struct EmailVerificationView: View {
             VStack {
                 HStack {
                     Button(action: { dismiss() }, label: {
-                        Image.Icons.leftArrow
-                            .foregroundStyle(Color.Gray.gray80)
+                        Image("leftArrow")
+                            .foregroundStyle(Color.gray80)
                     })
                     Spacer()
                 }
@@ -30,7 +30,7 @@ struct EmailVerificationView: View {
 
                 Text("회원가입")
                     .font(.finda(.heading4))
-                    .foregroundStyle(Color.Gray.gray80)
+                    .foregroundStyle(Color.gray80)
                     .padding(.bottom, 64)
 
                 VStack(spacing: 32) {

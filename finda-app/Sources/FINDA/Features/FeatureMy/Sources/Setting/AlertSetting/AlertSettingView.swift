@@ -4,7 +4,7 @@ import ComposableArchitecture
 
 struct AlertSettingView: View {
     @Environment(\.dismiss) private var dismiss
-    @Perception.Bindable private var store: StoreOf<AlertSettingFeature>
+    @Bindable private var store: StoreOf<AlertSettingFeature>
 
     init(store: StoreOf<AlertSettingFeature>) {
         self.store = store
@@ -15,19 +15,19 @@ struct AlertSettingView: View {
             VStack(spacing: 20) {
                 HStack {
                     Button(action: { dismiss() }, label: {
-                        Image.Icons.leftArrow
-                            .foregroundStyle(Color.Gray.gray80)
+                        Image("leftArrow")
+                            .foregroundStyle(Color.gray80)
                     })
 
                      Spacer()
 
                     Text("알림 설정")
                         .font(.finda(.body1))
-                        .foregroundColor(.Gray.gray90)
+                        .foregroundColor(.gray90)
 
                     Spacer()
 
-                    Image.Icons.leftArrow
+                    Image("leftArrow")
                         .opacity(0)
                         .accessibilityHidden(true)
                 }

@@ -4,7 +4,7 @@ import ComposableArchitecture
 
 struct NewPasswordView: View {
     @Environment(\.dismiss) private var dismiss
-    @Perception.Bindable private var store: StoreOf<NewPasswordFeature>
+    @Bindable private var store: StoreOf<NewPasswordFeature>
     private let selectedRole: UserRole?
 
     init(
@@ -20,8 +20,8 @@ struct NewPasswordView: View {
             VStack {
                 HStack {
                     Button(action: { dismiss() }, label: {
-                        Image.Icons.leftArrow
-                            .foregroundStyle(Color.Gray.gray80)
+                        Image("leftArrow")
+                            .foregroundStyle(Color.gray80)
                     })
                     Spacer()
                 }
@@ -31,7 +31,7 @@ struct NewPasswordView: View {
                 ViewThatFits(in: .vertical) {
                     Text("비밀번호 변경")
                         .font(.finda(.heading4))
-                        .foregroundStyle(Color.Gray.gray80)
+                        .foregroundStyle(Color.gray80)
                         .padding(.bottom, 64)
                 }
 
@@ -44,7 +44,7 @@ struct NewPasswordView: View {
                         )
                         Text("비밀번호는 이런이런이런 형식으로 ㄱㄱ")
                             .font(.finda(.body4))
-                            .foregroundStyle(Color.Blue.blue50)
+                            .foregroundStyle(Color.blue50)
                     }
                     AuthTextField(
                         type: .password,

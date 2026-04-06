@@ -9,19 +9,19 @@ struct VolunteerPostView: View {
         VStack {
             HStack {
                 Button(action: { dismiss() }, label: {
-                    Image.Icons.leftArrow
-                        .foregroundStyle(Color.Gray.gray80)
+                    Image("leftArrow")
+                        .foregroundStyle(Color.gray80)
                 })
 
                 Spacer()
 
                 Text("봉사활동 제목??")
                     .font(.finda(.body1))
-                    .foregroundColor(.Gray.gray90)
+                    .foregroundColor(.gray90)
 
                 Spacer()
 
-                Image.Icons.leftArrow
+                Image("leftArrow")
                     .opacity(0)
                     .accessibilityHidden(true)
             }
@@ -33,10 +33,10 @@ struct VolunteerPostView: View {
                     VStack(alignment: .leading, spacing: 5) {
                         Text("봉사활동 제목")
                             .font(.finda(.heading5))
-                            .foregroundColor(.Gray.gray90)
+                            .foregroundColor(.gray90)
                         Text("봉사활동 내용입니다.")
                             .font(.finda(.body4))
-                            .foregroundColor(.Gray.gray90)
+                            .foregroundColor(.gray90)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.top, 20)
@@ -44,14 +44,14 @@ struct VolunteerPostView: View {
                     VStack(spacing: 15) {
                         HStack(spacing: 13) {
                             InfoView(
-                                icon: Image.Icons.calendar,
+                                icon: Image("calendar"),
                                 title: "신청 기간",
                                 content: "2025.3.10 ~\n2025.3.12",
                                 date: true
                             )
                             .frame(maxWidth: .infinity)
                             InfoView(
-                                icon: Image.Icons.calendar,
+                                icon: Image("calendar"),
                                 title: "활동 기간",
                                 content: "2025.3.10 ~\n2025.3.12",
                                 date: true
@@ -60,13 +60,13 @@ struct VolunteerPostView: View {
                         }
                         HStack(spacing: 13) {
                             InfoView(
-                                icon: Image.Icons.time,
+                                icon: Image("time"),
                                 title: "봉사 기간",
                                 content: "8시간"
                             )
                             .frame(maxWidth: .infinity)
                             InfoView(
-                                icon: Image.Icons.people,
+                                icon: Image("people"),
                                 title: "활동 기간",
                                 content: "20명"
                             )
@@ -78,19 +78,19 @@ struct VolunteerPostView: View {
 
                     Text("활동 장소")
                         .font(.finda(.caption1))
-                        .foregroundColor(.Gray.gray60)
+                        .foregroundColor(.gray60)
 
                     HStack(spacing: 18) {
-                        Image.Icons.location
+                        Image("location")
                         Text("대덕소프트웨어마이스터고")
                             .font(.finda(.body3))
-                            .foregroundColor(.Gray.gray90)
+                            .foregroundColor(.gray90)
                         Spacer()
                     }
                     .padding(12)
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
-                            .strokeBorder(Color.Gray.gray70, lineWidth: 0.5)
+                            .strokeBorder(Color.gray70, lineWidth: 0.5)
                     )
 
                     Spacer()
@@ -103,7 +103,7 @@ struct VolunteerPostView: View {
 
         FINDAButton(
             buttonText: "신청",
-            buttonColor: Color.Blue.blue40,
+            buttonColor: Color.blue40,
             buttonClick: {}
         )
             .padding(20)

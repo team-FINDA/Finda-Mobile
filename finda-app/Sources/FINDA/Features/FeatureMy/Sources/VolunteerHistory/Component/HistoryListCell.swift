@@ -22,21 +22,21 @@ struct HistoryListCell: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(title)
                     .font(.finda(.body3))
-                    .foregroundStyle(Color.Gray.gray90)
+                    .foregroundStyle(Color.gray90)
 
                 Text(date)
                     .font(.finda(.caption2))
-                    .foregroundStyle(Color.Gray.gray50)
+                    .foregroundStyle(Color.gray50)
             }
 
             Spacer()
 
             Text("+ \(String(format: "%.1f", time))시간")
                 .font(.finda(.body3))
-                .foregroundStyle(Color.Blue.blue50)
+                .foregroundStyle(Color.blue50)
         }
         .padding(20)
-        .background(Color.Gray.gray20)
+        .background(Color.gray20)
         .clipShape(.rect(cornerRadius: 10))
     }
 }

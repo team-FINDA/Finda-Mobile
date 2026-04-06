@@ -4,7 +4,7 @@ import ComposableArchitecture
 
 struct SecretKeyView: View {
     @Environment(\.dismiss) private var dismiss
-    @Perception.Bindable private var store: StoreOf<SecretKeyFeature>
+    @Bindable private var store: StoreOf<SecretKeyFeature>
     private let selectedRole: UserRole?
 
     init(

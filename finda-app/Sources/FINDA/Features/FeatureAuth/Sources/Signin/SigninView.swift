@@ -4,7 +4,7 @@ import ComposableArchitecture
 
 struct SigninView: View {
     @Environment(\.dismiss) private var dismiss
-    @Perception.Bindable private var store: StoreOf<SigninFeature>
+    @Bindable private var store: StoreOf<SigninFeature>
 
     init(store: StoreOf<SigninFeature>) {
         self.store = store
@@ -15,8 +15,8 @@ struct SigninView: View {
             VStack {
                 HStack {
                     Button(action: { dismiss() }, label: {
-                        Image.Icons.leftArrow
-                            .foregroundStyle(Color.Gray.gray80)
+                        Image("leftArrow")
+                            .foregroundStyle(Color.gray80)
                     })
                     Spacer()
                 }
@@ -25,7 +25,7 @@ struct SigninView: View {
 
                 Text("로그인")
                     .font(.finda(.heading4))
-                    .foregroundStyle(Color.Gray.gray80)
+                    .foregroundStyle(Color.gray80)
                     .padding(.bottom, 64)
 
                 VStack(spacing: 32) {

@@ -11,16 +11,16 @@ struct ActivityTagCell: View {
     var body: some View {
         Text(title)
             .font(.finda(.caption1))
-            .foregroundColor(.Blue.blue40)
+            .foregroundColor(.blue40)
             .padding(.horizontal, 7)
             .padding(.vertical, 8)
             .background(
                 Capsule()
-                    .fill(Color.Blue.blue10)
+                    .fill(Color.blue10)
             )
             .overlay(
                 Capsule()
-                    .strokeBorder(Color.Blue.blue50, lineWidth: 0.5)
+                    .strokeBorder(Color.blue50, lineWidth: 0.5)
             )
     }
 }
@@ -101,7 +101,7 @@ struct ActivityTagSection: View {
         VStack(alignment: .leading, spacing: 10) {
             Text("활동")
                 .font(.finda(.caption1))
-                .foregroundColor(.Gray.gray60)
+                .foregroundColor(.gray60)
 
             ActivityTagFlowLayout(spacing: 8, rowSpacing: 8) {
                 ForEach(tags, id: \.self) { tag in

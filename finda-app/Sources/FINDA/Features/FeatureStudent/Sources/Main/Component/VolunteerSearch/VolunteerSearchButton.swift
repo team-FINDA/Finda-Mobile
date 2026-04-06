@@ -13,28 +13,28 @@ struct VolunteerSearchButton: View {
             VStack(alignment: .leading, spacing: 16) {
                 Text("참여중인 봉사활동이 없다면?")
                     .font(.finda(.body1))
-                    .foregroundColor(.Gray.gray80)
+                    .foregroundColor(.gray80)
 
                 Button(action: { action() }, label: {
                     Text("봉사 게시물 찾기")
                         .font(.finda(.body3))
-                        .foregroundColor(.Gray.gray10)
+                        .foregroundColor(.gray10)
                         .padding(.horizontal, 20)
                         .padding(.vertical, 8)
                 })
-                .background(Color.Blue.blue50)
+                .background(Color.blue50)
                 .cornerRadius(32)
             }
             .padding(.trailing, 24)
 
             Spacer()
 
-            Image.Images.findVolunteer
+            Image("findVolunteer")
                 .padding(.leading, 20)
                 .padding(.vertical, 13)
         }
         .padding(.horizontal, 20)
-        .background(Color.Blue.blue10)
+        .background(Color.blue10)
         .cornerRadius(20)
     }
 }

@@ -16,13 +16,13 @@ struct CustomToggle: View {
         HStack {
             Text(title)
                 .font(font)
-                .foregroundStyle(Color.Gray.gray90)
+                .foregroundStyle(Color.gray90)
 
             Spacer()
 
             Toggle(title, isOn: $isOn)
                 .labelsHidden()
-                .toggleStyle(SwitchToggleStyle(tint: Color.Blue.blue30))
+                .toggleStyle(SwitchToggleStyle(tint: Color.blue30))
         }
     }
 }

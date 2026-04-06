@@ -3,7 +3,7 @@ import SwiftUI
 import ComposableArchitecture
 
 public struct StudentMainView: View {
-    @Perception.Bindable private var store: StoreOf<StudentMainFeature>
+    @Bindable private var store: StoreOf<StudentMainFeature>
 
     public init(store: StoreOf<StudentMainFeature>) {
         self.store = store

@@ -39,9 +39,9 @@ struct NoticeDetailView: View {
         VStack(spacing: 20) {
             FINDAHeader(
                 title: isEditMode ? "공지사항 수정" : "공지사항 생성",
-                leftItemImage: Image.Icons.leftArrow,
+                leftItemImage: Image("leftArrow"),
                 leftItemAction: { dismiss() },
-                rightItemImage: isEditMode ? Image.Icons.delete : nil,
+                rightItemImage: isEditMode ? Image("delete") : nil,
                 rightItemAction: isEditMode ? (rightButtonAction ?? {}) : nil
             )
 
@@ -72,18 +72,18 @@ struct NoticeDetailView: View {
                             HStack(spacing: 8) {
                                 Text("날짜")
                                     .font(.finda(.body2))
-                                    .foregroundStyle(Color.Gray.gray90)
+                                    .foregroundStyle(Color.gray90)
 
                                 Spacer()
 
                                 Text(selectedDateText)
                                     .font(.finda(.body4))
-                                    .foregroundStyle(Color.Gray.gray60)
+                                    .foregroundStyle(Color.gray60)
 
-                                Image.Icons.rightArrow
+                                Image("rightArrow")
                             }
                             .padding(18)
-                            .background(Color.Gray.gray20)
+                            .background(Color.gray20)
                             .clipShape(.rect(cornerRadius: 16))
                         }
                     )
@@ -93,7 +93,7 @@ struct NoticeDetailView: View {
 
             FINDAButton(
                 buttonText: isEditMode ? "수정하기" : "생성하기",
-                buttonColor: Color.Blue.blue40,
+                buttonColor: Color.blue40,
                 buttonClick: {}
             )
             .padding(.bottom, 32)

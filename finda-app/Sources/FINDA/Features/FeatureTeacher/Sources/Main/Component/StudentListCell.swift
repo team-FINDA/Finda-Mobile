@@ -14,24 +14,24 @@ struct StudentListCell: View {
         HStack {
             Text(name)
                 .font(.finda(.body1))
-                .foregroundColor(.Gray.gray90)
+                .foregroundColor(.gray90)
 
             Spacer()
 
             Button(action: {}, label: {
                 Text(state ? "출석" : "미출석")
                     .font(.finda(.caption1))
-                    .foregroundColor(state ? .Sub.green20 : .Sub.red20)
+                    .foregroundColor(state ? .green20 : .red20)
                     .padding(.vertical, 6)
                     .padding(.horizontal, 12)
             })
-            .background(state ? Color.Sub.green10 : Color.Sub.red10)
+            .background(state ? Color.green10 : Color.red10)
             .cornerRadius(40)
         }
         .padding(16)
         .overlay(
             RoundedRectangle(cornerRadius: 5)
-                .strokeBorder(state ? Color.Sub.green20 : Color.Sub.red20, lineWidth: 0.8)
+                .strokeBorder(state ? Color.green20 : Color.red20, lineWidth: 0.8)
         )
     }
 }

@@ -25,7 +25,7 @@ let dummyActivities: [VolunteerListResponse] = [
     VolunteerListResponse(id: "6", title: "환경 지킴이 활동", startDate: "2025/04/16", endDate: "2025/07/30", status: .waiting)
 ]
 
-struct VolunteerListView: View {
+struct VolunteerFilterListView: View {
     let activities: [VolunteerListResponse]
 
     var body: some View {
@@ -115,7 +115,7 @@ private struct StatusTag: View {
 }
 
 #Preview {
-    VolunteerListView(activities: dummyActivities)
+    VolunteerFilterListView(activities: dummyActivities)
 }
 
 #endif
