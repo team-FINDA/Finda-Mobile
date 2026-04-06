@@ -1,75 +1,4 @@
-#if !SKIP && canImport(UIKit)
 import SwiftUI
-
-struct MonthlyEventResponse: Codable, Identifiable {
-    let id: String
-    let eventName: String
-    let month: Int
-    let day: Int
-    let dayName: String
-}
-
-struct CalendarDay: Identifiable {
-    let id = UUID()
-    let date: Date?
-    let events: [MonthlyEventResponse]
-
-    var hasEvents: Bool { !events.isEmpty }
-}
-
-struct CalendarMonth {
-    let year: Int
-    let month: Int
-
-    init(year: Int, month: Int) {
-        self.year = year
-        self.month = month
-    }
-
-    init(date: Date) {
-        let calendar = Calendar.current
-        self.year = calendar.component(.year, from: date)
-        self.month = calendar.component(.month, from: date)
-    }
-
-    var title: String { "\(year)년 \(month)월" }
-
-    var firstDate: Date {
-        var components = DateComponents()
-        components.year = year
-        components.month = month
-        components.day = 1
-        return Calendar.current.date(from: components)!
-    }
-
-    func shifted(by value: Int) -> CalendarMonth {
-        let movedDate = Calendar.current.date(byAdding: .month, value: value, to: firstDate)!
-        return CalendarMonth(date: movedDate)
-    }
-
-    func days(eventMap: [Int: [MonthlyEventResponse]]) -> [CalendarDay] {
-        let calendar = Calendar.current
-        let firstWeekday = calendar.component(.weekday, from: firstDate) - 1
-        let dayRange = calendar.range(of: .day, in: .month, for: firstDate)!
-
-        var result: [CalendarDay] = []
-
-        for _ in 0..<firstWeekday {
-            result.append(CalendarDay(date: nil, events: []))
-        }
-
-        for day in dayRange {
-            var components = DateComponents()
-            components.year = year
-            components.month = month
-            components.day = day
-            let date = calendar.date(from: components)!
-            result.append(CalendarDay(date: date, events: eventMap[day] ?? []))
-        }
-
-        return result
-    }
-}
 
 struct CalendarView: View {
     let monthlyEvents: [MonthlyEventResponse]
@@ -120,7 +49,6 @@ struct CalendarView: View {
                 currentMonth = currentMonth.shifted(by: -1)
             } label: {
                 Image(systemName: "chevron.left")
-                    .font(.system(size: 16, weight: .medium))
                     .foregroundColor(.gray90)
             }
 
@@ -132,7 +60,6 @@ struct CalendarView: View {
                 currentMonth = currentMonth.shifted(by: 1)
             } label: {
                 Image(systemName: "chevron.right")
-                    .font(.system(size: 16, weight: .medium))
                     .foregroundColor(.gray90)
             }
         }
@@ -177,20 +104,11 @@ struct CalendarView: View {
     }
 
     private func isSelected(_ calDay: CalendarDay) -> Bool {
-        guard
-            let cellDate = calDay.date,
-            let selectedDate
-        else { return false }
-
+        guard let cellDate = calDay.date, let selectedDate else { return false }
         let calendar = Calendar.current
-        let cellDay = calendar.component(.day, from: cellDate)
-        let cellMonth = calendar.component(.month, from: cellDate)
-        let cellYear = calendar.component(.year, from: cellDate)
-        let selectedDay = calendar.component(.day, from: selectedDate)
-        let selectedMonth = calendar.component(.month, from: selectedDate)
-        let selectedYear = calendar.component(.year, from: selectedDate)
-
-        return cellDay == selectedDay && cellMonth == selectedMonth && cellYear == selectedYear
+        return calendar.component(.day, from: cellDate) == calendar.component(.day, from: selectedDate)
+            && calendar.component(.month, from: cellDate) == calendar.component(.month, from: selectedDate)
+            && calendar.component(.year, from: cellDate) == calendar.component(.year, from: selectedDate)
     }
 
     private func isToday(_ calDay: CalendarDay) -> Bool {
@@ -214,57 +132,19 @@ struct DayCellView: View {
                         .font(.finda(.body4))
                         .foregroundColor(.gray90)
                         .frame(width: 28, height: 28)
-                        .background(Circle().fill(isToday ? Color.blue20 : .clear))
+                        .background(Circle().fill(isToday ? Color.blue20 : Color.clear))
 
                     Circle()
-                        .fill(
-                            (Color.blue30)
-                                .opacity(calDay.hasEvents ? 1 : 0)
-                        )
+                        .fill(Color.blue30.opacity(calDay.hasEvents ? 1 : 0))
                         .frame(width: 4, height: 4)
                 }
             }
             .frame(width: 36, height: 42)
             .background(
                 RoundedRectangle(cornerRadius: 5)
-                    .fill((isSelected && !isToday) ? Color.blue10 : .clear)
+                    .fill((isSelected && !isToday) ? Color.blue10 : Color.clear)
             )
         }
         .buttonStyle(.plain)
     }
 }
-
-struct CalendarView_Previews: PreviewProvider {
-    private static let previewEvents: [MonthlyEventResponse] = [
-        MonthlyEventResponse(
-            id: UUID().uuidString,
-            eventName: "모의고사",
-            month: 2,
-            day: 3,
-            dayName: "화"
-        ),
-        MonthlyEventResponse(
-            id: UUID().uuidString,
-            eventName: "동아리 발표",
-            month: 2,
-            day: 12,
-            dayName: "목"
-        ),
-        MonthlyEventResponse(
-            id: UUID().uuidString,
-            eventName: "봉사 활동",
-            month: 2,
-            day: 21,
-            dayName: "토"
-        )
-    ]
-
-    static var previews: some View {
-        CalendarView(
-            monthlyEvents: previewEvents,
-            onSelectDay: { _, _ in }
-        )
-    }
-}
-
-#endif

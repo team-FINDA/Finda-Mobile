@@ -1,4 +1,3 @@
-#if !SKIP && canImport(UIKit)
 import SwiftUI
 
 struct InfoView: View {
@@ -7,12 +6,7 @@ struct InfoView: View {
     var content: String
     var date: Bool
 
-    init(
-        icon: Image,
-        title: String,
-        content: String,
-        date: Bool = false
-    ) {
+    init(icon: Image, title: String, content: String, date: Bool = false) {
         self.icon = icon
         self.title = title
         self.content = content
@@ -27,7 +21,6 @@ struct InfoView: View {
                     .font(.finda(.caption3))
                     .foregroundColor(.blue50)
             }
-
             Text(content)
                 .lineLimit(nil)
                 .font(.finda(date ? .caption1 : .body1))
@@ -42,9 +35,3 @@ struct InfoView: View {
         )
     }
 }
-
-#Preview {
-    InfoView(icon: FINDAImage("calendar"), title: "신청 기간", content: "2025.3.10 ~2025.3.12")
-}
-
-#endif

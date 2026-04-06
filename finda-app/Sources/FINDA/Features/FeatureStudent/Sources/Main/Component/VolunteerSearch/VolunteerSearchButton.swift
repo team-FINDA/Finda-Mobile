@@ -1,27 +1,22 @@
-#if !SKIP && canImport(UIKit)
 import SwiftUI
 
 struct VolunteerSearchButton: View {
-    var action: (() -> Void)
-
-    init(action: @escaping () -> Void) {
-        self.action = action
-    }
+    var action: () -> Void
 
     var body: some View {
-        HStack(spacing: -100) {
+        HStack {
             VStack(alignment: .leading, spacing: 16) {
                 Text("참여중인 봉사활동이 없다면?")
                     .font(.finda(.body1))
                     .foregroundColor(.gray80)
 
-                Button(action: { action() }, label: {
+                Button(action: action) {
                     Text("봉사 게시물 찾기")
                         .font(.finda(.body3))
                         .foregroundColor(.gray10)
                         .padding(.horizontal, 20)
                         .padding(.vertical, 8)
-                })
+                }
                 .background(Color.blue50)
                 .cornerRadius(32)
             }
@@ -38,9 +33,3 @@ struct VolunteerSearchButton: View {
         .cornerRadius(20)
     }
 }
-
-#Preview {
-    VolunteerSearchButton(action: {})
-}
-
-#endif

@@ -1,37 +1,41 @@
-#if !SKIP && canImport(UIKit)
 import SwiftUI
-import ComposableArchitecture
 
-public struct StudentMainView: View {
-    @Bindable private var store: StoreOf<StudentMainFeature>
+@Observable
+class StudentMainViewModel {
+    var path: [StudentPath] = []
 
-    public init(store: StoreOf<StudentMainFeature>) {
-        self.store = store
+    enum StudentPath: Hashable {
+        case volunteerList
     }
 
+    func volunteerFindTapped() {
+        path.append(.volunteerList)
+    }
+}
+
+public struct StudentMainView: View {
+    @State private var viewModel = StudentMainViewModel()
+
+    public init() {}
+
     public var body: some View {
-        WithPerceptionTracking {
-            NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
-                ScrollView {
-                    VStack(spacing: 20) {
-                        MainHeaderView(
-                            name: "2216 하원",
-                            notificationAction: { store.send(.notificationButtonTapped) },
-                            shortNotificationAction: { store.send(.shortNotificationButtonTapped) }
-                        )
-
-                        TotalTimeView(volunteerTime: 16)
-
-                        GraphView()
-
-                        VolunteerSearchButton(action: { store.send(.volunteerFindButtonTapped) })
-
-                        Spacer()
-                    }
-                    .padding(.horizontal, 24.5)
+        NavigationStack(path: $viewModel.path) {
+            ScrollView {
+                VStack(spacing: 20) {
+                    MainHeaderView(
+                        name: "2216 하원",
+                        notificationAction: { },
+                        shortNotificationAction: { }
+                    )
+                    TotalTimeView(volunteerTime: 16)
+                    GraphView()
+                    VolunteerSearchButton(action: { viewModel.volunteerFindTapped() })
+                    Spacer()
                 }
-            } destination: { store in
-                switch store.case {
+                .padding(.horizontal, 24.5)
+            }
+            .navigationDestination(for: StudentMainViewModel.StudentPath.self) { path in
+                switch path {
                 case .volunteerList:
                     VolunteerListView()
                 }
@@ -39,12 +43,3 @@ public struct StudentMainView: View {
         }
     }
 }
-
-#Preview {
-    StudentMainView(
-        store: Store(initialState: StudentMainFeature.State()) {
-            StudentMainFeature()
-        })
-}
-
-#endif

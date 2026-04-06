@@ -1,7 +1,9 @@
-#if !SKIP && canImport(UIKit)
 import SwiftUI
 
 struct VolunteerListView: View {
+    @Environment(\.dismiss) private var dismiss
+    @State private var isShowingVolunteerPost = false
+
     private struct VolunteerPost: Identifiable {
         let id = UUID()
         let name: String
@@ -15,52 +17,37 @@ struct VolunteerListView: View {
         .init(name: "지역사회 환경 캠페인", date: "2025/06/01 ~ 2025/08/15", time: 6)
     ]
 
-    @State private var isShowingVolunteerPost = false
-    @Environment(\.dismiss) private var dismiss
-
     var body: some View {
         VStack {
             HStack {
-                Button(action: { dismiss() }, label: {
-                    FINDAImage("leftArrow")
-                        .foregroundStyle(Color.gray80)
-                })
-
+                Button(action: { dismiss() }) {
+                    FINDAImage("leftArrow").foregroundStyle(Color.gray80)
+                }
                 Spacer()
-
-                Text("봉사활동 게시물")
-                    .font(.finda(.body1))
-                    .foregroundColor(.gray90)
-
+                Text("봉사활동 게시물").font(.finda(.body1)).foregroundColor(.gray90)
                 Spacer()
-
-                FINDAImage("leftArrow")
-                    .opacity(0)
-                    .accessibilityHidden(true)
+                FINDAImage("leftArrow").opacity(0).accessibilityHidden(true)
             }
             .padding(.horizontal, 24)
             .padding(.vertical, 8)
 
-            List {
-                ForEach(volunteerPosts) { post in
-                    Button(action: {
-                        isShowingVolunteerPost = true
-                    }, label: {
-                        VolunteerListCell(
-                            volunteerName: post.name,
-                            date: post.date,
-                            time: post.time
-                        )
-                    })
-                    .buttonStyle(.plain)
-                    .listRowSeparator(.hidden)
-                    .listRowInsets(EdgeInsets(top: 8, leading: 24, bottom: 8, trailing: 24))
-                    .listRowBackground(Color.clear)
+            ScrollView {
+                LazyVStack(spacing: 0) {
+                    ForEach(volunteerPosts) { post in
+                        Button(action: { isShowingVolunteerPost = true }) {
+                            VolunteerListCell(
+                                volunteerName: post.name,
+                                date: post.date,
+                                time: post.time
+                            )
+                        }
+                        .buttonStyle(.plain)
+                        .padding(.horizontal, 24)
+                        .padding(.vertical, 8)
+                    }
                 }
+                .padding(.top, 12)
             }
-            .listStyle(.plain)
-            .scrollContentBackground(.hidden)
-            .padding(.top, 12)
         }
         .navigationBarBackButtonHidden(true)
         .toolbar(.hidden, for: .navigationBar)
@@ -70,9 +57,3 @@ struct VolunteerListView: View {
         }
     }
 }
-
-#Preview {
-    VolunteerListView()
-}
-
-#endif

@@ -1,4 +1,3 @@
-#if !SKIP && canImport(UIKit)
 import SwiftUI
 
 struct VolunteerPostView: View {
@@ -8,22 +7,13 @@ struct VolunteerPostView: View {
     var body: some View {
         VStack {
             HStack {
-                Button(action: { dismiss() }, label: {
-                    FINDAImage("leftArrow")
-                        .foregroundStyle(Color.gray80)
-                })
-
+                Button(action: { dismiss() }) {
+                    FINDAImage("leftArrow").foregroundStyle(Color.gray80)
+                }
                 Spacer()
-
-                Text("봉사활동 제목??")
-                    .font(.finda(.body1))
-                    .foregroundColor(.gray90)
-
+                Text("봉사활동 제목??").font(.finda(.body1)).foregroundColor(.gray90)
                 Spacer()
-
-                FINDAImage("leftArrow")
-                    .opacity(0)
-                    .accessibilityHidden(true)
+                FINDAImage("leftArrow").opacity(0).accessibilityHidden(true)
             }
             .padding(.horizontal, 24)
             .padding(.vertical, 8)
@@ -43,34 +33,16 @@ struct VolunteerPostView: View {
 
                     VStack(spacing: 15) {
                         HStack(spacing: 13) {
-                            InfoView(
-                                icon: FINDAImage("calendar"),
-                                title: "신청 기간",
-                                content: "2025.3.10 ~\n2025.3.12",
-                                date: true
-                            )
-                            .frame(maxWidth: .infinity)
-                            InfoView(
-                                icon: FINDAImage("calendar"),
-                                title: "활동 기간",
-                                content: "2025.3.10 ~\n2025.3.12",
-                                date: true
-                            )
-                            .frame(maxWidth: .infinity)
+                            InfoView(icon: FINDAImage("calendar"), title: "신청 기간", content: "2025.3.10 ~\n2025.3.12", date: true)
+                                .frame(maxWidth: .infinity)
+                            InfoView(icon: FINDAImage("calendar"), title: "활동 기간", content: "2025.3.10 ~\n2025.3.12", date: true)
+                                .frame(maxWidth: .infinity)
                         }
                         HStack(spacing: 13) {
-                            InfoView(
-                                icon: FINDAImage("time"),
-                                title: "봉사 기간",
-                                content: "8시간"
-                            )
-                            .frame(maxWidth: .infinity)
-                            InfoView(
-                                icon: FINDAImage("people"),
-                                title: "활동 기간",
-                                content: "20명"
-                            )
-                            .frame(maxWidth: .infinity)
+                            InfoView(icon: FINDAImage("time"), title: "봉사 기간", content: "8시간")
+                                .frame(maxWidth: .infinity)
+                            InfoView(icon: FINDAImage("people"), title: "활동 인원", content: "20명")
+                                .frame(maxWidth: .infinity)
                         }
                     }
 
@@ -101,17 +73,7 @@ struct VolunteerPostView: View {
         .navigationBarBackButtonHidden(true)
         .toolbar(.hidden, for: .navigationBar)
 
-        FINDAButton(
-            buttonText: "신청",
-            buttonColor: Color.blue40,
-            buttonClick: {}
-        )
+        FINDAButton(buttonText: "신청", buttonColor: Color.blue40, buttonClick: {})
             .padding(20)
     }
 }
-
-#Preview {
-    VolunteerPostView()
-}
-
-#endif

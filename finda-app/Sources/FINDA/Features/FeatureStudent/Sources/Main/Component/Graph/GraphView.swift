@@ -1,6 +1,4 @@
-#if !SKIP && canImport(UIKit)
 import SwiftUI
-import Charts
 
 struct MonthlyData: Identifiable {
     let id = UUID()
@@ -19,98 +17,97 @@ struct GraphView: View {
                 .padding(.top, 15)
                 .padding(.leading, 15)
 
-            Chart(data) { item in
-                AreaMark(
-                    x: .value("월", item.month),
-                    y: .value("값", item.value)
-                )
-                .foregroundStyle(
-                    LinearGradient(
-                        gradient: Gradient(colors: [
-                            Color.blue60.opacity(0.2)
-                        ]),
-                        startPoint: .top,
-                        endPoint: .bottom
-                    )
-                )
-
-                LineMark(
-                    x: .value("월", item.month),
-                    y: .value("값", item.value)
-                )
-                .foregroundStyle(Color.blue60)
-                .lineStyle(StrokeStyle(lineWidth: 2))
-
-                PointMark(
-                    x: .value("월", item.month),
-                    y: .value("값", item.value)
-                )
-                .foregroundStyle(Color.gray10)
-                .symbolSize(100)
-
-                PointMark(
-                    x: .value("월", item.month),
-                    y: .value("값", item.value)
-                )
-                .foregroundStyle(Color.blue60)
-                .symbolSize(100)
-                .symbol {
-                    Circle()
-                        .strokeBorder(Color.blue60, lineWidth: 3)
-                        .frame(width: 10, height: 10)
-                }
-            }
-            .chartYScale(domain: 0...100)
-            .chartXScale(range: .plotDimension(startPadding: 0, endPadding: 0))
-            .chartYAxis {
-                AxisMarks(position: .leading, values: [0, 25, 50, 75, 100]) { _ in
-                    AxisGridLine(stroke: StrokeStyle(lineWidth: 1, dash: [5, 5]))
-                        .foregroundStyle(Color.gray40)
-                    AxisValueLabel()
-                        .foregroundStyle(Color.gray90)
-                }
-            }
-            .chartXAxis {
-                AxisMarks(values: .automatic) { _ in
-                    AxisGridLine(stroke: StrokeStyle(lineWidth: 1, dash: [5, 5]))
-                        .foregroundStyle(Color.gray40)
-                    AxisValueLabel()
-                        .foregroundStyle(Color.gray90)
-                }
-            }
-            .frame(height: 100)
-            .padding()
-            .onAppear {
-                loadData()
-            }
+            SimpleLineChart(data: data)
+                .frame(height: 100)
+                .padding()
         }
         .background(Color.gray20)
         .cornerRadius(10)
+        .onAppear { loadData() }
     }
 
     func loadData() {
         let calendar = Calendar.current
         let now = Date()
         var monthlyData: [MonthlyData] = []
+        let formatter = DateFormatter()
+        formatter.dateFormat = "M월"
 
         for value in (0..<5).reversed() {
             if let date = calendar.date(byAdding: .month, value: -value, to: now) {
-                let monthFormatter = DateFormatter()
-                monthFormatter.dateFormat = "M월"
-                let monthString = monthFormatter.string(from: date)
-
-                let randomValue = Double.random(in: 0...100)
-
-                monthlyData.append(MonthlyData(month: monthString, value: randomValue))
+                monthlyData.append(MonthlyData(
+                    month: formatter.string(from: date),
+                    value: Double.random(in: 0...100)
+                ))
             }
         }
-
         data = monthlyData
     }
 }
 
-#Preview {
-    GraphView()
-}
+struct SimpleLineChart: View {
+    let data: [MonthlyData]
 
-#endif
+    var body: some View {
+        GeometryReader { geo in
+            let width = geo.size.width
+            let height = geo.size.height
+            let maxValue = 100.0
+            let count = data.count
+
+            guard count > 1 else {
+                return AnyView(EmptyView())
+            }
+
+            let points: [CGPoint] = data.enumerated().map { i, item in
+                CGPoint(
+                    x: width * CGFloat(i) / CGFloat(count - 1),
+                    y: height * (1 - CGFloat(item.value / maxValue))
+                )
+            }
+
+            return AnyView(
+                ZStack {
+                    // 배경 그리드
+                    VStack(spacing: 0) {
+                        ForEach([0, 25, 50, 75, 100], id: \.self) { _ in
+                            Spacer()
+                            Rectangle()
+                                .fill(Color.gray40)
+                                .frame(height: 0.5)
+                        }
+                    }
+
+                    // 라인
+                    Path { path in
+                        path.move(to: points[0])
+                        for point in points.dropFirst() {
+                            path.addLine(to: point)
+                        }
+                    }
+                    .stroke(Color.blue60, lineWidth: 2)
+
+                    // 포인트
+                    ForEach(0..<points.count, id: \.self) { i in
+                        Circle()
+                            .strokeBorder(Color.blue60, lineWidth: 3)
+                            .frame(width: 10, height: 10)
+                            .position(points[i])
+                    }
+
+                    // X축 레이블
+                    HStack(spacing: 0) {
+                        ForEach(data) { item in
+                            Text(item.month)
+                                .font(.finda(.caption4))
+                                .foregroundColor(.gray90)
+                                .frame(maxWidth: .infinity)
+                        }
+                    }
+                    .frame(maxHeight: .infinity, alignment: .bottom)
+                    .offset(y: 16)
+                }
+            )
+        }
+    }
+}
