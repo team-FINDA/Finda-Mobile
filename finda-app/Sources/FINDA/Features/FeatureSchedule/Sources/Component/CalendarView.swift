@@ -100,7 +100,13 @@ struct CalendarView: View {
     }
 
     private func eventMap(for month: CalendarMonth) -> [Int: [MonthlyEventResponse]] {
-        Dictionary(grouping: monthlyEvents.filter { $0.month == month.month }, by: \.day)
+        var grouped: [Int: [MonthlyEventResponse]] = [:]
+
+        for event in monthlyEvents where event.month == month.month {
+            grouped[event.day, default: []].append(event)
+        }
+
+        return grouped
     }
 
     private func isSelected(_ calDay: CalendarDay) -> Bool {

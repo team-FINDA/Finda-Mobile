@@ -25,7 +25,9 @@ struct InfoView: View {
                 .lineLimit(nil)
                 .font(.finda(date ? .caption1 : .body1))
                 .foregroundColor(.gray90)
+                #if !SKIP
                 .fixedSize(horizontal: false, vertical: true)
+                #endif
         }
         .frame(maxWidth: .infinity, minHeight: 56, alignment: .topLeading)
         .padding(14)

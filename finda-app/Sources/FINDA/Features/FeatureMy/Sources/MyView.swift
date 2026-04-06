@@ -2,6 +2,14 @@ import SwiftUI
 
 struct MyView: View {
     var viewModel: MyRootViewModel
+    let dummyActivities: [VolunteerListResponse] = [
+        VolunteerListResponse(id: "1", title: "환경 지킴이 활동", startDate: "2025/04/16", endDate: "2025/07/30", status: .waiting),
+        VolunteerListResponse(id: "2", title: "환경 지킴이 활동", startDate: "2025/04/16", endDate: "2025/07/30", status: .waiting),
+        VolunteerListResponse(id: "3", title: "환경 지킴이 활동", startDate: "2025/04/16", endDate: "2025/07/30", status: .inProgress),
+        VolunteerListResponse(id: "4", title: "환경 지킴이 활동", startDate: "2025/04/16", endDate: "2025/07/30", status: .ended),
+        VolunteerListResponse(id: "5", title: "환경 지킴이 활동", startDate: "2025/04/16", endDate: "2025/07/30", status: .inProgress),
+        VolunteerListResponse(id: "6", title: "환경 지킴이 활동", startDate: "2025/04/16", endDate: "2025/07/30", status: .waiting)
+    ]
 
     private let studentName = "2216 하원"
     private let roles = ["환경지킴이", "교감쌤과 바둑두기", "화단에 물주기"]

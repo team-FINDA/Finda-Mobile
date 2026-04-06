@@ -1,14 +1,8 @@
-#if !SKIP && canImport(UIKit)
 import SwiftUI
 
 struct StudentListCell: View {
     var name: String
     var state: Bool
-
-    init(name: String, state: Bool) {
-        self.name = name
-        self.state = state
-    }
 
     var body: some View {
         HStack {
@@ -18,15 +12,13 @@ struct StudentListCell: View {
 
             Spacer()
 
-            Button(action: {}, label: {
-                Text(state ? "출석" : "미출석")
-                    .font(.finda(.caption1))
-                    .foregroundColor(state ? .green20 : .red20)
-                    .padding(.vertical, 6)
-                    .padding(.horizontal, 12)
-            })
-            .background(state ? Color.green10 : Color.red10)
-            .cornerRadius(40)
+            Text(state ? "출석" : "미출석")
+                .font(.finda(.caption1))
+                .foregroundColor(state ? .green20 : .red20)
+                .padding(.vertical, 6)
+                .padding(.horizontal, 12)
+                .background(state ? Color.green10 : Color.red10)
+                .cornerRadius(40)
         }
         .padding(16)
         .overlay(
@@ -35,9 +27,3 @@ struct StudentListCell: View {
         )
     }
 }
-
-#Preview {
-    StudentListCell(name: "2216 하원", state: true)
-}
-
-#endif

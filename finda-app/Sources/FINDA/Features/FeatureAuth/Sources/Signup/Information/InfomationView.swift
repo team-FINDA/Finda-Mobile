@@ -69,9 +69,11 @@ struct InformationView: View {
 
             Spacer()
         }
+        #if !SKIP
         .safeAreaInset(edge: .bottom) {
             Color.clear.frame(height: 32)
         }
+        #endif
         .dismissKeyboardOnTap()
         .navigationBarBackButtonHidden(true)
         .toolbar(.hidden, for: .navigationBar)

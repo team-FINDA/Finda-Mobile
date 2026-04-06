@@ -3,11 +3,11 @@ import SwiftUI
 struct NoticeDetailView: View {
     @Environment(\.dismiss) private var dismiss
 
-    enum Mode {
+    enum Mode: Hashable {
         case create
         case edit(EditData)
 
-        struct EditData {
+        struct EditData: Hashable {
             let title: String
             let content: String
             let date: String
@@ -60,7 +60,9 @@ struct NoticeDetailView: View {
                         selection: $selectedTime,
                         displayedComponents: .hourAndMinute
                     )
+                    #if !SKIP
                     .datePickerStyle(.wheel)
+                    #endif
                     .labelsHidden()
 
                     AuthTextField(

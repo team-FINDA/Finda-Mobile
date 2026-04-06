@@ -43,7 +43,7 @@ struct AlertSettingView: View {
                     FINDAImage("leftArrow").foregroundStyle(Color.gray80)
                 }
                 Spacer()
-                Text("알림 설정").font(.finda(.body1)).foregroundColor(.gray90)
+                Text("알림 설정").font(Font.finda(.body1)).foregroundColor(.gray90)
                 Spacer()
                 FINDAImage("leftArrow").opacity(0).accessibilityHidden(true)
             }
@@ -51,10 +51,10 @@ struct AlertSettingView: View {
             .padding(.vertical, 8)
 
             VStack(spacing: 40) {
-                CustomToggle(title: "공지사항", font: .finda(.subheading2), isOn: $viewModel.noticeToggleOn)
+                CustomToggle(title: "공지사항", font: Font.finda(.subheading2), isOn: $viewModel.noticeToggleOn)
                 CustomToggle(
                     title: "봉사활동 전체",
-                    font: .finda(.subheading2),
+                    font: Font.finda(.subheading2),
                     isOn: Binding(
                         get: { viewModel.totalToggleOn },
                         set: { viewModel.totalToggleChanged($0) }
@@ -65,7 +65,7 @@ struct AlertSettingView: View {
                     ForEach(viewModel.volunteerAlertItems) { item in
                         CustomToggle(
                             title: item.title,
-                            font: .finda(.body1),
+                            font: Font.finda(.body1),
                             isOn: Binding(
                                 get: { item.isOn },
                                 set: { viewModel.volunteerToggleChanged(id: item.id, isOn: $0) }

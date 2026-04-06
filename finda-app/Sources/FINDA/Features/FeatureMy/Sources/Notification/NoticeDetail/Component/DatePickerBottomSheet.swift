@@ -17,7 +17,11 @@ struct DatePickerBottomSheet: View {
                 selection: $draftDate,
                 displayedComponents: .date
             )
+            #if !SKIP
             .datePickerStyle(.wheel)
+            #endif
+            .labelsHidden()
+            .environment(\.locale, Locale(identifier: "ko_KR"))
             .labelsHidden()
             .environment(\.locale, Locale(identifier: "ko_KR"))
 

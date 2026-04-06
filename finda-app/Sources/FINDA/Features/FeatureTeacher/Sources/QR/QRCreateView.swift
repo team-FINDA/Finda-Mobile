@@ -1,5 +1,9 @@
-#if !SKIP && canImport(UIKit)
 import SwiftUI
+
+struct QRPage: Identifiable {
+    let id: String
+    let title: String
+}
 
 public struct QRCreateView: View {
     private let pages: [QRPage] = [
@@ -22,11 +26,9 @@ public struct QRCreateView: View {
 
             HStack(spacing: 10) {
                 FINDAImage("logo")
-
                 Text("학생이 QR을 찍으면\n자동으로 다른 QR로 변경됩니다!")
                     .font(.finda(.body4))
                     .foregroundColor(.gray90)
-
                 Spacer()
             }
             .padding(15)
@@ -46,8 +48,102 @@ public struct QRCreateView: View {
     }
 }
 
-#Preview {
-    QRCreateView()
+struct QRListView: View {
+    let pages: [QRPage]
+    let onGenerateRequest: (String) -> Void
+    @State private var currentPage = 0
+
+    init(pages: [QRPage], onGenerateRequest: @escaping (String) -> Void = { _ in }) {
+        self.pages = pages
+        self.onGenerateRequest = onGenerateRequest
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            if pages.indices.contains(currentPage) {
+                Text(pages[currentPage].title)
+                    .font(.finda(.subheading2))
+                    .foregroundColor(.gray90)
+                    .padding(.bottom, 12)
+            }
+
+            #if !SKIP
+            TabView(selection: $currentPage) {
+                ForEach(Array(pages.enumerated()), id: \.element.id) { index, page in
+                    QRCodeView(
+                        page: page,
+                        onGenerateButtonTapped: { onGenerateRequest($0) }
+                    )
+                    .tag(index)
+                }
+            }
+            .tabViewStyle(.page(indexDisplayMode: .never))
+            .frame(maxWidth: .infinity)
+            .aspectRatio(1, contentMode: .fit)
+            #else
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 16) {
+                    ForEach(Array(pages.enumerated()), id: \.element.id) { index, page in
+                        QRCodeView(
+                            page: page,
+                            onGenerateButtonTapped: { onGenerateRequest($0) }
+                        )
+                        .frame(width: 280, height: 280)
+                        .onTapGesture { currentPage = index }
+                    }
+                }
+                .padding(.horizontal, 24)
+            }
+            #endif
+
+            HStack {
+                Spacer()
+                PageIndicator(total: pages.count, current: currentPage)
+                Spacer()
+            }
+            .padding(.top, 12)
+        }
+    }
 }
 
-#endif
+struct QRCodeView: View {
+    let page: QRPage
+    let onGenerateButtonTapped: (String) -> Void
+
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 10)
+                .fill(Color.blue10)
+
+            Button {
+                onGenerateButtonTapped(page.id)
+            } label: {
+                Text("QR 생성하기")
+                    .font(.finda(.body3))
+                    .foregroundColor(.blue10)
+                    .padding(.horizontal, 27)
+                    .padding(.vertical, 14)
+                    .background(Capsule().fill(Color.blue50))
+            }
+        }
+        .aspectRatio(1, contentMode: .fit)
+    }
+}
+
+struct PageIndicator: View {
+    let total: Int
+    let current: Int
+
+    var body: some View {
+        HStack(spacing: 8) {
+            ForEach(0..<total, id: \.self) { index in
+                Circle()
+                    .fill(index == current ? Color.blue50 : Color.blue10)
+                    .frame(
+                        width: index == current ? 7 : 6,
+                        height: index == current ? 7 : 6
+                    )
+            }
+        }
+    }
+}

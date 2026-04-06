@@ -78,8 +78,7 @@ public struct MyRootView: View {
                     case .volunteerHistory:
                         VolunteerHistoryView()
                     case .noticeManage:
-                        NoticeManageView(onAddTapped: { viewModel.noticeAddTapped() },
-                                        onItemTapped: { viewModel.noticeItemTapped($0) })
+                        NoticeManageView()
                     case .noticeDetail(let mode):
                         NoticeDetailView(mode: mode)
                     case .alertSetting:

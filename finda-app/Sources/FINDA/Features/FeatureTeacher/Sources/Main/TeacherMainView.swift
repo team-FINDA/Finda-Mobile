@@ -1,69 +1,59 @@
-#if !SKIP && canImport(UIKit)
 import SwiftUI
-import ComposableArchitecture
+
+@Observable
+class TeacherMainViewModel {
+    var selectedActivity = "환경지킴이"
+}
 
 public struct TeacherMainView: View {
+    @State private var viewModel = TeacherMainViewModel()
+
     private let students: [(name: String, state: Bool)] = [
         ("2216 하원", false),
         ("2205 김시우", false),
         ("2207 변도휘", true)
     ]
-    @Bindable private var store: StoreOf<TeacherMainFeature>
 
-    public init(store: StoreOf<TeacherMainFeature>) {
-        self.store = store
-    }
+    public init() {}
 
     public var body: some View {
-        WithPerceptionTracking {
-            VStack(spacing: 20) {
-                MainHeaderView(
-                    name: "하원 선생님",
-                    notificationAction: { store.send(.notificationButtonTapped) },
-                    shortNotificationAction: { store.send(.shortNotificationButtonTapped) }
-                )
+        VStack(spacing: 20) {
+            MainHeaderView(
+                name: "하원 선생님",
+                notificationAction: { },
+                shortNotificationAction: { }
+            )
 
-                HStack(spacing: 12) {
-                    Button(action: { store.send(.changeButtonTapped) }, label: {
-                        HStack(spacing: 8) {
-                            Text("환경지킴이")
-                                .font(.finda(.body1))
-                                .foregroundColor(.gray90)
-
-                            FINDAImage("change")
-                        }
-                        .padding(12)
-                        .background(Color.gray20)
-                        .cornerRadius(4)
-                    })
-
-                    Text("학생")
-                        .font(.finda(.body1))
-                        .foregroundColor(.gray90)
-
-                    Spacer()
-                }
-
-                ScrollView {
-                    LazyVStack(spacing: 8) {
-                        ForEach(Array(students.enumerated()), id: \.offset) { _, student in
-                            StudentListCell(name: student.name, state: student.state)
-                        }
+            HStack(spacing: 12) {
+                Button(action: { }) {
+                    HStack(spacing: 8) {
+                        Text(viewModel.selectedActivity)
+                            .font(.finda(.body1))
+                            .foregroundColor(.gray90)
+                        FINDAImage("change")
                     }
+                    .padding(12)
+                    .background(Color.gray20)
+                    .cornerRadius(4)
                 }
+
+                Text("학생")
+                    .font(.finda(.body1))
+                    .foregroundColor(.gray90)
 
                 Spacer()
             }
-            .padding(.horizontal, 24)
+
+            ScrollView {
+                LazyVStack(spacing: 8) {
+                    ForEach(Array(students.enumerated()), id: \.offset) { _, student in
+                        StudentListCell(name: student.name, state: student.state)
+                    }
+                }
+            }
+
+            Spacer()
         }
+        .padding(.horizontal, 24)
     }
 }
-
-#Preview {
-    TeacherMainView(
-        store: Store(initialState: TeacherMainFeature.State()) {
-            TeacherMainFeature()
-        })
-}
-
-#endif
