@@ -1,29 +1,4 @@
-#if !SKIP && canImport(UIKit)
 import SwiftUI
-
-struct VolunteerListResponse: Identifiable {
-    let id: String
-    let title: String
-    let startDate: String
-    let endDate: String
-    let status: VolunteerStatus
-}
-
-enum VolunteerStatus: String, CaseIterable {
-    case all = "전체"
-    case waiting = "대기중"
-    case inProgress = "진행중"
-    case ended = "종료"
-}
-
-let dummyActivities: [VolunteerListResponse] = [
-    VolunteerListResponse(id: "1", title: "환경 지킴이 활동", startDate: "2025/04/16", endDate: "2025/07/30", status: .waiting),
-    VolunteerListResponse(id: "2", title: "환경 지킴이 활동", startDate: "2025/04/16", endDate: "2025/07/30", status: .waiting),
-    VolunteerListResponse(id: "3", title: "환경 지킴이 활동", startDate: "2025/04/16", endDate: "2025/07/30", status: .inProgress),
-    VolunteerListResponse(id: "4", title: "환경 지킴이 활동", startDate: "2025/04/16", endDate: "2025/07/30", status: .ended),
-    VolunteerListResponse(id: "5", title: "환경 지킴이 활동", startDate: "2025/04/16", endDate: "2025/07/30", status: .inProgress),
-    VolunteerListResponse(id: "6", title: "환경 지킴이 활동", startDate: "2025/04/16", endDate: "2025/07/30", status: .waiting)
-]
 
 struct VolunteerFilterListView: View {
     let activities: [VolunteerListResponse]
@@ -49,15 +24,12 @@ private struct VolunteerCell: View {
                 Text(item.title)
                     .font(.finda(.body3))
                     .foregroundColor(.gray90)
-
                 Text("\(item.startDate) ~ \(item.endDate)")
                     .font(.finda(.caption4))
                     .foregroundColor(.gray80)
             }
-
             Spacer()
-
-            StatusTag(status: item.status)
+            VolunteerStatusTag(status: item.status)
         }
         .padding(.horizontal, 20)
         .padding(.vertical, 18)
@@ -69,10 +41,10 @@ private struct VolunteerCell: View {
     }
 }
 
-private struct StatusTag: View {
+struct VolunteerStatusTag: View {
     let status: VolunteerStatus
 
-    private var borderColor: Color {
+    var borderColor: Color {
         switch status {
         case .waiting: return .blue50
         case .inProgress: return .green20
@@ -81,7 +53,7 @@ private struct StatusTag: View {
         }
     }
 
-    private var textColor: Color {
+    var textColor: Color {
         switch status {
         case .waiting: return .blue40
         case .inProgress: return .green20
@@ -90,7 +62,7 @@ private struct StatusTag: View {
         }
     }
 
-    private var backgroundColor: Color {
+    var backgroundColor: Color {
         switch status {
         case .waiting: return .blue10
         case .inProgress: return .green10
@@ -113,9 +85,3 @@ private struct StatusTag: View {
             )
     }
 }
-
-#Preview {
-    VolunteerFilterListView(activities: dummyActivities)
-}
-
-#endif

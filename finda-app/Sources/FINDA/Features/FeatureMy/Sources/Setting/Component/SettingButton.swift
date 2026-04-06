@@ -1,14 +1,13 @@
-#if !SKIP && canImport(UIKit)
 import SwiftUI
 
 struct SettingButton: View {
     var buttonText: String
-    var textColor: Color?
+    var textColor: Color
     var action: () -> Void
 
     init(
         buttonText: String,
-        textColor: Color? = Color.red20,
+        textColor: Color = Color.red20,
         action: @escaping () -> Void
     ) {
         self.buttonText = buttonText
@@ -17,16 +16,12 @@ struct SettingButton: View {
     }
 
     var body: some View {
-        Button {
-            action()
-        } label: {
+        Button(action: action) {
             HStack {
                 Text(buttonText)
                     .font(.finda(.body1))
-                    .foregroundStyle(textColor!)
-
+                    .foregroundStyle(textColor)
                 Spacer()
-
                 FINDAImage("rightArrow")
             }
             .padding(18)
@@ -35,12 +30,3 @@ struct SettingButton: View {
         }
     }
 }
-
-#Preview {
-    SettingButton(
-        buttonText: "로그아웃",
-        action: {}
-    )
-}
-
-#endif

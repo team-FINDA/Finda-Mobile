@@ -1,4 +1,3 @@
-#if !SKIP && canImport(UIKit)
 import SwiftUI
 
 struct VolunteerRoleScrollView: View {
@@ -7,13 +6,12 @@ struct VolunteerRoleScrollView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 8) {
-                ForEach(Array(roles.enumerated()), id: \.offset) { _, interest in
+                ForEach(Array(roles.enumerated()), id: \.offset) { _, role in
                     HStack(spacing: 8) {
                         Circle()
                             .fill(Color.blue40)
                             .frame(width: 4, height: 4)
-
-                        Text(interest)
+                        Text(role)
                             .font(.finda(.caption1))
                             .foregroundColor(.gray60)
                     }
@@ -22,5 +20,3 @@ struct VolunteerRoleScrollView: View {
         }
     }
 }
-
-#endif

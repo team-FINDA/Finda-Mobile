@@ -1,4 +1,3 @@
-#if !SKIP && canImport(UIKit)
 import SwiftUI
 
 struct NoticeContentEditor: View {
@@ -40,9 +39,3 @@ struct NoticeContentEditor: View {
         }
     }
 }
-
-#Preview {
-    NoticeContentEditor(text: .constant(""))
-}
-
-#endif

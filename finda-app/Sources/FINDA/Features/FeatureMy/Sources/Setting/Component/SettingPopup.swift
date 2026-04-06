@@ -1,4 +1,3 @@
-#if !SKIP && canImport(UIKit)
 import SwiftUI
 
 struct SettingPopup: View {
@@ -31,25 +30,25 @@ struct SettingPopup: View {
                 .multilineTextAlignment(.center)
 
             HStack(spacing: 16) {
-                Button(action: { cancelAction() }, label: {
+                Button(action: cancelAction) {
                     Text("취소")
                         .font(.finda(.body3))
                         .foregroundStyle(Color.gray60)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 8)
-                })
+                }
                 .background(
                     RoundedRectangle(cornerRadius: 5, style: .continuous)
                         .fill(Color.gray30)
                 )
 
-                Button(action: { okAction() }, label: {
+                Button(action: okAction) {
                     Text(title)
                         .font(.finda(.body3))
                         .foregroundStyle(Color.red20)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 8)
-                })
+                }
                 .background(
                     RoundedRectangle(cornerRadius: 5, style: .continuous)
                         .fill(Color.red10)
@@ -63,16 +62,3 @@ struct SettingPopup: View {
         )
     }
 }
-
-#Preview {
-    VStack {
-        SettingPopup(
-            title: "로그아웃",
-            content: "정말 로그아웃 하시겠습니까?\n로그아웃 시 다시 로그인해야 합니다.",
-            cancelAction: {},
-            okAction: {}
-        )
-    }.padding(.horizontal, 52)
-}
-
-#endif

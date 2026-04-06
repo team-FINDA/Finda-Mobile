@@ -1,59 +1,100 @@
-#if !SKIP && canImport(UIKit)
 import SwiftUI
-import ComposableArchitecture
+
+@Observable
+class MyRootViewModel {
+    var role: UserRole
+    var path: [MyPath] = []
+
+    enum MyPath: Hashable {
+        case setting
+        case volunteerHistory
+        case noticeManage
+        case noticeDetail(NoticeDetailView.Mode)
+        case alertSetting
+        case passwordChangeEmailVerification
+        case newPassword
+    }
+
+    init(role: UserRole) {
+        self.role = role
+    }
+
+    func settingTapped() {
+        path.append(.setting)
+    }
+
+    func myButtonTapped() {
+        if role == .student {
+            path.append(.volunteerHistory)
+        } else {
+            path.append(.noticeManage)
+        }
+    }
+
+    func alertSettingTapped() {
+        path.append(.alertSetting)
+    }
+
+    func noticeAddTapped() {
+        path.append(.noticeDetail(.create))
+    }
+
+    func noticeItemTapped(_ item: NoticeItem) {
+        path.append(.noticeDetail(.edit(.init(
+            title: item.title,
+            content: item.content,
+            date: item.date,
+            time: item.time
+        ))))
+    }
+
+    func passwordChangeTapped() {
+        path.append(.passwordChangeEmailVerification)
+    }
+
+    func passwordChangeEmailNextTapped() {
+        path.append(.newPassword)
+    }
+
+    func backToMyRoot() {
+        path = []
+    }
+}
 
 public struct MyRootView: View {
-    @Bindable private var store: StoreOf<MyRootFeature>
+    @State private var viewModel: MyRootViewModel
 
-    public init(store: StoreOf<MyRootFeature>) {
-        self.store = store
+    public init(role: UserRole) {
+        _viewModel = State(initialValue: MyRootViewModel(role: role))
     }
 
     public var body: some View {
-        WithPerceptionTracking {
-            let selectedRole = store.role
-
-            NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
-                MyView(
-                    store: store.scope(
-                        state: \.myPage,
-                        action: \.myPage
-                    )
-                )
-            } destination: { pathStore in
-                switch pathStore.case {
-                case .setting(let store):
-                    SettingView(store: store)
-
-                case .volunteerHistory(let store):
-                    VolunteerHistoryView(store: store)
-
-                case .noticeManage(let store):
-                    NoticeManageView(store: store)
-
-                case .noticeDetail(let store):
-                    NoticeDetailView(mode: store.mode)
-
-                case .alertSetting(let store):
-                    AlertSettingView(store: store)
-
-                case .passwordChangeEmailVerification(let store):
-                    PasswordChangeEmailVerificationView(store: store, selectedRole: selectedRole)
-
-                case .newPassword(let store):
-                    NewPasswordView(store: store, selectedRole: selectedRole)
+        NavigationStack(path: $viewModel.path) {
+            MyView(viewModel: viewModel)
+                .navigationDestination(for: MyRootViewModel.MyPath.self) { path in
+                    switch path {
+                    case .setting:
+                        SettingView(viewModel: viewModel)
+                    case .volunteerHistory:
+                        VolunteerHistoryView()
+                    case .noticeManage:
+                        NoticeManageView(onAddTapped: { viewModel.noticeAddTapped() },
+                                        onItemTapped: { viewModel.noticeItemTapped($0) })
+                    case .noticeDetail(let mode):
+                        NoticeDetailView(mode: mode)
+                    case .alertSetting:
+                        AlertSettingView()
+                    case .passwordChangeEmailVerification:
+                        PasswordChangeEmailVerificationView(
+                            role: viewModel.role,
+                            onNextTapped: { viewModel.passwordChangeEmailNextTapped() }
+                        )
+                    case .newPassword:
+                        NewPasswordView(
+                            onChangeTapped: { viewModel.backToMyRoot() }
+                        )
+                    }
                 }
-            }
         }
     }
 }
-
-#Preview {
-    MyRootView(
-        store: Store(initialState: MyRootFeature.State(role: .student)) {
-            MyRootFeature()
-        }
-    )
-}
-
-#endif

@@ -1,27 +1,35 @@
-#if !SKIP && canImport(UIKit)
 import SwiftUI
 
 struct NoticeDetailView: View {
     @Environment(\.dismiss) private var dismiss
-    private let mode: NoticeDetailFeature.Mode
-    private let rightButtonAction: (() -> Void)?
-    @State private var selectedTime = Date()
-    @State private var title: String = ""
-    @State private var content = ""
-    @State private var selectedDate = Date()
+
+    enum Mode {
+        case create
+        case edit(EditData)
+
+        struct EditData {
+            let title: String
+            let content: String
+            let date: String
+            let time: String
+        }
+    }
+
+    let mode: Mode
+    @State private var title: String
+    @State private var content: String
+    @State private var selectedDate: Date
+    @State private var selectedTime: Date
     @State private var isDateSheetPresented = false
 
-    init(mode: NoticeDetailFeature.Mode = .create, rightButtonAction: (() -> Void)? = nil) {
+    init(mode: Mode = .create) {
         self.mode = mode
-        self.rightButtonAction = rightButtonAction
-
         switch mode {
         case .create:
             _title = State(initialValue: "")
             _content = State(initialValue: "")
             _selectedDate = State(initialValue: Date())
             _selectedTime = State(initialValue: Date())
-
         case let .edit(data):
             _title = State(initialValue: data.title)
             _content = State(initialValue: data.content)
@@ -30,19 +38,19 @@ struct NoticeDetailView: View {
         }
     }
 
-    var body: some View {
-        let isEditMode: Bool = {
-            if case .edit = mode { return true }
-            return false
-        }()
+    var isEditMode: Bool {
+        if case .edit = mode { return true }
+        return false
+    }
 
+    var body: some View {
         VStack(spacing: 20) {
             FINDAHeader(
                 title: isEditMode ? "공지사항 수정" : "공지사항 생성",
                 leftItemImage: FINDAImage("leftArrow"),
                 leftItemAction: { dismiss() },
                 rightItemImage: isEditMode ? FINDAImage("delete") : nil,
-                rightItemAction: isEditMode ? (rightButtonAction ?? {}) : nil
+                rightItemAction: isEditMode ? { } : nil
             )
 
             ScrollView {
@@ -64,29 +72,21 @@ struct NoticeDetailView: View {
 
                     NoticeContentEditor(text: $content)
 
-                    Button(
-                        action: {
-                            isDateSheetPresented = true
-                        },
-                        label: {
-                            HStack(spacing: 8) {
-                                Text("날짜")
-                                    .font(.finda(.body2))
-                                    .foregroundStyle(Color.gray90)
-
-                                Spacer()
-
-                                Text(selectedDateText)
-                                    .font(.finda(.body4))
-                                    .foregroundStyle(Color.gray60)
-
-                                FINDAImage("rightArrow")
-                            }
-                            .padding(18)
-                            .background(Color.gray20)
-                            .clipShape(.rect(cornerRadius: 16))
+                    Button(action: { isDateSheetPresented = true }) {
+                        HStack(spacing: 8) {
+                            Text("날짜")
+                                .font(.finda(.body2))
+                                .foregroundStyle(Color.gray90)
+                            Spacer()
+                            Text(selectedDateText)
+                                .font(.finda(.body4))
+                                .foregroundStyle(Color.gray60)
+                            FINDAImage("rightArrow")
                         }
-                    )
+                        .padding(18)
+                        .background(Color.gray20)
+                        .clipShape(.rect(cornerRadius: 16))
+                    }
                 }
             }
             .padding(.horizontal, 24)
@@ -108,9 +108,7 @@ struct NoticeDetailView: View {
             .presentationDetents([.height(360)])
         }
     }
-}
 
-private extension NoticeDetailView {
     var selectedDateText: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy.MM.dd"
@@ -129,18 +127,3 @@ private extension NoticeDetailView {
         return formatter.date(from: value)
     }
 }
-
-#Preview {
-    NoticeDetailView(
-        mode: .edit(
-            .init(
-                title: "환경 지킴이 활동 안내",
-                content: "오늘은 운동장 주변 쓰레기 줍기 봉사입니다.",
-                date: "2025.07.03",
-                time: "15:10"
-            )
-        )
-    )
-}
-
-#endif

@@ -1,10 +1,9 @@
-#if !SKIP && canImport(UIKit)
 import SwiftUI
 
 struct DatePickerBottomSheet: View {
     @Environment(\.dismiss) private var dismiss
     @State private var draftDate: Date
-    private let onConfirm: (Date) -> Void
+    let onConfirm: (Date) -> Void
 
     init(selectedDate: Date, onConfirm: @escaping (Date) -> Void) {
         self._draftDate = State(initialValue: selectedDate)
@@ -30,14 +29,7 @@ struct DatePickerBottomSheet: View {
                 }
             )
             .padding(.horizontal, 24)
-            .padding(.bottom, 0)
         }
         .padding(.top, 16)
     }
 }
-
-#Preview {
-    DatePickerBottomSheet(selectedDate: Date(), onConfirm: { _ in })
-}
-
-#endif

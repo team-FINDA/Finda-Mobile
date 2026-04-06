@@ -1,75 +1,54 @@
-#if !SKIP && canImport(UIKit)
 import SwiftUI
-import ComposableArchitecture
 
 struct PasswordChangeEmailVerificationView: View {
     @Environment(\.dismiss) private var dismiss
-    @Bindable private var store: StoreOf<PasswordChangeEmailVerificationFeature>
-    private let selectedRole: UserRole?
+    let role: UserRole
+    let onNextTapped: () -> Void
+    @State private var emailText = ""
+    @State private var codeText = ""
 
-    init(
-        store: StoreOf<PasswordChangeEmailVerificationFeature>,
-        selectedRole: UserRole?
-    ) {
-        self.store = store
-        self.selectedRole = selectedRole
-    }
+    var isDisabled: Bool { emailText.isEmpty || codeText.isEmpty }
 
     var body: some View {
-        WithPerceptionTracking {
-            VStack {
-                HStack {
-                    Button(action: { dismiss() }, label: {
-                        FINDAImage("leftArrow")
-                            .foregroundStyle(Color.gray80)
-                    })
-                    Spacer()
+        VStack {
+            HStack {
+                Button(action: { dismiss() }) {
+                    FINDAImage("leftArrow").foregroundStyle(Color.gray80)
                 }
-                .padding(.horizontal, 24)
-                .padding(.vertical, 8)
-
-                Text("비밀번호 변경")
-                    .font(.finda(.heading4))
-                    .foregroundStyle(Color.gray80)
-                    .padding(.bottom, 64)
-
-                VStack(spacing: 32) {
-                    AuthTextField(
-                        type: selectedRole == .student ? .schoolVerificationEmail : .verificationEmail,
-                        placeholder: selectedRole == .student ? "example" : "이메일을 입력해주세요",
-                        text: $store.emailText
-                    )
-                    AuthTextField(
-                        type: .base,
-                        placeholder: "인증 코드를 입력해주세요",
-                        label: "인증 코드",
-                        text: $store.codeText
-                    )
-
-                    FINDAButton(
-                        buttonText: "다음",
-                        isDisabled: store.nextButtonIsDisabled,
-                        buttonClick: { store.send(.nextButtonTapped) }
-                    )
-                }
-                .padding(.horizontal, 24)
-
                 Spacer()
             }
-            .dismissKeyboardOnTap()
-            .navigationBarBackButtonHidden(true)
-            .toolbar(.hidden, for: .navigationBar)
+            .padding(.horizontal, 24)
+            .padding(.vertical, 8)
+
+            Text("비밀번호 변경")
+                .font(.finda(.heading4))
+                .foregroundStyle(Color.gray80)
+                .padding(.bottom, 64)
+
+            VStack(spacing: 32) {
+                AuthTextField(
+                    type: role == .student ? .schoolVerificationEmail : .verificationEmail,
+                    placeholder: role == .student ? "example" : "이메일을 입력해주세요",
+                    text: $emailText
+                )
+                AuthTextField(
+                    type: .base,
+                    placeholder: "인증 코드를 입력해주세요",
+                    label: "인증 코드",
+                    text: $codeText
+                )
+                FINDAButton(
+                    buttonText: "다음",
+                    isDisabled: isDisabled,
+                    buttonClick: { onNextTapped() }
+                )
+            }
+            .padding(.horizontal, 24)
+
+            Spacer()
         }
+        .dismissKeyboardOnTap()
+        .navigationBarBackButtonHidden(true)
+        .toolbar(.hidden, for: .navigationBar)
     }
 }
-
-#Preview {
-    PasswordChangeEmailVerificationView(
-        store: Store(initialState: PasswordChangeEmailVerificationFeature.State()) {
-            PasswordChangeEmailVerificationFeature()
-        },
-        selectedRole: .student
-    )
-}
-
-#endif

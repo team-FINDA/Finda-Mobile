@@ -1,10 +1,7 @@
-#if !SKIP && canImport(UIKit)
 import SwiftUI
-import ComposableArchitecture
 
 struct VolunteerHistoryView: View {
     @Environment(\.dismiss) private var dismiss
-    @Bindable private var store: StoreOf<VolunteerHistoryFeature>
 
     private let historyItems: [VolunteerHistoryItem] = [
         .init(title: "환경지킴이", date: "2025.12.28", time: 2),
@@ -12,57 +9,42 @@ struct VolunteerHistoryView: View {
         .init(title: "조기 귀가", date: "2025.10.02", time: 0.1)
     ]
 
-    init(store: StoreOf<VolunteerHistoryFeature>) {
-        self.store = store
-    }
-
     var body: some View {
-        WithPerceptionTracking {
-            VStack(spacing: 20) {
-                HStack {
-                    Button(action: { dismiss() }, label: {
-                        FINDAImage("leftArrow")
-                            .foregroundStyle(Color.gray80)
-                    })
-
-                    Spacer()
-
-                    Text("봉사활동 내역")
-                        .font(.finda(.body1))
-                        .foregroundColor(.gray90)
-
-                    Spacer()
-
-                    FINDAImage("leftArrow")
-                        .opacity(0)
-                        .accessibilityHidden(true)
+        VStack(spacing: 20) {
+            HStack {
+                Button(action: { dismiss() }) {
+                    FINDAImage("leftArrow").foregroundStyle(Color.gray80)
                 }
-                .padding(.horizontal, 24)
-                .padding(.vertical, 8)
-
-                VStack {
-                    TotalTimeView(volunteerTime: 102.1)
-
-                    ScrollView(showsIndicators: false) {
-                        LazyVStack(spacing: 12) {
-                            ForEach(historyItems) { item in
-                                HistoryListCell(
-                                    title: item.title,
-                                    date: item.date,
-                                    time: item.time
-                                )
-                            }
-                        }
-                        .padding(.top, 20)
-                        .padding(.bottom, 12)
-                    }
-                }
-                .padding(.horizontal, 24)
+                Spacer()
+                Text("봉사활동 내역").font(.finda(.body1)).foregroundColor(.gray90)
+                Spacer()
+                FINDAImage("leftArrow").opacity(0).accessibilityHidden(true)
             }
-            .navigationBarBackButtonHidden(true)
-            .toolbar(.hidden, for: .navigationBar)
-            .toolbar(.hidden, for: .tabBar)
+            .padding(.horizontal, 24)
+            .padding(.vertical, 8)
+
+            VStack {
+                TotalTimeView(volunteerTime: 102.1)
+
+                ScrollView(showsIndicators: false) {
+                    LazyVStack(spacing: 12) {
+                        ForEach(historyItems) { item in
+                            HistoryListCell(
+                                title: item.title,
+                                date: item.date,
+                                time: item.time
+                            )
+                        }
+                    }
+                    .padding(.top, 20)
+                    .padding(.bottom, 12)
+                }
+            }
+            .padding(.horizontal, 24)
         }
+        .navigationBarBackButtonHidden(true)
+        .toolbar(.hidden, for: .navigationBar)
+        .toolbar(.hidden, for: .tabBar)
     }
 }
 
@@ -72,13 +54,3 @@ private struct VolunteerHistoryItem: Identifiable {
     let date: String
     let time: Float
 }
-
-#Preview {
-    VolunteerHistoryView(
-        store: Store(initialState: VolunteerHistoryFeature.State()) {
-            VolunteerHistoryFeature()
-        }
-    )
-}
-
-#endif

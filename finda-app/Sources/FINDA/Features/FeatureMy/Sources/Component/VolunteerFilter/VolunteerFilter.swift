@@ -1,4 +1,3 @@
-#if !SKIP && canImport(UIKit)
 import SwiftUI
 
 struct VolunteerFilterView: View {
@@ -9,10 +8,9 @@ struct VolunteerFilterView: View {
             ForEach(VolunteerStatus.allCases, id: \.self) { filter in
                 FilterCell(
                     title: filter.rawValue,
-                    isSelected: selectedFilter == filter
-                ) {
-                    selectedFilter = filter
-                }
+                    isSelected: selectedFilter == filter,
+                    onTap: { selectedFilter = filter }
+                )
             }
             Spacer()
         }
@@ -38,5 +36,3 @@ private struct FilterCell: View {
         }
     }
 }
-
-#endif
