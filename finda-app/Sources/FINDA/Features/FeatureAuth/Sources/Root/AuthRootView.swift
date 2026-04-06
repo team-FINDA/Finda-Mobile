@@ -1,48 +1,78 @@
-#if !SKIP && canImport(UIKit)
 import SwiftUI
-import ComposableArchitecture
+
+@Observable
+class AuthViewModel {
+    var selectedRole: UserRole?
+    var path: [AuthPath] = []
+    
+    enum AuthPath: Hashable {
+        case signin(UserRole)
+        case signupUserSelect
+        case secretKey
+        case emailVerification
+        case information
+    }
+    
+    func studentSigninTapped() {
+        selectedRole = .student
+        path.append(.signin(.student))
+    }
+    
+    func teacherSigninTapped() {
+        selectedRole = .teacher
+        path.append(.signin(.teacher))
+    }
+    
+    func signupTapped() {
+        path.append(.signupUserSelect)
+    }
+    
+    func studentSignupTapped() {
+        selectedRole = .student
+        path.append(.emailVerification)
+    }
+    
+    func teacherSignupTapped() {
+        selectedRole = .teacher
+        path.append(.secretKey)
+    }
+    
+    func secretKeyNextTapped() {
+        path.append(.emailVerification)
+    }
+    
+    func emailVerificationNextTapped() {
+        path.append(.information)
+    }
+    
+    func backToRoot() {
+        selectedRole = nil
+        path = []
+    }
+}
 
 public struct AuthRootView: View {
-    @Bindable private var store: StoreOf<AuthRootFeature>
-
-    public init(store: StoreOf<AuthRootFeature>) {
-        self.store = store
-    }
-
+    @State private var viewModel = AuthViewModel()
+    
+    public init() {}
+    
     public var body: some View {
-        WithPerceptionTracking {
-            let selectedRole = store.selectedRole
-            NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
-                SigninUserSelectView(
-                    store: store.scope(
-                        state: \.signinUserSelect,
-                        action: \.signinUserSelect
-                    )
-                )
-            } destination: { store in
-                switch store.case {
-                case .signin(let store):
-                    SigninView(store: store)
-                case .signupUserSelect(let store):
-                    SignupUserSelectView(store: store)
-                case .secretKey(let store):
-                    SecretKeyView(store: store, selectedRole: selectedRole)
-                case .emailVerification(let store):
-                    EmailVerificationView(store: store, selectedRole: selectedRole)
-                case .information(let store):
-                    InformationView(store: store, selectedRole: selectedRole)
+        NavigationStack(path: $viewModel.path) {
+            SigninUserSelectView(viewModel: viewModel)
+                .navigationDestination(for: AuthViewModel.AuthPath.self) { path in
+                    switch path {
+                    case .signin(let role):
+                        SigninView(role: role, viewModel: viewModel)
+                    case .signupUserSelect:
+                        SignupUserSelectView(viewModel: viewModel)
+                    case .secretKey:
+                        SecretKeyView(viewModel: viewModel)
+                    case .emailVerification:
+                        EmailVerificationView(viewModel: viewModel)
+                    case .information:
+                        InformationView(viewModel: viewModel)
+                    }
                 }
-            }
         }
     }
 }
-
-#Preview {
-    AuthRootView(
-        store: Store(initialState: AuthRootFeature.State()) {
-            AuthRootFeature()
-        }
-    )
-}
-
-#endif

@@ -1,74 +1,53 @@
-#if !SKIP && canImport(UIKit)
 import SwiftUI
-import ComposableArchitecture
 
 struct SecretKeyView: View {
+    var viewModel: AuthViewModel
+    @State private var secretKeyText = ""
     @Environment(\.dismiss) private var dismiss
-    @Bindable private var store: StoreOf<SecretKeyFeature>
-    private let selectedRole: UserRole?
 
-    init(
-        store: StoreOf<SecretKeyFeature>,
-        selectedRole: UserRole?
-    ) {
-        self.store = store
-        self.selectedRole = selectedRole
-    }
+    var isDisabled: Bool { secretKeyText.isEmpty }
 
     var body: some View {
-        WithPerceptionTracking {
-            VStack {
-                HStack {
-                    Button(action: { dismiss() }, label: {
-                        FINDAImage("leftArrow")
-                            .foregroundStyle(Color.gray80)
-                    })
-                    Spacer()
+        VStack {
+            HStack {
+                Button(action: { dismiss() }) {
+                    FINDAImage("leftArrow")
+                        .foregroundStyle(Color.gray80)
                 }
-                .padding(.horizontal, 24)
-                .padding(.vertical, 8)
-
-                Text("회원가입")
-                    .font(.finda(.heading4))
-                    .foregroundStyle(Color.gray80)
-                    .padding(.bottom, 64)
-
-                VStack(spacing: 32) {
-                    AuthTextField(
-                        type: .base,
-                        placeholder: "시크릿 키를 입력해주세요",
-                        label: "시크릿 키",
-                        text: $store.secretKeyText
-                    )
-                    FINDAButton(
-                        buttonText: "다음",
-                        isDisabled: store.signupButtonIsDisabled,
-                        buttonClick: { store.send(.nextButtonTapped) }
-                    )
-                    AuthPromptButton(
-                        promptText: "계정이 있으신가요?",
-                        buttonText: "로그인",
-                        action: { store.send(.signinButtonTapped) }
-                    )
-                }
-                .padding(.horizontal, 24)
-
                 Spacer()
             }
-            .dismissKeyboardOnTap()
-            .navigationBarBackButtonHidden(true)
-            .toolbar(.hidden, for: .navigationBar)
+            .padding(.horizontal, 24)
+            .padding(.vertical, 8)
+
+            Text("회원가입")
+                .font(.finda(.heading4))
+                .foregroundStyle(Color.gray80)
+                .padding(.bottom, 64)
+
+            VStack(spacing: 32) {
+                AuthTextField(
+                    type: .base,
+                    placeholder: "시크릿 키를 입력해주세요",
+                    label: "시크릿 키",
+                    text: $secretKeyText
+                )
+                FINDAButton(
+                    buttonText: "다음",
+                    isDisabled: isDisabled,
+                    buttonClick: { viewModel.secretKeyNextTapped() }
+                )
+                AuthPromptButton(
+                    promptText: "계정이 있으신가요?",
+                    buttonText: "로그인",
+                    action: { viewModel.backToRoot() }
+                )
+            }
+            .padding(.horizontal, 24)
+
+            Spacer()
         }
+        .dismissKeyboardOnTap()
+        .navigationBarBackButtonHidden(true)
+        .toolbar(.hidden, for: .navigationBar)
     }
 }
-
-#Preview {
-    SecretKeyView(
-        store: Store(initialState: SecretKeyFeature.State()) {
-            SecretKeyFeature()
-        },
-        selectedRole: .student
-    )
-}
-
-#endif

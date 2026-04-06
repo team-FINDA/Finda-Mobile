@@ -1,56 +1,48 @@
-#if !SKIP && canImport(UIKit)
 import SwiftUI
-import ComposableArchitecture
 
 struct InformationView: View {
+    var viewModel: AuthViewModel
+    @State private var nameText = ""
+    @State private var passwordText = ""
+    @State private var passwordConfirmText = ""
     @Environment(\.dismiss) private var dismiss
-    @Bindable private var store: StoreOf<InformationFeature>
-    private let selectedRole: UserRole?
 
-    init(
-        store: StoreOf<InformationFeature>,
-        selectedRole: UserRole?
-    ) {
-        self.store = store
-        self.selectedRole = selectedRole
+    var isDisabled: Bool {
+        nameText.isEmpty ||
+        passwordText.isEmpty ||
+        passwordConfirmText.isEmpty ||
+        passwordText != passwordConfirmText
     }
 
     var body: some View {
-        WithPerceptionTracking {
-            VStack {
-                HStack {
-                    Button(action: { dismiss() }, label: {
-                        FINDAImage("leftArrow")
-                            .foregroundStyle(Color.gray80)
-                    })
-                    Spacer()
+        VStack {
+            HStack {
+                Button(action: { dismiss() }) {
+                    FINDAImage("leftArrow")
+                        .foregroundStyle(Color.gray80)
                 }
-                .padding(.horizontal, 24)
-                .padding(.vertical, 8)
-
-            ViewThatFits(in: .vertical) {
-                Text("회원가입")
-                    .font(.finda(.heading4))
-                    .foregroundStyle(Color.gray80)
-                    .padding(.bottom, 64)
-                Text("회원가입")
-                    .font(.finda(.heading4))
-                    .foregroundStyle(Color.gray80)
-                    .padding(.bottom, 48)
+                Spacer()
             }
+            .padding(.horizontal, 24)
+            .padding(.vertical, 8)
+
+            Text("회원가입")
+                .font(.finda(.heading4))
+                .foregroundStyle(Color.gray80)
+                .padding(.bottom, 64)
 
             VStack(spacing: 32) {
                 AuthTextField(
                     type: .base,
-                    placeholder: selectedRole == .student ? "ex. 2216 하원" : "실명을 입력해주세요",
-                    label: selectedRole == .student ? "학번 이름" : "이름",
-                    text: $store.nameText
+                    placeholder: viewModel.selectedRole == .student ? "ex. 2216 하원" : "실명을 입력해주세요",
+                    label: viewModel.selectedRole == .student ? "학번 이름" : "이름",
+                    text: $nameText
                 )
                 VStack(alignment: .leading, spacing: 4) {
                     AuthTextField(
                         type: .password,
                         placeholder: "비밀번호를 입력해주세요",
-                        text: $store.passwordText
+                        text: $passwordText
                     )
                     Text("비밀번호는 이런이런이런 형식으로 ㄱㄱ")
                         .font(.finda(.body4))
@@ -60,41 +52,28 @@ struct InformationView: View {
                     type: .password,
                     placeholder: "비밀번호를 다시 입력해주세요",
                     label: "비밀번호 확인",
-                    text: $store.passwordConfirmText
+                    text: $passwordConfirmText
                 )
-
                 FINDAButton(
                     buttonText: "회원가입",
-                    isDisabled: store.signupButtonIsDisabled,
-                    buttonClick: { store.send(.signupButtonTapped) }
+                    isDisabled: isDisabled,
+                    buttonClick: { }
                 )
                 AuthPromptButton(
                     promptText: "계정이 있으신가요?",
                     buttonText: "로그인",
-                    action: { store.send(.signinButtonTapped) }
+                    action: { viewModel.backToRoot() }
                 )
             }
             .padding(.horizontal, 24)
 
-                Spacer()
-            }
-            .safeAreaInset(edge: .bottom) {
-                Color.clear.frame(height: 32)
-            }
-            .dismissKeyboardOnTap()
-            .navigationBarBackButtonHidden(true)
-            .toolbar(.hidden, for: .navigationBar)
+            Spacer()
         }
+        .safeAreaInset(edge: .bottom) {
+            Color.clear.frame(height: 32)
+        }
+        .dismissKeyboardOnTap()
+        .navigationBarBackButtonHidden(true)
+        .toolbar(.hidden, for: .navigationBar)
     }
 }
-
-#Preview {
-    InformationView(
-        store: Store(initialState: InformationFeature.State()) {
-            InformationFeature()
-        },
-        selectedRole: .student
-    )
-}
-
-#endif
