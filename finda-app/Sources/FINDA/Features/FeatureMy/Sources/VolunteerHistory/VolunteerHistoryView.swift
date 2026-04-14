@@ -4,9 +4,9 @@ struct VolunteerHistoryView: View {
     @Environment(\.dismiss) private var dismiss
 
     private let historyItems: [VolunteerHistoryItem] = [
-        .init(title: "환경지킴이", date: "2025.12.28", time: 2),
-        .init(title: "iOS 멘토링", date: "2026.02.21", time: 100),
-        .init(title: "조기 귀가", date: "2025.10.02", time: 0.1)
+        .init(title: "환경지킴이", date: "2025.12.28", time: 2.0 as Float),
+        .init(title: "iOS 멘토링", date: "2026.02.21", time: 100.0 as Float),
+        .init(title: "조기 귀가", date: "2025.10.02", time: 0.1 as Float)
     ]
 
     var body: some View {
@@ -24,7 +24,7 @@ struct VolunteerHistoryView: View {
             .padding(.vertical, 8)
 
             VStack {
-                TotalTimeView(volunteerTime: 102.1)
+                TotalTimeView(volunteerTime: 102.1 as Float)
 
                 ScrollView(showsIndicators: false) {
                     LazyVStack(spacing: 12) {

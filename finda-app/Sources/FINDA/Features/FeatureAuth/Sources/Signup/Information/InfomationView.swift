@@ -57,7 +57,7 @@ struct InformationView: View {
                 FINDAButton(
                     buttonText: "회원가입",
                     isDisabled: isDisabled,
-                    buttonClick: { }
+                    buttonClick: { viewModel.completeSignup() }
                 )
                 AuthPromptButton(
                     promptText: "계정이 있으신가요?",

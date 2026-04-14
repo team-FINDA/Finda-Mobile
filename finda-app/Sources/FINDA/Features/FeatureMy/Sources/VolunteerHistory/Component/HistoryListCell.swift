@@ -22,6 +22,6 @@ struct HistoryListCell: View {
         }
         .padding(20)
         .background(Color.gray20)
-        .clipShape(.rect(cornerRadius: 10))
+        .cornerRadius(10)
     }
 }

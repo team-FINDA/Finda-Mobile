@@ -14,7 +14,7 @@ struct InfoView: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: date ? 8 : 12) {
+        VStack(alignment: .leading, spacing: date ? 8.0 : 12.0) {
             HStack(spacing: 5) {
                 icon
                 Text(title)
@@ -25,15 +25,12 @@ struct InfoView: View {
                 .lineLimit(nil)
                 .font(.finda(date ? .caption1 : .body1))
                 .foregroundColor(.gray90)
-                #if !SKIP
-                .fixedSize(horizontal: false, vertical: true)
-                #endif
         }
         .frame(maxWidth: .infinity, minHeight: 56, alignment: .topLeading)
         .padding(14)
-        .overlay(
+        .overlay{
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.gray70, lineWidth: 0.5)
-        )
+        }
     }
 }

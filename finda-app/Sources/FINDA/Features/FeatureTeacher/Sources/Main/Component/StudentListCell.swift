@@ -9,9 +9,7 @@ struct StudentListCell: View {
             Text(name)
                 .font(.finda(.body1))
                 .foregroundColor(.gray90)
-
             Spacer()
-
             Text(state ? "출석" : "미출석")
                 .font(.finda(.caption1))
                 .foregroundColor(state ? .green20 : .red20)
@@ -21,9 +19,9 @@ struct StudentListCell: View {
                 .cornerRadius(40)
         }
         .padding(16)
-        .overlay(
+        .overlay{
             RoundedRectangle(cornerRadius: 5)
                 .strokeBorder(state ? Color.green20 : Color.red20, lineWidth: 0.8)
-        )
+        }
     }
 }

@@ -140,8 +140,8 @@ struct PageIndicator: View {
                 Circle()
                     .fill(index == current ? Color.blue50 : Color.blue10)
                     .frame(
-                        width: index == current ? 7 : 6,
-                        height: index == current ? 7 : 6
+                        width: index == current ? 7.0 : 6.0,
+                        height: index == current ? 7.0 : 6.0
                     )
             }
         }

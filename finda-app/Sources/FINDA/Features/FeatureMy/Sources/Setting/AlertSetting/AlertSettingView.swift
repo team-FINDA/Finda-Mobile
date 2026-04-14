@@ -58,7 +58,7 @@ struct AlertSettingView: View {
                     isOn: Binding(
                         get: { viewModel.totalToggleOn },
                         set: { viewModel.totalToggleChanged($0) }
-                    )
+                    )                                                                                                                                                                                                                                                                                                                                 
                 )
 
                 VStack(spacing: 20) {

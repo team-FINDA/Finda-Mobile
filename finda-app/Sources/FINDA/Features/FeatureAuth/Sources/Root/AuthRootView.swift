@@ -4,6 +4,11 @@ import SwiftUI
 class AuthViewModel {
     var selectedRole: UserRole?
     var path: [AuthPath] = []
+    private let onAuthenticated: ((UserRole) -> Void)?
+
+    init(onAuthenticated: ((UserRole) -> Void)? = nil) {
+        self.onAuthenticated = onAuthenticated
+    }
     
     enum AuthPath: Hashable {
         case signin(UserRole)
@@ -49,12 +54,24 @@ class AuthViewModel {
         selectedRole = nil
         path = []
     }
+
+    func completeAuthentication(role: UserRole) {
+        selectedRole = role
+        onAuthenticated?(role)
+    }
+
+    func completeSignup() {
+        guard let role = selectedRole else { return }
+        onAuthenticated?(role)
+    }
 }
 
 public struct AuthRootView: View {
-    @State private var viewModel = AuthViewModel()
-    
-    public init() {}
+    @State private var viewModel: AuthViewModel
+
+    public init(onAuthenticated: ((UserRole) -> Void)? = nil) {
+        _viewModel = State(initialValue: AuthViewModel(onAuthenticated: onAuthenticated))
+    }
     
     public var body: some View {
         NavigationStack(path: $viewModel.path) {

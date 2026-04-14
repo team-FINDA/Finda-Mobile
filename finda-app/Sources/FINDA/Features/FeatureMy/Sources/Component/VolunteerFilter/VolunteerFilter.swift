@@ -29,7 +29,7 @@ private struct FilterCell: View {
                 .foregroundColor(isSelected ? .blue40 : .gray50)
                 .padding(.horizontal, 14)
                 .padding(.vertical, 8)
-                .overlay(
+                .background(
                     RoundedRectangle(cornerRadius: 20)
                         .strokeBorder(isSelected ? Color.blue40 : Color.gray50)
                 )

@@ -32,10 +32,10 @@ struct NoticeContentEditor: View {
             }
             .background(Color.gray20)
             .cornerRadius(16)
-            .overlay(
+            .overlay {
                 RoundedRectangle(cornerRadius: 16)
-                    .stroke(isFocused ? Color.blue50 : Color.gray20, lineWidth: 1)
-            )
+                    .strokeBorder(isFocused ? Color.blue50 : Color.gray20, lineWidth: 1)
+            }
         }
     }
 }

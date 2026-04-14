@@ -1,41 +1,54 @@
-#if !SKIP && canImport(UIKit)
 import SwiftUI
-import ComposableArchitecture
+
+enum Tab: Hashable {
+    case QRCode
+    case main
+    case schedule
+    case profile
+}
+
+@Observable
+final class MainTabViewModel {
+    let role: UserRole
+    var selectedTab: Tab = .main
+
+    init(role: UserRole) {
+        self.role = role
+    }
+}
 
 struct MainTabView: View {
-    @Bindable private var store: StoreOf<MainTabFeature>
+    @State private var viewModel: MainTabViewModel
 
-    init(store: StoreOf<MainTabFeature>) {
-        self.store = store
+    init(role: UserRole) {
+        _viewModel = State(initialValue: MainTabViewModel(role: role))
     }
 
     var body: some View {
-        WithPerceptionTracking {
-            TabView(selection: $store.selectedTab) {
-                QRTabView(role: store.role)
-                    .tabItem {
-                        Image(store.selectedTab == .QRCode ? "tabbarQR" : "tabbarQRNot")
-                    }
-                    .tag(Tab.QRCode)
+        TabView(selection: $viewModel.selectedTab) {
+            QRTabView(role: viewModel.role)
+                .tabItem {
+                    Image(viewModel.selectedTab == .QRCode ? "tabbarQR" : "tabbarQRNot")
+                }
+                .tag(Tab.QRCode)
 
-                HomeTabView(role: store.role, store: store)
-                    .tabItem {
-                        Image(store.selectedTab == .main ? "tabbarLogo" : "tabbarLogoNot")
-                    }
-                    .tag(Tab.main)
+            HomeTabView(role: viewModel.role)
+                .tabItem {
+                    Image(viewModel.selectedTab == .main ? "tabbarLogo" : "tabbarLogoNot")
+                }
+                .tag(Tab.main)
 
-                ScheduleTabView(role: store.role)
-                    .tabItem {
-                        Image(store.selectedTab == .schedule ? "tabbarCalendar" : "tabbarCalendarNot")
-                    }
-                    .tag(Tab.schedule)
+            ScheduleTabView(role: viewModel.role)
+                .tabItem {
+                    Image(viewModel.selectedTab == .schedule ? "tabbarCalendar" : "tabbarCalendarNot")
+                }
+                .tag(Tab.schedule)
 
-                ProfileTabView(store: store)
-                    .tabItem {
-                        Image(store.selectedTab == .profile ? "tabbarPerson" : "tabbarPersonNot")
-                    }
-                    .tag(Tab.profile)
-            }
+            ProfileTabView(role: viewModel.role)
+                .tabItem {
+                    Image(viewModel.selectedTab == .profile ? "tabbarPerson" : "tabbarPersonNot")
+                }
+                .tag(Tab.profile)
         }
     }
 }
@@ -55,24 +68,13 @@ private struct QRTabView: View {
 
 private struct HomeTabView: View {
     let role: UserRole
-    let store: StoreOf<MainTabFeature>
 
     var body: some View {
         switch role {
         case .student:
-            StudentMainView(
-                store: store.scope(
-                    state: \.studentMain,
-                    action: \.studentMain
-                )
-            )
+            StudentMainView()
         case .teacher:
-            TeacherMainView(
-                store: store.scope(
-                    state: \.teacherMain,
-                    action: \.teacherMain
-                )
-            )
+            TeacherMainView()
         }
     }
 }
@@ -86,23 +88,13 @@ private struct ScheduleTabView: View {
 }
 
 private struct ProfileTabView: View {
-    let store: StoreOf<MainTabFeature>
+    let role: UserRole
 
     var body: some View {
-        MyRootView(
-            store: store.scope(
-                state: \.myPage,
-                action: \.myPage
-            )
-        )
+        MyRootView(role: role)
     }
 }
 
 #Preview {
-    MainTabView(
-        store: Store(initialState: MainTabFeature.State(role: .student)) {
-            MainTabFeature()
-        }
-    )
+    MainTabView(role: .student)
 }
-#endif

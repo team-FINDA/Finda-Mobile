@@ -1,4 +1,3 @@
-#if !SKIP && canImport(UIKit)
 import SwiftUI
 
 struct SplashView: View {
@@ -10,4 +9,3 @@ struct SplashView: View {
 #Preview {
     SplashView()
 }
-#endif

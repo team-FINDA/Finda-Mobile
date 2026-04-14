@@ -87,7 +87,7 @@ struct NoticeDetailView: View {
                         }
                         .padding(18)
                         .background(Color.gray20)
-                        .clipShape(.rect(cornerRadius: 16))
+                        .clipShape(RoundedRectangle(cornerRadius: 16))
                     }
                 }
             }

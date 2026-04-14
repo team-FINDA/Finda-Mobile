@@ -60,20 +60,20 @@ struct VolunteerPostView: View {
                         Spacer()
                     }
                     .padding(12)
-                    .overlay(
+                    .overlay{
                         RoundedRectangle(cornerRadius: 10)
                             .strokeBorder(Color.gray70, lineWidth: 0.5)
-                    )
+                    }
 
                     Spacer()
                 }
                 .padding(.horizontal, 24)
             }
+
+            FINDAButton(buttonText: "신청", buttonColor: Color.blue40, buttonClick: {})
+                .padding(20)
         }
         .navigationBarBackButtonHidden(true)
         .toolbar(.hidden, for: .navigationBar)
-
-        FINDAButton(buttonText: "신청", buttonColor: Color.blue40, buttonClick: {})
-            .padding(20)
     }
 }

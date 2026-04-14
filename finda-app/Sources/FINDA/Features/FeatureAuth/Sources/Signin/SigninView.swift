@@ -42,7 +42,7 @@ struct SigninView: View {
                 FINDAButton(
                     buttonText: "로그인",
                     isDisabled: isDisabled,
-                    buttonClick: { }
+                    buttonClick: { viewModel.completeAuthentication(role: role) }
                 )
                 AuthPromptButton(
                     promptText: "계정이 없으신가요?",

@@ -141,7 +141,7 @@ struct DayCellView: View {
                         .background(Circle().fill(isToday ? Color.blue20 : Color.clear))
 
                     Circle()
-                        .fill(Color.blue30.opacity(calDay.hasEvents ? 1 : 0))
+                        .fill(Color.blue30.opacity(calDay.hasEvents ? 1.0 : 0.0))
                         .frame(width: 4, height: 4)
                 }
             }

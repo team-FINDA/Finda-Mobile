@@ -19,7 +19,7 @@ private struct VolunteerCell: View {
     let item: VolunteerListResponse
 
     var body: some View {
-        HStack(alignment: .center) {
+        HStack(alignment: .center) { // Return type mismatch: expected 'ComposeResult', actual 'View'.
             VStack(alignment: .leading, spacing: 6) {
                 Text(item.title)
                     .font(.finda(.body3))
@@ -33,11 +33,12 @@ private struct VolunteerCell: View {
         }
         .padding(.horizontal, 20)
         .padding(.vertical, 18)
+        .background(Color.gray10)
         .cornerRadius(5)
-        .overlay(
+        .overlay {
             RoundedRectangle(cornerRadius: 5)
                 .strokeBorder(Color.gray40, lineWidth: 0.8)
-        )
+        }
     }
 }
 
@@ -72,16 +73,16 @@ struct VolunteerStatusTag: View {
     }
 
     var body: some View {
-        Text(status.rawValue)
+        Text(status.rawValue) // Return type mismatch: expected 'ComposeResult', actual 'View'.
             .font(.finda(.caption1))
             .foregroundColor(textColor)
             .padding(.horizontal, 7)
             .padding(.vertical, 8)
             .background(backgroundColor)
-            .clipShape(RoundedRectangle(cornerRadius: 15))
-            .overlay(
+            .cornerRadius(15)
+            .overlay {
                 RoundedRectangle(cornerRadius: 15)
                     .strokeBorder(borderColor, lineWidth: 0.5)
-            )
+            }
     }
 }

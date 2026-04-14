@@ -19,7 +19,7 @@ struct NoticeAlertListCell: View {
                 FINDAImage("notification")
                     .padding(8)
                     .background(Color.blue10)
-                    .clipShape(.rect(cornerRadius: 8))
+                    .cornerRadius(8)
 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(title)

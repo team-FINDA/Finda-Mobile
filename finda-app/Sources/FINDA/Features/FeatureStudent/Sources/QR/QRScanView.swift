@@ -1,20 +1,17 @@
+import Foundation
 import SwiftUI
 
 public struct QRScanView: View {
     @State private var scannedURI: String = ""
     @State private var isShowingScanAlert = false
+    @State private var manualEntryCode = ""
+    @State private var isShowingManualEntrySheet = false
 
     public init() {}
 
     public var body: some View {
-        #if !SKIP
         ZStack {
-            QRScannerRepresentable(isPopupPresented: isShowingScanAlert) { code in
-                guard !isShowingScanAlert else { return }
-                scannedURI = code
-                isShowingScanAlert = true
-            }
-            .ignoresSafeArea()
+            scannerSurface
 
             if isShowingScanAlert {
                 Color.black.opacity(0.6)
@@ -27,26 +24,112 @@ public struct QRScanView: View {
                 .padding(.horizontal, 64)
             }
         }
-        #else
-        VStack(spacing: 20) {
-            Image(systemName: "qrcode.viewfinder")
-                .font(.system(size: 80))
-                .foregroundColor(.gray50)
-            Text("QR 스캔")
-                .font(.finda(.heading4))
-                .foregroundColor(.gray80)
-            Text("카메라로 QR코드를 스캔해주세요")
-                .font(.finda(.body3))
-                .foregroundColor(.gray60)
+        .sheet(isPresented: $isShowingManualEntrySheet) {
+            ManualQREntrySheet(code: $manualEntryCode) {
+                let normalized = manualEntryCode.trimmingCharacters(in: .whitespacesAndNewlines)
+                guard !normalized.isEmpty else { return }
+                scannedURI = normalized
+                isShowingManualEntrySheet = false
+                isShowingScanAlert = true
+            }
         }
+    }
+
+    @ViewBuilder
+    private var scannerSurface: some View {
+        #if canImport(UIKit) && canImport(AVFoundation)
+        QRScannerRepresentable(isPopupPresented: isShowingScanAlert) { code in
+            guard !isShowingScanAlert else { return }
+            scannedURI = code
+            isShowingScanAlert = true
+        }
+        .ignoresSafeArea()
+        #else
+        VStack(spacing: 16) {
+            ZStack {
+                RoundedRectangle(cornerRadius: 24, style: .continuous)
+                    .fill(Color.gray90)
+
+                VStack(spacing: 12) {
+                    Image(systemName: "qrcode.viewfinder")
+                        .font(.system(size: 72))
+                        .foregroundColor(.gray20)
+                    Text("QR 스캔")
+                        .font(.finda(.heading4))
+                        .foregroundColor(.gray10)
+                    Text("Android에서는 QR 값을 입력해서 동일하게 진행할 수 있어요")
+                        .font(.finda(.body4))
+                        .foregroundColor(.gray30)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 12)
+                }
+                .padding(24)
+            }
+            .aspectRatio(3.0 / 4.0, contentMode: .fit)
+
+            Button {
+                manualEntryCode = ""
+                isShowingManualEntrySheet = true
+            } label: {
+                Text("QR 코드 입력")
+                    .font(.finda(.caption1))
+                    .foregroundStyle(Color.gray10)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 14)
+            }
+            .background(Color.blue40)
+            .clipShape(RoundedRectangle(cornerRadius: 32, style: .continuous))
+        }
+        .padding(.horizontal, 24)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.black.ignoresSafeArea())
         #endif
     }
 }
 
-#if !SKIP
-import UIKit
+private struct ManualQREntrySheet: View {
+    @Binding var code: String
+    let submit: () -> Void
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
+        VStack(spacing: 16) {
+            Text("QR 코드 입력")
+                .font(.finda(.subheading2))
+                .foregroundStyle(Color.gray90)
+
+            TextField("QR 내용을 입력하세요", text: $code)
+                .textFieldStyle(.roundedBorder)
+
+            HStack(spacing: 12) {
+                Button("취소") {
+                    dismiss()
+                }
+                .font(.finda(.body3))
+                .foregroundStyle(Color.gray70)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 12)
+                .background(Color.gray20)
+                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+
+                Button("완료") {
+                    submit()
+                }
+                .font(.finda(.body3))
+                .foregroundStyle(Color.gray10)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 12)
+                .background(Color.blue40)
+                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+            }
+        }
+        .padding(24)
+    }
+}
+
+#if canImport(UIKit) && canImport(AVFoundation)
 import AVFoundation
+import UIKit
 
 struct QRScannerRepresentable: UIViewControllerRepresentable {
     let isPopupPresented: Bool

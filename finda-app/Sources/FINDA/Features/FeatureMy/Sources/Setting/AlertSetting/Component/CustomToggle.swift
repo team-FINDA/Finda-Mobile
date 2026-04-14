@@ -1,4 +1,3 @@
-#if !SKIP && canImport(UIKit)
 import SwiftUI
 
 struct CustomToggle: View {
@@ -6,29 +5,15 @@ struct CustomToggle: View {
     var font: Font
     @Binding var isOn: Bool
 
-    init(title: String, font: Font, isOn: Binding<Bool>) {
-        self.title = title
-        self.font = font
-        self._isOn = isOn
-    }
-
     var body: some View {
         HStack {
             Text(title)
                 .font(font)
                 .foregroundStyle(Color.gray90)
-
             Spacer()
-
             Toggle(title, isOn: $isOn)
                 .labelsHidden()
-                .toggleStyle(SwitchToggleStyle(tint: Color.blue30))
+                .tint(Color.blue30)
         }
     }
 }
-
-#Preview {
-    CustomToggle(title: "공지사항", font: .finda(.subheading2), isOn: .constant(false))
-}
-
-#endif

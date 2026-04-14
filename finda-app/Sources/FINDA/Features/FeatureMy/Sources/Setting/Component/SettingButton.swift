@@ -26,7 +26,7 @@ struct SettingButton: View {
             }
             .padding(18)
             .background(Color.gray20)
-            .clipShape(.rect(cornerRadius: 16))
+            .cornerRadius(16)
         }
     }
 }

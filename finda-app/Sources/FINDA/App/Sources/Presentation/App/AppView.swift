@@ -1,48 +1,45 @@
-#if !SKIP && canImport(UIKit)
 import SwiftUI
-import ComposableArchitecture
 
-struct AppView: View {
-    private let store: StoreOf<AppFeature>
+@Observable
+final class AppViewModel {
+    var isShowingSplash = true
+    var role: UserRole?
 
-    init(store: StoreOf<AppFeature>) {
-        self.store = store
+    func splashFinished() {
+        isShowingSplash = false
     }
 
+    func didAuthenticate(role: UserRole) {
+        self.role = role
+    }
+}
+
+struct AppView: View {
+    @State private var viewModel = AppViewModel()
+
     var body: some View {
-        WithPerceptionTracking {
-            ZStack {
-                Group {
-                    if let store = store.scope(
-                        state: \.mainTab,
-                        action: \.mainTab
-                    ) {
-                        MainTabView(store: store)
-                            .transition(.opacity)
-                    } else {
-                        AuthRootView(
-                            store: store.scope(
-                                state: \.authRoot,
-                                action: \.authRoot
-                            )
-                        )
-                        .transition(.opacity)
+        ZStack {
+            Group {
+                if let role = viewModel.role {
+                    MainTabView(role: role)
+                } else {
+                    AuthRootView { role in
+                        viewModel.didAuthenticate(role: role)
                     }
                 }
-                .opacity(store.isShowingSplash ? 0 : 1)
-
-                if store.isShowingSplash {
-                    SplashView()
-                        .transition(.opacity)
-                        .zIndex(1)
-                }
             }
-            .onAppear {
-                store.send(.onAppear)
+            .opacity(viewModel.isShowingSplash ? 0.0 : 1.0)
+            if viewModel.isShowingSplash {
+                SplashView()
+                    .zIndex(1)
             }
-            .animation(.easeInOut(duration: 0.3), value: store.isShowingSplash)
-            .animation(.easeInOut(duration: 0.35), value: store.mainTab != nil)
+        }
+        .task {
+            guard viewModel.isShowingSplash else { return }
+            try? await Task.sleep(for: .seconds(1.2))
+            await MainActor.run {
+                viewModel.splashFinished()
+            }
         }
     }
 }
-#endif
