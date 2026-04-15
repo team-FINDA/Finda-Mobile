@@ -33,5 +33,6 @@ struct SigninUserSelectView: View {
         }
         .navigationBarBackButtonHidden(true)
         .toolbar(.hidden, for: .navigationBar)
+        .background(Color.gray10)
     }
 }
