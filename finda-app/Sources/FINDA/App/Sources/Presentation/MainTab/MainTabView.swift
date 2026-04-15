@@ -28,25 +28,37 @@ struct MainTabView: View {
         TabView(selection: $viewModel.selectedTab) {
             QRTabView(role: viewModel.role)
                 .tabItem {
-                    Image(viewModel.selectedTab == .QRCode ? "tabbarQR" : "tabbarQRNot")
+                    Image(viewModel.selectedTab == .QRCode ? "tabbarQR" : "tabbarQRNot", bundle: .module)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 24, height: 24)
                 }
                 .tag(Tab.QRCode)
 
             HomeTabView(role: viewModel.role)
                 .tabItem {
-                    Image(viewModel.selectedTab == .main ? "tabbarLogo" : "tabbarLogoNot")
+                    Image(viewModel.selectedTab == .main ? "tabbarLogo" : "tabbarLogoNot", bundle: .module)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 24, height: 24)
                 }
                 .tag(Tab.main)
 
             ScheduleTabView(role: viewModel.role)
                 .tabItem {
-                    Image(viewModel.selectedTab == .schedule ? "tabbarCalendar" : "tabbarCalendarNot")
+                    Image(viewModel.selectedTab == .schedule ? "tabbarCalendar" : "tabbarCalendarNot", bundle: .module)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 24, height: 24)
                 }
                 .tag(Tab.schedule)
 
             ProfileTabView(role: viewModel.role)
                 .tabItem {
-                    Image(viewModel.selectedTab == .profile ? "tabbarPerson" : "tabbarPersonNot")
+                    Image(viewModel.selectedTab == .profile ? "tabbarPerson" : "tabbarPersonNot", bundle: .module)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 24, height: 24)
                 }
                 .tag(Tab.profile)
         }
