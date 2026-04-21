@@ -44,29 +44,42 @@ public struct AuthTextField: View {
                 .foregroundColor(Color.gray80)
 
             HStack(spacing: 4) {
-                Group {
-                    if type == .password && !isPasswordVisible {
-                        SecureField(placeholder, text: $text)
-                            .focused($isFocused)
-                    } else {
+                if type == .password {
+                    ZStack(alignment: .trailing) {
+                        Group {
+                            if !isPasswordVisible {
+                                SecureField(placeholder, text: $text)
+                                    .focused($isFocused)
+                            } else {
+                                TextField(placeholder, text: $text)
+                                    .focused($isFocused)
+                            }
+                        }
+                        .textFieldStyle(.plain)
+                        .font(.system(size: 15))
+                        .foregroundColor(textColor)
+                        .padding(.trailing, 28)
+
+                        Button {
+                            isPasswordVisible.toggle()
+                        } label: {
+                            if isPasswordVisible {
+                                FINDAImage("eyeOpen")
+                            } else {
+                                FINDAImage("eyeOff")
+                            }
+                        }
+                        .buttonStyle(.plain)
+                    }
+                } else {
+                    Group {
                         TextField(placeholder, text: $text)
                             .focused($isFocused)
                     }
-                }
-                .font(.system(size: 15))
-                .foregroundColor(textColor)
+                    .textFieldStyle(.plain)
+                    .font(.system(size: 15))
+                    .foregroundColor(textColor)
 
-                if type == .password {
-                    Button {
-                        isPasswordVisible.toggle()
-                    } label: {
-                        (
-                            isPasswordVisible
-                            ? FINDAImage("eyeOpen")
-                            : FINDAImage("eyeOff")
-                        )
-                    }
-                } else {
                     if type == .schoolEmail || type == .schoolVerificationEmail {
                         Text("@dsm.hs.kr")
                             .font(.finda(.body2))
@@ -91,10 +104,14 @@ public struct AuthTextField: View {
                     }
                 }
             }
+            #if SKIP
+            .padding(.leading, -16)
+            .padding(.vertical, -17)
+            .padding(.trailing, 0)
+            #endif
             .padding(.horizontal, 16)
             .padding(.vertical, 17)
-            .background(Color.gray20)
-            .cornerRadius(16)
+            .background(Color.gray20, in: RoundedRectangle(cornerRadius: 16))
             .overlay(alignment: .center) {
                 RoundedRectangle(cornerRadius: 16)
                     .stroke(borderColor, lineWidth: 1)

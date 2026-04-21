@@ -22,11 +22,9 @@ public struct UserSelectButton: View {
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical, 36)
-            .background(
-                RoundedRectangle(cornerRadius: 16)
-                    .fill(Color.blue10)
-            )
+            .background(Color.blue10, in: RoundedRectangle(cornerRadius: 16))
         }
+        .buttonStyle(.plain)
     }
 }
 
