@@ -36,6 +36,8 @@ public struct StudentMainView: View {
                     VolunteerListView()
                 }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            .background(Color.Gray.gray10.ignoresSafeArea())
         }
     }
 }

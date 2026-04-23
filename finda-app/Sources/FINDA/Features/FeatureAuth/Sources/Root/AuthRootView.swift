@@ -91,5 +91,7 @@ public struct AuthRootView: View {
                     }
                 }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .background(Color.gray10.ignoresSafeArea())
     }
 }

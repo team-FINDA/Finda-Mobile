@@ -62,6 +62,8 @@ struct MainTabView: View {
                 }
                 .tag(Tab.profile)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .background(Color.gray10.ignoresSafeArea())
     }
 }
 

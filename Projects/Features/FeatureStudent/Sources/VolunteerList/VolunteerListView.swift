@@ -68,6 +68,8 @@ struct VolunteerListView: View {
         .navigationDestination(isPresented: $isShowingVolunteerPost) {
             VolunteerPostView()
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .background(Color.Gray.gray10.ignoresSafeArea())
     }
 }
 

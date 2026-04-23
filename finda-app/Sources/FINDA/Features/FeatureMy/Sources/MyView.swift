@@ -45,13 +45,15 @@ struct MyView: View {
             }
 
             Button(action: { viewModel.myButtonTapped() }) {
-                Text(viewModel.role == .student ? "봉사 활동 내역 확인" : "공지사항 관리/생성")
-                    .font(.finda(.body1))
-                    .foregroundColor(.blue50)
-                Spacer()
-                FINDAImage("rightArrow")
-                    .renderingMode(.template)
-                    .foregroundColor(.blue50)
+                HStack {
+                    Text(viewModel.role == .student ? "봉사 활동 내역 확인" : "공지사항 관리/생성")
+                        .font(.finda(.body1))
+                        .foregroundColor(.blue50)
+                    Spacer()
+                    FINDAImage("rightArrow")
+                        .renderingMode(.template)
+                        .foregroundColor(.blue50)
+                }
             }
             .padding(18)
             .background(Color.blue10)
@@ -65,5 +67,7 @@ struct MyView: View {
         .toolbar(.hidden, for: .navigationBar)
         .padding(.horizontal, 24)
         .padding(.top, 24)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .background(Color.gray10.ignoresSafeArea())
     }
 }

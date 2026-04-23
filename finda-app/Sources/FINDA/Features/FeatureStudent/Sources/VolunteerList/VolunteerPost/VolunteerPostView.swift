@@ -73,6 +73,8 @@ struct VolunteerPostView: View {
             FINDAButton(buttonText: "신청", buttonColor: Color.blue40, buttonClick: {})
                 .padding(20)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .background(Color.gray10.ignoresSafeArea())
         .navigationBarBackButtonHidden(true)
         .toolbar(.hidden, for: .navigationBar)
     }

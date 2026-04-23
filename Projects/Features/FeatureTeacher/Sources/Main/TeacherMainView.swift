@@ -55,6 +55,8 @@ public struct TeacherMainView: View {
                 Spacer()
             }
             .padding(.horizontal, 24)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            .background(Color.Gray.gray10.ignoresSafeArea())
         }
     }
 }

@@ -28,5 +28,7 @@ public struct QRScanView: View {
                 .padding(.horizontal, 64)
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .background(Color.Gray.gray10.ignoresSafeArea())
     }
 }

@@ -51,10 +51,7 @@ public struct MainHeaderView: View {
             }
             .padding(.horizontal, 12)
             .padding(.vertical, 9)
-            .background(
-                RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .fill(Color.blue10)
-            )
+            .background(Color.blue10, in: RoundedRectangle(cornerRadius: 20))
             .onTapGesture { shortNotificationAction() }
         }
     }

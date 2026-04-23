@@ -1,6 +1,7 @@
 import SwiftUI
 import ComposableArchitecture
 import FeatureAuth
+import DesignSystem
 
 struct AppView: View {
     private let store: StoreOf<AppFeature>
@@ -37,6 +38,8 @@ struct AppView: View {
                         .zIndex(1)
                 }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            .background(Color.Gray.gray10.ignoresSafeArea())
             .onAppear {
                 store.send(.onAppear)
             }

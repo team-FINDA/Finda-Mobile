@@ -1,5 +1,6 @@
 import SwiftUI
 import ComposableArchitecture
+import DesignSystem
 
 public struct AuthRootView: View {
     @Perception.Bindable private var store: StoreOf<AuthRootFeature>
@@ -32,6 +33,8 @@ public struct AuthRootView: View {
                     InformationView(store: store, selectedRole: selectedRole)
                 }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            .background(Color.Gray.gray10.ignoresSafeArea())
         }
     }
 }

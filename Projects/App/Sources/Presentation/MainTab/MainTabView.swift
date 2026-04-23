@@ -5,6 +5,7 @@ import FeatureSchedule
 import FeatureStudent
 import FeatureTeacher
 import Shared
+import DesignSystem
 
 struct MainTabView: View {
     @Perception.Bindable private var store: StoreOf<MainTabFeature>
@@ -40,6 +41,8 @@ struct MainTabView: View {
                     }
                     .tag(Tab.profile)
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            .background(Color.Gray.gray10.ignoresSafeArea())
         }
     }
 }

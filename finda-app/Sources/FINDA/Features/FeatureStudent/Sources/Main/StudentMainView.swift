@@ -20,19 +20,23 @@ public struct StudentMainView: View {
 
     public var body: some View {
         NavigationStack(path: $viewModel.path) {
-            ScrollView {
-                VStack(spacing: 20) {
-                    MainHeaderView(
-                        name: "2216 하원",
-                        notificationAction: { },
-                        shortNotificationAction: { }
-                    )
-                    TotalTimeView(volunteerTime: Float(16.0))
-                    GraphView()
-                    VolunteerSearchButton(action: { viewModel.volunteerFindTapped() })
-                    Spacer()
+            ZStack {
+                Color.gray10.ignoresSafeArea()
+
+                ScrollView {
+                    VStack(spacing: 20) {
+                        MainHeaderView(
+                            name: "2216 하원",
+                            notificationAction: { },
+                            shortNotificationAction: { }
+                        )
+                        TotalTimeView(volunteerTime: Float(16.0))
+                        GraphView()
+                        VolunteerSearchButton(action: { viewModel.volunteerFindTapped() })
+                        Spacer()
+                    }
+                    .padding(.horizontal, 24.5)
                 }
-                .padding(.horizontal, 24.5)
             }
             .navigationDestination(for: StudentMainViewModel.StudentPath.self) { path in
                 switch path {
@@ -41,5 +45,7 @@ public struct StudentMainView: View {
                 }
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .background(Color.gray10.ignoresSafeArea())
     }
 }

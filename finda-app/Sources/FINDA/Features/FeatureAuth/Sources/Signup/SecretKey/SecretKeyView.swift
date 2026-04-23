@@ -47,6 +47,8 @@ struct SecretKeyView: View {
             Spacer()
         }
         .dismissKeyboardOnTap()
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .background(Color.gray10.ignoresSafeArea())
         .navigationBarBackButtonHidden(true)
         .toolbar(.hidden, for: .navigationBar)
     }

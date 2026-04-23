@@ -57,6 +57,8 @@ struct PasswordChangeEmailVerificationView: View {
 
                 Spacer()
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            .background(Color.Gray.gray10.ignoresSafeArea())
             .dismissKeyboardOnTap()
             .navigationBarBackButtonHidden(true)
             .toolbar(.hidden, for: .navigationBar)

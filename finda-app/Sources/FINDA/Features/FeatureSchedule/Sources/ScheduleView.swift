@@ -75,5 +75,7 @@ public struct ScheduleView: View {
             .padding(.horizontal, 24)
             .padding(.vertical, 20)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .background(Color.gray10.ignoresSafeArea())
     }
 }

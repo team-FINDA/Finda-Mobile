@@ -45,6 +45,8 @@ public struct QRCreateView: View {
             Spacer()
         }
         .padding(.horizontal, 24)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .background(Color.gray10.ignoresSafeArea())
     }
 }
 

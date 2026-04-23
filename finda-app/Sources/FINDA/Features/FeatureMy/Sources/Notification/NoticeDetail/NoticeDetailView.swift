@@ -101,6 +101,8 @@ struct NoticeDetailView: View {
             .padding(.bottom, 32)
             .padding(.horizontal, 24)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .background(Color.gray10.ignoresSafeArea())
         .navigationBarBackButtonHidden(true)
         .toolbar(.hidden, for: .navigationBar)
         .sheet(isPresented: $isDateSheetPresented) {

@@ -1,5 +1,6 @@
 import SwiftUI
 import ComposableArchitecture
+import DesignSystem
 
 public struct MyRootView: View {
     @Perception.Bindable private var store: StoreOf<MyRootFeature>
@@ -43,6 +44,8 @@ public struct MyRootView: View {
                     NewPasswordView(store: store, selectedRole: selectedRole)
                 }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            .background(Color.Gray.gray10.ignoresSafeArea())
         }
     }
 }
