@@ -5,12 +5,12 @@ import Foundation
 struct HistoryListCell: View {
     var title: String
     var date: String
-    var time: Float
+    var time: Double
 
     init(
         title: String,
         date: String,
-        time: Float
+        time: Double
     ) {
         self.title = title
         self.date = date
@@ -31,13 +31,20 @@ struct HistoryListCell: View {
 
             Spacer()
 
-            Text("+ \(String(format: "%.1f", time))시간")
+            Text("+ \(oneDecimalString(time))시간")
                 .font(.finda(.body3))
                 .foregroundStyle(Color.Blue.blue50)
         }
         .padding(20)
         .background(Color.Gray.gray20)
         .clipShape(.rect(cornerRadius: 10))
+    }
+
+    private func oneDecimalString(_ value: Double) -> String {
+        let scaled = Int((value * 10).rounded())
+        let integerPart = scaled / 10
+        let decimalPart = abs(scaled % 10)
+        return "\(integerPart).\(decimalPart)"
     }
 }
 

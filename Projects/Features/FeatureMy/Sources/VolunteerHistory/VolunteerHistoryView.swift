@@ -72,7 +72,7 @@ private struct VolunteerHistoryItem: Identifiable {
     let id = UUID()
     let title: String
     let date: String
-    let time: Float
+    let time: Double
 }
 
 #Preview {

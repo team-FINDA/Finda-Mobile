@@ -30,7 +30,7 @@ public struct StudentMainView: View {
                             notificationAction: { },
                             shortNotificationAction: { }
                         )
-                        TotalTimeView(volunteerTime: Float(16.0))
+                        TotalTimeView(volunteerTime: 16.0)
                         GraphView()
                         VolunteerSearchButton(action: { viewModel.volunteerFindTapped() })
                         Spacer()

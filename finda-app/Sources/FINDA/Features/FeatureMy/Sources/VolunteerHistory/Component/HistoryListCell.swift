@@ -3,7 +3,7 @@ import SwiftUI
 struct HistoryListCell: View {
     var title: String
     var date: String
-    var time: Float
+    var time: Double
 
     var body: some View {
         HStack {
@@ -16,12 +16,19 @@ struct HistoryListCell: View {
                     .foregroundStyle(Color.gray50)
             }
             Spacer()
-            Text("+ \(String(format: "%.1f", time))시간")
+            Text("+ \(oneDecimalString(time))시간")
                 .font(.finda(.body3))
                 .foregroundStyle(Color.blue50)
         }
         .padding(20)
         .background(Color.gray20)
         .cornerRadius(10)
+    }
+
+    private func oneDecimalString(_ value: Double) -> String {
+        let scaled = Int((value * 10).rounded())
+        let integerPart = scaled / 10
+        let decimalPart = abs(scaled % 10)
+        return "\(integerPart).\(decimalPart)"
     }
 }
