@@ -60,6 +60,7 @@ public struct ScheduleView: View {
                                     Text(event.eventName)
                                         .font(.finda(.caption1))
                                         .foregroundColor(.gray90)
+                                    Spacer()
                                 }
                                 .padding(.vertical, 8)
                             }

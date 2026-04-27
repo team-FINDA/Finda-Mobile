@@ -32,10 +32,7 @@ struct CalendarView: View {
         }
         .padding(.horizontal, 20)
         .padding(.vertical, 24)
-        .background(
-            RoundedRectangle(cornerRadius: 10)
-                .fill(Color.gray20)
-        )
+        .background(Color.gray20, in: RoundedRectangle(cornerRadius: 10))
         .onAppear {
             guard !didSendInitialSelection else { return }
             didSendInitialSelection = true
@@ -134,11 +131,16 @@ struct DayCellView: View {
             VStack(spacing: 2) {
                 if let date = calDay.date {
                     let dayNum = Calendar.current.component(.day, from: date)
-                    Text("\(dayNum)")
-                        .font(.finda(.body4))
-                        .foregroundColor(.gray90)
-                        .frame(width: 28, height: 28)
-                        .background(Circle().fill(isToday ? Color.blue20 : Color.clear))
+                    ZStack {
+                        Circle()
+                            .fill(isToday ? Color.blue20 : Color.clear)
+                            .frame(width: 28, height: 28)
+
+                        Text("\(dayNum)")
+                            .font(.finda(.body4))
+                            .foregroundColor(.gray90)
+                    }
+                    .frame(width: 28, height: 28)
 
                     Circle()
                         .fill(Color.blue30.opacity(calDay.hasEvents ? 1.0 : 0.0))
@@ -146,10 +148,7 @@ struct DayCellView: View {
                 }
             }
             .frame(width: 36, height: 42)
-            .background(
-                RoundedRectangle(cornerRadius: 5)
-                    .fill((isSelected && !isToday) ? Color.blue10 : Color.clear)
-            )
+            .background((isSelected && !isToday) ? Color.blue10 : Color.clear, in: RoundedRectangle(cornerRadius: 5))
         }
         .buttonStyle(.plain)
     }

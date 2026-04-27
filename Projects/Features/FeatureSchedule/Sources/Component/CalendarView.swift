@@ -210,11 +210,16 @@ struct DayCellView: View {
             VStack(spacing: 2) {
                 if let date = calDay.date {
                     let dayNum = Calendar.current.component(.day, from: date)
-                    Text("\(dayNum)")
-                        .font(.finda(.body4))
-                        .foregroundColor(.Gray.gray90)
-                        .frame(width: 28, height: 28)
-                        .background(Circle().fill(isToday ? Color.Blue.blue20 : .clear))
+                    ZStack {
+                        Circle()
+                            .fill(isToday ? Color.Blue.blue20 : .clear)
+                            .frame(width: 28, height: 28)
+
+                        Text("\(dayNum)")
+                            .font(.finda(.body4))
+                            .foregroundColor(.Gray.gray90)
+                    }
+                    .frame(width: 28, height: 28)
 
                     Circle()
                         .fill(
