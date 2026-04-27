@@ -40,5 +40,6 @@ let package = Package(
             "FINDA",
             .product(name: "SkipTest", package: "skip")
         ], resources: [.process("Resources")], plugins: [.plugin(name: "skipstone", package: "skip")]),
-    ]
+    ],
+    swiftLanguageModes: [.v5]
 )
