@@ -16,36 +16,37 @@ public struct QRCreateView: View {
     public init() {}
 
     public var body: some View {
-        VStack(spacing: 16) {
-            HStack {
-                Text("QR 코드 생성")
-                    .font(.finda(.body1))
-                    .foregroundColor(.gray90)
-            }
-            .padding(.vertical, 12)
-
-            HStack(spacing: 10) {
-                FINDAImage("logo")
-                Text("학생이 QR을 찍으면\n자동으로 다른 QR로 변경됩니다!")
-                    .font(.finda(.body4))
-                    .foregroundColor(.gray90)
-                Spacer()
-            }
-            .padding(15)
-            .background(Color.blue10)
-            .cornerRadius(10)
-
-            QRListView(
-                pages: pages,
-                onGenerateRequest: { pageID in
-                    selectedPageID = pageID
+        ScrollView {
+            VStack(spacing: 16) {
+                HStack {
+                    Text("QR 코드 생성")
+                        .font(.finda(.body1))
+                        .foregroundColor(.gray90)
                 }
-            )
+                .padding(.vertical, 12)
 
-            Spacer()
+                HStack(spacing: 10) {
+                    FINDAImage("logo")
+                    Text("학생이 QR을 찍으면\n자동으로 다른 QR로 변경됩니다!")
+                        .font(.finda(.body4))
+                        .foregroundColor(.gray90)
+                    Spacer()
+                }
+                .padding(15)
+                .background(Color.blue10)
+                .cornerRadius(10)
+
+                QRListView(
+                    pages: pages,
+                    onGenerateRequest: { pageID in
+                        selectedPageID = pageID
+                    }
+                )
+            }
+            .padding(.horizontal, 24)
+            .padding(.top, 24)
+            .frame(maxWidth: .infinity, alignment: .top)
         }
-        .padding(.horizontal, 24)
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .background(Color.gray10.ignoresSafeArea())
     }
 }
