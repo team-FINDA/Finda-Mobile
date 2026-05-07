@@ -35,7 +35,7 @@ struct AppView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .background(Color.gray10.ignoresSafeArea())
+        .background(Color.gray10)
         .task {
             guard viewModel.isShowingSplash else { return }
             try? await Task.sleep(for: .seconds(1.2))

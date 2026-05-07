@@ -25,45 +25,48 @@ struct MainTabView: View {
     }
 
     var body: some View {
-        TabView(selection: $viewModel.selectedTab) {
-            QRTabView(role: viewModel.role)
-                .tabItem {
-                    Image(viewModel.selectedTab == .QRCode ? "tabbarQR" : "tabbarQRNot", bundle: .module)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 24, height: 24)
-                }
-                .tag(Tab.QRCode)
+        ZStack {
+            Color.gray10
 
-            HomeTabView(role: viewModel.role)
-                .tabItem {
-                    Image(viewModel.selectedTab == .main ? "tabbarLogo" : "tabbarLogoNot", bundle: .module)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 24, height: 24)
-                }
-                .tag(Tab.main)
+            TabView(selection: $viewModel.selectedTab) {
+                QRTabView(role: viewModel.role)
+                    .tabItem {
+                        Image(viewModel.selectedTab == .QRCode ? "tabbarQR" : "tabbarQRNot", bundle: .module)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 24, height: 24)
+                    }
+                    .tag(Tab.QRCode)
 
-            ScheduleTabView(role: viewModel.role)
-                .tabItem {
-                    Image(viewModel.selectedTab == .schedule ? "tabbarCalendar" : "tabbarCalendarNot", bundle: .module)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 24, height: 24)
-                }
-                .tag(Tab.schedule)
+                HomeTabView(role: viewModel.role)
+                    .tabItem {
+                        Image(viewModel.selectedTab == .main ? "tabbarLogo" : "tabbarLogoNot", bundle: .module)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 24, height: 24)
+                    }
+                    .tag(Tab.main)
 
-            ProfileTabView(role: viewModel.role)
-                .tabItem {
-                    Image(viewModel.selectedTab == .profile ? "tabbarPerson" : "tabbarPersonNot", bundle: .module)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 24, height: 24)
-                }
-                .tag(Tab.profile)
+                ScheduleTabView(role: viewModel.role)
+                    .tabItem {
+                        Image(viewModel.selectedTab == .schedule ? "tabbarCalendar" : "tabbarCalendarNot", bundle: .module)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 24, height: 24)
+                    }
+                    .tag(Tab.schedule)
+
+                ProfileTabView(role: viewModel.role)
+                    .tabItem {
+                        Image(viewModel.selectedTab == .profile ? "tabbarPerson" : "tabbarPersonNot", bundle: .module)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 24, height: 24)
+                    }
+                    .tag(Tab.profile)
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .background(Color.gray10.ignoresSafeArea())
     }
 }
 

@@ -16,38 +16,41 @@ public struct QRCreateView: View {
     public init() {}
 
     public var body: some View {
-        ScrollView {
-            VStack(spacing: 16) {
-                HStack {
-                    Text("QR 코드 생성")
-                        .font(.finda(.body1))
-                        .foregroundColor(.gray90)
-                }
-                .padding(.vertical, 12)
+        ZStack {
+            Color.gray10
 
-                HStack(spacing: 10) {
-                    FINDAImage("logo")
-                    Text("학생이 QR을 찍으면\n자동으로 다른 QR로 변경됩니다!")
-                        .font(.finda(.body4))
-                        .foregroundColor(.gray90)
-                    Spacer()
-                }
-                .padding(15)
-                .background(Color.blue10)
-                .cornerRadius(10)
-
-                QRListView(
-                    pages: pages,
-                    onGenerateRequest: { pageID in
-                        selectedPageID = pageID
+            ScrollView {
+                VStack(spacing: 16) {
+                    HStack {
+                        Text("QR 코드 생성")
+                            .font(.finda(.body1))
+                            .foregroundColor(.gray90)
                     }
-                )
+                    .padding(.vertical, 12)
+
+                    HStack(spacing: 10) {
+                        FINDAImage("logo")
+                        Text("학생이 QR을 찍으면\n자동으로 다른 QR로 변경됩니다!")
+                            .font(.finda(.body4))
+                            .foregroundColor(.gray90)
+                        Spacer()
+                    }
+                    .padding(15)
+                    .background(Color.blue10)
+                    .cornerRadius(10)
+
+                    QRListView(
+                        pages: pages,
+                        onGenerateRequest: { pageID in
+                            selectedPageID = pageID
+                        }
+                    )
+                }
+                .padding(.horizontal, 24)
+                .padding(.top, 24)
+                .frame(maxWidth: .infinity, alignment: .top)
             }
-            .padding(.horizontal, 24)
-            .padding(.top, 24)
-            .frame(maxWidth: .infinity, alignment: .top)
         }
-        .background(Color.gray10.ignoresSafeArea())
     }
 }
 
@@ -84,19 +87,32 @@ struct QRListView: View {
             .frame(maxWidth: .infinity)
             .aspectRatio(1, contentMode: .fit)
             #else
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 16) {
-                    ForEach(Array(pages.enumerated()), id: \.element.id) { index, page in
+            GeometryReader { geo in
+                ZStack {
+                    if pages.indices.contains(currentPage) {
                         QRCodeView(
-                            page: page,
+                            page: pages[currentPage],
                             onGenerateButtonTapped: { onGenerateRequest($0) }
                         )
-                        .frame(width: 280, height: 280)
-                        .onTapGesture { currentPage = index }
+                        .frame(width: geo.size.width, height: geo.size.width)
                     }
                 }
-                .padding(.horizontal, 24)
+                .frame(width: geo.size.width, height: geo.size.width, alignment: .leading)
+                .clipped()
+                .gesture(
+                    DragGesture(minimumDistance: 20)
+                        .onEnded { value in
+                            if value.translation.width < -40, currentPage < pages.count - 1 {
+                                currentPage += 1
+                            } else if value.translation.width > 40, currentPage > 0 {
+                                currentPage -= 1
+                            }
+                        }
+                )
+                .animation(.easeInOut(duration: 0.2), value: currentPage)
             }
+            .frame(maxWidth: .infinity)
+            .aspectRatio(1, contentMode: .fit)
             #endif
 
             HStack {
@@ -126,7 +142,8 @@ struct QRCodeView: View {
                     .foregroundColor(.blue10)
                     .padding(.horizontal, 27)
                     .padding(.vertical, 14)
-                    .background(Capsule().fill(Color.blue50))
+                    .background(Color.blue50)
+                    .clipShape(Capsule())
             }
         }
         .aspectRatio(1, contentMode: .fit)
