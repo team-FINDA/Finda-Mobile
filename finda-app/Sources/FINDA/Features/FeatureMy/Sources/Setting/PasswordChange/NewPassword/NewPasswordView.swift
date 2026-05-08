@@ -58,5 +58,7 @@ struct NewPasswordView: View {
         .dismissKeyboardOnTap()
         .navigationBarBackButtonHidden(true)
         .toolbar(.hidden, for: .navigationBar)
+        .toolbar(.hidden, for: .tabBar)
+        .background(Color.gray10.ignoresSafeArea())
     }
 }
