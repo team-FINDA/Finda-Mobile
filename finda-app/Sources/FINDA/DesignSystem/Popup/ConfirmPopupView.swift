@@ -42,10 +42,7 @@ public struct ConfirmPopupView: View {
             .cornerRadius(32)
         }
         .padding(20)
-        .background(
-            RoundedRectangle(cornerRadius: 10, style: .continuous)
-                .fill(Color.gray10)
-        )
+        .background(Color.gray10, in: RoundedRectangle(cornerRadius: 10))
         .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
         .overlay(alignment: .center) {
             RoundedRectangle(cornerRadius: 10, style: .continuous)

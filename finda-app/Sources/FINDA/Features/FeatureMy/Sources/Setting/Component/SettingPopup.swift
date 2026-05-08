@@ -37,10 +37,7 @@ struct SettingPopup: View {
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 8)
                 }
-                .background(
-                    RoundedRectangle(cornerRadius: 5, style: .continuous)
-                        .fill(Color.gray30)
-                )
+                .background(Color.gray30, in: RoundedRectangle(cornerRadius: 5))
 
                 Button(action: okAction) {
                     Text(title)
@@ -49,16 +46,10 @@ struct SettingPopup: View {
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 8)
                 }
-                .background(
-                    RoundedRectangle(cornerRadius: 5, style: .continuous)
-                        .fill(Color.red10)
-                )
+                .background(Color.red10, in: RoundedRectangle(cornerRadius: 5))
             }
         }
         .padding(20)
-        .background(
-            RoundedRectangle(cornerRadius: 10, style: .continuous)
-                .fill(Color.gray10)
-        )
+        .background(Color.gray10, in: RoundedRectangle(cornerRadius: 10))
     }
 }
