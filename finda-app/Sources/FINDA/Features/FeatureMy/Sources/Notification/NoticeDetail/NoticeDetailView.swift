@@ -105,6 +105,7 @@ struct NoticeDetailView: View {
         .background(Color.gray10.ignoresSafeArea())
         .navigationBarBackButtonHidden(true)
         .toolbar(.hidden, for: .navigationBar)
+        .toolbar(.hidden, for: .tabBar)
         .sheet(isPresented: $isDateSheetPresented) {
             DatePickerBottomSheet(selectedDate: selectedDate) { pickedDate in
                 selectedDate = pickedDate
