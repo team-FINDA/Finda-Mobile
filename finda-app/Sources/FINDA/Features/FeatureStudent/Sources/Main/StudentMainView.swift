@@ -45,7 +45,7 @@ public struct StudentMainView: View {
                 }
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.gray10.ignoresSafeArea())
     }
 }
