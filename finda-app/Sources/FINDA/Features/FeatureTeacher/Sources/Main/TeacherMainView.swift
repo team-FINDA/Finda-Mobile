@@ -19,45 +19,45 @@ public struct TeacherMainView: View {
     public var body: some View {
         ZStack {
             Color.gray10
-
-            ScrollView {
-                VStack(spacing: 20) {
-                    MainHeaderView(
-                        name: "하원 선생님",
-                        notificationAction: { },
-                        shortNotificationAction: { }
-                    )
-
-                    HStack(spacing: 12) {
-                        Button(action: { }) {
-                            HStack(spacing: 8) {
-                                Text(viewModel.selectedActivity)
-                                    .font(.finda(.body1))
-                                    .foregroundColor(.gray90)
-                                FINDAImage("change")
-                            }
-                            .padding(12)
-                            .background(Color.gray20)
-                            .cornerRadius(4)
+                .ignoresSafeArea()
+            
+            VStack(spacing: 20) {
+                MainHeaderView(
+                    name: "하원 선생님",
+                    notificationAction: { },
+                    shortNotificationAction: { }
+                )
+                
+                HStack(spacing: 12) {
+                    Button(action: { }) {
+                        HStack(spacing: 8) {
+                            Text(viewModel.selectedActivity)
+                                .font(.finda(.body1))
+                                .foregroundColor(.gray90)
+                            FINDAImage("change")
                         }
-
-                        Text("학생")
-                            .font(.finda(.body1))
-                            .foregroundColor(.gray90)
-
-                        Spacer()
+                        .padding(12)
+                        .background(Color.gray20)
+                        .cornerRadius(4)
                     }
-
+                    
+                    Text("학생")
+                        .font(.finda(.body1))
+                        .foregroundColor(.gray90)
+                    
+                    Spacer()
+                }
+                
+                ScrollView {
                     LazyVStack(spacing: 8) {
                         ForEach(Array(students.enumerated()), id: \.offset) { _, student in
                             StudentListCell(name: student.name, state: student.state)
                         }
                     }
                 }
-                .padding(.horizontal, 24)
-                .padding(.top, 24)
-                .frame(maxWidth: .infinity, alignment: .top)
             }
+            .padding(.horizontal, 24)
+            .padding(.top, 24)
         }
     }
 }
