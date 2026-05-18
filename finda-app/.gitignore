@@ -77,3 +77,4 @@ Carthage/Build/
 
 # Local secret config
 .secrets/
+Darwin/LocalSecrets.xcconfig

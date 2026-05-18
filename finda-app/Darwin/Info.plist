@@ -20,6 +20,16 @@
     <string>$(CURRENT_PROJECT_VERSION)</string>
     <key>ITSAppUsesNonExemptEncryption</key>
     <false/>
+    <key>NSCameraUsageDescription</key>
+    <string>QR 코드 스캔을 위해 카메라 권한이 필요합니다.</string>
+    <key>WEBVIEW_BASE_URL</key>
+    <string>$(WEBVIEW_BASE_URL)</string>
+    <key>WEBVIEW_QR_SCAN_PATH</key>
+    <string>$(WEBVIEW_QR_SCAN_PATH)</string>
+    <key>WEBVIEW_QR_DISPLAY_PATH</key>
+    <string>$(WEBVIEW_QR_DISPLAY_PATH)</string>
+    <key>WEBVIEW_ATTENDANCE_CHART_PATH</key>
+    <string>$(WEBVIEW_ATTENDANCE_CHART_PATH)</string>
     <key>UILaunchScreen</key>
     <dict/>
 </dict>
