@@ -1,4 +1,10 @@
+import Foundation
 import SwiftUI
+#if SKIP
+import android.webkit.WebView
+import android.webkit.WebViewClient
+import androidx.compose.ui.viewinterop.AndroidView
+#endif
 
 struct QRPage: Identifiable {
     let id: String
@@ -11,160 +17,230 @@ public struct QRCreateView: View {
         QRPage(id: "3543453", title: "바둑두기"),
         QRPage(id: "7867656", title: "화분에 물주기")
     ]
-    @State private var selectedPageID: String?
-    
+    @State private var currentIndex = 0
+
     public init() {}
-    
+
     public var body: some View {
-        ZStack {
-            Color.gray10
-                .ignoresSafeArea()
-            
-            ScrollView {
-                VStack(spacing: 16) {
-                    HStack {
-                        Text("QR 코드 생성")
-                            .font(.finda(.body1))
-                            .foregroundColor(.gray90)
-                    }
-                    .padding(.vertical, 12)
-                    
-                    HStack(spacing: 10) {
-                        FINDAImage("logo")
-                        Text("학생이 QR을 찍으면\n자동으로 다른 QR로 변경됩니다!")
-                            .font(.finda(.body4))
-                            .foregroundColor(.gray90)
-                        Spacer()
-                    }
-                    .padding(15)
-                    .background(Color.blue10)
-                    .cornerRadius(10)
-                    
-                    QRListView(
-                        pages: pages,
-                        onGenerateRequest: { pageID in
-                            selectedPageID = pageID
-                        }
-                    )
-                }
-                .padding(.horizontal, 24)
-                .padding(.top, 24)
-                .frame(maxWidth: .infinity, alignment: .top)
+        VStack(spacing: 0) {
+            HStack(spacing: 8) {
+                pickerButton(title: "QR 생성", index: 0)
+                pickerButton(title: "출석 그래프", index: 1)
             }
+            .padding(.horizontal, 24)
+            .padding(.top, 16)
+
+            if currentIndex == 0 {
+                qrDisplayPager
+            } else {
+                chartWebContainer
+            }
+        }
+        .background(Color.gray10.ignoresSafeArea())
+    }
+
+    @ViewBuilder
+    private var qrDisplayPager: some View {
+        VStack(spacing: 12) {
+            TabView {
+                ForEach(pages) { page in
+                    VStack(spacing: 12) {
+                        Text(page.title)
+                            .font(.finda(.subheading2))
+                            .foregroundStyle(Color.gray90)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+
+                        QRDisplayWebContainer(value: page.id)
+                            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                            .frame(maxWidth: .infinity)
+                            .aspectRatio(1, contentMode: .fit)
+                    }
+                    .padding(.horizontal, 24)
+                    .padding(.top, 16)
+                }
+            }
+            #if !os(macOS)
+            .tabViewStyle(.page(indexDisplayMode: .automatic))
+            #endif
+        }
+    }
+
+    private var chartWebContainer: some View {
+        AttendanceChartWebContainer(
+            title: "환경지킴이 출석률",
+            data: [
+                .init(month: "3월", value: 10),
+                .init(month: "4월", value: 30),
+                .init(month: "5월", value: 70),
+                .init(month: "6월", value: 40),
+                .init(month: "7월", value: 60)
+            ]
+        )
+        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .padding(24)
+    }
+
+    private func pickerButton(title: String, index: Int) -> some View {
+        Button {
+            currentIndex = index
+        } label: {
+            Text(title)
+                .font(.finda(.body3))
+                .foregroundStyle(currentIndex == index ? Color.gray10 : Color.gray70)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 12)
+                .background(currentIndex == index ? Color.blue50 : Color.gray20)
+                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
         }
     }
 }
 
-struct QRListView: View {
-    let pages: [QRPage]
-    let onGenerateRequest: (String) -> Void
-    @State private var currentPage = 0
+private struct AttendanceChartItem: Codable {
+    let month: String
+    let value: Int
+}
 
-    init(pages: [QRPage], onGenerateRequest: @escaping (String) -> Void = { _ in }) {
-        self.pages = pages
-        self.onGenerateRequest = onGenerateRequest
-    }
+#if SKIP
+private struct QRDisplayWebContainer: View {
+    let value: String
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            if pages.indices.contains(currentPage) {
-                Text(pages[currentPage].title)
-                    .font(.finda(.subheading2))
-                    .foregroundColor(.gray90)
-                    .padding(.bottom, 12)
-            }
-            
-#if !SKIP
-            TabView(selection: $currentPage) {
-                ForEach(Array(pages.enumerated()), id: \.element.id) { index, page in
-                    QRCodeView(
-                        page: page,
-                        onGenerateButtonTapped: { onGenerateRequest($0) }
-                    )
-                    .tag(index)
-                }
-            }
-            .tabViewStyle(.page(indexDisplayMode: .never))
-            .frame(maxWidth: .infinity)
-            .aspectRatio(1, contentMode: .fit)
+        ComposeView { context in
+            AndroidView(factory: { ctx in
+                let webView = WebView(ctx)
+                configureAndroidWebView(webView)
+
+                let uri = android.net.Uri.parse(WebViewEndpoints.baseURL)
+                    .buildUpon()
+                    .appendPath("qr-display")
+                    .appendQueryParameter("value", value)
+                    .build()
+                    .toString()
+                webView.loadUrl(uri)
+                return webView
+            }, modifier: context.modifier, update: { _ in
+            })
+        }
+    }
+
+    private func configureAndroidWebView(_ webView: WebView) {
+        webView.settings.javaScriptEnabled = true
+        webView.settings.domStorageEnabled = true
+        webView.settings.mediaPlaybackRequiresUserGesture = false
+        webView.webViewClient = WebViewClient()
+    }
+}
+
+private struct AttendanceChartWebContainer: View {
+    let title: String
+    let data: [AttendanceChartItem]
+
+    var body: some View {
+        ComposeView { context in
+            AndroidView(factory: { ctx in
+                let webView = WebView(ctx)
+                configureAndroidWebView(webView)
+
+                let payload = data
+                    .map { "{\"month\":\"\($0.month)\",\"value\":\($0.value)}" }
+                    .joined(separator: ",")
+                let dataString = "[\(payload)]"
+
+                let uri = android.net.Uri.parse(WebViewEndpoints.baseURL)
+                    .buildUpon()
+                    .appendPath("attendance-chart")
+                    .appendQueryParameter("title", title)
+                    .appendQueryParameter("data", dataString)
+                    .build()
+                    .toString()
+                webView.loadUrl(uri)
+                return webView
+            }, modifier: context.modifier, update: { _ in
+            })
+        }
+    }
+
+    private func configureAndroidWebView(_ webView: WebView) {
+        webView.settings.javaScriptEnabled = true
+        webView.settings.domStorageEnabled = true
+        webView.settings.mediaPlaybackRequiresUserGesture = false
+        webView.webViewClient = WebViewClient()
+    }
+}
+#elseif canImport(WebKit) && canImport(UIKit)
+import UIKit
+import WebKit
+
+private struct QRDisplayWebContainer: UIViewRepresentable {
+    let value: String
+
+    func makeUIView(context: Context) -> WKWebView {
+        let config = WKWebViewConfiguration()
+        config.allowsInlineMediaPlayback = true
+        let webView = WKWebView(frame: .zero, configuration: config)
+        webView.scrollView.isScrollEnabled = false
+        return webView
+    }
+
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        guard !WebViewEndpoints.qrDisplayURL.isEmpty,
+              var components = URLComponents(string: WebViewEndpoints.qrDisplayURL) else { return }
+        components.queryItems = [URLQueryItem(name: "value", value: value)]
+        guard let url = components.url else { return }
+        uiView.load(URLRequest(url: url))
+    }
+}
+
+private struct AttendanceChartWebContainer: UIViewRepresentable {
+    let title: String
+    let data: [AttendanceChartItem]
+
+    func makeUIView(context: Context) -> WKWebView {
+        let config = WKWebViewConfiguration()
+        config.allowsInlineMediaPlayback = true
+        let webView = WKWebView(frame: .zero, configuration: config)
+        webView.scrollView.isScrollEnabled = false
+        return webView
+    }
+
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        guard let jsonData = try? JSONEncoder().encode(data),
+              let dataString = String(data: jsonData, encoding: .utf8),
+              !WebViewEndpoints.attendanceChartURL.isEmpty,
+              var components = URLComponents(string: WebViewEndpoints.attendanceChartURL) else { return }
+        components.queryItems = [
+            URLQueryItem(name: "title", value: title),
+            URLQueryItem(name: "data", value: dataString)
+        ]
+        guard let url = components.url else { return }
+        uiView.load(URLRequest(url: url))
+    }
+}
 #else
-            GeometryReader { geo in
-                ZStack {
-                    if pages.indices.contains(currentPage) {
-                        QRCodeView(
-                            page: pages[currentPage],
-                            onGenerateButtonTapped: { onGenerateRequest($0) }
-                        )
-                        .frame(width: geo.size.width, height: geo.size.width)
-                    }
-                }
-                .frame(width: geo.size.width, height: geo.size.width, alignment: .leading)
-                .clipped()
-                .gesture(
-                    DragGesture(minimumDistance: 20)
-                        .onEnded { value in
-                            if value.translation.width < -40, currentPage < pages.count - 1 {
-                                currentPage += 1
-                            } else if value.translation.width > 40, currentPage > 0 {
-                                currentPage -= 1
-                            }
-                        }
-                )
-                .animation(.easeInOut(duration: 0.2), value: currentPage)
-            }
-            .frame(maxWidth: .infinity)
-            .aspectRatio(1, contentMode: .fit)
+private struct QRDisplayWebContainer: View {
+    let value: String
+
+    var body: some View {
+        Color.gray20
+            .overlay(
+                Text("WebView 미지원 환경")
+                    .font(.finda(.body4))
+                    .foregroundStyle(Color.gray70)
+            )
+    }
+}
+
+private struct AttendanceChartWebContainer: View {
+    let title: String
+    let data: [AttendanceChartItem]
+
+    var body: some View {
+        Color.gray20
+            .overlay(
+                Text("WebView 미지원 환경")
+                    .font(.finda(.body4))
+                    .foregroundStyle(Color.gray70)
+            )
+    }
+}
 #endif
-            
-            HStack {
-                Spacer()
-                PageIndicator(total: pages.count, current: currentPage)
-                Spacer()
-            }
-            .padding(.top, 12)
-        }
-    }
-}
-
-struct QRCodeView: View {
-    let page: QRPage
-    let onGenerateButtonTapped: (String) -> Void
-
-    var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 10)
-                .fill(Color.blue10)
-
-            Button {
-                onGenerateButtonTapped(page.id)
-            } label: {
-                Text("QR 생성하기")
-                    .font(.finda(.body3))
-                    .foregroundColor(.blue10)
-                    .padding(.horizontal, 27)
-                    .padding(.vertical, 14)
-                    .background(Color.blue50)
-                    .clipShape(Capsule())
-            }
-        }
-        .aspectRatio(1, contentMode: .fit)
-    }
-}
-
-struct PageIndicator: View {
-    let total: Int
-    let current: Int
-
-    var body: some View {
-        HStack(spacing: 8) {
-            ForEach(0..<total, id: \.self) { index in
-                Circle()
-                    .fill(index == current ? Color.blue50 : Color.blue10)
-                    .frame(
-                        width: index == current ? 7.0 : 6.0,
-                        height: index == current ? 7.0 : 6.0
-                    )
-            }
-        }
-    }
-}
