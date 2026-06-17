@@ -1,145 +1,155 @@
+import Foundation
 import SwiftUI
+#if SKIP
+import android.webkit.WebView
+import android.webkit.WebViewClient
+import android.view.ViewGroup
+import androidx.compose.ui.viewinterop.AndroidView
+#elseif canImport(WebKit) && canImport(UIKit)
+import UIKit
+import WebKit
+#endif
 
-struct MonthlyData: Identifiable {
-    let id = UUID()
+private struct AttendanceChartPoint: Codable {
     let month: String
-    let value: Double
+    let value: Int
 }
 
 struct GraphView: View {
-    @State private var data: [MonthlyData] = []
+    private let title = "봉사활동 출석률"
+    @State private var data: [AttendanceChartPoint] = []
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            Text("봉사활동 출석률")
-                .font(.finda(.body1))
-                .foregroundStyle(Color.gray90)
-                .padding(.top, 15)
-                .padding(.leading, 15)
-
-            SimpleLineChart(data: data)
-                .frame(height: 120)
-                .padding()
-        }
-        .background(Color.gray20)
-        .cornerRadius(10)
-        .onAppear { loadData() }
+        AttendanceChartWebContainer(title: title, data: data)
+            .frame(height: 220)
+            .background(Color.gray20)
+            .cornerRadius(10)
+            .clipped()
+            .onAppear { loadData() }
     }
 
-    func loadData() {
+    private func loadData() {
+#if SKIP
+    android.util.Log.d("FINDA", "attendanceChartURL: \(WebViewEndpoints.attendanceChartURL)")
+    #else
+    print("🔍 attendanceChartURL: \(WebViewEndpoints.attendanceChartURL)")
+    #endif
         let calendar = Calendar.current
         let now = Date()
-        var monthlyData: [MonthlyData] = []
+        var points: [AttendanceChartPoint] = []
         let formatter = DateFormatter()
         formatter.dateFormat = "M월"
+
         for i in (0..<5).reversed() {
             if let date = calendar.date(byAdding: .month, value: -i, to: now) {
-                monthlyData.append(MonthlyData(
-                    month: formatter.string(from: date),
-                    value: Double.random(in: 0.0...100.0)
-                ))
+                points.append(
+                    AttendanceChartPoint(
+                        month: formatter.string(from: date),
+                        value: Int.random(in: 0...100)
+                    )
+                )
             }
         }
-        data = monthlyData
+
+        data = points
     }
 }
 
-struct SimpleLineChart: View {
-    let data: [MonthlyData]
-    let maxValue: Double = 100
+private struct AttendanceChartWebContainer: View {
+    let title: String
+    let data: [AttendanceChartPoint]
 
     var body: some View {
-        VStack(spacing: 0) {
-            ChartCanvas(data: data, maxValue: maxValue)
-                .frame(maxWidth: .infinity)
-                .frame(height: 80)
+        ZStack {
+            platformWebView
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
 
-            HStack(spacing: 0) {
-                ForEach(data) { item in
-                    Text(item.month)
-                        .font(.finda(.caption4))
-                        .foregroundColor(.gray90)
-                        .frame(maxWidth: .infinity)
+    @ViewBuilder
+    private var platformWebView: some View {
+#if SKIP
+        ComposeView { context in
+            func chartURLString() -> String? {
+                guard !WebViewEndpoints.attendanceChartURL.isEmpty,
+                      let jsonData = try? JSONEncoder().encode(data),
+                      let dataString = String(data: jsonData, encoding: .utf8) else {
+                    return nil
                 }
+
+                return android.net.Uri.parse(WebViewEndpoints.attendanceChartURL)
+                    .buildUpon()
+                    .appendQueryParameter("title", title)
+                    .appendQueryParameter("data", dataString)
+                    .build()
+                    .toString()
             }
-            .padding(.top, 4)
-        }
-    }
-}
 
-struct ChartCanvas: View {
-    let data: [MonthlyData]
-    let maxValue: Double
+            AndroidView(factory: { ctx in
+                let webView = WebView(ctx)
+                webView.layoutParams = ViewGroup.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.MATCH_PARENT
+                )
+                webView.settings.javaScriptEnabled = true
+                webView.settings.domStorageEnabled = true
+                webView.settings.mediaPlaybackRequiresUserGesture = false
+                webView.webViewClient = WebViewClient()
+                webView.setBackgroundColor(android.graphics.Color.TRANSPARENT)
 
-    var body: some View {
-        ZStack(alignment: .bottom) {
-            // 그리드 라인
-            VStack(spacing: 0) {
-                ForEach([100, 75, 50, 25, 0], id: \.self) { _ in
-                    Spacer()
-                    Rectangle()
-                        .fill(Color.gray40)
-                        .frame(height: 0.5)
+                if let url = chartURLString() {
+                    webView.loadUrl(url)
                 }
-            }
-
-            // 라인 + 포인트
-            ChartLineView(data: data, maxValue: maxValue)
-        }
-    }
-}
-
-struct ChartLineView: View {
-    let data: [MonthlyData]
-    let maxValue: Double
-
-    var body: some View {
-        GeometryReader { geo in
-            let width = geo.size.width
-            let height = geo.size.height
-            let count = data.count
-
-            if count > 1 {
-                ZStack {
-                    ChartPath(data: data, width: width, height: height, maxValue: maxValue)
-                        .stroke(Color.blue60, lineWidth: 2)
-
-                    ForEach(0..<count, id: \.self) { i in
-                        let x = width * CGFloat(i) / CGFloat(count - 1)
-                        let y = height * (1 - CGFloat(data[i].value / maxValue))
-                        Circle()
-                            .strokeBorder(Color.blue60, lineWidth: 3)
-                            .frame(width: 10, height: 10)
-                            .position(x: x, y: y)
+                return webView
+            }, modifier: context.modifier, update: { webView in
+                if let url = chartURLString() {
+                    if webView.url != url {
+                        webView.loadUrl(url)
                     }
                 }
-            }
+            })
         }
-    }
-}
-
-struct ChartPath: Shape {
-    let data: [MonthlyData]
-    let width: CGFloat
-    let height: CGFloat
-    let maxValue: Double
-
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        let count = data.count
-        guard count > 1 else { return path }
-
-        let points = data.enumerated().map { i, item in
-            CGPoint(
-                x: width * CGFloat(i) / CGFloat(count - 1),
-                y: height * (1 - CGFloat(item.value / maxValue))
+#elseif canImport(WebKit) && canImport(UIKit)
+        AttendanceChartWKWebView(title: title, data: data)
+#else
+        Color.gray20
+            .overlay(
+                Text("WebView 미지원 환경")
+                    .font(.finda(.body4))
+                    .foregroundStyle(Color.gray70)
             )
-        }
-
-        path.move(to: points[0])
-        for point in points.dropFirst() {
-            path.addLine(to: point)
-        }
-        return path
+#endif
     }
 }
+
+#if canImport(WebKit) && canImport(UIKit)
+private struct AttendanceChartWKWebView: UIViewRepresentable {
+    let title: String
+    let data: [AttendanceChartPoint]
+
+    func makeUIView(context: Context) -> WKWebView {
+        let config = WKWebViewConfiguration()
+        config.allowsInlineMediaPlayback = true
+        let webView = WKWebView(frame: .zero, configuration: config)
+        webView.scrollView.isScrollEnabled = false
+        return webView
+    }
+
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        guard let jsonData = try? JSONEncoder().encode(data),
+              let dataString = String(data: jsonData, encoding: .utf8),
+              !WebViewEndpoints.attendanceChartURL.isEmpty,
+              var components = URLComponents(string: WebViewEndpoints.attendanceChartURL) else {
+            return
+        }
+
+        components.queryItems = [
+            URLQueryItem(name: "title", value: title),
+            URLQueryItem(name: "data", value: dataString)
+        ]
+
+        guard let url = components.url else { return }
+        uiView.load(URLRequest(url: url))
+    }
+}
+#endif
